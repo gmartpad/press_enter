@@ -195,11 +195,21 @@ const en = {
     'upgrade.humanoidRobotsUpgrade003.name': 'Small Talk Acquired III',
     'upgrade.humanoidRobotsUpgrade004.name': 'Small Talk Acquired IV',
     'upgrade.humanoidRobotsUpgrade005.name': 'Small Talk Acquired V',
-    'upgrade.humanoidRobotsUpgrade006name': 'Small Talk Acquired VI',
+    'upgrade.humanoidRobotsUpgrade006.name': 'Small Talk Acquired VI',
     'upgrade.humanoidRobotsUpgrade007.name': 'Small Talk Acquired VII',
     'upgrade.humanoidRobotsUpgrade008.name': 'Small Talk Acquired VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Small Talk Acquired IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'Small Talk Acquired X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.humanoidRobotsUpgrade002.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.humanoidRobotsUpgrade003.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.humanoidRobotsUpgrade004.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.humanoidRobotsUpgrade005.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.humanoidRobotsUpgrade006.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.humanoidRobotsUpgrade007.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.humanoidRobotsUpgrade008.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.humanoidRobotsUpgrade009.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.humanoidRobotsUpgrade010.description': 'Humanoid Robots are twice as efficient',
 }
 
 export default en

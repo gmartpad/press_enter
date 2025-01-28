@@ -213,6 +213,16 @@ const ru = {
     'upgrade.humanoidRobotsUpgrade008.name': 'Приобретённый Малый Разговор VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Приобретённый Малый Разговор IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'Приобретённый Малый Разговор X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.humanoidRobotsUpgrade002.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.humanoidRobotsUpgrade003.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.humanoidRobotsUpgrade004.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.humanoidRobotsUpgrade005.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.humanoidRobotsUpgrade006.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.humanoidRobotsUpgrade007.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.humanoidRobotsUpgrade008.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.humanoidRobotsUpgrade009.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.humanoidRobotsUpgrade010.description': 'Гуманоидные роботы в два раза эффективнее',
 }
 
 export default ru

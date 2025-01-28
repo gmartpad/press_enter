@@ -213,6 +213,16 @@ const ar = {
     'upgrade.humanoidRobotsUpgrade008.name': 'حديث جانبي مكتسب VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'حديث جانبي مكتسب IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'حديث جانبي مكتسب X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.humanoidRobotsUpgrade002.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.humanoidRobotsUpgrade003.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.humanoidRobotsUpgrade004.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.humanoidRobotsUpgrade005.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.humanoidRobotsUpgrade006.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.humanoidRobotsUpgrade007.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.humanoidRobotsUpgrade008.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.humanoidRobotsUpgrade009.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.humanoidRobotsUpgrade010.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
 }
 
 export default ar

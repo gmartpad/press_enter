@@ -213,6 +213,16 @@ const bn = {
     'upgrade.humanoidRobotsUpgrade008.name': 'ছোট্ট আলাপ অর্জিত VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'ছোট্ট আলাপ অর্জিত IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'ছোট্ট আলাপ অর্জিত X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.humanoidRobotsUpgrade002.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.humanoidRobotsUpgrade003.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.humanoidRobotsUpgrade004.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.humanoidRobotsUpgrade005.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.humanoidRobotsUpgrade006.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.humanoidRobotsUpgrade007.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.humanoidRobotsUpgrade008.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.humanoidRobotsUpgrade009.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.humanoidRobotsUpgrade010.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
 }
 
 export default bn
