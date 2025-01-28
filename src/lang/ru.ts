@@ -253,6 +253,16 @@ const ru = {
     'upgrade.musicBotsUpgrade008.name': 'Дабстеп Репертуар VIII',
     'upgrade.musicBotsUpgrade009.name': 'Дабстеп Репертуар IX',
     'upgrade.musicBotsUpgrade010.name': 'Дабстеп Репертуар X',
+    'upgrade.musicBotsUpgrade001.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.musicBotsUpgrade002.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.musicBotsUpgrade003.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.musicBotsUpgrade004.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.musicBotsUpgrade005.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.musicBotsUpgrade006.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.musicBotsUpgrade007.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.musicBotsUpgrade008.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.musicBotsUpgrade009.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.musicBotsUpgrade010.description': 'Музыкальные боты в два раза эффективнее',
 }
 
 export default ru

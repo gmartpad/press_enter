@@ -253,6 +253,16 @@ const fr = {
     'upgrade.musicBotsUpgrade008.name': 'Répertoire Dubstep VIII',
     'upgrade.musicBotsUpgrade009.name': 'Répertoire Dubstep IX',
     'upgrade.musicBotsUpgrade010.name': 'Répertoire Dubstep X',
+    'upgrade.musicBotsUpgrade001.description': 'Les bots musicaux sont deux fois plus efficaces',
+    'upgrade.musicBotsUpgrade002.description': 'Les bots musicaux sont deux fois plus efficaces',
+    'upgrade.musicBotsUpgrade003.description': 'Les bots musicaux sont deux fois plus efficaces',
+    'upgrade.musicBotsUpgrade004.description': 'Les bots musicaux sont deux fois plus efficaces',
+    'upgrade.musicBotsUpgrade005.description': 'Les bots musicaux sont deux fois plus efficaces',
+    'upgrade.musicBotsUpgrade006.description': 'Les bots musicaux sont deux fois plus efficaces',
+    'upgrade.musicBotsUpgrade007.description': 'Les bots musicaux sont deux fois plus efficaces',
+    'upgrade.musicBotsUpgrade008.description': 'Les bots musicaux sont deux fois plus efficaces',
+    'upgrade.musicBotsUpgrade009.description': 'Les bots musicaux sont deux fois plus efficaces',
+    'upgrade.musicBotsUpgrade010.description': 'Les bots musicaux sont deux fois plus efficaces',
 }
 
 export default fr

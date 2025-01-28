@@ -253,6 +253,16 @@ const ptBr = {
     'upgrade.musicBotsUpgrade008.name': 'Repertório Dubstep VIII',
     'upgrade.musicBotsUpgrade009.name': 'Repertório Dubstep IX',
     'upgrade.musicBotsUpgrade010.name': 'Repertório Dubstep X',
+    'upgrade.musicBotsUpgrade001.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade002.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade003.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade004.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade005.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade006.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade007.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade008.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade009.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade010.description': 'Os bots de música são duas vezes mais eficientes',
 }
 
 export default ptBr

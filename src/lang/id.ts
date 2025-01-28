@@ -253,6 +253,16 @@ const id = {
     'upgrade.musicBotsUpgrade008.name': 'Repertoar Dubstep VIII',
     'upgrade.musicBotsUpgrade009.name': 'Repertoar Dubstep IX',
     'upgrade.musicBotsUpgrade010.name': 'Repertoar Dubstep X',
+    'upgrade.musicBotsUpgrade001.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade002.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade003.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade004.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade005.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade006.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade007.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade008.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade009.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade010.description': 'Bot musik dua kali lebih efisien',
 }
 
 export default id

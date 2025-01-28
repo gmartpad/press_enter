@@ -253,6 +253,16 @@ const zhCn = {
     'upgrade.musicBotsUpgrade008.name': '电音曲目 VIII',
     'upgrade.musicBotsUpgrade009.name': '电音曲目 IX',
     'upgrade.musicBotsUpgrade010.name': '电音曲目 X',
+    'upgrade.musicBotsUpgrade001.description': '音乐机器人效率提高两倍',
+    'upgrade.musicBotsUpgrade002.description': '音乐机器人效率提高两倍',
+    'upgrade.musicBotsUpgrade003.description': '音乐机器人效率提高两倍',
+    'upgrade.musicBotsUpgrade004.description': '音乐机器人效率提高两倍',
+    'upgrade.musicBotsUpgrade005.description': '音乐机器人效率提高两倍',
+    'upgrade.musicBotsUpgrade006.description': '音乐机器人效率提高两倍',
+    'upgrade.musicBotsUpgrade007.description': '音乐机器人效率提高两倍',
+    'upgrade.musicBotsUpgrade008.description': '音乐机器人效率提高两倍',
+    'upgrade.musicBotsUpgrade009.description': '音乐机器人效率提高两倍',
+    'upgrade.musicBotsUpgrade010.description': '音乐机器人效率提高两倍',
 }
 
 export default zhCn

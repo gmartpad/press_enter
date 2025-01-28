@@ -253,6 +253,16 @@ const ar = {
     'upgrade.musicBotsUpgrade008.name': 'مرجع الدبستيب VIII',
     'upgrade.musicBotsUpgrade009.name': 'مرجع الدبستيب IX',
     'upgrade.musicBotsUpgrade010.name': 'مرجع الدبستيب X',
+    'upgrade.musicBotsUpgrade001.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.musicBotsUpgrade002.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.musicBotsUpgrade003.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.musicBotsUpgrade004.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.musicBotsUpgrade005.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.musicBotsUpgrade006.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.musicBotsUpgrade007.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.musicBotsUpgrade008.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.musicBotsUpgrade009.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.musicBotsUpgrade010.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
 }
 
 export default ar

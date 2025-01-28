@@ -253,6 +253,16 @@ const ur = {
     'upgrade.musicBotsUpgrade008.name': 'ڈب سٹیپ ریپرٹائر VIII',
     'upgrade.musicBotsUpgrade009.name': 'ڈب سٹیپ ریپرٹائر IX',
     'upgrade.musicBotsUpgrade010.name': 'ڈب سٹیپ ریپرٹائر X',
+    'upgrade.musicBotsUpgrade001.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.musicBotsUpgrade002.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.musicBotsUpgrade003.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.musicBotsUpgrade004.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.musicBotsUpgrade005.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.musicBotsUpgrade006.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.musicBotsUpgrade007.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.musicBotsUpgrade008.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.musicBotsUpgrade009.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.musicBotsUpgrade010.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
 }
 
 export default ur
