@@ -208,7 +208,7 @@ const hiIn = {
     'upgrade.humanoidRobotsUpgrade003.name': 'छोटी बातचीत प्राप्त III',
     'upgrade.humanoidRobotsUpgrade004.name': 'छोटी बातचीत प्राप्त IV',
     'upgrade.humanoidRobotsUpgrade005.name': 'छोटी बातचीत प्राप्त V',
-    'upgrade.humanoidRobotsUpgrade006name': 'छोटी बातचीत प्राप्त VI',
+    'upgrade.humanoidRobotsUpgrade006.name': 'छोटी बातचीत प्राप्त VI',
     'upgrade.humanoidRobotsUpgrade007.name': 'छोटी बातचीत प्राप्त VII',
     'upgrade.humanoidRobotsUpgrade008.name': 'छोटी बातचीत प्राप्त VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'छोटी बातचीत प्राप्त IX',
@@ -223,6 +223,16 @@ const hiIn = {
     'upgrade.humanoidRobotsUpgrade008.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
     'upgrade.humanoidRobotsUpgrade009.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
     'upgrade.humanoidRobotsUpgrade010.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.llmsUpgrade001.name': 'फ़ाइल आधार I',
+    'upgrade.llmsUpgrade002.name': 'फ़ाइल आधार II',
+    'upgrade.llmsUpgrade003.name': 'फ़ाइल आधार III',
+    'upgrade.llmsUpgrade004.name': 'फ़ाइल आधार IV',
+    'upgrade.llmsUpgrade005.name': 'फ़ाइल आधार V',
+    'upgrade.llmsUpgrade006.name': 'फ़ाइल आधार VI',
+    'upgrade.llmsUpgrade007.name': 'फ़ाइल आधार VII',
+    'upgrade.llmsUpgrade008.name': 'फ़ाइल आधार VIII',
+    'upgrade.llmsUpgrade009.name': 'फ़ाइल आधार IX',
+    'upgrade.llmsUpgrade010.name': 'फ़ाइल आधार X',
 }
 
 export default hiIn

@@ -208,7 +208,7 @@ const ar = {
     'upgrade.humanoidRobotsUpgrade003.name': 'حديث جانبي مكتسب III',
     'upgrade.humanoidRobotsUpgrade004.name': 'حديث جانبي مكتسب IV',
     'upgrade.humanoidRobotsUpgrade005.name': 'حديث جانبي مكتسب V',
-    'upgrade.humanoidRobotsUpgrade006name': 'حديث جانبي مكتسب VI',
+    'upgrade.humanoidRobotsUpgrade006.name': 'حديث جانبي مكتسب VI',
     'upgrade.humanoidRobotsUpgrade007.name': 'حديث جانبي مكتسب VII',
     'upgrade.humanoidRobotsUpgrade008.name': 'حديث جانبي مكتسب VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'حديث جانبي مكتسب IX',
@@ -223,6 +223,16 @@ const ar = {
     'upgrade.humanoidRobotsUpgrade008.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
     'upgrade.humanoidRobotsUpgrade009.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
     'upgrade.humanoidRobotsUpgrade010.description': 'الروبوتات البشرية ذات كفاءة مضاعفة',
+    'upgrade.llmsUpgrade001.name': 'أساس الملفات I',
+    'upgrade.llmsUpgrade002.name': 'أساس الملفات II',
+    'upgrade.llmsUpgrade003.name': 'أساس الملفات III',
+    'upgrade.llmsUpgrade004.name': 'أساس الملفات IV',
+    'upgrade.llmsUpgrade005.name': 'أساس الملفات V',
+    'upgrade.llmsUpgrade006.name': 'أساس الملفات VI',
+    'upgrade.llmsUpgrade007.name': 'أساس الملفات VII',
+    'upgrade.llmsUpgrade008.name': 'أساس الملفات VIII',
+    'upgrade.llmsUpgrade009.name': 'أساس الملفات IX',
+    'upgrade.llmsUpgrade010.name': 'أساس الملفات X',
 }
 
 export default ar
