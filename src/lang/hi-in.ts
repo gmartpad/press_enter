@@ -253,6 +253,16 @@ const hiIn = {
     'upgrade.musicBotsUpgrade008.name': 'डबस्टेप रिपर्टॉयर VIII',
     'upgrade.musicBotsUpgrade009.name': 'डबस्टेप रिपर्टॉयर IX',
     'upgrade.musicBotsUpgrade010.name': 'डबस्टेप रिपर्टॉयर X',
+    'upgrade.musicBotsUpgrade001.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.musicBotsUpgrade002.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.musicBotsUpgrade003.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.musicBotsUpgrade004.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.musicBotsUpgrade005.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.musicBotsUpgrade006.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.musicBotsUpgrade007.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.musicBotsUpgrade008.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.musicBotsUpgrade009.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.musicBotsUpgrade010.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
 }
 
 export default hiIn

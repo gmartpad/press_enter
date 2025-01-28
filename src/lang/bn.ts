@@ -253,6 +253,16 @@ const bn = {
     'upgrade.musicBotsUpgrade008.name': 'ডাবস্টেপ রেপারটোয়ার VIII',
     'upgrade.musicBotsUpgrade009.name': 'ডাবস্টেপ রেপারটোয়ার IX',
     'upgrade.musicBotsUpgrade010.name': 'ডাবস্টেপ রেপারটোয়ার X',
+    'upgrade.musicBotsUpgrade001.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade002.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade003.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade004.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade005.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade006.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade007.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade008.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade009.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade010.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
 }
 
 export default bn

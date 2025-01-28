@@ -240,6 +240,16 @@ const en = {
     'upgrade.musicBotsUpgrade008.name': 'Dubstep Repertoire VIII',
     'upgrade.musicBotsUpgrade009.name': 'Dubstep Repertoire IX',
     'upgrade.musicBotsUpgrade010.name': 'Dubstep Repertoire X',
+    'upgrade.musicBotsUpgrade001.description': 'Music Bots are twice as efficient',
+    'upgrade.musicBotsUpgrade002.description': 'Music Bots are twice as efficient',
+    'upgrade.musicBotsUpgrade003.description': 'Music Bots are twice as efficient',
+    'upgrade.musicBotsUpgrade004.description': 'Music Bots are twice as efficient',
+    'upgrade.musicBotsUpgrade005.description': 'Music Bots are twice as efficient',
+    'upgrade.musicBotsUpgrade006.description': 'Music Bots are twice as efficient',
+    'upgrade.musicBotsUpgrade007.description': 'Music Bots are twice as efficient',
+    'upgrade.musicBotsUpgrade008.description': 'Music Bots are twice as efficient',
+    'upgrade.musicBotsUpgrade009.description': 'Music Bots are twice as efficient',
+    'upgrade.musicBotsUpgrade010.description': 'Music Bots are twice as efficient',
 }
 
 export default en
