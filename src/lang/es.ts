@@ -220,6 +220,16 @@ const es = {
     'upgrade.llmsUpgrade008.name': 'Fundamentación de Archivos VIII',
     'upgrade.llmsUpgrade009.name': 'Fundamentación de Archivos IX',
     'upgrade.llmsUpgrade010.name': 'Fundamentación de Archivos X',
+    'upgrade.llmsUpgrade001.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.llmsUpgrade002.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.llmsUpgrade003.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.llmsUpgrade004.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.llmsUpgrade005.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.llmsUpgrade006.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.llmsUpgrade007.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.llmsUpgrade008.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.llmsUpgrade009.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.llmsUpgrade010.description': 'Los LLM son dos veces más eficientes',
 }
 
 export default es

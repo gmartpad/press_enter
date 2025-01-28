@@ -233,6 +233,16 @@ const hiIn = {
     'upgrade.llmsUpgrade008.name': 'फ़ाइल आधार VIII',
     'upgrade.llmsUpgrade009.name': 'फ़ाइल आधार IX',
     'upgrade.llmsUpgrade010.name': 'फ़ाइल आधार X',
+    'upgrade.llmsUpgrade001.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.llmsUpgrade002.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.llmsUpgrade003.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.llmsUpgrade004.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.llmsUpgrade005.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.llmsUpgrade006.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.llmsUpgrade007.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.llmsUpgrade008.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.llmsUpgrade009.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.llmsUpgrade010.description': 'एलएलएम दोगुनी कुशल हैं',
 }
 
 export default hiIn

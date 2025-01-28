@@ -233,6 +233,16 @@ const bn = {
     'upgrade.llmsUpgrade008.name': 'ফাইল ভিত্তি VIII',
     'upgrade.llmsUpgrade009.name': 'ফাইল ভিত্তি IX',
     'upgrade.llmsUpgrade010.name': 'ফাইল ভিত্তি X',
+    'upgrade.llmsUpgrade001.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade002.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade003.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade004.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade005.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade006.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade007.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade008.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade009.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade010.description': 'এলএলএম দ্বিগুণ দক্ষ',
 }
 
 export default bn

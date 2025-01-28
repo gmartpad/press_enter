@@ -233,6 +233,16 @@ const ur = {
     'upgrade.llmsUpgrade008.name': 'فائل کی بنیاد VIII',
     'upgrade.llmsUpgrade009.name': 'فائل کی بنیاد IX',
     'upgrade.llmsUpgrade010.name': 'فائل کی بنیاد X',
+    'upgrade.llmsUpgrade001.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.llmsUpgrade002.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.llmsUpgrade003.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.llmsUpgrade004.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.llmsUpgrade005.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.llmsUpgrade006.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.llmsUpgrade007.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.llmsUpgrade008.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.llmsUpgrade009.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.llmsUpgrade010.description': 'ایل ایل ایمز دوگنا موثر ہیں',
 }
 
 export default ur

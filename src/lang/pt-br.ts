@@ -233,6 +233,16 @@ const ptBr = {
     'upgrade.llmsUpgrade008.name': 'Fundamentação de Arquivos VIII',
     'upgrade.llmsUpgrade009.name': 'Fundamentação de Arquivos IX',
     'upgrade.llmsUpgrade010.name': 'Fundamentação de Arquivos X',
+    'upgrade.llmsUpgrade001.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade002.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade003.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade004.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade005.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade006.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade007.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade008.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade009.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade010.description': 'LLMs são duas vezes mais eficientes',
 }
 
 export default ptBr

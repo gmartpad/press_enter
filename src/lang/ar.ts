@@ -233,6 +233,16 @@ const ar = {
     'upgrade.llmsUpgrade008.name': 'أساس الملفات VIII',
     'upgrade.llmsUpgrade009.name': 'أساس الملفات IX',
     'upgrade.llmsUpgrade010.name': 'أساس الملفات X',
+    'upgrade.llmsUpgrade001.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.llmsUpgrade002.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.llmsUpgrade003.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.llmsUpgrade004.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.llmsUpgrade005.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.llmsUpgrade006.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.llmsUpgrade007.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.llmsUpgrade008.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.llmsUpgrade009.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.llmsUpgrade010.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
 }
 
 export default ar
