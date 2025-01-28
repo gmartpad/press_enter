@@ -213,6 +213,16 @@ const id = {
     'upgrade.humanoidRobotsUpgrade008.name': 'Small Talk Acquired VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Small Talk Acquired IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'Small Talk Acquired X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.humanoidRobotsUpgrade002.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.humanoidRobotsUpgrade003.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.humanoidRobotsUpgrade004.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.humanoidRobotsUpgrade005.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.humanoidRobotsUpgrade006.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.humanoidRobotsUpgrade007.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.humanoidRobotsUpgrade008.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.humanoidRobotsUpgrade009.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.humanoidRobotsUpgrade010.description': 'Robot humanoid dua kali lebih efisien',
 }
 
 export default id

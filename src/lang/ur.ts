@@ -213,6 +213,16 @@ const ur = {
     'upgrade.humanoidRobotsUpgrade008.name': 'چھوٹی گفتگو حاصل شدہ VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'چھوٹی گفتگو حاصل شدہ IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'چھوٹی گفتگو حاصل شدہ X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.humanoidRobotsUpgrade002.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.humanoidRobotsUpgrade003.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.humanoidRobotsUpgrade004.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.humanoidRobotsUpgrade005.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.humanoidRobotsUpgrade006.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.humanoidRobotsUpgrade007.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.humanoidRobotsUpgrade008.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.humanoidRobotsUpgrade009.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.humanoidRobotsUpgrade010.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
 }
 
 export default ur

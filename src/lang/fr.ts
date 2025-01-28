@@ -213,6 +213,16 @@ const fr = {
     'upgrade.humanoidRobotsUpgrade008.name': 'Conversation Informelle Acquise VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Conversation Informelle Acquise IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'Conversation Informelle Acquise X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.humanoidRobotsUpgrade002.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.humanoidRobotsUpgrade003.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.humanoidRobotsUpgrade004.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.humanoidRobotsUpgrade005.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.humanoidRobotsUpgrade006.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.humanoidRobotsUpgrade007.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.humanoidRobotsUpgrade008.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.humanoidRobotsUpgrade009.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.humanoidRobotsUpgrade010.description': 'Les robots humanoïdes sont deux fois plus efficaces',
 }
 
 export default fr

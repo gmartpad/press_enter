@@ -213,6 +213,16 @@ const ptBr = {
     'upgrade.humanoidRobotsUpgrade008.name': 'Conversa Casual Adquirida VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Conversa Casual Adquirida IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'Conversa Casual Adquirida X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.humanoidRobotsUpgrade002.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.humanoidRobotsUpgrade003.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.humanoidRobotsUpgrade004.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.humanoidRobotsUpgrade005.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.humanoidRobotsUpgrade006.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.humanoidRobotsUpgrade007.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.humanoidRobotsUpgrade008.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.humanoidRobotsUpgrade009.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.humanoidRobotsUpgrade010.description': 'Robôs humanoides são duas vezes mais eficientes',
 }
 
 export default ptBr

@@ -213,6 +213,16 @@ const hiIn = {
     'upgrade.humanoidRobotsUpgrade008.name': 'छोटी बातचीत प्राप्त VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'छोटी बातचीत प्राप्त IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'छोटी बातचीत प्राप्त X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.humanoidRobotsUpgrade002.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.humanoidRobotsUpgrade003.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.humanoidRobotsUpgrade004.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.humanoidRobotsUpgrade005.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.humanoidRobotsUpgrade006.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.humanoidRobotsUpgrade007.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.humanoidRobotsUpgrade008.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.humanoidRobotsUpgrade009.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
+    'upgrade.humanoidRobotsUpgrade010.description': 'ह्यूमनॉइड रोबोट दोगुने कुशल होते हैं',
 }
 
 export default hiIn

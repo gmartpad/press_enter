@@ -213,6 +213,16 @@ const zhCn = {
     'upgrade.humanoidRobotsUpgrade008.name': '习得闲聊 VIII',
     'upgrade.humanoidRobotsUpgrade009.name': '习得闲聊 IX',
     'upgrade.humanoidRobotsUpgrade010.name': '习得闲聊 X',
+    'upgrade.humanoidRobotsUpgrade001.description': '人形机器人的效率提高一倍',
+    'upgrade.humanoidRobotsUpgrade002.description': '人形机器人的效率提高一倍',
+    'upgrade.humanoidRobotsUpgrade003.description': '人形机器人的效率提高一倍',
+    'upgrade.humanoidRobotsUpgrade004.description': '人形机器人的效率提高一倍',
+    'upgrade.humanoidRobotsUpgrade005.description': '人形机器人的效率提高一倍',
+    'upgrade.humanoidRobotsUpgrade006.description': '人形机器人的效率提高一倍',
+    'upgrade.humanoidRobotsUpgrade007.description': '人形机器人的效率提高一倍',
+    'upgrade.humanoidRobotsUpgrade008.description': '人形机器人的效率提高一倍',
+    'upgrade.humanoidRobotsUpgrade009.description': '人形机器人的效率提高一倍',
+    'upgrade.humanoidRobotsUpgrade010.description': '人形机器人的效率提高一倍',
 }
 
 export default zhCn

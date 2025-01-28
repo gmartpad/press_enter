@@ -200,6 +200,16 @@ const es = {
     'upgrade.humanoidRobotsUpgrade008.name': 'Conversación Casual Adquirida VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Conversación Casual Adquirida IX',
     'upgrade.humanoidRobotsUpgrade010.name': 'Conversación Casual Adquirida X',
+    'upgrade.humanoidRobotsUpgrade001.description': 'Los robots humanoides son el doble de eficientes',
+    'upgrade.humanoidRobotsUpgrade002.description': 'Los robots humanoides son el doble de eficientes',
+    'upgrade.humanoidRobotsUpgrade003.description': 'Los robots humanoides son el doble de eficientes',
+    'upgrade.humanoidRobotsUpgrade004.description': 'Los robots humanoides son el doble de eficientes',
+    'upgrade.humanoidRobotsUpgrade005.description': 'Los robots humanoides son el doble de eficientes',
+    'upgrade.humanoidRobotsUpgrade006.description': 'Los robots humanoides son el doble de eficientes',
+    'upgrade.humanoidRobotsUpgrade007.description': 'Los robots humanoides son el doble de eficientes',
+    'upgrade.humanoidRobotsUpgrade008.description': 'Los robots humanoides son el doble de eficientes',
+    'upgrade.humanoidRobotsUpgrade009.description': 'Los robots humanoides son el doble de eficientes',
+    'upgrade.humanoidRobotsUpgrade010.description': 'Los robots humanoides son el doble de eficientes',
 }
 
 export default es
