@@ -233,6 +233,16 @@ const id = {
     'upgrade.llmsUpgrade008.name': 'Dasar Berkas VIII',
     'upgrade.llmsUpgrade009.name': 'Dasar Berkas IX',
     'upgrade.llmsUpgrade010.name': 'Dasar Berkas X',
+    'upgrade.llmsUpgrade001.description': 'LLM dua kali lebih efisien',
+    'upgrade.llmsUpgrade002.description': 'LLM dua kali lebih efisien',
+    'upgrade.llmsUpgrade003.description': 'LLM dua kali lebih efisien',
+    'upgrade.llmsUpgrade004.description': 'LLM dua kali lebih efisien',
+    'upgrade.llmsUpgrade005.description': 'LLM dua kali lebih efisien',
+    'upgrade.llmsUpgrade006.description': 'LLM dua kali lebih efisien',
+    'upgrade.llmsUpgrade007.description': 'LLM dua kali lebih efisien',
+    'upgrade.llmsUpgrade008.description': 'LLM dua kali lebih efisien',
+    'upgrade.llmsUpgrade009.description': 'LLM dua kali lebih efisien',
+    'upgrade.llmsUpgrade010.description': 'LLM dua kali lebih efisien',
 }
 
 export default id

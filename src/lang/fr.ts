@@ -233,6 +233,16 @@ const fr = {
     'upgrade.llmsUpgrade008.name': 'Fondation de Fichiers VIII',
     'upgrade.llmsUpgrade009.name': 'Fondation de Fichiers IX',
     'upgrade.llmsUpgrade010.name': 'Fondation de Fichiers X',
+    'upgrade.llmsUpgrade001.description': 'Les LLM sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade002.description': 'Les LLM sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade003.description': 'Les LLM sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade004.description': 'Les LLM sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade005.description': 'Les LLM sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade006.description': 'Les LLM sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade007.description': 'Les LLM sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade008.description': 'Les LLM sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade009.description': 'Les LLM sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade010.description': 'Les LLM sont deux fois plus efficaces',
 }
 
 export default fr

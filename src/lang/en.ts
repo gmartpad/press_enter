@@ -220,6 +220,16 @@ const en = {
     'upgrade.llmsUpgrade008.name': 'File Grounding VIII',
     'upgrade.llmsUpgrade009.name': 'File Grounding IX',
     'upgrade.llmsUpgrade010.name': 'File Grounding X',
+    'upgrade.llmsUpgrade001.description': 'LLMs are twice as efficient',
+    'upgrade.llmsUpgrade002.description': 'LLMs are twice as efficient',
+    'upgrade.llmsUpgrade003.description': 'LLMs are twice as efficient',
+    'upgrade.llmsUpgrade004.description': 'LLMs are twice as efficient',
+    'upgrade.llmsUpgrade005.description': 'LLMs are twice as efficient',
+    'upgrade.llmsUpgrade006.description': 'LLMs are twice as efficient',
+    'upgrade.llmsUpgrade007.description': 'LLMs are twice as efficient',
+    'upgrade.llmsUpgrade008.description': 'LLMs are twice as efficient',
+    'upgrade.llmsUpgrade009.description': 'LLMs are twice as efficient',
+    'upgrade.llmsUpgrade010.description': 'LLMs are twice as efficient',
 }
 
 export default en

@@ -233,6 +233,16 @@ const ru = {
     'upgrade.llmsUpgrade008.name': 'Основание Файлов VIII',
     'upgrade.llmsUpgrade009.name': 'Основание Файлов IX',
     'upgrade.llmsUpgrade010.name': 'Основание Файлов X',
+    'upgrade.llmsUpgrade001.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.llmsUpgrade002.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.llmsUpgrade003.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.llmsUpgrade004.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.llmsUpgrade005.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.llmsUpgrade006.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.llmsUpgrade007.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.llmsUpgrade008.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.llmsUpgrade009.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.llmsUpgrade010.description': 'ЛЛМ в два раза эффективнее',
 }
 
 export default ru

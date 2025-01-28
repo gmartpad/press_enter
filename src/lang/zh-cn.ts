@@ -233,6 +233,16 @@ const zhCn = {
     'upgrade.llmsUpgrade008.name': '文件基础 VIII',
     'upgrade.llmsUpgrade009.name': '文件基础 IX',
     'upgrade.llmsUpgrade010.name': '文件基础 X',
+    'upgrade.llmsUpgrade001.description': 'LLM效率提高一倍',
+    'upgrade.llmsUpgrade002.description': 'LLM效率提高一倍',
+    'upgrade.llmsUpgrade003.description': 'LLM效率提高一倍',
+    'upgrade.llmsUpgrade004.description': 'LLM效率提高一倍',
+    'upgrade.llmsUpgrade005.description': 'LLM效率提高一倍',
+    'upgrade.llmsUpgrade006.description': 'LLM效率提高一倍',
+    'upgrade.llmsUpgrade007.description': 'LLM效率提高一倍',
+    'upgrade.llmsUpgrade008.description': 'LLM效率提高一倍',
+    'upgrade.llmsUpgrade009.description': 'LLM效率提高一倍',
+    'upgrade.llmsUpgrade010.description': 'LLM效率提高一倍',
 }
 
 export default zhCn
