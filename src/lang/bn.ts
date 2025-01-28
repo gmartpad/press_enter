@@ -208,7 +208,7 @@ const bn = {
     'upgrade.humanoidRobotsUpgrade003.name': 'ছোট্ট আলাপ অর্জিত III',
     'upgrade.humanoidRobotsUpgrade004.name': 'ছোট্ট আলাপ অর্জিত IV',
     'upgrade.humanoidRobotsUpgrade005.name': 'ছোট্ট আলাপ অর্জিত V',
-    'upgrade.humanoidRobotsUpgrade006name': 'ছোট্ট আলাপ অর্জিত VI',
+    'upgrade.humanoidRobotsUpgrade006.name': 'ছোট্ট আলাপ অর্জিত VI',
     'upgrade.humanoidRobotsUpgrade007.name': 'ছোট্ট আলাপ অর্জিত VII',
     'upgrade.humanoidRobotsUpgrade008.name': 'ছোট্ট আলাপ অর্জিত VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'ছোট্ট আলাপ অর্জিত IX',
@@ -223,6 +223,16 @@ const bn = {
     'upgrade.humanoidRobotsUpgrade008.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
     'upgrade.humanoidRobotsUpgrade009.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
     'upgrade.humanoidRobotsUpgrade010.description': 'হিউম্যানয়েড রোবটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.llmsUpgrade001.name': 'ফাইল ভিত্তি I',
+    'upgrade.llmsUpgrade002.name': 'ফাইল ভিত্তি II',
+    'upgrade.llmsUpgrade003.name': 'ফাইল ভিত্তি III',
+    'upgrade.llmsUpgrade004.name': 'ফাইল ভিত্তি IV',
+    'upgrade.llmsUpgrade005.name': 'ফাইল ভিত্তি V',
+    'upgrade.llmsUpgrade006.name': 'ফাইল ভিত্তি VI',
+    'upgrade.llmsUpgrade007.name': 'ফাইল ভিত্তি VII',
+    'upgrade.llmsUpgrade008.name': 'ফাইল ভিত্তি VIII',
+    'upgrade.llmsUpgrade009.name': 'ফাইল ভিত্তি IX',
+    'upgrade.llmsUpgrade010.name': 'ফাইল ভিত্তি X',
 }
 
 export default bn

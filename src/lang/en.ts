@@ -210,6 +210,16 @@ const en = {
     'upgrade.humanoidRobotsUpgrade008.description': 'Humanoid Robots are twice as efficient',
     'upgrade.humanoidRobotsUpgrade009.description': 'Humanoid Robots are twice as efficient',
     'upgrade.humanoidRobotsUpgrade010.description': 'Humanoid Robots are twice as efficient',
+    'upgrade.llmsUpgrade001.name': 'File Grounding I',
+    'upgrade.llmsUpgrade002.name': 'File Grounding II',
+    'upgrade.llmsUpgrade003.name': 'File Grounding III',
+    'upgrade.llmsUpgrade004.name': 'File Grounding IV',
+    'upgrade.llmsUpgrade005.name': 'File Grounding V',
+    'upgrade.llmsUpgrade006.name': 'File Grounding VI',
+    'upgrade.llmsUpgrade007.name': 'File Grounding VII',
+    'upgrade.llmsUpgrade008.name': 'File Grounding VIII',
+    'upgrade.llmsUpgrade009.name': 'File Grounding IX',
+    'upgrade.llmsUpgrade010.name': 'File Grounding X',
 }
 
 export default en

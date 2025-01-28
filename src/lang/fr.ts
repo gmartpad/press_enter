@@ -208,7 +208,7 @@ const fr = {
     'upgrade.humanoidRobotsUpgrade003.name': 'Conversation Informelle Acquise III',
     'upgrade.humanoidRobotsUpgrade004.name': 'Conversation Informelle Acquise IV',
     'upgrade.humanoidRobotsUpgrade005.name': 'Conversation Informelle Acquise V',
-    'upgrade.humanoidRobotsUpgrade006name': 'Conversation Informelle Acquise VI',
+    'upgrade.humanoidRobotsUpgrade006.name': 'Conversation Informelle Acquise VI',
     'upgrade.humanoidRobotsUpgrade007.name': 'Conversation Informelle Acquise VII',
     'upgrade.humanoidRobotsUpgrade008.name': 'Conversation Informelle Acquise VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Conversation Informelle Acquise IX',
@@ -223,6 +223,16 @@ const fr = {
     'upgrade.humanoidRobotsUpgrade008.description': 'Les robots humanoïdes sont deux fois plus efficaces',
     'upgrade.humanoidRobotsUpgrade009.description': 'Les robots humanoïdes sont deux fois plus efficaces',
     'upgrade.humanoidRobotsUpgrade010.description': 'Les robots humanoïdes sont deux fois plus efficaces',
+    'upgrade.llmsUpgrade001.name': 'Fondation de Fichiers I',
+    'upgrade.llmsUpgrade002.name': 'Fondation de Fichiers II',
+    'upgrade.llmsUpgrade003.name': 'Fondation de Fichiers III',
+    'upgrade.llmsUpgrade004.name': 'Fondation de Fichiers IV',
+    'upgrade.llmsUpgrade005.name': 'Fondation de Fichiers V',
+    'upgrade.llmsUpgrade006.name': 'Fondation de Fichiers VI',
+    'upgrade.llmsUpgrade007.name': 'Fondation de Fichiers VII',
+    'upgrade.llmsUpgrade008.name': 'Fondation de Fichiers VIII',
+    'upgrade.llmsUpgrade009.name': 'Fondation de Fichiers IX',
+    'upgrade.llmsUpgrade010.name': 'Fondation de Fichiers X',
 }
 
 export default fr

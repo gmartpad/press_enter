@@ -208,7 +208,7 @@ const ru = {
     'upgrade.humanoidRobotsUpgrade003.name': 'Приобретённый Малый Разговор III',
     'upgrade.humanoidRobotsUpgrade004.name': 'Приобретённый Малый Разговор IV',
     'upgrade.humanoidRobotsUpgrade005.name': 'Приобретённый Малый Разговор V',
-    'upgrade.humanoidRobotsUpgrade006name': 'Приобретённый Малый Разговор VI',
+    'upgrade.humanoidRobotsUpgrade006.name': 'Приобретённый Малый Разговор VI',
     'upgrade.humanoidRobotsUpgrade007.name': 'Приобретённый Малый Разговор VII',
     'upgrade.humanoidRobotsUpgrade008.name': 'Приобретённый Малый Разговор VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Приобретённый Малый Разговор IX',
@@ -223,6 +223,16 @@ const ru = {
     'upgrade.humanoidRobotsUpgrade008.description': 'Гуманоидные роботы в два раза эффективнее',
     'upgrade.humanoidRobotsUpgrade009.description': 'Гуманоидные роботы в два раза эффективнее',
     'upgrade.humanoidRobotsUpgrade010.description': 'Гуманоидные роботы в два раза эффективнее',
+    'upgrade.llmsUpgrade001.name': 'Основание Файлов I',
+    'upgrade.llmsUpgrade002.name': 'Основание Файлов II',
+    'upgrade.llmsUpgrade003.name': 'Основание Файлов III',
+    'upgrade.llmsUpgrade004.name': 'Основание Файлов IV',
+    'upgrade.llmsUpgrade005.name': 'Основание Файлов V',
+    'upgrade.llmsUpgrade006.name': 'Основание Файлов VI',
+    'upgrade.llmsUpgrade007.name': 'Основание Файлов VII',
+    'upgrade.llmsUpgrade008.name': 'Основание Файлов VIII',
+    'upgrade.llmsUpgrade009.name': 'Основание Файлов IX',
+    'upgrade.llmsUpgrade010.name': 'Основание Файлов X',
 }
 
 export default ru

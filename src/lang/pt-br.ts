@@ -208,7 +208,7 @@ const ptBr = {
     'upgrade.humanoidRobotsUpgrade003.name': 'Conversa Casual Adquirida III',
     'upgrade.humanoidRobotsUpgrade004.name': 'Conversa Casual Adquirida IV',
     'upgrade.humanoidRobotsUpgrade005.name': 'Conversa Casual Adquirida V',
-    'upgrade.humanoidRobotsUpgrade006name': 'Conversa Casual Adquirida VI',
+    'upgrade.humanoidRobotsUpgrade006.name': 'Conversa Casual Adquirida VI',
     'upgrade.humanoidRobotsUpgrade007.name': 'Conversa Casual Adquirida VII',
     'upgrade.humanoidRobotsUpgrade008.name': 'Conversa Casual Adquirida VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Conversa Casual Adquirida IX',
@@ -223,6 +223,16 @@ const ptBr = {
     'upgrade.humanoidRobotsUpgrade008.description': 'Robôs humanoides são duas vezes mais eficientes',
     'upgrade.humanoidRobotsUpgrade009.description': 'Robôs humanoides são duas vezes mais eficientes',
     'upgrade.humanoidRobotsUpgrade010.description': 'Robôs humanoides são duas vezes mais eficientes',
+    'upgrade.llmsUpgrade001.name': 'Fundamentação de Arquivos I',
+    'upgrade.llmsUpgrade002.name': 'Fundamentação de Arquivos II',
+    'upgrade.llmsUpgrade003.name': 'Fundamentação de Arquivos III',
+    'upgrade.llmsUpgrade004.name': 'Fundamentação de Arquivos IV',
+    'upgrade.llmsUpgrade005.name': 'Fundamentação de Arquivos V',
+    'upgrade.llmsUpgrade006.name': 'Fundamentação de Arquivos VI',
+    'upgrade.llmsUpgrade007.name': 'Fundamentação de Arquivos VII',
+    'upgrade.llmsUpgrade008.name': 'Fundamentação de Arquivos VIII',
+    'upgrade.llmsUpgrade009.name': 'Fundamentação de Arquivos IX',
+    'upgrade.llmsUpgrade010.name': 'Fundamentação de Arquivos X',
 }
 
 export default ptBr

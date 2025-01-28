@@ -208,7 +208,7 @@ const zhCn = {
     'upgrade.humanoidRobotsUpgrade003.name': '习得闲聊 III',
     'upgrade.humanoidRobotsUpgrade004.name': '习得闲聊 IV',
     'upgrade.humanoidRobotsUpgrade005.name': '习得闲聊 V',
-    'upgrade.humanoidRobotsUpgrade006name': '习得闲聊 VI',
+    'upgrade.humanoidRobotsUpgrade006.name': '习得闲聊 VI',
     'upgrade.humanoidRobotsUpgrade007.name': '习得闲聊 VII',
     'upgrade.humanoidRobotsUpgrade008.name': '习得闲聊 VIII',
     'upgrade.humanoidRobotsUpgrade009.name': '习得闲聊 IX',
@@ -223,6 +223,16 @@ const zhCn = {
     'upgrade.humanoidRobotsUpgrade008.description': '人形机器人的效率提高一倍',
     'upgrade.humanoidRobotsUpgrade009.description': '人形机器人的效率提高一倍',
     'upgrade.humanoidRobotsUpgrade010.description': '人形机器人的效率提高一倍',
+    'upgrade.llmsUpgrade001.name': '文件基础 I',
+    'upgrade.llmsUpgrade002.name': '文件基础 II',
+    'upgrade.llmsUpgrade003.name': '文件基础 III',
+    'upgrade.llmsUpgrade004.name': '文件基础 IV',
+    'upgrade.llmsUpgrade005.name': '文件基础 V',
+    'upgrade.llmsUpgrade006.name': '文件基础 VI',
+    'upgrade.llmsUpgrade007.name': '文件基础 VII',
+    'upgrade.llmsUpgrade008.name': '文件基础 VIII',
+    'upgrade.llmsUpgrade009.name': '文件基础 IX',
+    'upgrade.llmsUpgrade010.name': '文件基础 X',
 }
 
 export default zhCn

@@ -208,7 +208,7 @@ const ur = {
     'upgrade.humanoidRobotsUpgrade003.name': 'چھوٹی گفتگو حاصل شدہ III',
     'upgrade.humanoidRobotsUpgrade004.name': 'چھوٹی گفتگو حاصل شدہ IV',
     'upgrade.humanoidRobotsUpgrade005.name': 'چھوٹی گفتگو حاصل شدہ V',
-    'upgrade.humanoidRobotsUpgrade006name': 'چھوٹی گفتگو حاصل شدہ VI',
+    'upgrade.humanoidRobotsUpgrade006.name': 'چھوٹی گفتگو حاصل شدہ VI',
     'upgrade.humanoidRobotsUpgrade007.name': 'چھوٹی گفتگو حاصل شدہ VII',
     'upgrade.humanoidRobotsUpgrade008.name': 'چھوٹی گفتگو حاصل شدہ VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'چھوٹی گفتگو حاصل شدہ IX',
@@ -223,6 +223,16 @@ const ur = {
     'upgrade.humanoidRobotsUpgrade008.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
     'upgrade.humanoidRobotsUpgrade009.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
     'upgrade.humanoidRobotsUpgrade010.description': 'ہیومانوئڈ روبوٹ دگنا زیادہ مؤثر ہوتے ہیں',
+    'upgrade.llmsUpgrade001.name': 'فائل کی بنیاد I',
+    'upgrade.llmsUpgrade002.name': 'فائل کی بنیاد II',
+    'upgrade.llmsUpgrade003.name': 'فائل کی بنیاد III',
+    'upgrade.llmsUpgrade004.name': 'فائل کی بنیاد IV',
+    'upgrade.llmsUpgrade005.name': 'فائل کی بنیاد V',
+    'upgrade.llmsUpgrade006.name': 'فائل کی بنیاد VI',
+    'upgrade.llmsUpgrade007.name': 'فائل کی بنیاد VII',
+    'upgrade.llmsUpgrade008.name': 'فائل کی بنیاد VIII',
+    'upgrade.llmsUpgrade009.name': 'فائل کی بنیاد IX',
+    'upgrade.llmsUpgrade010.name': 'فائل کی بنیاد X',
 }
 
 export default ur

@@ -208,7 +208,7 @@ const id = {
     'upgrade.humanoidRobotsUpgrade003.name': 'Small Talk Acquired III',
     'upgrade.humanoidRobotsUpgrade004.name': 'Small Talk Acquired IV',
     'upgrade.humanoidRobotsUpgrade005.name': 'Small Talk Acquired V',
-    'upgrade.humanoidRobotsUpgrade006name': 'Small Talk Acquired VI',
+    'upgrade.humanoidRobotsUpgrade006.name': 'Small Talk Acquired VI',
     'upgrade.humanoidRobotsUpgrade007.name': 'Small Talk Acquired VII',
     'upgrade.humanoidRobotsUpgrade008.name': 'Small Talk Acquired VIII',
     'upgrade.humanoidRobotsUpgrade009.name': 'Small Talk Acquired IX',
@@ -223,6 +223,16 @@ const id = {
     'upgrade.humanoidRobotsUpgrade008.description': 'Robot humanoid dua kali lebih efisien',
     'upgrade.humanoidRobotsUpgrade009.description': 'Robot humanoid dua kali lebih efisien',
     'upgrade.humanoidRobotsUpgrade010.description': 'Robot humanoid dua kali lebih efisien',
+    'upgrade.llmsUpgrade001.name': 'Dasar Berkas I',
+    'upgrade.llmsUpgrade002.name': 'Dasar Berkas II',
+    'upgrade.llmsUpgrade003.name': 'Dasar Berkas III',
+    'upgrade.llmsUpgrade004.name': 'Dasar Berkas IV',
+    'upgrade.llmsUpgrade005.name': 'Dasar Berkas V',
+    'upgrade.llmsUpgrade006.name': 'Dasar Berkas VI',
+    'upgrade.llmsUpgrade007.name': 'Dasar Berkas VII',
+    'upgrade.llmsUpgrade008.name': 'Dasar Berkas VIII',
+    'upgrade.llmsUpgrade009.name': 'Dasar Berkas IX',
+    'upgrade.llmsUpgrade010.name': 'Dasar Berkas X',
 }
 
 export default id
