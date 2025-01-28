@@ -243,6 +243,16 @@ const zhCn = {
     'upgrade.llmsUpgrade008.description': 'LLM效率提高一倍',
     'upgrade.llmsUpgrade009.description': 'LLM效率提高一倍',
     'upgrade.llmsUpgrade010.description': 'LLM效率提高一倍',
+    'upgrade.musicBotsUpgrade001.name': '电音曲目 I',
+    'upgrade.musicBotsUpgrade002.name': '电音曲目 II',
+    'upgrade.musicBotsUpgrade003.name': '电音曲目 III',
+    'upgrade.musicBotsUpgrade004.name': '电音曲目 IV',
+    'upgrade.musicBotsUpgrade005.name': '电音曲目 V',
+    'upgrade.musicBotsUpgrade006.name': '电音曲目 VI',
+    'upgrade.musicBotsUpgrade007.name': '电音曲目 VII',
+    'upgrade.musicBotsUpgrade008.name': '电音曲目 VIII',
+    'upgrade.musicBotsUpgrade009.name': '电音曲目 IX',
+    'upgrade.musicBotsUpgrade010.name': '电音曲目 X',
 }
 
 export default zhCn

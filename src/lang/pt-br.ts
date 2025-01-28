@@ -243,6 +243,16 @@ const ptBr = {
     'upgrade.llmsUpgrade008.description': 'LLMs são duas vezes mais eficientes',
     'upgrade.llmsUpgrade009.description': 'LLMs são duas vezes mais eficientes',
     'upgrade.llmsUpgrade010.description': 'LLMs são duas vezes mais eficientes',
+    'upgrade.musicBotsUpgrade001.name': 'Repertório Dubstep I',
+    'upgrade.musicBotsUpgrade002.name': 'Repertório Dubstep II',
+    'upgrade.musicBotsUpgrade003.name': 'Repertório Dubstep III',
+    'upgrade.musicBotsUpgrade004.name': 'Repertório Dubstep IV',
+    'upgrade.musicBotsUpgrade005.name': 'Repertório Dubstep V',
+    'upgrade.musicBotsUpgrade006.name': 'Repertório Dubstep VI',
+    'upgrade.musicBotsUpgrade007.name': 'Repertório Dubstep VII',
+    'upgrade.musicBotsUpgrade008.name': 'Repertório Dubstep VIII',
+    'upgrade.musicBotsUpgrade009.name': 'Repertório Dubstep IX',
+    'upgrade.musicBotsUpgrade010.name': 'Repertório Dubstep X',
 }
 
 export default ptBr
