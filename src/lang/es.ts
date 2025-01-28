@@ -230,6 +230,16 @@ const es = {
     'upgrade.llmsUpgrade008.description': 'Los LLM son dos veces más eficientes',
     'upgrade.llmsUpgrade009.description': 'Los LLM son dos veces más eficientes',
     'upgrade.llmsUpgrade010.description': 'Los LLM son dos veces más eficientes',
+    'upgrade.musicBotsUpgrade001.name': 'Dubstep Repertoire I',
+    'upgrade.musicBotsUpgrade002.name': 'Dubstep Repertoire II',
+    'upgrade.musicBotsUpgrade003.name': 'Dubstep Repertoire III',
+    'upgrade.musicBotsUpgrade004.name': 'Dubstep Repertoire IV',
+    'upgrade.musicBotsUpgrade005.name': 'Dubstep Repertoire V',
+    'upgrade.musicBotsUpgrade006.name': 'Dubstep Repertoire VI',
+    'upgrade.musicBotsUpgrade007.name': 'Dubstep Repertoire VII',
+    'upgrade.musicBotsUpgrade008.name': 'Dubstep Repertoire VIII',
+    'upgrade.musicBotsUpgrade009.name': 'Dubstep Repertoire IX',
+    'upgrade.musicBotsUpgrade010.name': 'Dubstep Repertoire X',
 }
 
 export default es

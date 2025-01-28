@@ -243,6 +243,16 @@ const id = {
     'upgrade.llmsUpgrade008.description': 'LLM dua kali lebih efisien',
     'upgrade.llmsUpgrade009.description': 'LLM dua kali lebih efisien',
     'upgrade.llmsUpgrade010.description': 'LLM dua kali lebih efisien',
+    'upgrade.musicBotsUpgrade001.name': 'Repertoar Dubstep I',
+    'upgrade.musicBotsUpgrade002.name': 'Repertoar Dubstep II',
+    'upgrade.musicBotsUpgrade003.name': 'Repertoar Dubstep III',
+    'upgrade.musicBotsUpgrade004.name': 'Repertoar Dubstep IV',
+    'upgrade.musicBotsUpgrade005.name': 'Repertoar Dubstep V',
+    'upgrade.musicBotsUpgrade006.name': 'Repertoar Dubstep VI',
+    'upgrade.musicBotsUpgrade007.name': 'Repertoar Dubstep VII',
+    'upgrade.musicBotsUpgrade008.name': 'Repertoar Dubstep VIII',
+    'upgrade.musicBotsUpgrade009.name': 'Repertoar Dubstep IX',
+    'upgrade.musicBotsUpgrade010.name': 'Repertoar Dubstep X',
 }
 
 export default id

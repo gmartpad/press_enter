@@ -243,6 +243,16 @@ const ar = {
     'upgrade.llmsUpgrade008.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
     'upgrade.llmsUpgrade009.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
     'upgrade.llmsUpgrade010.description': 'نماذج اللغة الكبيرة أكثر كفاءة بمرتين',
+    'upgrade.musicBotsUpgrade001.name': 'مرجع الدبستيب I',
+    'upgrade.musicBotsUpgrade002.name': 'مرجع الدبستيب II',
+    'upgrade.musicBotsUpgrade003.name': 'مرجع الدبستيب III',
+    'upgrade.musicBotsUpgrade004.name': 'مرجع الدبستيب IV',
+    'upgrade.musicBotsUpgrade005.name': 'مرجع الدبستيب V',
+    'upgrade.musicBotsUpgrade006.name': 'مرجع الدبستيب VI',
+    'upgrade.musicBotsUpgrade007.name': 'مرجع الدبستيب VII',
+    'upgrade.musicBotsUpgrade008.name': 'مرجع الدبستيب VIII',
+    'upgrade.musicBotsUpgrade009.name': 'مرجع الدبستيب IX',
+    'upgrade.musicBotsUpgrade010.name': 'مرجع الدبستيب X',
 }
 
 export default ar

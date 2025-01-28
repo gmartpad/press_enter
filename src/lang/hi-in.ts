@@ -243,6 +243,16 @@ const hiIn = {
     'upgrade.llmsUpgrade008.description': 'एलएलएम दोगुनी कुशल हैं',
     'upgrade.llmsUpgrade009.description': 'एलएलएम दोगुनी कुशल हैं',
     'upgrade.llmsUpgrade010.description': 'एलएलएम दोगुनी कुशल हैं',
+    'upgrade.musicBotsUpgrade001.name': 'डबस्टेप रिपर्टॉयर I',
+    'upgrade.musicBotsUpgrade002.name': 'डबस्टेप रिपर्टॉयर II',
+    'upgrade.musicBotsUpgrade003.name': 'डबस्टेप रिपर्टॉयर III',
+    'upgrade.musicBotsUpgrade004.name': 'डबस्टेप रिपर्टॉयर IV',
+    'upgrade.musicBotsUpgrade005.name': 'डबस्टेप रिपर्टॉयर V',
+    'upgrade.musicBotsUpgrade006.name': 'डबस्टेप रिपर्टॉयर VI',
+    'upgrade.musicBotsUpgrade007.name': 'डबस्टेप रिपर्टॉयर VII',
+    'upgrade.musicBotsUpgrade008.name': 'डबस्टेप रिपर्टॉयर VIII',
+    'upgrade.musicBotsUpgrade009.name': 'डबस्टेप रिपर्टॉयर IX',
+    'upgrade.musicBotsUpgrade010.name': 'डबस्टेप रिपर्टॉयर X',
 }
 
 export default hiIn

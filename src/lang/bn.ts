@@ -243,6 +243,16 @@ const bn = {
     'upgrade.llmsUpgrade008.description': 'এলএলএম দ্বিগুণ দক্ষ',
     'upgrade.llmsUpgrade009.description': 'এলএলএম দ্বিগুণ দক্ষ',
     'upgrade.llmsUpgrade010.description': 'এলএলএম দ্বিগুণ দক্ষ',
+    'upgrade.musicBotsUpgrade001.name': 'ডাবস্টেপ রেপারটোয়ার I',
+    'upgrade.musicBotsUpgrade002.name': 'ডাবস্টেপ রেপারটোয়ার II',
+    'upgrade.musicBotsUpgrade003.name': 'ডাবস্টেপ রেপারটোয়ার III',
+    'upgrade.musicBotsUpgrade004.name': 'ডাবস্টেপ রেপারটোয়ার IV',
+    'upgrade.musicBotsUpgrade005.name': 'ডাবস্টেপ রেপারটোয়ার V',
+    'upgrade.musicBotsUpgrade006.name': 'ডাবস্টেপ রেপারটোয়ার VI',
+    'upgrade.musicBotsUpgrade007.name': 'ডাবস্টেপ রেপারটোয়ার VII',
+    'upgrade.musicBotsUpgrade008.name': 'ডাবস্টেপ রেপারটোয়ার VIII',
+    'upgrade.musicBotsUpgrade009.name': 'ডাবস্টেপ রেপারটোয়ার IX',
+    'upgrade.musicBotsUpgrade010.name': 'ডাবস্টেপ রেপারটোয়ার X',
 }
 
 export default bn

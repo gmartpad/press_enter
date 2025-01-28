@@ -243,6 +243,16 @@ const ru = {
     'upgrade.llmsUpgrade008.description': 'ЛЛМ в два раза эффективнее',
     'upgrade.llmsUpgrade009.description': 'ЛЛМ в два раза эффективнее',
     'upgrade.llmsUpgrade010.description': 'ЛЛМ в два раза эффективнее',
+    'upgrade.musicBotsUpgrade001.name': 'Дабстеп Репертуар I',
+    'upgrade.musicBotsUpgrade002.name': 'Дабстеп Репертуар II',
+    'upgrade.musicBotsUpgrade003.name': 'Дабстеп Репертуар III',
+    'upgrade.musicBotsUpgrade004.name': 'Дабстеп Репертуар IV',
+    'upgrade.musicBotsUpgrade005.name': 'Дабстеп Репертуар V',
+    'upgrade.musicBotsUpgrade006.name': 'Дабстеп Репертуар VI',
+    'upgrade.musicBotsUpgrade007.name': 'Дабстеп Репертуар VII',
+    'upgrade.musicBotsUpgrade008.name': 'Дабстеп Репертуар VIII',
+    'upgrade.musicBotsUpgrade009.name': 'Дабстеп Репертуар IX',
+    'upgrade.musicBotsUpgrade010.name': 'Дабстеп Репертуар X',
 }
 
 export default ru

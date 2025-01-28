@@ -243,6 +243,16 @@ const ur = {
     'upgrade.llmsUpgrade008.description': 'ایل ایل ایمز دوگنا موثر ہیں',
     'upgrade.llmsUpgrade009.description': 'ایل ایل ایمز دوگنا موثر ہیں',
     'upgrade.llmsUpgrade010.description': 'ایل ایل ایمز دوگنا موثر ہیں',
+    'upgrade.musicBotsUpgrade001.name': 'ڈب سٹیپ ریپرٹائر I',
+    'upgrade.musicBotsUpgrade002.name': 'ڈب سٹیپ ریپرٹائر II',
+    'upgrade.musicBotsUpgrade003.name': 'ڈب سٹیپ ریپرٹائر III',
+    'upgrade.musicBotsUpgrade004.name': 'ڈب سٹیپ ریپرٹائر IV',
+    'upgrade.musicBotsUpgrade005.name': 'ڈب سٹیپ ریپرٹائر V',
+    'upgrade.musicBotsUpgrade006.name': 'ڈب سٹیپ ریپرٹائر VI',
+    'upgrade.musicBotsUpgrade007.name': 'ڈب سٹیپ ریپرٹائر VII',
+    'upgrade.musicBotsUpgrade008.name': 'ڈب سٹیپ ریپرٹائر VIII',
+    'upgrade.musicBotsUpgrade009.name': 'ڈب سٹیپ ریپرٹائر IX',
+    'upgrade.musicBotsUpgrade010.name': 'ڈب سٹیپ ریپرٹائر X',
 }
 
 export default ur
