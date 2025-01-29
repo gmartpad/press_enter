@@ -273,6 +273,16 @@ const fr = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'Électrolytes numériques VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'Électrolytes numériques IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'Électrolytes numériques X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
 }
 
 export default fr

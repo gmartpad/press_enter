@@ -273,6 +273,16 @@ const id = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'Elektrolit Digital VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'Elektrolit Digital IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'Elektrolit Digital X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'Jaringan Neural Lama dua kali lebih efisien',
 }
 
 export default id

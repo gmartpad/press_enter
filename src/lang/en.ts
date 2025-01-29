@@ -260,6 +260,16 @@ const en = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'Digital Electrolytes VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'Digital Electrolytes IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'Digital Electrolytes X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'Old Neural Networks are twice as efficient',
 }
 
 export default en

@@ -273,6 +273,16 @@ const ar = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'الإلكتروليتات الرقمية VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'الإلكتروليتات الرقمية IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'الإلكتروليتات الرقمية X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
 }
 
 export default ar

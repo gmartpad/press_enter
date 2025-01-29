@@ -273,6 +273,16 @@ const bn = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'ডিজিটাল ইলেকট্রোলাইটস VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'ডিজিটাল ইলেকট্রোলাইটস IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'ডিজিটাল ইলেকট্রোলাইটস X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
 }
 
 export default bn
