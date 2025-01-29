@@ -373,6 +373,16 @@ const bn = {
     'upgrade.turingTestersUpgrade008.name': 'ক্যাফিনযুক্ত পরীক্ষক VIII',
     'upgrade.turingTestersUpgrade009.name': 'ক্যাফিনযুক্ত পরীক্ষক IX',
     'upgrade.turingTestersUpgrade010.name': 'ক্যাফিনযুক্ত পরীক্ষক X',
+    'upgrade.turingTestersUpgrade001.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade002.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade003.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade004.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade005.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade006.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade007.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade008.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade009.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade010.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
 }
 
 export default bn

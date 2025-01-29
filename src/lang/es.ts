@@ -360,6 +360,16 @@ const es = {
     'upgrade.turingTestersUpgrade008.name': 'Probadores Cafeinados VIII',
     'upgrade.turingTestersUpgrade009.name': 'Probadores Cafeinados IX',
     'upgrade.turingTestersUpgrade010.name': 'Probadores Cafeinados X',
+    'upgrade.turingTestersUpgrade001.description': 'Testers de Turing son el doble de eficientes',
+    'upgrade.turingTestersUpgrade002.description': 'Testers de Turing son el doble de eficientes',
+    'upgrade.turingTestersUpgrade003.description': 'Testers de Turing son el doble de eficientes',
+    'upgrade.turingTestersUpgrade004.description': 'Testers de Turing son el doble de eficientes',
+    'upgrade.turingTestersUpgrade005.description': 'Testers de Turing son el doble de eficientes',
+    'upgrade.turingTestersUpgrade006.description': 'Testers de Turing son el doble de eficientes',
+    'upgrade.turingTestersUpgrade007.description': 'Testers de Turing son el doble de eficientes',
+    'upgrade.turingTestersUpgrade008.description': 'Testers de Turing son el doble de eficientes',
+    'upgrade.turingTestersUpgrade009.description': 'Testers de Turing son el doble de eficientes',
+    'upgrade.turingTestersUpgrade010.description': 'Testers de Turing son el doble de eficientes',
 }
 
 export default es

@@ -373,6 +373,16 @@ const ptBr = {
     'upgrade.turingTestersUpgrade008.name': 'Testadores com Cafeína VIII',
     'upgrade.turingTestersUpgrade009.name': 'Testadores com Cafeína IX',
     'upgrade.turingTestersUpgrade010.name': 'Testadores com Cafeína X',
+    'upgrade.turingTestersUpgrade001.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade002.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade003.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade004.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade005.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade006.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade007.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade008.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade009.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade010.description': 'Testadores de Turing são duas vezes mais eficientes',
 }
 
 export default ptBr

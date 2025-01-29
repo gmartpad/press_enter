@@ -373,6 +373,16 @@ const zhCn = {
     'upgrade.turingTestersUpgrade008.name': '含咖啡因的测试员 VIII',
     'upgrade.turingTestersUpgrade009.name': '含咖啡因的测试员 IX',
     'upgrade.turingTestersUpgrade010.name': '含咖啡因的测试员 X',
+    'upgrade.turingTestersUpgrade001.description': '图灵测试员的效率提高一倍',
+    'upgrade.turingTestersUpgrade002.description': '图灵测试员的效率提高一倍',
+    'upgrade.turingTestersUpgrade003.description': '图灵测试员的效率提高一倍',
+    'upgrade.turingTestersUpgrade004.description': '图灵测试员的效率提高一倍',
+    'upgrade.turingTestersUpgrade005.description': '图灵测试员的效率提高一倍',
+    'upgrade.turingTestersUpgrade006.description': '图灵测试员的效率提高一倍',
+    'upgrade.turingTestersUpgrade007.description': '图灵测试员的效率提高一倍',
+    'upgrade.turingTestersUpgrade008.description': '图灵测试员的效率提高一倍',
+    'upgrade.turingTestersUpgrade009.description': '图灵测试员的效率提高一倍',
+    'upgrade.turingTestersUpgrade010.description': '图灵测试员的效率提高一倍',
 }
 
 export default zhCn

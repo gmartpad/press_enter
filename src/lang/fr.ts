@@ -373,6 +373,16 @@ const fr = {
     'upgrade.turingTestersUpgrade008.name': 'Testeurs Caféinés VIII',
     'upgrade.turingTestersUpgrade009.name': 'Testeurs Caféinés IX',
     'upgrade.turingTestersUpgrade010.name': 'Testeurs Caféinés X',
+    'upgrade.turingTestersUpgrade001.description': 'Testeurs de Turing sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade002.description': 'Testeurs de Turing sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade003.description': 'Testeurs de Turing sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade004.description': 'Testeurs de Turing sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade005.description': 'Testeurs de Turing sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade006.description': 'Testeurs de Turing sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade007.description': 'Testeurs de Turing sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade008.description': 'Testeurs de Turing sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade009.description': 'Testeurs de Turing sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade010.description': 'Testeurs de Turing sont deux fois plus efficaces',
 }
 
 export default fr

@@ -373,6 +373,16 @@ const ar = {
     'upgrade.turingTestersUpgrade008.name': 'المختبرين المدمج بالكافيين VIII',
     'upgrade.turingTestersUpgrade009.name': 'المختبرين المدمج بالكافيين IX',
     'upgrade.turingTestersUpgrade010.name': 'المختبرين المدمج بالكافيين X',
+    'upgrade.turingTestersUpgrade001.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade002.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade003.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade004.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade005.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade006.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade007.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade008.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade009.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade010.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
 }
 
 export default ar
