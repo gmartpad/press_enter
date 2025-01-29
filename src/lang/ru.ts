@@ -393,6 +393,16 @@ const ru = {
     'upgrade.virtualAssistantsUpgrade008.name': 'Автоматическое Планирование Встреч VIII',
     'upgrade.virtualAssistantsUpgrade009.name': 'Автоматическое Планирование Встреч IX',
     'upgrade.virtualAssistantsUpgrade010.name': 'Автоматическое Планирование Встреч X',
+    'upgrade.virtualAssistantsUpgrade001.description': 'Виртуальные ассистенты в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade002.description': 'Виртуальные ассистенты в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade003.description': 'Виртуальные ассистенты в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade004.description': 'Виртуальные ассистенты в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade005.description': 'Виртуальные ассистенты в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade006.description': 'Виртуальные ассистенты в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade007.description': 'Виртуальные ассистенты в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade008.description': 'Виртуальные ассистенты в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade009.description': 'Виртуальные ассистенты в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade010.description': 'Виртуальные ассистенты в два раза эффективнее',
 }
 
 export default ru

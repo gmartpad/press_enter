@@ -393,6 +393,16 @@ const ptBr = {
     'upgrade.virtualAssistantsUpgrade008.name': 'Agendamento Automático de Reuniões VIII',
     'upgrade.virtualAssistantsUpgrade009.name': 'Agendamento Automático de Reuniões IX',
     'upgrade.virtualAssistantsUpgrade010.name': 'Agendamento Automático de Reuniões X',
+    'upgrade.virtualAssistantsUpgrade001.description': 'Assistentes Virtuais são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade002.description': 'Assistentes Virtuais são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade003.description': 'Assistentes Virtuais são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade004.description': 'Assistentes Virtuais são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade005.description': 'Assistentes Virtuais são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade006.description': 'Assistentes Virtuais são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade007.description': 'Assistentes Virtuais são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade008.description': 'Assistentes Virtuais são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade009.description': 'Assistentes Virtuais são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade010.description': 'Assistentes Virtuais são duas vezes mais eficientes',
 }
 
 export default ptBr

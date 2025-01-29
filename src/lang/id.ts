@@ -393,6 +393,16 @@ const id = {
     'upgrade.virtualAssistantsUpgrade008.name': 'Penjadwalan Rapat Otomatis VIII',
     'upgrade.virtualAssistantsUpgrade009.name': 'Penjadwalan Rapat Otomatis IX',
     'upgrade.virtualAssistantsUpgrade010.name': 'Penjadwalan Rapat Otomatis X',
+    'upgrade.virtualAssistantsUpgrade001.description': 'Asisten virtual dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade002.description': 'Asisten virtual dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade003.description': 'Asisten virtual dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade004.description': 'Asisten virtual dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade005.description': 'Asisten virtual dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade006.description': 'Asisten virtual dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade007.description': 'Asisten virtual dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade008.description': 'Asisten virtual dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade009.description': 'Asisten virtual dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade010.description': 'Asisten virtual dua kali lebih efisien',
 }
 
 export default id

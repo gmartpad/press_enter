@@ -393,6 +393,16 @@ const bn = {
     'upgrade.virtualAssistantsUpgrade008.name': 'স্বয়ংক্রিয় সভা নির্ধারণ VIII',
     'upgrade.virtualAssistantsUpgrade009.name': 'স্বয়ংক্রিয় সভা নির্ধারণ IX',
     'upgrade.virtualAssistantsUpgrade010.name': 'স্বয়ংক্রিয় সভা নির্ধারণ X',
+    'upgrade.virtualAssistantsUpgrade001.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade002.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade003.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade004.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade005.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade006.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade007.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade008.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade009.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade010.description': 'ভার্চুয়াল অ্যাসিস্ট্যান্টগুলি দ্বিগুণ দক্ষ',
 }
 
 export default bn

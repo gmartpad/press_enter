@@ -393,6 +393,16 @@ const fr = {
     'upgrade.virtualAssistantsUpgrade008.name': 'Planification Automatique de Réunions VIII',
     'upgrade.virtualAssistantsUpgrade009.name': 'Planification Automatique de Réunions IX',
     'upgrade.virtualAssistantsUpgrade010.name': 'Planification Automatique de Réunions X',
+    'upgrade.virtualAssistantsUpgrade001.description': 'Assistants Virtuels sont deux fois plus efficaces',
+    'upgrade.virtualAssistantsUpgrade002.description': 'Assistants Virtuels sont deux fois plus efficaces',
+    'upgrade.virtualAssistantsUpgrade003.description': 'Assistants Virtuels sont deux fois plus efficaces',
+    'upgrade.virtualAssistantsUpgrade004.description': 'Assistants Virtuels sont deux fois plus efficaces',
+    'upgrade.virtualAssistantsUpgrade005.description': 'Assistants Virtuels sont deux fois plus efficaces',
+    'upgrade.virtualAssistantsUpgrade006.description': 'Assistants Virtuels sont deux fois plus efficaces',
+    'upgrade.virtualAssistantsUpgrade007.description': 'Assistants Virtuels sont deux fois plus efficaces',
+    'upgrade.virtualAssistantsUpgrade008.description': 'Assistants Virtuels sont deux fois plus efficaces',
+    'upgrade.virtualAssistantsUpgrade009.description': 'Assistants Virtuels sont deux fois plus efficaces',
+    'upgrade.virtualAssistantsUpgrade010.description': 'Assistants Virtuels sont deux fois plus efficaces',
 }
 
 export default fr

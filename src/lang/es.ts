@@ -380,6 +380,16 @@ const es = {
     'upgrade.virtualAssistantsUpgrade008.name': 'Programación Automática de Reuniones VIII',
     'upgrade.virtualAssistantsUpgrade009.name': 'Programación Automática de Reuniones IX',
     'upgrade.virtualAssistantsUpgrade010.name': 'Programación Automática de Reuniones X',
+    'upgrade.virtualAssistantsUpgrade001.description': 'Asistentes Virtuales son el doble de eficientes',
+    'upgrade.virtualAssistantsUpgrade002.description': 'Asistentes Virtuales son el doble de eficientes',
+    'upgrade.virtualAssistantsUpgrade003.description': 'Asistentes Virtuales son el doble de eficientes',
+    'upgrade.virtualAssistantsUpgrade004.description': 'Asistentes Virtuales son el doble de eficientes',
+    'upgrade.virtualAssistantsUpgrade005.description': 'Asistentes Virtuales son el doble de eficientes',
+    'upgrade.virtualAssistantsUpgrade006.description': 'Asistentes Virtuales son el doble de eficientes',
+    'upgrade.virtualAssistantsUpgrade007.description': 'Asistentes Virtuales son el doble de eficientes',
+    'upgrade.virtualAssistantsUpgrade008.description': 'Asistentes Virtuales son el doble de eficientes',
+    'upgrade.virtualAssistantsUpgrade009.description': 'Asistentes Virtuales son el doble de eficientes',
+    'upgrade.virtualAssistantsUpgrade010.description': 'Asistentes Virtuales son el doble de eficientes',
 }
 
 export default es

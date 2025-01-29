@@ -393,6 +393,16 @@ const ar = {
     'upgrade.virtualAssistantsUpgrade008.name': 'جدولة الاجتماعات التلقائية VIII',
     'upgrade.virtualAssistantsUpgrade009.name': 'جدولة الاجتماعات التلقائية IX',
     'upgrade.virtualAssistantsUpgrade010.name': 'جدولة الاجتماعات التلقائية X',
+    'upgrade.virtualAssistantsUpgrade001.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade002.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade003.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade004.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade005.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade006.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade007.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade008.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade009.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade010.description': 'المساعدون الافتراضيون ذوي كفاءة مضاعفة',
 }
 
 export default ar
