@@ -293,6 +293,16 @@ const hiIn = {
     'upgrade.pressEnterUpgrade008.name': 'तेज़ उंगलियाँ VIII',
     'upgrade.pressEnterUpgrade009.name': 'तेज़ उंगलियाँ IX',
     'upgrade.pressEnterUpgrade010.name': 'तेज़ उंगलियाँ X',
+    'upgrade.pressEnterUpgrade001.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.pressEnterUpgrade002.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.pressEnterUpgrade003.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.pressEnterUpgrade004.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.pressEnterUpgrade005.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.pressEnterUpgrade006.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.pressEnterUpgrade007.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.pressEnterUpgrade008.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.pressEnterUpgrade009.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.pressEnterUpgrade010.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
 }
 
 export default hiIn

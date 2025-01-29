@@ -293,6 +293,16 @@ const ptBr = {
     'upgrade.pressEnterUpgrade008.name': 'Dedos Rápidos VIII',
     'upgrade.pressEnterUpgrade009.name': 'Dedos Rápidos IX',
     'upgrade.pressEnterUpgrade010.name': 'Dedos Rápidos X',
+    'upgrade.pressEnterUpgrade001.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.pressEnterUpgrade002.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.pressEnterUpgrade003.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.pressEnterUpgrade004.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.pressEnterUpgrade005.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.pressEnterUpgrade006.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.pressEnterUpgrade007.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.pressEnterUpgrade008.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.pressEnterUpgrade009.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.pressEnterUpgrade010.description': 'Pressionar Enter produz 1% adicional do BpS atual',
 }
 
 export default ptBr

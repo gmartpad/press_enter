@@ -293,6 +293,16 @@ const ru = {
     'upgrade.pressEnterUpgrade008.name': 'Быстрые Пальцы VIII',
     'upgrade.pressEnterUpgrade009.name': 'Быстрые Пальцы IX',
     'upgrade.pressEnterUpgrade010.name': 'Быстрые Пальцы X',
+    'upgrade.pressEnterUpgrade001.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.pressEnterUpgrade002.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.pressEnterUpgrade003.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.pressEnterUpgrade004.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.pressEnterUpgrade005.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.pressEnterUpgrade006.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.pressEnterUpgrade007.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.pressEnterUpgrade008.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.pressEnterUpgrade009.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.pressEnterUpgrade010.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
 }
 
 export default ru

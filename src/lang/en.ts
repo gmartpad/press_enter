@@ -280,6 +280,16 @@ const en = {
     'upgrade.pressEnterUpgrade008.name': 'Quick Fingers VIII',
     'upgrade.pressEnterUpgrade009.name': 'Quick Fingers IX',
     'upgrade.pressEnterUpgrade010.name': 'Quick Fingers X',
+    'upgrade.pressEnterUpgrade001.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.pressEnterUpgrade002.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.pressEnterUpgrade003.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.pressEnterUpgrade004.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.pressEnterUpgrade005.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.pressEnterUpgrade006.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.pressEnterUpgrade007.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.pressEnterUpgrade008.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.pressEnterUpgrade009.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.pressEnterUpgrade010.description': 'Pressing Enter produces an additional 1% of the current BpS',
 }
 
 export default en

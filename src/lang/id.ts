@@ -293,6 +293,16 @@ const id = {
     'upgrade.pressEnterUpgrade008.name': 'Jari Cepat VIII',
     'upgrade.pressEnterUpgrade009.name': 'Jari Cepat IX',
     'upgrade.pressEnterUpgrade010.name': 'Jari Cepat X',
+    'upgrade.pressEnterUpgrade001.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.pressEnterUpgrade002.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.pressEnterUpgrade003.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.pressEnterUpgrade004.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.pressEnterUpgrade005.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.pressEnterUpgrade006.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.pressEnterUpgrade007.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.pressEnterUpgrade008.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.pressEnterUpgrade009.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.pressEnterUpgrade010.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
 }
 
 export default id
