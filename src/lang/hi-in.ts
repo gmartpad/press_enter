@@ -313,6 +313,16 @@ const hiIn = {
     'upgrade.roboDogsUpgrade008.name': 'सरकारी धन VIII',
     'upgrade.roboDogsUpgrade009.name': 'सरकारी धन IX',
     'upgrade.roboDogsUpgrade010.name': 'सरकारी धन X',
+    'upgrade.roboDogsUpgrade001.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboDogsUpgrade002.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboDogsUpgrade003.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboDogsUpgrade004.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboDogsUpgrade005.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboDogsUpgrade006.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboDogsUpgrade007.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboDogsUpgrade008.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboDogsUpgrade009.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboDogsUpgrade010.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
 }
 
 export default hiIn

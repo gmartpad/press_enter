@@ -313,6 +313,16 @@ const ar = {
     'upgrade.roboDogsUpgrade008.name': 'تمويل حكومي VIII',
     'upgrade.roboDogsUpgrade009.name': 'تمويل حكومي IX',
     'upgrade.roboDogsUpgrade010.name': 'تمويل حكومي X',
+    'upgrade.roboDogsUpgrade001.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
+    'upgrade.roboDogsUpgrade002.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
+    'upgrade.roboDogsUpgrade003.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
+    'upgrade.roboDogsUpgrade004.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
+    'upgrade.roboDogsUpgrade005.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
+    'upgrade.roboDogsUpgrade006.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
+    'upgrade.roboDogsUpgrade007.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
+    'upgrade.roboDogsUpgrade008.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
+    'upgrade.roboDogsUpgrade009.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
+    'upgrade.roboDogsUpgrade010.description': 'الروبوتات الكلبية ذات كفاءة مضاعفة',
 }
 
 export default ar

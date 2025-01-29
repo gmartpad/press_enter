@@ -300,6 +300,16 @@ const es = {
     'upgrade.roboDogsUpgrade008.name': 'Financiación Gubernamental VIII',
     'upgrade.roboDogsUpgrade009.name': 'Financiación Gubernamental IX',
     'upgrade.roboDogsUpgrade010.name': 'Financiación Gubernamental X',
+    'upgrade.roboDogsUpgrade001.description': 'Los perros robóticos son el doble de eficientes',
+    'upgrade.roboDogsUpgrade002.description': 'Los perros robóticos son el doble de eficientes',
+    'upgrade.roboDogsUpgrade003.description': 'Los perros robóticos son el doble de eficientes',
+    'upgrade.roboDogsUpgrade004.description': 'Los perros robóticos son el doble de eficientes',
+    'upgrade.roboDogsUpgrade005.description': 'Los perros robóticos son el doble de eficientes',
+    'upgrade.roboDogsUpgrade006.description': 'Los perros robóticos son el doble de eficientes',
+    'upgrade.roboDogsUpgrade007.description': 'Los perros robóticos son el doble de eficientes',
+    'upgrade.roboDogsUpgrade008.description': 'Los perros robóticos son el doble de eficientes',
+    'upgrade.roboDogsUpgrade009.description': 'Los perros robóticos son el doble de eficientes',
+    'upgrade.roboDogsUpgrade010.description': 'Los perros robóticos son el doble de eficientes',
 }
 
 export default es

@@ -313,6 +313,16 @@ const id = {
     'upgrade.roboDogsUpgrade008.name': 'Pendanaan Pemerintah VIII',
     'upgrade.roboDogsUpgrade009.name': 'Pendanaan Pemerintah IX',
     'upgrade.roboDogsUpgrade010.name': 'Pendanaan Pemerintah X',
+    'upgrade.roboDogsUpgrade001.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboDogsUpgrade002.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboDogsUpgrade003.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboDogsUpgrade004.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboDogsUpgrade005.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboDogsUpgrade006.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboDogsUpgrade007.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboDogsUpgrade008.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboDogsUpgrade009.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboDogsUpgrade010.description': 'Anjing robot dua kali lebih efisien',
 }
 
 export default id
