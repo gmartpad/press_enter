@@ -313,6 +313,16 @@ const ur = {
     'upgrade.roboDogsUpgrade008.name': 'حکومتی فنڈنگ VIII',
     'upgrade.roboDogsUpgrade009.name': 'حکومتی فنڈنگ IX',
     'upgrade.roboDogsUpgrade010.name': 'حکومتی فنڈنگ X',
+    'upgrade.roboDogsUpgrade001.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboDogsUpgrade002.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboDogsUpgrade003.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboDogsUpgrade004.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboDogsUpgrade005.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboDogsUpgrade006.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboDogsUpgrade007.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboDogsUpgrade008.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboDogsUpgrade009.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboDogsUpgrade010.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
 }
 
 export default ur

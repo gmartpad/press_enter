@@ -300,6 +300,16 @@ const en = {
     'upgrade.roboDogsUpgrade008.name': 'Government Funding VIII',
     'upgrade.roboDogsUpgrade009.name': 'Government Funding IX',
     'upgrade.roboDogsUpgrade010.name': 'Government Funding X',
+    'upgrade.roboDogsUpgrade001.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboDogsUpgrade002.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboDogsUpgrade003.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboDogsUpgrade004.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboDogsUpgrade005.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboDogsUpgrade006.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboDogsUpgrade007.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboDogsUpgrade008.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboDogsUpgrade009.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboDogsUpgrade010.description': 'Robo-Dogs are twice as efficient',
 }
 
 export default en

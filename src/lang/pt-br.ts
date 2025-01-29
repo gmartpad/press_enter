@@ -313,6 +313,16 @@ const ptBr = {
     'upgrade.roboDogsUpgrade008.name': 'Financiamento Governamental VIII',
     'upgrade.roboDogsUpgrade009.name': 'Financiamento Governamental IX',
     'upgrade.roboDogsUpgrade010.name': 'Financiamento Governamental X',
+    'upgrade.roboDogsUpgrade001.description': 'Cães robô são duas vezes mais eficientes',
+    'upgrade.roboDogsUpgrade002.description': 'Cães robô são duas vezes mais eficientes',
+    'upgrade.roboDogsUpgrade003.description': 'Cães robô são duas vezes mais eficientes',
+    'upgrade.roboDogsUpgrade004.description': 'Cães robô são duas vezes mais eficientes',
+    'upgrade.roboDogsUpgrade005.description': 'Cães robô são duas vezes mais eficientes',
+    'upgrade.roboDogsUpgrade006.description': 'Cães robô são duas vezes mais eficientes',
+    'upgrade.roboDogsUpgrade007.description': 'Cães robô são duas vezes mais eficientes',
+    'upgrade.roboDogsUpgrade008.description': 'Cães robô são duas vezes mais eficientes',
+    'upgrade.roboDogsUpgrade009.description': 'Cães robô são duas vezes mais eficientes',
+    'upgrade.roboDogsUpgrade010.description': 'Cães robô são duas vezes mais eficientes',
 }
 
 export default ptBr

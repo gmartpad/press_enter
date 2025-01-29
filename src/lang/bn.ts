@@ -313,6 +313,16 @@ const bn = {
     'upgrade.roboDogsUpgrade008.name': 'সরকারি অর্থায়ন VIII',
     'upgrade.roboDogsUpgrade009.name': 'সরকারি অর্থায়ন IX',
     'upgrade.roboDogsUpgrade010.name': 'সরকারি অর্থায়ন X',
+    'upgrade.roboDogsUpgrade001.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboDogsUpgrade002.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboDogsUpgrade003.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboDogsUpgrade004.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboDogsUpgrade005.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboDogsUpgrade006.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboDogsUpgrade007.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboDogsUpgrade008.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboDogsUpgrade009.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboDogsUpgrade010.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
 }
 
 export default bn

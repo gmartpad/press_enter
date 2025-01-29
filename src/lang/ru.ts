@@ -313,6 +313,16 @@ const ru = {
     'upgrade.roboDogsUpgrade008.name': 'Государственное Финансирование VIII',
     'upgrade.roboDogsUpgrade009.name': 'Государственное Финансирование IX',
     'upgrade.roboDogsUpgrade010.name': 'Государственное Финансирование X',
+    'upgrade.roboDogsUpgrade001.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboDogsUpgrade002.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboDogsUpgrade003.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboDogsUpgrade004.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboDogsUpgrade005.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboDogsUpgrade006.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboDogsUpgrade007.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboDogsUpgrade008.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboDogsUpgrade009.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboDogsUpgrade010.description': 'Робо-собаки в два раза эффективнее',
 }
 
 export default ru

@@ -313,6 +313,16 @@ const zhCn = {
     'upgrade.roboDogsUpgrade008.name': '政府资助 VIII',
     'upgrade.roboDogsUpgrade009.name': '政府资助 IX',
     'upgrade.roboDogsUpgrade010.name': '政府资助 X',
+    'upgrade.roboDogsUpgrade001.description': '机器狗的效率提高一倍',
+    'upgrade.roboDogsUpgrade002.description': '机器狗的效率提高一倍',
+    'upgrade.roboDogsUpgrade003.description': '机器狗的效率提高一倍',
+    'upgrade.roboDogsUpgrade004.description': '机器狗的效率提高一倍',
+    'upgrade.roboDogsUpgrade005.description': '机器狗的效率提高一倍',
+    'upgrade.roboDogsUpgrade006.description': '机器狗的效率提高一倍',
+    'upgrade.roboDogsUpgrade007.description': '机器狗的效率提高一倍',
+    'upgrade.roboDogsUpgrade008.description': '机器狗的效率提高一倍',
+    'upgrade.roboDogsUpgrade009.description': '机器狗的效率提高一倍',
+    'upgrade.roboDogsUpgrade010.description': '机器狗的效率提高一倍',
 }
 
 export default zhCn
