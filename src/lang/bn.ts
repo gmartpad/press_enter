@@ -263,6 +263,16 @@ const bn = {
     'upgrade.musicBotsUpgrade008.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
     'upgrade.musicBotsUpgrade009.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
     'upgrade.musicBotsUpgrade010.description': 'মিউজিক বটগুলি দ্বিগুণ দক্ষ',
+    'upgrade.oldNeuralNetworksUpgrade001.name': 'ডিজিটাল ইলেকট্রোলাইটস I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': 'ডিজিটাল ইলেকট্রোলাইটস II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': 'ডিজিটাল ইলেকট্রোলাইটস III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': 'ডিজিটাল ইলেকট্রোলাইটস IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': 'ডিজিটাল ইলেকট্রোলাইটস V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': 'ডিজিটাল ইলেকট্রোলাইটস VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': 'ডিজিটাল ইলেকট্রোলাইটস VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': 'ডিজিটাল ইলেকট্রোলাইটস VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': 'ডিজিটাল ইলেকট্রোলাইটস IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': 'ডিজিটাল ইলেকট্রোলাইটস X',
 }
 
 export default bn

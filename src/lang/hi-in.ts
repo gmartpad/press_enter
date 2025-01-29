@@ -263,6 +263,16 @@ const hiIn = {
     'upgrade.musicBotsUpgrade008.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
     'upgrade.musicBotsUpgrade009.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
     'upgrade.musicBotsUpgrade010.description': 'म्यूजिक बॉट्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade001.name': 'डिजिटल इलेक्ट्रोलाइट्स I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': 'डिजिटल इलेक्ट्रोलाइट्स II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': 'डिजिटल इलेक्ट्रोलाइट्स III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': 'डिजिटल इलेक्ट्रोलाइट्स IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': 'डिजिटल इलेक्ट्रोलाइट्स V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': 'डिजिटल इलेक्ट्रोलाइट्स VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': 'डिजिटल इलेक्ट्रोलाइट्स VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': 'डिजिटल इलेक्ट्रोलाइट्स VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': 'डिजिटल इलेक्ट्रोलाइट्स IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': 'डिजिटल इलेक्ट्रोलाइट्स X',
 }
 
 export default hiIn

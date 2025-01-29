@@ -250,6 +250,16 @@ const es = {
     'upgrade.musicBotsUpgrade008.description': 'Los bots de música son el doble de eficientes',
     'upgrade.musicBotsUpgrade009.description': 'Los bots de música son el doble de eficientes',
     'upgrade.musicBotsUpgrade010.description': 'Los bots de música son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade001.name': 'Electrolitos digitales I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': 'Electrolitos digitales II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': 'Electrolitos digitales III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': 'Electrolitos digitales IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': 'Electrolitos digitales V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': 'Electrolitos digitales VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': 'Electrolitos digitales VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': 'Electrolitos digitales VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': 'Electrolitos digitales IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': 'Electrolitos digitales X',
 }
 
 export default es

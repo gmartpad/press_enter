@@ -263,6 +263,16 @@ const ar = {
     'upgrade.musicBotsUpgrade008.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
     'upgrade.musicBotsUpgrade009.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
     'upgrade.musicBotsUpgrade010.description': 'روبوتات الموسيقى أكثر كفاءة مرتين',
+    'upgrade.oldNeuralNetworksUpgrade001.name': 'الإلكتروليتات الرقمية I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': 'الإلكتروليتات الرقمية II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': 'الإلكتروليتات الرقمية III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': 'الإلكتروليتات الرقمية IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': 'الإلكتروليتات الرقمية V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': 'الإلكتروليتات الرقمية VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': 'الإلكتروليتات الرقمية VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': 'الإلكتروليتات الرقمية VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': 'الإلكتروليتات الرقمية IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': 'الإلكتروليتات الرقمية X',
 }
 
 export default ar
