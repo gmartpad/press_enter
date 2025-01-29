@@ -283,6 +283,16 @@ const hiIn = {
     'upgrade.oldNeuralNetworksUpgrade008.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
     'upgrade.oldNeuralNetworksUpgrade009.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
     'upgrade.oldNeuralNetworksUpgrade010.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.pressEnterUpgrade001.name': 'तेज़ उंगलियाँ I',
+    'upgrade.pressEnterUpgrade002.name': 'तेज़ उंगलियाँ II',
+    'upgrade.pressEnterUpgrade003.name': 'तेज़ उंगलियाँ III',
+    'upgrade.pressEnterUpgrade004.name': 'तेज़ उंगलियाँ IV',
+    'upgrade.pressEnterUpgrade005.name': 'तेज़ उंगलियाँ V',
+    'upgrade.pressEnterUpgrade006.name': 'तेज़ उंगलियाँ VI',
+    'upgrade.pressEnterUpgrade007.name': 'तेज़ उंगलियाँ VII',
+    'upgrade.pressEnterUpgrade008.name': 'तेज़ उंगलियाँ VIII',
+    'upgrade.pressEnterUpgrade009.name': 'तेज़ उंगलियाँ IX',
+    'upgrade.pressEnterUpgrade010.name': 'तेज़ उंगलियाँ X',
 }
 
 export default hiIn

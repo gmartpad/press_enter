@@ -270,6 +270,16 @@ const en = {
     'upgrade.oldNeuralNetworksUpgrade008.description': 'Old Neural Networks are twice as efficient',
     'upgrade.oldNeuralNetworksUpgrade009.description': 'Old Neural Networks are twice as efficient',
     'upgrade.oldNeuralNetworksUpgrade010.description': 'Old Neural Networks are twice as efficient',
+    'upgrade.pressEnterUpgrade001.name': 'Quick Fingers I',
+    'upgrade.pressEnterUpgrade002.name': 'Quick Fingers II',
+    'upgrade.pressEnterUpgrade003.name': 'Quick Fingers III',
+    'upgrade.pressEnterUpgrade004.name': 'Quick Fingers IV',
+    'upgrade.pressEnterUpgrade005.name': 'Quick Fingers V',
+    'upgrade.pressEnterUpgrade006.name': 'Quick Fingers VI',
+    'upgrade.pressEnterUpgrade007.name': 'Quick Fingers VII',
+    'upgrade.pressEnterUpgrade008.name': 'Quick Fingers VIII',
+    'upgrade.pressEnterUpgrade009.name': 'Quick Fingers IX',
+    'upgrade.pressEnterUpgrade010.name': 'Quick Fingers X',
 }
 
 export default en

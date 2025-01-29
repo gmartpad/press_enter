@@ -283,6 +283,16 @@ const bn = {
     'upgrade.oldNeuralNetworksUpgrade008.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
     'upgrade.oldNeuralNetworksUpgrade009.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
     'upgrade.oldNeuralNetworksUpgrade010.description': 'রানো নিউরাল নেটওয়ার্ক দ্বিগুণ দক্ষ',
+    'upgrade.pressEnterUpgrade001.name': 'দ্রুত আঙুল I',
+    'upgrade.pressEnterUpgrade002.name': 'দ্রুত আঙুল II',
+    'upgrade.pressEnterUpgrade003.name': 'দ্রুত আঙুল III',
+    'upgrade.pressEnterUpgrade004.name': 'দ্রুত আঙুল IV',
+    'upgrade.pressEnterUpgrade005.name': 'দ্রুত আঙুল V',
+    'upgrade.pressEnterUpgrade006.name': 'দ্রুত আঙুল VI',
+    'upgrade.pressEnterUpgrade007.name': 'দ্রুত আঙুল VII',
+    'upgrade.pressEnterUpgrade008.name': 'দ্রুত আঙুল VIII',
+    'upgrade.pressEnterUpgrade009.name': 'দ্রুত আঙুল IX',
+    'upgrade.pressEnterUpgrade010.name': 'দ্রুত আঙুল X',
 }
 
 export default bn
