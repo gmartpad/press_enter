@@ -303,6 +303,16 @@ const ur = {
     'upgrade.pressEnterUpgrade008.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
     'upgrade.pressEnterUpgrade009.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
     'upgrade.pressEnterUpgrade010.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.roboDogsUpgrade001.name': 'حکومتی فنڈنگ I',
+    'upgrade.roboDogsUpgrade002.name': 'حکومتی فنڈنگ II',
+    'upgrade.roboDogsUpgrade003.name': 'حکومتی فنڈنگ III',
+    'upgrade.roboDogsUpgrade004.name': 'حکومتی فنڈنگ IV',
+    'upgrade.roboDogsUpgrade005.name': 'حکومتی فنڈنگ V',
+    'upgrade.roboDogsUpgrade006.name': 'حکومتی فنڈنگ VI',
+    'upgrade.roboDogsUpgrade007.name': 'حکومتی فنڈنگ VII',
+    'upgrade.roboDogsUpgrade008.name': 'حکومتی فنڈنگ VIII',
+    'upgrade.roboDogsUpgrade009.name': 'حکومتی فنڈنگ IX',
+    'upgrade.roboDogsUpgrade010.name': 'حکومتی فنڈنگ X',
 }
 
 export default ur

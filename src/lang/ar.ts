@@ -303,6 +303,16 @@ const ar = {
     'upgrade.pressEnterUpgrade008.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
     'upgrade.pressEnterUpgrade009.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
     'upgrade.pressEnterUpgrade010.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.roboDogsUpgrade001.name': 'تمويل حكومي I',
+    'upgrade.roboDogsUpgrade002.name': 'تمويل حكومي II',
+    'upgrade.roboDogsUpgrade003.name': 'تمويل حكومي III',
+    'upgrade.roboDogsUpgrade004.name': 'تمويل حكومي IV',
+    'upgrade.roboDogsUpgrade005.name': 'تمويل حكومي V',
+    'upgrade.roboDogsUpgrade006.name': 'تمويل حكومي VI',
+    'upgrade.roboDogsUpgrade007.name': 'تمويل حكومي VII',
+    'upgrade.roboDogsUpgrade008.name': 'تمويل حكومي VIII',
+    'upgrade.roboDogsUpgrade009.name': 'تمويل حكومي IX',
+    'upgrade.roboDogsUpgrade010.name': 'تمويل حكومي X',
 }
 
 export default ar

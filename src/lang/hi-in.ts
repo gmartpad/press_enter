@@ -303,6 +303,16 @@ const hiIn = {
     'upgrade.pressEnterUpgrade008.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
     'upgrade.pressEnterUpgrade009.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
     'upgrade.pressEnterUpgrade010.description': 'Enter दबाने पर वर्तमान BpS का अतिरिक्त 1% उत्पन्न होता है',
+    'upgrade.roboDogsUpgrade001.name': 'सरकारी धन I',
+    'upgrade.roboDogsUpgrade002.name': 'सरकारी धन II',
+    'upgrade.roboDogsUpgrade003.name': 'सरकारी धन III',
+    'upgrade.roboDogsUpgrade004.name': 'सरकारी धन IV',
+    'upgrade.roboDogsUpgrade005.name': 'सरकारी धन V',
+    'upgrade.roboDogsUpgrade006.name': 'सरकारी धन VI',
+    'upgrade.roboDogsUpgrade007.name': 'सरकारी धन VII',
+    'upgrade.roboDogsUpgrade008.name': 'सरकारी धन VIII',
+    'upgrade.roboDogsUpgrade009.name': 'सरकारी धन IX',
+    'upgrade.roboDogsUpgrade010.name': 'सरकारी धन X',
 }
 
 export default hiIn

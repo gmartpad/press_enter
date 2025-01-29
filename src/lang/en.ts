@@ -290,6 +290,16 @@ const en = {
     'upgrade.pressEnterUpgrade008.description': 'Pressing Enter produces an additional 1% of the current BpS',
     'upgrade.pressEnterUpgrade009.description': 'Pressing Enter produces an additional 1% of the current BpS',
     'upgrade.pressEnterUpgrade010.description': 'Pressing Enter produces an additional 1% of the current BpS',
+    'upgrade.roboDogsUpgrade001.name': 'Government Funding I',
+    'upgrade.roboDogsUpgrade002.name': 'Government Funding II',
+    'upgrade.roboDogsUpgrade003.name': 'Government Funding III',
+    'upgrade.roboDogsUpgrade004.name': 'Government Funding IV',
+    'upgrade.roboDogsUpgrade005.name': 'Government Funding V',
+    'upgrade.roboDogsUpgrade006.name': 'Government Funding VI',
+    'upgrade.roboDogsUpgrade007.name': 'Government Funding VII',
+    'upgrade.roboDogsUpgrade008.name': 'Government Funding VIII',
+    'upgrade.roboDogsUpgrade009.name': 'Government Funding IX',
+    'upgrade.roboDogsUpgrade010.name': 'Government Funding X',
 }
 
 export default en
