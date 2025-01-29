@@ -373,6 +373,16 @@ const ru = {
     'upgrade.turingTestersUpgrade008.name': 'Тестировщики с Кофеином VIII',
     'upgrade.turingTestersUpgrade009.name': 'Тестировщики с Кофеином IX',
     'upgrade.turingTestersUpgrade010.name': 'Тестировщики с Кофеином X',
+    'upgrade.turingTestersUpgrade001.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.turingTestersUpgrade002.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.turingTestersUpgrade003.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.turingTestersUpgrade004.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.turingTestersUpgrade005.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.turingTestersUpgrade006.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.turingTestersUpgrade007.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.turingTestersUpgrade008.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.turingTestersUpgrade009.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.turingTestersUpgrade010.description': 'Тестеры Тьюринга в два раза эффективнее',
 }
 
 export default ru

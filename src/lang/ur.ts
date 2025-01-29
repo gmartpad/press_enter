@@ -373,6 +373,16 @@ const ur = {
     'upgrade.turingTestersUpgrade008.name': 'کیفین والے ٹیسٹرز VIII',
     'upgrade.turingTestersUpgrade009.name': 'کیفین والے ٹیسٹرز IX',
     'upgrade.turingTestersUpgrade010.name': 'کیفین والے ٹیسٹرز X',
+    'upgrade.turingTestersUpgrade001.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade002.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade003.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade004.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade005.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade006.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade007.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade008.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade009.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade010.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
 }
 
 export default ur

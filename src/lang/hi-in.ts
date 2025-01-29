@@ -373,6 +373,16 @@ const hiIn = {
     'upgrade.turingTestersUpgrade008.name': 'कैफीनयुक्त परीक्षक VIII',
     'upgrade.turingTestersUpgrade009.name': 'कैफीनयुक्त परीक्षक IX',
     'upgrade.turingTestersUpgrade010.name': 'कैफीनयुक्त परीक्षक X',
+    'upgrade.turingTestersUpgrade001.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade002.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade003.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade004.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade005.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade006.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade007.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade008.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade009.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade010.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
 }
 
 export default hiIn

@@ -373,6 +373,16 @@ const id = {
     'upgrade.turingTestersUpgrade008.name': 'Penguji Berkafein VIII',
     'upgrade.turingTestersUpgrade009.name': 'Penguji Berkafein IX',
     'upgrade.turingTestersUpgrade010.name': 'Penguji Berkafein X',
+    'upgrade.turingTestersUpgrade001.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade002.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade003.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade004.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade005.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade006.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade007.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade008.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade009.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade010.description': 'Penguji Turing dua kali lebih efisien',
 }
 
 export default id
