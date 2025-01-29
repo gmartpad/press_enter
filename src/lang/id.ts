@@ -333,6 +333,16 @@ const id = {
     'upgrade.roboMaidsUpgrade008.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida VIII',
     'upgrade.roboMaidsUpgrade009.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida IX',
     'upgrade.roboMaidsUpgrade010.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida X',
+    'upgrade.roboMaidsUpgrade001.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade002.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade003.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade004.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade005.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade006.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade007.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade008.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade009.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade010.description': 'Robot pembantu dua kali lebih efisien',
 }
 
 export default id

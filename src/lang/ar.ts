@@ -333,6 +333,16 @@ const ar = {
     'upgrade.roboMaidsUpgrade008.name': 'طريقة صابون الغسيل + بيروكسيد الهيدروجين VIII',
     'upgrade.roboMaidsUpgrade009.name': 'طريقة صابون الغسيل + بيروكسيد الهيدروجين IX',
     'upgrade.roboMaidsUpgrade010.name': 'طريقة صابون الغسيل + بيروكسيد الهيدروجين X',
+    'upgrade.roboMaidsUpgrade001.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboMaidsUpgrade002.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboMaidsUpgrade003.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboMaidsUpgrade004.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboMaidsUpgrade005.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboMaidsUpgrade006.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboMaidsUpgrade007.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboMaidsUpgrade008.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboMaidsUpgrade009.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboMaidsUpgrade010.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
 }
 
 export default ar

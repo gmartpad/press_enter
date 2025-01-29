@@ -333,6 +333,16 @@ const ptBr = {
     'upgrade.roboMaidsUpgrade008.name': 'Método de Detergente + Peróxido de Hidrogênio VIII',
     'upgrade.roboMaidsUpgrade009.name': 'Método de Detergente + Peróxido de Hidrogênio IX',
     'upgrade.roboMaidsUpgrade010.name': 'Método de Detergente + Peróxido de Hidrogênio X',
+    'upgrade.roboMaidsUpgrade001.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboMaidsUpgrade002.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboMaidsUpgrade003.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboMaidsUpgrade004.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboMaidsUpgrade005.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboMaidsUpgrade006.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboMaidsUpgrade007.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboMaidsUpgrade008.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboMaidsUpgrade009.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboMaidsUpgrade010.description': 'Empregados Robô são duas vezes mais eficientes',
 }
 
 export default ptBr

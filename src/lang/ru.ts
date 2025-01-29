@@ -333,6 +333,16 @@ const ru = {
     'upgrade.roboMaidsUpgrade008.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода VIII',
     'upgrade.roboMaidsUpgrade009.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода IX',
     'upgrade.roboMaidsUpgrade010.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода X',
+    'upgrade.roboMaidsUpgrade001.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade002.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade003.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade004.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade005.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade006.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade007.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade008.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade009.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade010.description': 'Роботы-горничные в два раза эффективнее',
 }
 
 export default ru

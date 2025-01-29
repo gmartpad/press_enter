@@ -320,6 +320,16 @@ const es = {
     'upgrade.roboMaidsUpgrade008.name': 'Método de Jabón para Platos + Peróxido de Hidrógeno VIII',
     'upgrade.roboMaidsUpgrade009.name': 'Método de Jabón para Platos + Peróxido de Hidrógeno IX',
     'upgrade.roboMaidsUpgrade010.name': 'Método de Jabón para Platos + Peróxido de Hidrógeno X',
+    'upgrade.roboMaidsUpgrade001.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboMaidsUpgrade002.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboMaidsUpgrade003.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboMaidsUpgrade004.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboMaidsUpgrade005.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboMaidsUpgrade006.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboMaidsUpgrade007.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboMaidsUpgrade008.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboMaidsUpgrade009.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboMaidsUpgrade010.description': 'Robo-Camareras son el doble de eficientes',
 }
 
 export default es

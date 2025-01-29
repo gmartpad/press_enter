@@ -320,6 +320,17 @@ const en = {
     'upgrade.roboMaidsUpgrade008.name': 'Dish Soap + Hydrogen Peroxide Trick VIII',
     'upgrade.roboMaidsUpgrade009.name': 'Dish Soap + Hydrogen Peroxide Trick IX',
     'upgrade.roboMaidsUpgrade010.name': 'Dish Soap + Hydrogen Peroxide Trick X',
+    'upgrade.roboMaidsUpgrade001.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade002.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade003.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade004.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade005.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade006.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade007.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade008.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade009.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade010.description': 'Robo-Maids are twice as efficient',
+
 }
 
 export default en

@@ -333,6 +333,16 @@ const fr = {
     'upgrade.roboMaidsUpgrade008.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène VIII',
     'upgrade.roboMaidsUpgrade009.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène IX',
     'upgrade.roboMaidsUpgrade010.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène X',
+    'upgrade.roboMaidsUpgrade001.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade002.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade003.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade004.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade005.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade006.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade007.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade008.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade009.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade010.description': 'Robots Domestiques sont deux fois plus efficaces',
 }
 
 export default fr
