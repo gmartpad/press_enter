@@ -293,6 +293,16 @@ const fr = {
     'upgrade.pressEnterUpgrade008.name': 'Doigts Rapides VIII',
     'upgrade.pressEnterUpgrade009.name': 'Doigts Rapides IX',
     'upgrade.pressEnterUpgrade010.name': 'Doigts Rapides X',
+    'upgrade.pressEnterUpgrade001.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
+    'upgrade.pressEnterUpgrade002.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
+    'upgrade.pressEnterUpgrade003.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
+    'upgrade.pressEnterUpgrade004.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
+    'upgrade.pressEnterUpgrade005.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
+    'upgrade.pressEnterUpgrade006.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
+    'upgrade.pressEnterUpgrade007.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
+    'upgrade.pressEnterUpgrade008.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
+    'upgrade.pressEnterUpgrade009.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
+    'upgrade.pressEnterUpgrade010.description': 'Appuyer sur Entrée génère 1 % supplémentaire du BpS actuel',
 }
 
 export default fr

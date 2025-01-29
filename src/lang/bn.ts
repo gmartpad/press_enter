@@ -293,6 +293,16 @@ const bn = {
     'upgrade.pressEnterUpgrade008.name': 'দ্রুত আঙুল VIII',
     'upgrade.pressEnterUpgrade009.name': 'দ্রুত আঙুল IX',
     'upgrade.pressEnterUpgrade010.name': 'দ্রুত আঙুল X',
+    'upgrade.pressEnterUpgrade001.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.pressEnterUpgrade002.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.pressEnterUpgrade003.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.pressEnterUpgrade004.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.pressEnterUpgrade005.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.pressEnterUpgrade006.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.pressEnterUpgrade007.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.pressEnterUpgrade008.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.pressEnterUpgrade009.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.pressEnterUpgrade010.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
 }
 
 export default bn

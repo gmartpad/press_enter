@@ -293,6 +293,16 @@ const ur = {
     'upgrade.pressEnterUpgrade008.name': 'تیز انگلیاں VIII',
     'upgrade.pressEnterUpgrade009.name': 'تیز انگلیاں IX',
     'upgrade.pressEnterUpgrade010.name': 'تیز انگلیاں X',
+    'upgrade.pressEnterUpgrade001.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.pressEnterUpgrade002.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.pressEnterUpgrade003.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.pressEnterUpgrade004.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.pressEnterUpgrade005.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.pressEnterUpgrade006.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.pressEnterUpgrade007.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.pressEnterUpgrade008.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.pressEnterUpgrade009.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
+    'upgrade.pressEnterUpgrade010.description': 'Enter دبانے سے موجودہ BpS کا اضافی 1% پیدا ہوتا ہے',
 }
 
 export default ur

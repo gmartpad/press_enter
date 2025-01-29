@@ -293,6 +293,16 @@ const zhCn = {
     'upgrade.pressEnterUpgrade008.name': '快速手指 VIII',
     'upgrade.pressEnterUpgrade009.name': '快速手指 IX',
     'upgrade.pressEnterUpgrade010.name': '快速手指 X',
+    'upgrade.pressEnterUpgrade001.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.pressEnterUpgrade002.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.pressEnterUpgrade003.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.pressEnterUpgrade004.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.pressEnterUpgrade005.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.pressEnterUpgrade006.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.pressEnterUpgrade007.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.pressEnterUpgrade008.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.pressEnterUpgrade009.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.pressEnterUpgrade010.description': '按下 Enter 可产生当前 BpS 的额外 1%',
 }
 
 export default zhCn

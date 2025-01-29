@@ -280,6 +280,16 @@ const es = {
     'upgrade.pressEnterUpgrade008.name': 'Dedos Rápidos VIII',
     'upgrade.pressEnterUpgrade009.name': 'Dedos Rápidos IX',
     'upgrade.pressEnterUpgrade010.name': 'Dedos Rápidos X',
+    'upgrade.pressEnterUpgrade001.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.pressEnterUpgrade002.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.pressEnterUpgrade003.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.pressEnterUpgrade004.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.pressEnterUpgrade005.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.pressEnterUpgrade006.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.pressEnterUpgrade007.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.pressEnterUpgrade008.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.pressEnterUpgrade009.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.pressEnterUpgrade010.description': 'Presionar Enter produce un 1% adicional del BpS actual',
 }
 
 export default es

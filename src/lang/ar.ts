@@ -293,6 +293,16 @@ const ar = {
     'upgrade.pressEnterUpgrade008.name': 'أصابع سريعة VIII',
     'upgrade.pressEnterUpgrade009.name': 'أصابع سريعة IX',
     'upgrade.pressEnterUpgrade010.name': 'أصابع سريعة X',
+    'upgrade.pressEnterUpgrade001.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.pressEnterUpgrade002.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.pressEnterUpgrade003.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.pressEnterUpgrade004.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.pressEnterUpgrade005.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.pressEnterUpgrade006.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.pressEnterUpgrade007.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.pressEnterUpgrade008.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.pressEnterUpgrade009.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
+    'upgrade.pressEnterUpgrade010.description': 'الضغط على Enter يُنتج 1% إضافية من الـ BpS الحالي',
 }
 
 export default ar
