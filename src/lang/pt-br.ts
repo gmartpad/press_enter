@@ -303,6 +303,16 @@ const ptBr = {
     'upgrade.pressEnterUpgrade008.description': 'Pressionar Enter produz 1% adicional do BpS atual',
     'upgrade.pressEnterUpgrade009.description': 'Pressionar Enter produz 1% adicional do BpS atual',
     'upgrade.pressEnterUpgrade010.description': 'Pressionar Enter produz 1% adicional do BpS atual',
+    'upgrade.roboDogsUpgrade001.name': 'Financiamento Governamental I',
+    'upgrade.roboDogsUpgrade002.name': 'Financiamento Governamental II',
+    'upgrade.roboDogsUpgrade003.name': 'Financiamento Governamental III',
+    'upgrade.roboDogsUpgrade004.name': 'Financiamento Governamental IV',
+    'upgrade.roboDogsUpgrade005.name': 'Financiamento Governamental V',
+    'upgrade.roboDogsUpgrade006.name': 'Financiamento Governamental VI',
+    'upgrade.roboDogsUpgrade007.name': 'Financiamento Governamental VII',
+    'upgrade.roboDogsUpgrade008.name': 'Financiamento Governamental VIII',
+    'upgrade.roboDogsUpgrade009.name': 'Financiamento Governamental IX',
+    'upgrade.roboDogsUpgrade010.name': 'Financiamento Governamental X',
 }
 
 export default ptBr

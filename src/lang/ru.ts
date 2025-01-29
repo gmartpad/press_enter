@@ -303,6 +303,16 @@ const ru = {
     'upgrade.pressEnterUpgrade008.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
     'upgrade.pressEnterUpgrade009.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
     'upgrade.pressEnterUpgrade010.description': 'Нажатие Enter даёт дополнительный 1% от текущего BpS',
+    'upgrade.roboDogsUpgrade001.name': 'Государственное Финансирование I',
+    'upgrade.roboDogsUpgrade002.name': 'Государственное Финансирование II',
+    'upgrade.roboDogsUpgrade003.name': 'Государственное Финансирование III',
+    'upgrade.roboDogsUpgrade004.name': 'Государственное Финансирование IV',
+    'upgrade.roboDogsUpgrade005.name': 'Государственное Финансирование V',
+    'upgrade.roboDogsUpgrade006.name': 'Государственное Финансирование VI',
+    'upgrade.roboDogsUpgrade007.name': 'Государственное Финансирование VII',
+    'upgrade.roboDogsUpgrade008.name': 'Государственное Финансирование VIII',
+    'upgrade.roboDogsUpgrade009.name': 'Государственное Финансирование IX',
+    'upgrade.roboDogsUpgrade010.name': 'Государственное Финансирование X',
 }
 
 export default ru

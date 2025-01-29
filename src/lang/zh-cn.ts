@@ -303,6 +303,16 @@ const zhCn = {
     'upgrade.pressEnterUpgrade008.description': '按下 Enter 可产生当前 BpS 的额外 1%',
     'upgrade.pressEnterUpgrade009.description': '按下 Enter 可产生当前 BpS 的额外 1%',
     'upgrade.pressEnterUpgrade010.description': '按下 Enter 可产生当前 BpS 的额外 1%',
+    'upgrade.roboDogsUpgrade001.name': '政府资助 I',
+    'upgrade.roboDogsUpgrade002.name': '政府资助 II',
+    'upgrade.roboDogsUpgrade003.name': '政府资助 III',
+    'upgrade.roboDogsUpgrade004.name': '政府资助 IV',
+    'upgrade.roboDogsUpgrade005.name': '政府资助 V',
+    'upgrade.roboDogsUpgrade006.name': '政府资助 VI',
+    'upgrade.roboDogsUpgrade007.name': '政府资助 VII',
+    'upgrade.roboDogsUpgrade008.name': '政府资助 VIII',
+    'upgrade.roboDogsUpgrade009.name': '政府资助 IX',
+    'upgrade.roboDogsUpgrade010.name': '政府资助 X',
 }
 
 export default zhCn

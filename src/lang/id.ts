@@ -303,6 +303,16 @@ const id = {
     'upgrade.pressEnterUpgrade008.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
     'upgrade.pressEnterUpgrade009.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
     'upgrade.pressEnterUpgrade010.description': 'Menekan Enter menghasilkan tambahan 1% dari BpS saat ini',
+    'upgrade.roboDogsUpgrade001.name': 'Pendanaan Pemerintah I',
+    'upgrade.roboDogsUpgrade002.name': 'Pendanaan Pemerintah II',
+    'upgrade.roboDogsUpgrade003.name': 'Pendanaan Pemerintah III',
+    'upgrade.roboDogsUpgrade004.name': 'Pendanaan Pemerintah IV',
+    'upgrade.roboDogsUpgrade005.name': 'Pendanaan Pemerintah V',
+    'upgrade.roboDogsUpgrade006.name': 'Pendanaan Pemerintah VI',
+    'upgrade.roboDogsUpgrade007.name': 'Pendanaan Pemerintah VII',
+    'upgrade.roboDogsUpgrade008.name': 'Pendanaan Pemerintah VIII',
+    'upgrade.roboDogsUpgrade009.name': 'Pendanaan Pemerintah IX',
+    'upgrade.roboDogsUpgrade010.name': 'Pendanaan Pemerintah X',
 }
 
 export default id

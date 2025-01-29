@@ -303,6 +303,16 @@ const bn = {
     'upgrade.pressEnterUpgrade008.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
     'upgrade.pressEnterUpgrade009.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
     'upgrade.pressEnterUpgrade010.description': 'Enter চাপলে বর্তমান BpS-এর অতিরিক্ত 1% উৎপন্ন হয়',
+    'upgrade.roboDogsUpgrade001.name': 'সরকারি অর্থায়ন I',
+    'upgrade.roboDogsUpgrade002.name': 'সরকারি অর্থায়ন II',
+    'upgrade.roboDogsUpgrade003.name': 'সরকারি অর্থায়ন III',
+    'upgrade.roboDogsUpgrade004.name': 'সরকারি অর্থায়ন IV',
+    'upgrade.roboDogsUpgrade005.name': 'সরকারি অর্থায়ন V',
+    'upgrade.roboDogsUpgrade006.name': 'সরকারি অর্থায়ন VI',
+    'upgrade.roboDogsUpgrade007.name': 'সরকারি অর্থায়ন VII',
+    'upgrade.roboDogsUpgrade008.name': 'সরকারি অর্থায়ন VIII',
+    'upgrade.roboDogsUpgrade009.name': 'সরকারি অর্থায়ন IX',
+    'upgrade.roboDogsUpgrade010.name': 'সরকারি অর্থায়ন X',
 }
 
 export default bn

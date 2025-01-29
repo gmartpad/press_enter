@@ -290,6 +290,16 @@ const es = {
     'upgrade.pressEnterUpgrade008.description': 'Presionar Enter produce un 1% adicional del BpS actual',
     'upgrade.pressEnterUpgrade009.description': 'Presionar Enter produce un 1% adicional del BpS actual',
     'upgrade.pressEnterUpgrade010.description': 'Presionar Enter produce un 1% adicional del BpS actual',
+    'upgrade.roboDogsUpgrade001.name': 'Financiación Gubernamental I',
+    'upgrade.roboDogsUpgrade002.name': 'Financiación Gubernamental II',
+    'upgrade.roboDogsUpgrade003.name': 'Financiación Gubernamental III',
+    'upgrade.roboDogsUpgrade004.name': 'Financiación Gubernamental IV',
+    'upgrade.roboDogsUpgrade005.name': 'Financiación Gubernamental V',
+    'upgrade.roboDogsUpgrade006.name': 'Financiación Gubernamental VI',
+    'upgrade.roboDogsUpgrade007.name': 'Financiación Gubernamental VII',
+    'upgrade.roboDogsUpgrade008.name': 'Financiación Gubernamental VIII',
+    'upgrade.roboDogsUpgrade009.name': 'Financiación Gubernamental IX',
+    'upgrade.roboDogsUpgrade010.name': 'Financiación Gubernamental X',
 }
 
 export default es
