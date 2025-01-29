@@ -353,6 +353,16 @@ const ar = {
     'upgrade.roboTurtlesUpgrade008.name': 'أصداف مطلية بالكروم VIII',
     'upgrade.roboTurtlesUpgrade009.name': 'أصداف مطلية بالكروم IX',
     'upgrade.roboTurtlesUpgrade010.name': 'أصداف مطلية بالكروم X',
+    'upgrade.roboTurtlesUpgrade001.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade002.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade003.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade004.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade005.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade006.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade007.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade008.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade009.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade010.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
 }
 
 export default ar

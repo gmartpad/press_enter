@@ -340,6 +340,16 @@ const en = {
     'upgrade.roboTurtlesUpgrade008.name': 'Chromed Shells VIII',
     'upgrade.roboTurtlesUpgrade009.name': 'Chromed Shells IX',
     'upgrade.roboTurtlesUpgrade010.name': 'Chromed Shells X',
+    'upgrade.roboTurtlesUpgrade001.description': 'Robo-Turtles are twice as efficient',
+    'upgrade.roboTurtlesUpgrade002.description': 'Robo-Turtles are twice as efficient',
+    'upgrade.roboTurtlesUpgrade003.description': 'Robo-Turtles are twice as efficient',
+    'upgrade.roboTurtlesUpgrade004.description': 'Robo-Turtles are twice as efficient',
+    'upgrade.roboTurtlesUpgrade005.description': 'Robo-Turtles are twice as efficient',
+    'upgrade.roboTurtlesUpgrade006.description': 'Robo-Turtles are twice as efficient',
+    'upgrade.roboTurtlesUpgrade007.description': 'Robo-Turtles are twice as efficient',
+    'upgrade.roboTurtlesUpgrade008.description': 'Robo-Turtles are twice as efficient',
+    'upgrade.roboTurtlesUpgrade009.description': 'Robo-Turtles are twice as efficient',
+    'upgrade.roboTurtlesUpgrade010.description': 'Robo-Turtles are twice as efficient',
 }
 
 export default en

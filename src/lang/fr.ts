@@ -353,6 +353,16 @@ const fr = {
     'upgrade.roboTurtlesUpgrade008.name': 'Carapaces Chromées VIII',
     'upgrade.roboTurtlesUpgrade009.name': 'Carapaces Chromées IX',
     'upgrade.roboTurtlesUpgrade010.name': 'Carapaces Chromées X',
+    'upgrade.roboTurtlesUpgrade001.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade002.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade003.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade004.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade005.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade006.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade007.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade008.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade009.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade010.description': 'Tortues Robots sont deux fois plus efficaces',
 }
 
 export default fr

@@ -353,6 +353,16 @@ const ur = {
     'upgrade.roboTurtlesUpgrade008.name': 'کروم چڑھے خول VIII',
     'upgrade.roboTurtlesUpgrade009.name': 'کروم چڑھے خول IX',
     'upgrade.roboTurtlesUpgrade010.name': 'کروم چڑھے خول X',
+    'upgrade.roboTurtlesUpgrade001.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade002.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade003.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade004.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade005.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade006.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade007.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade008.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade009.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade010.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
 }
 
 export default ur

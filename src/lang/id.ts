@@ -353,6 +353,16 @@ const id = {
     'upgrade.roboTurtlesUpgrade008.name': 'Cangkang Berlapis Krom VIII',
     'upgrade.roboTurtlesUpgrade009.name': 'Cangkang Berlapis Krom IX',
     'upgrade.roboTurtlesUpgrade010.name': 'Cangkang Berlapis Krom X',
+    'upgrade.roboTurtlesUpgrade001.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade002.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade003.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade004.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade005.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade006.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade007.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade008.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade009.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade010.description': 'Kura-kura robot dua kali lebih efisien',
 }
 
 export default id

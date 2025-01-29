@@ -353,6 +353,16 @@ const zhCn = {
     'upgrade.roboTurtlesUpgrade008.name': '镀铬外壳 VIII',
     'upgrade.roboTurtlesUpgrade009.name': '镀铬外壳 IX',
     'upgrade.roboTurtlesUpgrade010.name': '镀铬外壳 X',
+    'upgrade.roboTurtlesUpgrade001.description': '机器海龟的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade002.description': '机器海龟的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade003.description': '机器海龟的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade004.description': '机器海龟的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade005.description': '机器海龟的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade006.description': '机器海龟的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade007.description': '机器海龟的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade008.description': '机器海龟的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade009.description': '机器海龟的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade010.description': '机器海龟的效率提高一倍',
 }
 
 export default zhCn
