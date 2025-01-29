@@ -263,6 +263,16 @@ const ur = {
     'upgrade.musicBotsUpgrade008.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
     'upgrade.musicBotsUpgrade009.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
     'upgrade.musicBotsUpgrade010.description': 'میوزک بوٹس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade001.name': 'ڈیجیٹل الیکٹرولائٹس I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': 'ڈیجیٹل الیکٹرولائٹس II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': 'ڈیجیٹل الیکٹرولائٹس III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': 'ڈیجیٹل الیکٹرولائٹس IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': 'ڈیجیٹل الیکٹرولائٹس V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': 'ڈیجیٹل الیکٹرولائٹس VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': 'ڈیجیٹل الیکٹرولائٹس VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': 'ڈیجیٹل الیکٹرولائٹس VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': 'ڈیجیٹل الیکٹرولائٹس IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': 'ڈیجیٹل الیکٹرولائٹس X',
 }
 
 export default ur

@@ -250,6 +250,16 @@ const en = {
     'upgrade.musicBotsUpgrade008.description': 'Music Bots are twice as efficient',
     'upgrade.musicBotsUpgrade009.description': 'Music Bots are twice as efficient',
     'upgrade.musicBotsUpgrade010.description': 'Music Bots are twice as efficient',
+    'upgrade.oldNeuralNetworksUpgrade001.name': 'Digital Electrolytes I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': 'Digital Electrolytes II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': 'Digital Electrolytes III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': 'Digital Electrolytes IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': 'Digital Electrolytes V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': 'Digital Electrolytes VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': 'Digital Electrolytes VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': 'Digital Electrolytes VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': 'Digital Electrolytes IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': 'Digital Electrolytes X',
 }
 
 export default en

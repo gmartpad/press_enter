@@ -263,6 +263,16 @@ const zhCn = {
     'upgrade.musicBotsUpgrade008.description': '音乐机器人效率提高两倍',
     'upgrade.musicBotsUpgrade009.description': '音乐机器人效率提高两倍',
     'upgrade.musicBotsUpgrade010.description': '音乐机器人效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade001.name': '数字电解质 I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': '数字电解质 II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': '数字电解质 III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': '数字电解质 IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': '数字电解质 V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': '数字电解质 VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': '数字电解质 VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': '数字电解质 VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': '数字电解质 IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': '数字电解质 X',
 }
 
 export default zhCn

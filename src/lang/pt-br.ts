@@ -263,6 +263,16 @@ const ptBr = {
     'upgrade.musicBotsUpgrade008.description': 'Os bots de música são duas vezes mais eficientes',
     'upgrade.musicBotsUpgrade009.description': 'Os bots de música são duas vezes mais eficientes',
     'upgrade.musicBotsUpgrade010.description': 'Os bots de música são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade001.name': 'Eletrólitos Digitais I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': 'Eletrólitos Digitais II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': 'Eletrólitos Digitais III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': 'Eletrólitos Digitais IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': 'Eletrólitos Digitais V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': 'Eletrólitos Digitais VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': 'Eletrólitos Digitais VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': 'Eletrólitos Digitais VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': 'Eletrólitos Digitais IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': 'Eletrólitos Digitais X',
 }
 
 export default ptBr

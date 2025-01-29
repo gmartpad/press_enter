@@ -263,6 +263,16 @@ const ru = {
     'upgrade.musicBotsUpgrade008.description': 'Музыкальные боты в два раза эффективнее',
     'upgrade.musicBotsUpgrade009.description': 'Музыкальные боты в два раза эффективнее',
     'upgrade.musicBotsUpgrade010.description': 'Музыкальные боты в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade001.name': 'Цифровые электролиты I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': 'Цифровые электролиты II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': 'Цифровые электролиты III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': 'Цифровые электролиты IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': 'Цифровые электролиты V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': 'Цифровые электролиты VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': 'Цифровые электролиты VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': 'Цифровые электролиты VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': 'Цифровые электролиты IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': 'Цифровые электролиты X',
 }
 
 export default ru

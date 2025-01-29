@@ -263,6 +263,16 @@ const id = {
     'upgrade.musicBotsUpgrade008.description': 'Bot musik dua kali lebih efisien',
     'upgrade.musicBotsUpgrade009.description': 'Bot musik dua kali lebih efisien',
     'upgrade.musicBotsUpgrade010.description': 'Bot musik dua kali lebih efisien',
+    'upgrade.oldNeuralNetworksUpgrade001.name': 'Elektrolit Digital I',
+    'upgrade.oldNeuralNetworksUpgrade002.name': 'Elektrolit Digital II',
+    'upgrade.oldNeuralNetworksUpgrade003.name': 'Elektrolit Digital III',
+    'upgrade.oldNeuralNetworksUpgrade004.name': 'Elektrolit Digital IV',
+    'upgrade.oldNeuralNetworksUpgrade005.name': 'Elektrolit Digital V',
+    'upgrade.oldNeuralNetworksUpgrade006.name': 'Elektrolit Digital VI',
+    'upgrade.oldNeuralNetworksUpgrade007.name': 'Elektrolit Digital VII',
+    'upgrade.oldNeuralNetworksUpgrade008.name': 'Elektrolit Digital VIII',
+    'upgrade.oldNeuralNetworksUpgrade009.name': 'Elektrolit Digital IX',
+    'upgrade.oldNeuralNetworksUpgrade010.name': 'Elektrolit Digital X',
 }
 
 export default id
