@@ -260,6 +260,16 @@ const es = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'Electrolitos digitales VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'Electrolitos digitales IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'Electrolitos digitales X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'Las redes neuronales antiguas son el doble de eficientes',
 }
 
 export default es

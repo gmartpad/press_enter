@@ -273,6 +273,16 @@ const ur = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'ڈیجیٹل الیکٹرولائٹس VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'ڈیجیٹل الیکٹرولائٹس IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'ڈیجیٹل الیکٹرولائٹس X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
 }
 
 export default ur

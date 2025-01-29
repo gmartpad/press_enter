@@ -273,6 +273,16 @@ const hiIn = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'डिजिटल इलेक्ट्रोलाइट्स VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'डिजिटल इलेक्ट्रोलाइट्स IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'डिजिटल इलेक्ट्रोलाइट्स X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'पुरानी न्यूरल नेटवर्क्स दो गुना अधिक कुशल हैं',
 }
 
 export default hiIn

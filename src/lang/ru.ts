@@ -273,6 +273,16 @@ const ru = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'Цифровые электролиты VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'Цифровые электролиты IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'Цифровые электролиты X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'Старые нейронные сети в два раза эффективнее',
 }
 
 export default ru

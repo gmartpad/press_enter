@@ -273,6 +273,16 @@ const zhCn = {
     'upgrade.oldNeuralNetworksUpgrade008.name': '数字电解质 VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': '数字电解质 IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': '数字电解质 X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': '旧神经网络效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade002.description': '旧神经网络效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade003.description': '旧神经网络效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade004.description': '旧神经网络效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade005.description': '旧神经网络效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade006.description': '旧神经网络效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade007.description': '旧神经网络效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade008.description': '旧神经网络效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade009.description': '旧神经网络效率提高两倍',
+    'upgrade.oldNeuralNetworksUpgrade010.description': '旧神经网络效率提高两倍',
 }
 
 export default zhCn

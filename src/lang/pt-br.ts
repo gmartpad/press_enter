@@ -273,6 +273,16 @@ const ptBr = {
     'upgrade.oldNeuralNetworksUpgrade008.name': 'Eletrólitos Digitais VIII',
     'upgrade.oldNeuralNetworksUpgrade009.name': 'Eletrólitos Digitais IX',
     'upgrade.oldNeuralNetworksUpgrade010.name': 'Eletrólitos Digitais X',
+    'upgrade.oldNeuralNetworksUpgrade001.description': 'As redes neurais antigas são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade002.description': 'As redes neurais antigas são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade003.description': 'As redes neurais antigas são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade004.description': 'As redes neurais antigas são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade005.description': 'As redes neurais antigas são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade006.description': 'As redes neurais antigas são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade007.description': 'As redes neurais antigas são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade008.description': 'As redes neurais antigas são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade009.description': 'As redes neurais antigas são duas vezes mais eficientes',
+    'upgrade.oldNeuralNetworksUpgrade010.description': 'As redes neurais antigas são duas vezes mais eficientes',
 }
 
 export default ptBr
