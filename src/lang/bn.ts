@@ -343,6 +343,16 @@ const bn = {
     'upgrade.roboMaidsUpgrade008.description': 'রোবো-মেইডগুলি দ্বিগুণ দক্ষ',
     'upgrade.roboMaidsUpgrade009.description': 'রোবো-মেইডগুলি দ্বিগুণ দক্ষ',
     'upgrade.roboMaidsUpgrade010.description': 'রোবো-মেইডগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboTurtlesUpgrade001.name': 'ক্রোমযুক্ত খোলক I',
+    'upgrade.roboTurtlesUpgrade002.name': 'ক্রোমযুক্ত খোলক II',
+    'upgrade.roboTurtlesUpgrade003.name': 'ক্রোমযুক্ত খোলক III',
+    'upgrade.roboTurtlesUpgrade004.name': 'ক্রোমযুক্ত খোলক IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'ক্রোমযুক্ত খোলক V',
+    'upgrade.roboTurtlesUpgrade006.name': 'ক্রোমযুক্ত খোলক VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'ক্রোমযুক্ত খোলক VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'ক্রোমযুক্ত খোলক VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'ক্রোমযুক্ত খোলক IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'ক্রোমযুক্ত খোলক X',
 }
 
 export default bn

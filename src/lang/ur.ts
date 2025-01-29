@@ -343,6 +343,16 @@ const ur = {
     'upgrade.roboMaidsUpgrade008.description': 'روبو میڈز دگنا زیادہ مؤثر ہیں',
     'upgrade.roboMaidsUpgrade009.description': 'روبو میڈز دگنا زیادہ مؤثر ہیں',
     'upgrade.roboMaidsUpgrade010.description': 'روبو میڈز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboTurtlesUpgrade001.name': 'کروم چڑھے خول I',
+    'upgrade.roboTurtlesUpgrade002.name': 'کروم چڑھے خول II',
+    'upgrade.roboTurtlesUpgrade003.name': 'کروم چڑھے خول III',
+    'upgrade.roboTurtlesUpgrade004.name': 'کروم چڑھے خول IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'کروم چڑھے خول V',
+    'upgrade.roboTurtlesUpgrade006.name': 'کروم چڑھے خول VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'کروم چڑھے خول VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'کروم چڑھے خول VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'کروم چڑھے خول IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'کروم چڑھے خول X',
 }
 
 export default ur

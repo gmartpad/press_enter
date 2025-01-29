@@ -330,7 +330,16 @@ const en = {
     'upgrade.roboMaidsUpgrade008.description': 'Robo-Maids are twice as efficient',
     'upgrade.roboMaidsUpgrade009.description': 'Robo-Maids are twice as efficient',
     'upgrade.roboMaidsUpgrade010.description': 'Robo-Maids are twice as efficient',
-
+    'upgrade.roboTurtlesUpgrade001.name': 'Chromed Shells I',
+    'upgrade.roboTurtlesUpgrade002.name': 'Chromed Shells II',
+    'upgrade.roboTurtlesUpgrade003.name': 'Chromed Shells III',
+    'upgrade.roboTurtlesUpgrade004.name': 'Chromed Shells IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'Chromed Shells V',
+    'upgrade.roboTurtlesUpgrade006.name': 'Chromed Shells VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'Chromed Shells VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'Chromed Shells VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'Chromed Shells IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'Chromed Shells X',
 }
 
 export default en

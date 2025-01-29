@@ -343,6 +343,16 @@ const ptBr = {
     'upgrade.roboMaidsUpgrade008.description': 'Empregados Robô são duas vezes mais eficientes',
     'upgrade.roboMaidsUpgrade009.description': 'Empregados Robô são duas vezes mais eficientes',
     'upgrade.roboMaidsUpgrade010.description': 'Empregados Robô são duas vezes mais eficientes',
+    'upgrade.roboTurtlesUpgrade001.name': 'Cascos Cromados I',
+    'upgrade.roboTurtlesUpgrade002.name': 'Cascos Cromados II',
+    'upgrade.roboTurtlesUpgrade003.name': 'Cascos Cromados III',
+    'upgrade.roboTurtlesUpgrade004.name': 'Cascos Cromados IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'Cascos Cromados V',
+    'upgrade.roboTurtlesUpgrade006.name': 'Cascos Cromados VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'Cascos Cromados VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'Cascos Cromados VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'Cascos Cromados IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'Cascos Cromados X',
 }
 
 export default ptBr

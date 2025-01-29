@@ -343,6 +343,16 @@ const fr = {
     'upgrade.roboMaidsUpgrade008.description': 'Robots Domestiques sont deux fois plus efficaces',
     'upgrade.roboMaidsUpgrade009.description': 'Robots Domestiques sont deux fois plus efficaces',
     'upgrade.roboMaidsUpgrade010.description': 'Robots Domestiques sont deux fois plus efficaces',
+    'upgrade.roboTurtlesUpgrade001.name': 'Carapaces Chromées I',
+    'upgrade.roboTurtlesUpgrade002.name': 'Carapaces Chromées II',
+    'upgrade.roboTurtlesUpgrade003.name': 'Carapaces Chromées III',
+    'upgrade.roboTurtlesUpgrade004.name': 'Carapaces Chromées IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'Carapaces Chromées V',
+    'upgrade.roboTurtlesUpgrade006.name': 'Carapaces Chromées VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'Carapaces Chromées VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'Carapaces Chromées VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'Carapaces Chromées IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'Carapaces Chromées X',
 }
 
 export default fr

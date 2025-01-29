@@ -343,6 +343,16 @@ const id = {
     'upgrade.roboMaidsUpgrade008.description': 'Robot pembantu dua kali lebih efisien',
     'upgrade.roboMaidsUpgrade009.description': 'Robot pembantu dua kali lebih efisien',
     'upgrade.roboMaidsUpgrade010.description': 'Robot pembantu dua kali lebih efisien',
+    'upgrade.roboTurtlesUpgrade001.name': 'Cangkang Berlapis Krom I',
+    'upgrade.roboTurtlesUpgrade002.name': 'Cangkang Berlapis Krom II',
+    'upgrade.roboTurtlesUpgrade003.name': 'Cangkang Berlapis Krom III',
+    'upgrade.roboTurtlesUpgrade004.name': 'Cangkang Berlapis Krom IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'Cangkang Berlapis Krom V',
+    'upgrade.roboTurtlesUpgrade006.name': 'Cangkang Berlapis Krom VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'Cangkang Berlapis Krom VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'Cangkang Berlapis Krom VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'Cangkang Berlapis Krom IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'Cangkang Berlapis Krom X',
 }
 
 export default id

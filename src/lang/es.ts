@@ -330,6 +330,16 @@ const es = {
     'upgrade.roboMaidsUpgrade008.description': 'Robo-Camareras son el doble de eficientes',
     'upgrade.roboMaidsUpgrade009.description': 'Robo-Camareras son el doble de eficientes',
     'upgrade.roboMaidsUpgrade010.description': 'Robo-Camareras son el doble de eficientes',
+    'upgrade.roboTurtlesUpgrade001.name': 'Caparazones Cromados I',
+    'upgrade.roboTurtlesUpgrade002.name': 'Caparazones Cromados II',
+    'upgrade.roboTurtlesUpgrade003.name': 'Caparazones Cromados III',
+    'upgrade.roboTurtlesUpgrade004.name': 'Caparazones Cromados IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'Caparazones Cromados V',
+    'upgrade.roboTurtlesUpgrade006.name': 'Caparazones Cromados VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'Caparazones Cromados VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'Caparazones Cromados VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'Caparazones Cromados IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'Caparazones Cromados X',
 }
 
 export default es
