@@ -363,6 +363,16 @@ const id = {
     'upgrade.roboTurtlesUpgrade008.description': 'Kura-kura robot dua kali lebih efisien',
     'upgrade.roboTurtlesUpgrade009.description': 'Kura-kura robot dua kali lebih efisien',
     'upgrade.roboTurtlesUpgrade010.description': 'Kura-kura robot dua kali lebih efisien',
+    'upgrade.turingTestersUpgrade001.name': 'Penguji Berkafein I',
+    'upgrade.turingTestersUpgrade002.name': 'Penguji Berkafein II',
+    'upgrade.turingTestersUpgrade003.name': 'Penguji Berkafein III',
+    'upgrade.turingTestersUpgrade004.name': 'Penguji Berkafein IV',
+    'upgrade.turingTestersUpgrade005.name': 'Penguji Berkafein V',
+    'upgrade.turingTestersUpgrade006.name': 'Penguji Berkafein VI',
+    'upgrade.turingTestersUpgrade007.name': 'Penguji Berkafein VII',
+    'upgrade.turingTestersUpgrade008.name': 'Penguji Berkafein VIII',
+    'upgrade.turingTestersUpgrade009.name': 'Penguji Berkafein IX',
+    'upgrade.turingTestersUpgrade010.name': 'Penguji Berkafein X',
 }
 
 export default id

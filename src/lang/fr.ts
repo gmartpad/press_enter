@@ -363,6 +363,16 @@ const fr = {
     'upgrade.roboTurtlesUpgrade008.description': 'Tortues Robots sont deux fois plus efficaces',
     'upgrade.roboTurtlesUpgrade009.description': 'Tortues Robots sont deux fois plus efficaces',
     'upgrade.roboTurtlesUpgrade010.description': 'Tortues Robots sont deux fois plus efficaces',
+    'upgrade.turingTestersUpgrade001.name': 'Testeurs Caféinés I',
+    'upgrade.turingTestersUpgrade002.name': 'Testeurs Caféinés II',
+    'upgrade.turingTestersUpgrade003.name': 'Testeurs Caféinés III',
+    'upgrade.turingTestersUpgrade004.name': 'Testeurs Caféinés IV',
+    'upgrade.turingTestersUpgrade005.name': 'Testeurs Caféinés V',
+    'upgrade.turingTestersUpgrade006.name': 'Testeurs Caféinés VI',
+    'upgrade.turingTestersUpgrade007.name': 'Testeurs Caféinés VII',
+    'upgrade.turingTestersUpgrade008.name': 'Testeurs Caféinés VIII',
+    'upgrade.turingTestersUpgrade009.name': 'Testeurs Caféinés IX',
+    'upgrade.turingTestersUpgrade010.name': 'Testeurs Caféinés X',
 }
 
 export default fr

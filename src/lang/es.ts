@@ -350,6 +350,16 @@ const es = {
     'upgrade.roboTurtlesUpgrade008.description': 'Robo-Tortugas son el doble de eficientes',
     'upgrade.roboTurtlesUpgrade009.description': 'Robo-Tortugas son el doble de eficientes',
     'upgrade.roboTurtlesUpgrade010.description': 'Robo-Tortugas son el doble de eficientes',
+    'upgrade.turingTestersUpgrade001.name': 'Probadores Cafeinados I',
+    'upgrade.turingTestersUpgrade002.name': 'Probadores Cafeinados II',
+    'upgrade.turingTestersUpgrade003.name': 'Probadores Cafeinados III',
+    'upgrade.turingTestersUpgrade004.name': 'Probadores Cafeinados IV',
+    'upgrade.turingTestersUpgrade005.name': 'Probadores Cafeinados V',
+    'upgrade.turingTestersUpgrade006.name': 'Probadores Cafeinados VI',
+    'upgrade.turingTestersUpgrade007.name': 'Probadores Cafeinados VII',
+    'upgrade.turingTestersUpgrade008.name': 'Probadores Cafeinados VIII',
+    'upgrade.turingTestersUpgrade009.name': 'Probadores Cafeinados IX',
+    'upgrade.turingTestersUpgrade010.name': 'Probadores Cafeinados X',
 }
 
 export default es

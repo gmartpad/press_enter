@@ -363,6 +363,16 @@ const hiIn = {
     'upgrade.roboTurtlesUpgrade008.description': 'रोबो-टर्टल दोगुने कुशल होते हैं',
     'upgrade.roboTurtlesUpgrade009.description': 'रोबो-टर्टल दोगुने कुशल होते हैं',
     'upgrade.roboTurtlesUpgrade010.description': 'रोबो-टर्टल दोगुने कुशल होते हैं',
+    'upgrade.turingTestersUpgrade001.name': 'कैफीनयुक्त परीक्षक I',
+    'upgrade.turingTestersUpgrade002.name': 'कैफीनयुक्त परीक्षक II',
+    'upgrade.turingTestersUpgrade003.name': 'कैफीनयुक्त परीक्षक III',
+    'upgrade.turingTestersUpgrade004.name': 'कैफीनयुक्त परीक्षक IV',
+    'upgrade.turingTestersUpgrade005.name': 'कैफीनयुक्त परीक्षक V',
+    'upgrade.turingTestersUpgrade006.name': 'कैफीनयुक्त परीक्षक VI',
+    'upgrade.turingTestersUpgrade007.name': 'कैफीनयुक्त परीक्षक VII',
+    'upgrade.turingTestersUpgrade008.name': 'कैफीनयुक्त परीक्षक VIII',
+    'upgrade.turingTestersUpgrade009.name': 'कैफीनयुक्त परीक्षक IX',
+    'upgrade.turingTestersUpgrade010.name': 'कैफीनयुक्त परीक्षक X',
 }
 
 export default hiIn

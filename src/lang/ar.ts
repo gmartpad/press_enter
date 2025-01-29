@@ -363,6 +363,16 @@ const ar = {
     'upgrade.roboTurtlesUpgrade008.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
     'upgrade.roboTurtlesUpgrade009.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
     'upgrade.roboTurtlesUpgrade010.description': 'روبوتات السلاحف ذات كفاءة مضاعفة',
+    'upgrade.turingTestersUpgrade001.name': 'المختبرين المدمج بالكافيين I',
+    'upgrade.turingTestersUpgrade002.name': 'المختبرين المدمج بالكافيين II',
+    'upgrade.turingTestersUpgrade003.name': 'المختبرين المدمج بالكافيين III',
+    'upgrade.turingTestersUpgrade004.name': 'المختبرين المدمج بالكافيين IV',
+    'upgrade.turingTestersUpgrade005.name': 'المختبرين المدمج بالكافيين V',
+    'upgrade.turingTestersUpgrade006.name': 'المختبرين المدمج بالكافيين VI',
+    'upgrade.turingTestersUpgrade007.name': 'المختبرين المدمج بالكافيين VII',
+    'upgrade.turingTestersUpgrade008.name': 'المختبرين المدمج بالكافيين VIII',
+    'upgrade.turingTestersUpgrade009.name': 'المختبرين المدمج بالكافيين IX',
+    'upgrade.turingTestersUpgrade010.name': 'المختبرين المدمج بالكافيين X',
 }
 
 export default ar

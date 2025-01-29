@@ -363,6 +363,16 @@ const ru = {
     'upgrade.roboTurtlesUpgrade008.description': 'Роботы-черепахи в два раза эффективнее',
     'upgrade.roboTurtlesUpgrade009.description': 'Роботы-черепахи в два раза эффективнее',
     'upgrade.roboTurtlesUpgrade010.description': 'Роботы-черепахи в два раза эффективнее',
+    'upgrade.turingTestersUpgrade001.name': 'Тестировщики с Кофеином I',
+    'upgrade.turingTestersUpgrade002.name': 'Тестировщики с Кофеином II',
+    'upgrade.turingTestersUpgrade003.name': 'Тестировщики с Кофеином III',
+    'upgrade.turingTestersUpgrade004.name': 'Тестировщики с Кофеином IV',
+    'upgrade.turingTestersUpgrade005.name': 'Тестировщики с Кофеином V',
+    'upgrade.turingTestersUpgrade006.name': 'Тестировщики с Кофеином VI',
+    'upgrade.turingTestersUpgrade007.name': 'Тестировщики с Кофеином VII',
+    'upgrade.turingTestersUpgrade008.name': 'Тестировщики с Кофеином VIII',
+    'upgrade.turingTestersUpgrade009.name': 'Тестировщики с Кофеином IX',
+    'upgrade.turingTestersUpgrade010.name': 'Тестировщики с Кофеином X',
 }
 
 export default ru

@@ -363,6 +363,16 @@ const zhCn = {
     'upgrade.roboTurtlesUpgrade008.description': '机器海龟的效率提高一倍',
     'upgrade.roboTurtlesUpgrade009.description': '机器海龟的效率提高一倍',
     'upgrade.roboTurtlesUpgrade010.description': '机器海龟的效率提高一倍',
+    'upgrade.turingTestersUpgrade001.name': '含咖啡因的测试员 I',
+    'upgrade.turingTestersUpgrade002.name': '含咖啡因的测试员 II',
+    'upgrade.turingTestersUpgrade003.name': '含咖啡因的测试员 III',
+    'upgrade.turingTestersUpgrade004.name': '含咖啡因的测试员 IV',
+    'upgrade.turingTestersUpgrade005.name': '含咖啡因的测试员 V',
+    'upgrade.turingTestersUpgrade006.name': '含咖啡因的测试员 VI',
+    'upgrade.turingTestersUpgrade007.name': '含咖啡因的测试员 VII',
+    'upgrade.turingTestersUpgrade008.name': '含咖啡因的测试员 VIII',
+    'upgrade.turingTestersUpgrade009.name': '含咖啡因的测试员 IX',
+    'upgrade.turingTestersUpgrade010.name': '含咖啡因的测试员 X',
 }
 
 export default zhCn

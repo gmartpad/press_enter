@@ -363,6 +363,16 @@ const bn = {
     'upgrade.roboTurtlesUpgrade008.description': 'রোবো-টার্টলগুলি দ্বিগুণ দক্ষ',
     'upgrade.roboTurtlesUpgrade009.description': 'রোবো-টার্টলগুলি দ্বিগুণ দক্ষ',
     'upgrade.roboTurtlesUpgrade010.description': 'রোবো-টার্টলগুলি দ্বিগুণ দক্ষ',
+    'upgrade.turingTestersUpgrade001.name': 'ক্যাফিনযুক্ত পরীক্ষক I',
+    'upgrade.turingTestersUpgrade002.name': 'ক্যাফিনযুক্ত পরীক্ষক II',
+    'upgrade.turingTestersUpgrade003.name': 'ক্যাফিনযুক্ত পরীক্ষক III',
+    'upgrade.turingTestersUpgrade004.name': 'ক্যাফিনযুক্ত পরীক্ষক IV',
+    'upgrade.turingTestersUpgrade005.name': 'ক্যাফিনযুক্ত পরীক্ষক V',
+    'upgrade.turingTestersUpgrade006.name': 'ক্যাফিনযুক্ত পরীক্ষক VI',
+    'upgrade.turingTestersUpgrade007.name': 'ক্যাফিনযুক্ত পরীক্ষক VII',
+    'upgrade.turingTestersUpgrade008.name': 'ক্যাফিনযুক্ত পরীক্ষক VIII',
+    'upgrade.turingTestersUpgrade009.name': 'ক্যাফিনযুক্ত পরীক্ষক IX',
+    'upgrade.turingTestersUpgrade010.name': 'ক্যাফিনযুক্ত পরীক্ষক X',
 }
 
 export default bn

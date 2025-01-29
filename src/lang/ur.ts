@@ -363,6 +363,16 @@ const ur = {
     'upgrade.roboTurtlesUpgrade008.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
     'upgrade.roboTurtlesUpgrade009.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
     'upgrade.roboTurtlesUpgrade010.description': 'روبو ٹرٹلز دگنا زیادہ مؤثر ہیں',
+    'upgrade.turingTestersUpgrade001.name': 'کیفین والے ٹیسٹرز I',
+    'upgrade.turingTestersUpgrade002.name': 'کیفین والے ٹیسٹرز II',
+    'upgrade.turingTestersUpgrade003.name': 'کیفین والے ٹیسٹرز III',
+    'upgrade.turingTestersUpgrade004.name': 'کیفین والے ٹیسٹرز IV',
+    'upgrade.turingTestersUpgrade005.name': 'کیفین والے ٹیسٹرز V',
+    'upgrade.turingTestersUpgrade006.name': 'کیفین والے ٹیسٹرز VI',
+    'upgrade.turingTestersUpgrade007.name': 'کیفین والے ٹیسٹرز VII',
+    'upgrade.turingTestersUpgrade008.name': 'کیفین والے ٹیسٹرز VIII',
+    'upgrade.turingTestersUpgrade009.name': 'کیفین والے ٹیسٹرز IX',
+    'upgrade.turingTestersUpgrade010.name': 'کیفین والے ٹیسٹرز X',
 }
 
 export default ur

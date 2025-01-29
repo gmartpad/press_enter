@@ -363,6 +363,16 @@ const ptBr = {
     'upgrade.roboTurtlesUpgrade008.description': 'Tartarugas Robô são duas vezes mais eficientes',
     'upgrade.roboTurtlesUpgrade009.description': 'Tartarugas Robô são duas vezes mais eficientes',
     'upgrade.roboTurtlesUpgrade010.description': 'Tartarugas Robô são duas vezes mais eficientes',
+    'upgrade.turingTestersUpgrade001.name': 'Testadores com Cafeína I',
+    'upgrade.turingTestersUpgrade002.name': 'Testadores com Cafeína II',
+    'upgrade.turingTestersUpgrade003.name': 'Testadores com Cafeína III',
+    'upgrade.turingTestersUpgrade004.name': 'Testadores com Cafeína IV',
+    'upgrade.turingTestersUpgrade005.name': 'Testadores com Cafeína V',
+    'upgrade.turingTestersUpgrade006.name': 'Testadores com Cafeína VI',
+    'upgrade.turingTestersUpgrade007.name': 'Testadores com Cafeína VII',
+    'upgrade.turingTestersUpgrade008.name': 'Testadores com Cafeína VIII',
+    'upgrade.turingTestersUpgrade009.name': 'Testadores com Cafeína IX',
+    'upgrade.turingTestersUpgrade010.name': 'Testadores com Cafeína X',
 }
 
 export default ptBr
