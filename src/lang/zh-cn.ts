@@ -323,6 +323,16 @@ const zhCn = {
     'upgrade.roboDogsUpgrade008.description': '机器狗的效率提高一倍',
     'upgrade.roboDogsUpgrade009.description': '机器狗的效率提高一倍',
     'upgrade.roboDogsUpgrade010.description': '机器狗的效率提高一倍',
+    'upgrade.roboMaidsUpgrade001.name': '洗洁精 + 过氧化氢方法 I',
+    'upgrade.roboMaidsUpgrade002.name': '洗洁精 + 过氧化氢方法 II',
+    'upgrade.roboMaidsUpgrade003.name': '洗洁精 + 过氧化氢方法 III',
+    'upgrade.roboMaidsUpgrade004.name': '洗洁精 + 过氧化氢方法 IV',
+    'upgrade.roboMaidsUpgrade005.name': '洗洁精 + 过氧化氢方法 V',
+    'upgrade.roboMaidsUpgrade006.name': '洗洁精 + 过氧化氢方法 VI',
+    'upgrade.roboMaidsUpgrade007.name': '洗洁精 + 过氧化氢方法 VII',
+    'upgrade.roboMaidsUpgrade008.name': '洗洁精 + 过氧化氢方法 VIII',
+    'upgrade.roboMaidsUpgrade009.name': '洗洁精 + 过氧化氢方法 IX',
+    'upgrade.roboMaidsUpgrade010.name': '洗洁精 + 过氧化氢方法 X',
 }
 
 export default zhCn

@@ -323,6 +323,16 @@ const bn = {
     'upgrade.roboDogsUpgrade008.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
     'upgrade.roboDogsUpgrade009.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
     'upgrade.roboDogsUpgrade010.description': 'রোবো-কুকুরগুলি দ্বিগুণ দক্ষ',
+    'upgrade.roboMaidsUpgrade001.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি I',
+    'upgrade.roboMaidsUpgrade002.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি II',
+    'upgrade.roboMaidsUpgrade003.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি III',
+    'upgrade.roboMaidsUpgrade004.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি IV',
+    'upgrade.roboMaidsUpgrade005.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি V',
+    'upgrade.roboMaidsUpgrade006.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি VI',
+    'upgrade.roboMaidsUpgrade007.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি VII',
+    'upgrade.roboMaidsUpgrade008.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি VIII',
+    'upgrade.roboMaidsUpgrade009.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি IX',
+    'upgrade.roboMaidsUpgrade010.name': 'ডিশ সাবান + হাইড্রোজেন পারঅক্সাইড পদ্ধতি X',
 }
 
 export default bn

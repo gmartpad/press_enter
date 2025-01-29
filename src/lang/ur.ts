@@ -323,6 +323,16 @@ const ur = {
     'upgrade.roboDogsUpgrade008.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
     'upgrade.roboDogsUpgrade009.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
     'upgrade.roboDogsUpgrade010.description': 'روبو ڈاگز دگنا زیادہ مؤثر ہیں',
+    'upgrade.roboMaidsUpgrade001.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب I',
+    'upgrade.roboMaidsUpgrade002.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب II',
+    'upgrade.roboMaidsUpgrade003.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب III',
+    'upgrade.roboMaidsUpgrade004.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب IV',
+    'upgrade.roboMaidsUpgrade005.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب V',
+    'upgrade.roboMaidsUpgrade006.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب VI',
+    'upgrade.roboMaidsUpgrade007.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب VII',
+    'upgrade.roboMaidsUpgrade008.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب VIII',
+    'upgrade.roboMaidsUpgrade009.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب IX',
+    'upgrade.roboMaidsUpgrade010.name': 'ڈش صابن + ہائیڈروجن پیرو آکسائیڈ ترکیب X',
 }
 
 export default ur

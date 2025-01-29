@@ -323,6 +323,16 @@ const id = {
     'upgrade.roboDogsUpgrade008.description': 'Anjing robot dua kali lebih efisien',
     'upgrade.roboDogsUpgrade009.description': 'Anjing robot dua kali lebih efisien',
     'upgrade.roboDogsUpgrade010.description': 'Anjing robot dua kali lebih efisien',
+    'upgrade.roboMaidsUpgrade001.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida I',
+    'upgrade.roboMaidsUpgrade002.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida II',
+    'upgrade.roboMaidsUpgrade003.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida III',
+    'upgrade.roboMaidsUpgrade004.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida IV',
+    'upgrade.roboMaidsUpgrade005.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida V',
+    'upgrade.roboMaidsUpgrade006.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida VI',
+    'upgrade.roboMaidsUpgrade007.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida VII',
+    'upgrade.roboMaidsUpgrade008.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida VIII',
+    'upgrade.roboMaidsUpgrade009.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida IX',
+    'upgrade.roboMaidsUpgrade010.name': 'Metode Sabun Cuci Piring + Hidrogen Peroksida X',
 }
 
 export default id

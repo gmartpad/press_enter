@@ -323,6 +323,16 @@ const fr = {
     'upgrade.roboDogsUpgrade008.description': 'Les chiens robots sont deux fois plus efficaces',
     'upgrade.roboDogsUpgrade009.description': 'Les chiens robots sont deux fois plus efficaces',
     'upgrade.roboDogsUpgrade010.description': 'Les chiens robots sont deux fois plus efficaces',
+    'upgrade.roboMaidsUpgrade001.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène I',
+    'upgrade.roboMaidsUpgrade002.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène II',
+    'upgrade.roboMaidsUpgrade003.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène III',
+    'upgrade.roboMaidsUpgrade004.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène IV',
+    'upgrade.roboMaidsUpgrade005.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène V',
+    'upgrade.roboMaidsUpgrade006.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène VI',
+    'upgrade.roboMaidsUpgrade007.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène VII',
+    'upgrade.roboMaidsUpgrade008.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène VIII',
+    'upgrade.roboMaidsUpgrade009.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène IX',
+    'upgrade.roboMaidsUpgrade010.name': 'Méthode Liquide Vaisselle + Peroxyde d’Hydrogène X',
 }
 
 export default fr

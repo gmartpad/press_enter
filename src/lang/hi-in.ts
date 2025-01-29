@@ -323,6 +323,16 @@ const hiIn = {
     'upgrade.roboDogsUpgrade008.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
     'upgrade.roboDogsUpgrade009.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
     'upgrade.roboDogsUpgrade010.description': 'रोबो-डॉग्स दोगुने कुशल होते हैं',
+    'upgrade.roboMaidsUpgrade001.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि I',
+    'upgrade.roboMaidsUpgrade002.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि II',
+    'upgrade.roboMaidsUpgrade003.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि III',
+    'upgrade.roboMaidsUpgrade004.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि IV',
+    'upgrade.roboMaidsUpgrade005.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि V',
+    'upgrade.roboMaidsUpgrade006.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि VI',
+    'upgrade.roboMaidsUpgrade007.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि VII',
+    'upgrade.roboMaidsUpgrade008.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि VIII',
+    'upgrade.roboMaidsUpgrade009.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि IX',
+    'upgrade.roboMaidsUpgrade010.name': 'डिश सोप + हाइड्रोजन पेरोक्साइड विधि X',
 }
 
 export default hiIn

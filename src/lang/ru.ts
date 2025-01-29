@@ -323,6 +323,16 @@ const ru = {
     'upgrade.roboDogsUpgrade008.description': 'Робо-собаки в два раза эффективнее',
     'upgrade.roboDogsUpgrade009.description': 'Робо-собаки в два раза эффективнее',
     'upgrade.roboDogsUpgrade010.description': 'Робо-собаки в два раза эффективнее',
+    'upgrade.roboMaidsUpgrade001.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода I',
+    'upgrade.roboMaidsUpgrade002.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода II',
+    'upgrade.roboMaidsUpgrade003.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода III',
+    'upgrade.roboMaidsUpgrade004.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода IV',
+    'upgrade.roboMaidsUpgrade005.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода V',
+    'upgrade.roboMaidsUpgrade006.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода VI',
+    'upgrade.roboMaidsUpgrade007.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода VII',
+    'upgrade.roboMaidsUpgrade008.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода VIII',
+    'upgrade.roboMaidsUpgrade009.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода IX',
+    'upgrade.roboMaidsUpgrade010.name': 'Метод Средства для Мытья Посуды + Перекиси Водорода X',
 }
 
 export default ru
