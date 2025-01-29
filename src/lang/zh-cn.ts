@@ -283,6 +283,16 @@ const zhCn = {
     'upgrade.oldNeuralNetworksUpgrade008.description': '旧神经网络效率提高两倍',
     'upgrade.oldNeuralNetworksUpgrade009.description': '旧神经网络效率提高两倍',
     'upgrade.oldNeuralNetworksUpgrade010.description': '旧神经网络效率提高两倍',
+    'upgrade.pressEnterUpgrade001.name': '快速手指 I',
+    'upgrade.pressEnterUpgrade002.name': '快速手指 II',
+    'upgrade.pressEnterUpgrade003.name': '快速手指 III',
+    'upgrade.pressEnterUpgrade004.name': '快速手指 IV',
+    'upgrade.pressEnterUpgrade005.name': '快速手指 V',
+    'upgrade.pressEnterUpgrade006.name': '快速手指 VI',
+    'upgrade.pressEnterUpgrade007.name': '快速手指 VII',
+    'upgrade.pressEnterUpgrade008.name': '快速手指 VIII',
+    'upgrade.pressEnterUpgrade009.name': '快速手指 IX',
+    'upgrade.pressEnterUpgrade010.name': '快速手指 X',
 }
 
 export default zhCn

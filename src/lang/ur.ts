@@ -283,6 +283,16 @@ const ur = {
     'upgrade.oldNeuralNetworksUpgrade008.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
     'upgrade.oldNeuralNetworksUpgrade009.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
     'upgrade.oldNeuralNetworksUpgrade010.description': 'پرانی نیورل نیٹ ورکس دوگنا مؤثر ہیں',
+    'upgrade.pressEnterUpgrade001.name': 'تیز انگلیاں I',
+    'upgrade.pressEnterUpgrade002.name': 'تیز انگلیاں II',
+    'upgrade.pressEnterUpgrade003.name': 'تیز انگلیاں III',
+    'upgrade.pressEnterUpgrade004.name': 'تیز انگلیاں IV',
+    'upgrade.pressEnterUpgrade005.name': 'تیز انگلیاں V',
+    'upgrade.pressEnterUpgrade006.name': 'تیز انگلیاں VI',
+    'upgrade.pressEnterUpgrade007.name': 'تیز انگلیاں VII',
+    'upgrade.pressEnterUpgrade008.name': 'تیز انگلیاں VIII',
+    'upgrade.pressEnterUpgrade009.name': 'تیز انگلیاں IX',
+    'upgrade.pressEnterUpgrade010.name': 'تیز انگلیاں X',
 }
 
 export default ur

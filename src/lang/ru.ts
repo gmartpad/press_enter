@@ -283,6 +283,16 @@ const ru = {
     'upgrade.oldNeuralNetworksUpgrade008.description': 'Старые нейронные сети в два раза эффективнее',
     'upgrade.oldNeuralNetworksUpgrade009.description': 'Старые нейронные сети в два раза эффективнее',
     'upgrade.oldNeuralNetworksUpgrade010.description': 'Старые нейронные сети в два раза эффективнее',
+    'upgrade.pressEnterUpgrade001.name': 'Быстрые Пальцы I',
+    'upgrade.pressEnterUpgrade002.name': 'Быстрые Пальцы II',
+    'upgrade.pressEnterUpgrade003.name': 'Быстрые Пальцы III',
+    'upgrade.pressEnterUpgrade004.name': 'Быстрые Пальцы IV',
+    'upgrade.pressEnterUpgrade005.name': 'Быстрые Пальцы V',
+    'upgrade.pressEnterUpgrade006.name': 'Быстрые Пальцы VI',
+    'upgrade.pressEnterUpgrade007.name': 'Быстрые Пальцы VII',
+    'upgrade.pressEnterUpgrade008.name': 'Быстрые Пальцы VIII',
+    'upgrade.pressEnterUpgrade009.name': 'Быстрые Пальцы IX',
+    'upgrade.pressEnterUpgrade010.name': 'Быстрые Пальцы X',
 }
 
 export default ru

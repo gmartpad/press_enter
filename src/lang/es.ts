@@ -270,6 +270,16 @@ const es = {
     'upgrade.oldNeuralNetworksUpgrade008.description': 'Las redes neuronales antiguas son el doble de eficientes',
     'upgrade.oldNeuralNetworksUpgrade009.description': 'Las redes neuronales antiguas son el doble de eficientes',
     'upgrade.oldNeuralNetworksUpgrade010.description': 'Las redes neuronales antiguas son el doble de eficientes',
+    'upgrade.pressEnterUpgrade001.name': 'Dedos Rápidos I',
+    'upgrade.pressEnterUpgrade002.name': 'Dedos Rápidos II',
+    'upgrade.pressEnterUpgrade003.name': 'Dedos Rápidos III',
+    'upgrade.pressEnterUpgrade004.name': 'Dedos Rápidos IV',
+    'upgrade.pressEnterUpgrade005.name': 'Dedos Rápidos V',
+    'upgrade.pressEnterUpgrade006.name': 'Dedos Rápidos VI',
+    'upgrade.pressEnterUpgrade007.name': 'Dedos Rápidos VII',
+    'upgrade.pressEnterUpgrade008.name': 'Dedos Rápidos VIII',
+    'upgrade.pressEnterUpgrade009.name': 'Dedos Rápidos IX',
+    'upgrade.pressEnterUpgrade010.name': 'Dedos Rápidos X',
 }
 
 export default es

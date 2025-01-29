@@ -283,6 +283,16 @@ const id = {
     'upgrade.oldNeuralNetworksUpgrade008.description': 'Jaringan Neural Lama dua kali lebih efisien',
     'upgrade.oldNeuralNetworksUpgrade009.description': 'Jaringan Neural Lama dua kali lebih efisien',
     'upgrade.oldNeuralNetworksUpgrade010.description': 'Jaringan Neural Lama dua kali lebih efisien',
+    'upgrade.pressEnterUpgrade001.name': 'Jari Cepat I',
+    'upgrade.pressEnterUpgrade002.name': 'Jari Cepat II',
+    'upgrade.pressEnterUpgrade003.name': 'Jari Cepat III',
+    'upgrade.pressEnterUpgrade004.name': 'Jari Cepat IV',
+    'upgrade.pressEnterUpgrade005.name': 'Jari Cepat V',
+    'upgrade.pressEnterUpgrade006.name': 'Jari Cepat VI',
+    'upgrade.pressEnterUpgrade007.name': 'Jari Cepat VII',
+    'upgrade.pressEnterUpgrade008.name': 'Jari Cepat VIII',
+    'upgrade.pressEnterUpgrade009.name': 'Jari Cepat IX',
+    'upgrade.pressEnterUpgrade010.name': 'Jari Cepat X',
 }
 
 export default id

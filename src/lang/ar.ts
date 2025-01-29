@@ -283,6 +283,16 @@ const ar = {
     'upgrade.oldNeuralNetworksUpgrade008.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
     'upgrade.oldNeuralNetworksUpgrade009.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
     'upgrade.oldNeuralNetworksUpgrade010.description': 'الشبكات العصبية القديمة أكثر كفاءة مرتين',
+    'upgrade.pressEnterUpgrade001.name': 'أصابع سريعة I',
+    'upgrade.pressEnterUpgrade002.name': 'أصابع سريعة II',
+    'upgrade.pressEnterUpgrade003.name': 'أصابع سريعة III',
+    'upgrade.pressEnterUpgrade004.name': 'أصابع سريعة IV',
+    'upgrade.pressEnterUpgrade005.name': 'أصابع سريعة V',
+    'upgrade.pressEnterUpgrade006.name': 'أصابع سريعة VI',
+    'upgrade.pressEnterUpgrade007.name': 'أصابع سريعة VII',
+    'upgrade.pressEnterUpgrade008.name': 'أصابع سريعة VIII',
+    'upgrade.pressEnterUpgrade009.name': 'أصابع سريعة IX',
+    'upgrade.pressEnterUpgrade010.name': 'أصابع سريعة X',
 }
 
 export default ar

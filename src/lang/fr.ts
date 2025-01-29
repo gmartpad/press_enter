@@ -283,6 +283,16 @@ const fr = {
     'upgrade.oldNeuralNetworksUpgrade008.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
     'upgrade.oldNeuralNetworksUpgrade009.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
     'upgrade.oldNeuralNetworksUpgrade010.description': 'Les anciens réseaux neuronaux sont deux fois plus efficaces',
+    'upgrade.pressEnterUpgrade001.name': 'Doigts Rapides I',
+    'upgrade.pressEnterUpgrade002.name': 'Doigts Rapides II',
+    'upgrade.pressEnterUpgrade003.name': 'Doigts Rapides III',
+    'upgrade.pressEnterUpgrade004.name': 'Doigts Rapides IV',
+    'upgrade.pressEnterUpgrade005.name': 'Doigts Rapides V',
+    'upgrade.pressEnterUpgrade006.name': 'Doigts Rapides VI',
+    'upgrade.pressEnterUpgrade007.name': 'Doigts Rapides VII',
+    'upgrade.pressEnterUpgrade008.name': 'Doigts Rapides VIII',
+    'upgrade.pressEnterUpgrade009.name': 'Doigts Rapides IX',
+    'upgrade.pressEnterUpgrade010.name': 'Doigts Rapides X',
 }
 
 export default fr
