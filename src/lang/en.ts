@@ -310,6 +310,27 @@ const en = {
     'upgrade.roboDogsUpgrade008.description': 'Robo-Dogs are twice as efficient',
     'upgrade.roboDogsUpgrade009.description': 'Robo-Dogs are twice as efficient',
     'upgrade.roboDogsUpgrade010.description': 'Robo-Dogs are twice as efficient',
+    'upgrade.roboMaidsUpgrade001.name': 'Dish Soap + Hydrogen Peroxide Trick I',
+    'upgrade.roboMaidsUpgrade002.name': 'Dish Soap + Hydrogen Peroxide Trick II',
+    'upgrade.roboMaidsUpgrade003.name': 'Dish Soap + Hydrogen Peroxide Trick III',
+    'upgrade.roboMaidsUpgrade004.name': 'Dish Soap + Hydrogen Peroxide Trick IV',
+    'upgrade.roboMaidsUpgrade005.name': 'Dish Soap + Hydrogen Peroxide Trick V',
+    'upgrade.roboMaidsUpgrade006.name': 'Dish Soap + Hydrogen Peroxide Trick VI',
+    'upgrade.roboMaidsUpgrade007.name': 'Dish Soap + Hydrogen Peroxide Trick VII',
+    'upgrade.roboMaidsUpgrade008.name': 'Dish Soap + Hydrogen Peroxide Trick VIII',
+    'upgrade.roboMaidsUpgrade009.name': 'Dish Soap + Hydrogen Peroxide Trick IX',
+    'upgrade.roboMaidsUpgrade010.name': 'Dish Soap + Hydrogen Peroxide Trick X',
+    'upgrade.roboMaidsUpgrade001.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade002.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade003.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade004.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade005.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade006.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade007.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade008.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade009.description': 'Robo-Maids are twice as efficient',
+    'upgrade.roboMaidsUpgrade010.description': 'Robo-Maids are twice as efficient',
+
 }
 
 export default en
