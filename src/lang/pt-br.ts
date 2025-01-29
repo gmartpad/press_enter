@@ -383,6 +383,16 @@ const ptBr = {
     'upgrade.turingTestersUpgrade008.description': 'Testadores de Turing são duas vezes mais eficientes',
     'upgrade.turingTestersUpgrade009.description': 'Testadores de Turing são duas vezes mais eficientes',
     'upgrade.turingTestersUpgrade010.description': 'Testadores de Turing são duas vezes mais eficientes',
+    'upgrade.virtualAssistantsUpgrade001.name': 'Agendamento Automático de Reuniões I',
+    'upgrade.virtualAssistantsUpgrade002.name': 'Agendamento Automático de Reuniões II',
+    'upgrade.virtualAssistantsUpgrade003.name': 'Agendamento Automático de Reuniões III',
+    'upgrade.virtualAssistantsUpgrade004.name': 'Agendamento Automático de Reuniões IV',
+    'upgrade.virtualAssistantsUpgrade005.name': 'Agendamento Automático de Reuniões V',
+    'upgrade.virtualAssistantsUpgrade006.name': 'Agendamento Automático de Reuniões VI',
+    'upgrade.virtualAssistantsUpgrade007.name': 'Agendamento Automático de Reuniões VII',
+    'upgrade.virtualAssistantsUpgrade008.name': 'Agendamento Automático de Reuniões VIII',
+    'upgrade.virtualAssistantsUpgrade009.name': 'Agendamento Automático de Reuniões IX',
+    'upgrade.virtualAssistantsUpgrade010.name': 'Agendamento Automático de Reuniões X',
 }
 
 export default ptBr

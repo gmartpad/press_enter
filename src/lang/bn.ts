@@ -383,6 +383,16 @@ const bn = {
     'upgrade.turingTestersUpgrade008.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
     'upgrade.turingTestersUpgrade009.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
     'upgrade.turingTestersUpgrade010.description': 'টিউরিং টেস্টারগুলি দ্বিগুণ দক্ষ',
+    'upgrade.virtualAssistantsUpgrade001.name': 'স্বয়ংক্রিয় সভা নির্ধারণ I',
+    'upgrade.virtualAssistantsUpgrade002.name': 'স্বয়ংক্রিয় সভা নির্ধারণ II',
+    'upgrade.virtualAssistantsUpgrade003.name': 'স্বয়ংক্রিয় সভা নির্ধারণ III',
+    'upgrade.virtualAssistantsUpgrade004.name': 'স্বয়ংক্রিয় সভা নির্ধারণ IV',
+    'upgrade.virtualAssistantsUpgrade005.name': 'স্বয়ংক্রিয় সভা নির্ধারণ V',
+    'upgrade.virtualAssistantsUpgrade006.name': 'স্বয়ংক্রিয় সভা নির্ধারণ VI',
+    'upgrade.virtualAssistantsUpgrade007.name': 'স্বয়ংক্রিয় সভা নির্ধারণ VII',
+    'upgrade.virtualAssistantsUpgrade008.name': 'স্বয়ংক্রিয় সভা নির্ধারণ VIII',
+    'upgrade.virtualAssistantsUpgrade009.name': 'স্বয়ংক্রিয় সভা নির্ধারণ IX',
+    'upgrade.virtualAssistantsUpgrade010.name': 'স্বয়ংক্রিয় সভা নির্ধারণ X',
 }
 
 export default bn
