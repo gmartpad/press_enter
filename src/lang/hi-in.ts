@@ -343,6 +343,16 @@ const hiIn = {
     'upgrade.roboMaidsUpgrade008.description': 'रोबो-मेड्स दोगुने कुशल होते हैं',
     'upgrade.roboMaidsUpgrade009.description': 'रोबो-मेड्स दोगुने कुशल होते हैं',
     'upgrade.roboMaidsUpgrade010.description': 'रोबो-मेड्स दोगुने कुशल होते हैं',
+    'upgrade.roboTurtlesUpgrade001.name': 'क्रोम-लेपित खोल I',
+    'upgrade.roboTurtlesUpgrade002.name': 'क्रोम-लेपित खोल II',
+    'upgrade.roboTurtlesUpgrade003.name': 'क्रोम-लेपित खोल III',
+    'upgrade.roboTurtlesUpgrade004.name': 'क्रोम-लेपित खोल IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'क्रोम-लेपित खोल V',
+    'upgrade.roboTurtlesUpgrade006.name': 'क्रोम-लेपित खोल VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'क्रोम-लेपित खोल VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'क्रोम-लेपित खोल VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'क्रोम-लेपित खोल IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'क्रोम-लेपित खोल X',
 }
 
 export default hiIn

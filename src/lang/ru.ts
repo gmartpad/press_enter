@@ -343,6 +343,16 @@ const ru = {
     'upgrade.roboMaidsUpgrade008.description': 'Роботы-горничные в два раза эффективнее',
     'upgrade.roboMaidsUpgrade009.description': 'Роботы-горничные в два раза эффективнее',
     'upgrade.roboMaidsUpgrade010.description': 'Роботы-горничные в два раза эффективнее',
+    'upgrade.roboTurtlesUpgrade001.name': 'Хромированные Панцири I',
+    'upgrade.roboTurtlesUpgrade002.name': 'Хромированные Панцири II',
+    'upgrade.roboTurtlesUpgrade003.name': 'Хромированные Панцири III',
+    'upgrade.roboTurtlesUpgrade004.name': 'Хромированные Панцири IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'Хромированные Панцири V',
+    'upgrade.roboTurtlesUpgrade006.name': 'Хромированные Панцири VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'Хромированные Панцири VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'Хромированные Панцири VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'Хромированные Панцири IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'Хромированные Панцири X',
 }
 
 export default ru

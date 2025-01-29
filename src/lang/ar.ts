@@ -343,6 +343,16 @@ const ar = {
     'upgrade.roboMaidsUpgrade008.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
     'upgrade.roboMaidsUpgrade009.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
     'upgrade.roboMaidsUpgrade010.description': 'روبوتات الخادمات ذات كفاءة مضاعفة',
+    'upgrade.roboTurtlesUpgrade001.name': 'أصداف مطلية بالكروم I',
+    'upgrade.roboTurtlesUpgrade002.name': 'أصداف مطلية بالكروم II',
+    'upgrade.roboTurtlesUpgrade003.name': 'أصداف مطلية بالكروم III',
+    'upgrade.roboTurtlesUpgrade004.name': 'أصداف مطلية بالكروم IV',
+    'upgrade.roboTurtlesUpgrade005.name': 'أصداف مطلية بالكروم V',
+    'upgrade.roboTurtlesUpgrade006.name': 'أصداف مطلية بالكروم VI',
+    'upgrade.roboTurtlesUpgrade007.name': 'أصداف مطلية بالكروم VII',
+    'upgrade.roboTurtlesUpgrade008.name': 'أصداف مطلية بالكروم VIII',
+    'upgrade.roboTurtlesUpgrade009.name': 'أصداف مطلية بالكروم IX',
+    'upgrade.roboTurtlesUpgrade010.name': 'أصداف مطلية بالكروم X',
 }
 
 export default ar

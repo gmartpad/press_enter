@@ -343,6 +343,16 @@ const zhCn = {
     'upgrade.roboMaidsUpgrade008.description': '机器女佣的效率提高一倍',
     'upgrade.roboMaidsUpgrade009.description': '机器女佣的效率提高一倍',
     'upgrade.roboMaidsUpgrade010.description': '机器女佣的效率提高一倍',
+    'upgrade.roboTurtlesUpgrade001.name': '镀铬外壳 I',
+    'upgrade.roboTurtlesUpgrade002.name': '镀铬外壳 II',
+    'upgrade.roboTurtlesUpgrade003.name': '镀铬外壳 III',
+    'upgrade.roboTurtlesUpgrade004.name': '镀铬外壳 IV',
+    'upgrade.roboTurtlesUpgrade005.name': '镀铬外壳 V',
+    'upgrade.roboTurtlesUpgrade006.name': '镀铬外壳 VI',
+    'upgrade.roboTurtlesUpgrade007.name': '镀铬外壳 VII',
+    'upgrade.roboTurtlesUpgrade008.name': '镀铬外壳 VIII',
+    'upgrade.roboTurtlesUpgrade009.name': '镀铬外壳 IX',
+    'upgrade.roboTurtlesUpgrade010.name': '镀铬外壳 X',
 }
 
 export default zhCn
