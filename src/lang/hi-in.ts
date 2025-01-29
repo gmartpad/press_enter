@@ -393,6 +393,16 @@ const hiIn = {
     'upgrade.virtualAssistantsUpgrade008.name': 'स्वचालित बैठक अनुसूची VIII',
     'upgrade.virtualAssistantsUpgrade009.name': 'स्वचालित बैठक अनुसूची IX',
     'upgrade.virtualAssistantsUpgrade010.name': 'स्वचालित बैठक अनुसूची X',
+    'upgrade.virtualAssistantsUpgrade001.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade002.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade003.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade004.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade005.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade006.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade007.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade008.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade009.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade010.description': 'वर्चुअल असिस्टेंट दोगुने कुशल होते हैं',
 }
 
 export default hiIn

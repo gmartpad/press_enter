@@ -393,6 +393,16 @@ const ur = {
     'upgrade.virtualAssistantsUpgrade008.name': 'خودکار میٹنگ شیڈولنگ VIII',
     'upgrade.virtualAssistantsUpgrade009.name': 'خودکار میٹنگ شیڈولنگ IX',
     'upgrade.virtualAssistantsUpgrade010.name': 'خودکار میٹنگ شیڈولنگ X',
+    'upgrade.virtualAssistantsUpgrade001.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade002.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade003.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade004.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade005.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade006.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade007.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade008.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade009.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade010.description': 'ورچوئل اسسٹنٹس دگنا زیادہ مؤثر ہیں',
 }
 
 export default ur

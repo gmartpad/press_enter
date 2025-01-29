@@ -393,6 +393,16 @@ const zhCn = {
     'upgrade.virtualAssistantsUpgrade008.name': '自动会议安排 VIII',
     'upgrade.virtualAssistantsUpgrade009.name': '自动会议安排 IX',
     'upgrade.virtualAssistantsUpgrade010.name': '自动会议安排 X',
+    'upgrade.virtualAssistantsUpgrade001.description': '虚拟助理的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade002.description': '虚拟助理的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade003.description': '虚拟助理的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade004.description': '虚拟助理的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade005.description': '虚拟助理的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade006.description': '虚拟助理的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade007.description': '虚拟助理的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade008.description': '虚拟助理的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade009.description': '虚拟助理的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade010.description': '虚拟助理的效率提高一倍',
 }
 
 export default zhCn
