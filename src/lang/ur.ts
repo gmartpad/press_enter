@@ -383,6 +383,16 @@ const ur = {
     'upgrade.turingTestersUpgrade008.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
     'upgrade.turingTestersUpgrade009.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
     'upgrade.turingTestersUpgrade010.description': 'ٹیورنگ ٹیسٹرز دگنا زیادہ مؤثر ہیں',
+    'upgrade.virtualAssistantsUpgrade001.name': 'خودکار میٹنگ شیڈولنگ I',
+    'upgrade.virtualAssistantsUpgrade002.name': 'خودکار میٹنگ شیڈولنگ II',
+    'upgrade.virtualAssistantsUpgrade003.name': 'خودکار میٹنگ شیڈولنگ III',
+    'upgrade.virtualAssistantsUpgrade004.name': 'خودکار میٹنگ شیڈولنگ IV',
+    'upgrade.virtualAssistantsUpgrade005.name': 'خودکار میٹنگ شیڈولنگ V',
+    'upgrade.virtualAssistantsUpgrade006.name': 'خودکار میٹنگ شیڈولنگ VI',
+    'upgrade.virtualAssistantsUpgrade007.name': 'خودکار میٹنگ شیڈولنگ VII',
+    'upgrade.virtualAssistantsUpgrade008.name': 'خودکار میٹنگ شیڈولنگ VIII',
+    'upgrade.virtualAssistantsUpgrade009.name': 'خودکار میٹنگ شیڈولنگ IX',
+    'upgrade.virtualAssistantsUpgrade010.name': 'خودکار میٹنگ شیڈولنگ X',
 }
 
 export default ur

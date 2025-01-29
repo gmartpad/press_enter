@@ -370,6 +370,16 @@ const en = {
     'upgrade.turingTestersUpgrade008.description': 'Turing Testers are twice as efficient',
     'upgrade.turingTestersUpgrade009.description': 'Turing Testers are twice as efficient',
     'upgrade.turingTestersUpgrade010.description': 'Turing Testers are twice as efficient',
+    'upgrade.virtualAssistantsUpgrade001.name': 'Automatic Meeting Scheduling I',
+    'upgrade.virtualAssistantsUpgrade002.name': 'Automatic Meeting Scheduling II',
+    'upgrade.virtualAssistantsUpgrade003.name': 'Automatic Meeting Scheduling III',
+    'upgrade.virtualAssistantsUpgrade004.name': 'Automatic Meeting Scheduling IV',
+    'upgrade.virtualAssistantsUpgrade005.name': 'Automatic Meeting Scheduling V',
+    'upgrade.virtualAssistantsUpgrade006.name': 'Automatic Meeting Scheduling VI',
+    'upgrade.virtualAssistantsUpgrade007.name': 'Automatic Meeting Scheduling VII',
+    'upgrade.virtualAssistantsUpgrade008.name': 'Automatic Meeting Scheduling VIII',
+    'upgrade.virtualAssistantsUpgrade009.name': 'Automatic Meeting Scheduling IX',
+    'upgrade.virtualAssistantsUpgrade010.name': 'Automatic Meeting Scheduling X',
 }
 
 export default en

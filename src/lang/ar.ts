@@ -383,6 +383,16 @@ const ar = {
     'upgrade.turingTestersUpgrade008.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
     'upgrade.turingTestersUpgrade009.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
     'upgrade.turingTestersUpgrade010.description': 'مختبرات تورينج ذات كفاءة مضاعفة',
+    'upgrade.virtualAssistantsUpgrade001.name': 'جدولة الاجتماعات التلقائية I',
+    'upgrade.virtualAssistantsUpgrade002.name': 'جدولة الاجتماعات التلقائية II',
+    'upgrade.virtualAssistantsUpgrade003.name': 'جدولة الاجتماعات التلقائية III',
+    'upgrade.virtualAssistantsUpgrade004.name': 'جدولة الاجتماعات التلقائية IV',
+    'upgrade.virtualAssistantsUpgrade005.name': 'جدولة الاجتماعات التلقائية V',
+    'upgrade.virtualAssistantsUpgrade006.name': 'جدولة الاجتماعات التلقائية VI',
+    'upgrade.virtualAssistantsUpgrade007.name': 'جدولة الاجتماعات التلقائية VII',
+    'upgrade.virtualAssistantsUpgrade008.name': 'جدولة الاجتماعات التلقائية VIII',
+    'upgrade.virtualAssistantsUpgrade009.name': 'جدولة الاجتماعات التلقائية IX',
+    'upgrade.virtualAssistantsUpgrade010.name': 'جدولة الاجتماعات التلقائية X',
 }
 
 export default ar

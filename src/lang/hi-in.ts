@@ -383,6 +383,16 @@ const hiIn = {
     'upgrade.turingTestersUpgrade008.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
     'upgrade.turingTestersUpgrade009.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
     'upgrade.turingTestersUpgrade010.description': 'ट्यूरिंग टेस्टर दोगुने कुशल होते हैं',
+    'upgrade.virtualAssistantsUpgrade001.name': 'स्वचालित बैठक अनुसूची I',
+    'upgrade.virtualAssistantsUpgrade002.name': 'स्वचालित बैठक अनुसूची II',
+    'upgrade.virtualAssistantsUpgrade003.name': 'स्वचालित बैठक अनुसूची III',
+    'upgrade.virtualAssistantsUpgrade004.name': 'स्वचालित बैठक अनुसूची IV',
+    'upgrade.virtualAssistantsUpgrade005.name': 'स्वचालित बैठक अनुसूची V',
+    'upgrade.virtualAssistantsUpgrade006.name': 'स्वचालित बैठक अनुसूची VI',
+    'upgrade.virtualAssistantsUpgrade007.name': 'स्वचालित बैठक अनुसूची VII',
+    'upgrade.virtualAssistantsUpgrade008.name': 'स्वचालित बैठक अनुसूची VIII',
+    'upgrade.virtualAssistantsUpgrade009.name': 'स्वचालित बैठक अनुसूची IX',
+    'upgrade.virtualAssistantsUpgrade010.name': 'स्वचालित बैठक अनुसूची X',
 }
 
 export default hiIn

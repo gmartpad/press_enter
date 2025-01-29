@@ -383,6 +383,16 @@ const ru = {
     'upgrade.turingTestersUpgrade008.description': 'Тестеры Тьюринга в два раза эффективнее',
     'upgrade.turingTestersUpgrade009.description': 'Тестеры Тьюринга в два раза эффективнее',
     'upgrade.turingTestersUpgrade010.description': 'Тестеры Тьюринга в два раза эффективнее',
+    'upgrade.virtualAssistantsUpgrade001.name': 'Автоматическое Планирование Встреч I',
+    'upgrade.virtualAssistantsUpgrade002.name': 'Автоматическое Планирование Встреч II',
+    'upgrade.virtualAssistantsUpgrade003.name': 'Автоматическое Планирование Встреч III',
+    'upgrade.virtualAssistantsUpgrade004.name': 'Автоматическое Планирование Встреч IV',
+    'upgrade.virtualAssistantsUpgrade005.name': 'Автоматическое Планирование Встреч V',
+    'upgrade.virtualAssistantsUpgrade006.name': 'Автоматическое Планирование Встреч VI',
+    'upgrade.virtualAssistantsUpgrade007.name': 'Автоматическое Планирование Встреч VII',
+    'upgrade.virtualAssistantsUpgrade008.name': 'Автоматическое Планирование Встреч VIII',
+    'upgrade.virtualAssistantsUpgrade009.name': 'Автоматическое Планирование Встреч IX',
+    'upgrade.virtualAssistantsUpgrade010.name': 'Автоматическое Планирование Встреч X',
 }
 
 export default ru

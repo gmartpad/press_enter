@@ -383,6 +383,16 @@ const id = {
     'upgrade.turingTestersUpgrade008.description': 'Penguji Turing dua kali lebih efisien',
     'upgrade.turingTestersUpgrade009.description': 'Penguji Turing dua kali lebih efisien',
     'upgrade.turingTestersUpgrade010.description': 'Penguji Turing dua kali lebih efisien',
+    'upgrade.virtualAssistantsUpgrade001.name': 'Penjadwalan Rapat Otomatis I',
+    'upgrade.virtualAssistantsUpgrade002.name': 'Penjadwalan Rapat Otomatis II',
+    'upgrade.virtualAssistantsUpgrade003.name': 'Penjadwalan Rapat Otomatis III',
+    'upgrade.virtualAssistantsUpgrade004.name': 'Penjadwalan Rapat Otomatis IV',
+    'upgrade.virtualAssistantsUpgrade005.name': 'Penjadwalan Rapat Otomatis V',
+    'upgrade.virtualAssistantsUpgrade006.name': 'Penjadwalan Rapat Otomatis VI',
+    'upgrade.virtualAssistantsUpgrade007.name': 'Penjadwalan Rapat Otomatis VII',
+    'upgrade.virtualAssistantsUpgrade008.name': 'Penjadwalan Rapat Otomatis VIII',
+    'upgrade.virtualAssistantsUpgrade009.name': 'Penjadwalan Rapat Otomatis IX',
+    'upgrade.virtualAssistantsUpgrade010.name': 'Penjadwalan Rapat Otomatis X',
 }
 
 export default id

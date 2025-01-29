@@ -383,6 +383,16 @@ const zhCn = {
     'upgrade.turingTestersUpgrade008.description': '图灵测试员的效率提高一倍',
     'upgrade.turingTestersUpgrade009.description': '图灵测试员的效率提高一倍',
     'upgrade.turingTestersUpgrade010.description': '图灵测试员的效率提高一倍',
+    'upgrade.virtualAssistantsUpgrade001.name': '自动会议安排 I',
+    'upgrade.virtualAssistantsUpgrade002.name': '自动会议安排 II',
+    'upgrade.virtualAssistantsUpgrade003.name': '自动会议安排 III',
+    'upgrade.virtualAssistantsUpgrade004.name': '自动会议安排 IV',
+    'upgrade.virtualAssistantsUpgrade005.name': '自动会议安排 V',
+    'upgrade.virtualAssistantsUpgrade006.name': '自动会议安排 VI',
+    'upgrade.virtualAssistantsUpgrade007.name': '自动会议安排 VII',
+    'upgrade.virtualAssistantsUpgrade008.name': '自动会议安排 VIII',
+    'upgrade.virtualAssistantsUpgrade009.name': '自动会议安排 IX',
+    'upgrade.virtualAssistantsUpgrade010.name': '自动会议安排 X',
 }
 
 export default zhCn
