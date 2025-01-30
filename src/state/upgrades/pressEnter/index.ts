@@ -52,7 +52,7 @@ const pressEnterUpgrades: Upgrade[] = [
             }
         },
         requirementsToBeListable: {
-            pressEnterClicks: 10_000
+            pressEnterClicks: 2000
         }
     },
     {
@@ -70,7 +70,7 @@ const pressEnterUpgrades: Upgrade[] = [
             }
         },
         requirementsToBeListable: {
-            pressEnterClicks: 100_000
+            pressEnterClicks: 3000
         }
     },
     {
@@ -88,7 +88,7 @@ const pressEnterUpgrades: Upgrade[] = [
             }
         },
         requirementsToBeListable: {
-            pressEnterClicks: 1_000_000
+            pressEnterClicks: 4000
         }
     },
     {
@@ -106,7 +106,7 @@ const pressEnterUpgrades: Upgrade[] = [
             }
         },
         requirementsToBeListable: {
-            pressEnterClicks: 10_000_000
+            pressEnterClicks: 5000
         }
     },
     {
@@ -124,7 +124,7 @@ const pressEnterUpgrades: Upgrade[] = [
             }
         },
         requirementsToBeListable: {
-            pressEnterClicks: 100_000_000
+            pressEnterClicks: 6000
         }
     },
     {
@@ -142,7 +142,7 @@ const pressEnterUpgrades: Upgrade[] = [
             }
         },
         requirementsToBeListable: {
-            pressEnterClicks: 1_000_000_000
+            pressEnterClicks: 7000
         }
     },
     {
@@ -160,7 +160,7 @@ const pressEnterUpgrades: Upgrade[] = [
             }
         },
         requirementsToBeListable: {
-            pressEnterClicks: 10_000_000_000
+            pressEnterClicks: 8000
         }
     },
     {
@@ -178,7 +178,7 @@ const pressEnterUpgrades: Upgrade[] = [
             }
         },
         requirementsToBeListable: {
-            pressEnterClicks: 100_000_000_000
+            pressEnterClicks: 9000
         }
     },
 ]
