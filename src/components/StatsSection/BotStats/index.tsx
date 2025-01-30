@@ -23,7 +23,7 @@ const BotStats = ({
 
     const currentUnitProduction = formatLargeNumber(Number((productionPerUnit * incrementorMultiplier).toFixed(2)), intl)
 
-    const currentBitsProducedSoFar = formatLargeNumber(bitsProducedSoFar, intl)
+    const currentBitsProducedSoFar = formatLargeNumber(Number(bitsProducedSoFar.toFixed(0)), intl)
 
     const stats = useMemo<Stat[]>(() => [
         {
