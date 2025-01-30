@@ -1,7 +1,6 @@
 import { useRecoilCallback, useRecoilState, useRecoilValue } from 'recoil'
 import { autoIncrementorsState, bitState, upgradesState } from '@state/atoms'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { debounce } from 'lodash'
 import { type Upgrade } from '@upgrades'
 import { useDebouncedProduction } from './useDebouncedProduction'
 import { Incrementor } from '@state/defaultAutoIncrementors'
@@ -57,15 +56,15 @@ const useBitUpdater = () => {
     const currentProduction = useDebouncedProduction()
     const currentProductionByMS = useMemo(() => currentProduction / 1000, [currentProduction])
 
-    const saveLastUpdateTime = useMemo(() => debounce((time: number) => {
+    const saveLastUpdateTime = useCallback((time: number) => {
         localStorage.setItem('lastUpdateTime', String(time))
-    }, 500), [])
+    }, [])
 
     useEffect(() => {
         const lastUpdateTime = localStorage.getItem('lastUpdateTime')
         if (lastUpdateTime) {
             const elapsedTime = Math.floor((Date.now() - Number(lastUpdateTime)) / 1000)
-            
+
             setBits(currVal => currVal + elapsedTime * currentProduction)
 
             const elapsedUpdatedIncrementors = autoIncrementors.map(inc => {
@@ -121,7 +120,6 @@ const useBitUpdater = () => {
                 clearInterval(intervalRef.current)
                 intervalRef.current = null
             }
-            saveLastUpdateTime.cancel()
         }
     }, [startBitUpdate])
 
