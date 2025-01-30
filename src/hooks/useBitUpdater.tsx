@@ -1,22 +1,27 @@
 import { useRecoilCallback, useRecoilState, useRecoilValue } from 'recoil'
-import { autoIncrementorsState, BitIntervals, bitIntervalsState, bitState, upgradesState } from '@state/atoms'
-import { useCallback, useEffect, useMemo } from 'react'
+import { autoIncrementorsState, bitState, upgradesState } from '@state/atoms'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { debounce } from 'lodash'
 import { type Upgrade } from '@upgrades'
 import { useDebouncedProduction } from './useDebouncedProduction'
-import handleClearInterval from '@utils/handleClearInterval'
 import { Incrementor } from '@state/defaultAutoIncrementors'
 
 const useBitUpdater = () => {
-    const [bitIntervals, setBitIntervals] = useRecoilState<BitIntervals>(bitIntervalsState)
     const [autoIncrementors, setAutoIncrementors] = useRecoilState<Incrementor[]>(autoIncrementorsState)
     const upgrades = useRecoilValue<Upgrade[]>(upgradesState)
+    const [bits, setBits] = useRecoilState(bitState)
+
+    const intervalRef = useRef<NodeJS.Timeout | null>(null)
+    const lastUpdateRef = useRef<number>(Date.now())
+    const [updateInterval, setUpdateInterval] = useState(100)
 
     const handleUpgradesMultiplicator = useCallback((incrementorId: string, upgrades: Upgrade[]) => {
         let additive = 0
         let multiplicative = 1
         
-        const selectedUpgrades = upgrades.filter((upgrade) => upgrade.purchased && (!upgrade.effects?.specific || upgrade.effects.specific?.incrementorId == incrementorId))
+        const selectedUpgrades = upgrades.filter(
+            (upgrade) => upgrade.purchased && (!upgrade.effects?.specific || upgrade.effects.specific?.incrementorId === incrementorId)
+        )
         
         selectedUpgrades.forEach(upgrade => {
             if (upgrade.effects.global) {
@@ -33,7 +38,7 @@ const useBitUpdater = () => {
         return (1 + additive) * multiplicative
     }, [])
 
-    const setBitsProduced = useRecoilCallback(({ snapshot, set, }) => async (multiplier: number) => {
+    const setBitsProduced = useRecoilCallback(({ snapshot, set }) => async (multiplier: number) => {
         const currentIncrementors = await snapshot.getPromise(autoIncrementorsState)
         const upgrades = await snapshot.getPromise<Upgrade[]>(upgradesState)
 
@@ -49,71 +54,76 @@ const useBitUpdater = () => {
         set(autoIncrementorsState, updatedIncrementors)
     })
 
-    const [bits, setBits] = useRecoilState(bitState)
     const currentProduction = useDebouncedProduction()
-
     const currentProductionByMS = useMemo(() => currentProduction / 1000, [currentProduction])
 
-    const saveLastUpdateTime = useMemo(
-        () =>
-            debounce((time: number) => {
-                localStorage.setItem('lastUpdateTime', String(time))
-            }, 500),
-        []
-    )
+    const saveLastUpdateTime = useMemo(() => debounce((time: number) => {
+        localStorage.setItem('lastUpdateTime', String(time))
+    }, 500), [])
 
     useEffect(() => {
-        // Retrieve the last update time from localStorage
         const lastUpdateTime = localStorage.getItem('lastUpdateTime')
         if (lastUpdateTime) {
             const elapsedTime = Math.floor((Date.now() - Number(lastUpdateTime)) / 1000)
-            // Increment bits based on elapsed time
-            setBits(currVal => currVal + elapsedTime * currentProduction)
             
-            const elapsedUpdatedIncrementors = autoIncrementors.map((inc) => {
+            setBits(currVal => currVal + elapsedTime * currentProduction)
+
+            const elapsedUpdatedIncrementors = autoIncrementors.map(inc => {
                 const upgradesMultiplicator = handleUpgradesMultiplicator(inc.id, upgrades)
 
                 return {
                     ...inc,
-                    bitsProducedSoFar: inc.bitsProducedSoFar + (inc.units * inc.productionPerUnit * 1 * upgradesMultiplicator * elapsedTime)
+                    bitsProducedSoFar: inc.bitsProducedSoFar + (inc.units * inc.productionPerUnit * elapsedTime * upgradesMultiplicator)
                 }
             })
             setAutoIncrementors(elapsedUpdatedIncrementors)
         }
 
-        // Update the last update time in localStorage
-        localStorage.setItem('lastUpdateTime', String(Date.now()))
-        // eslint-disable-next-line
+        lastUpdateRef.current = Date.now()
+        localStorage.setItem('lastUpdateTime', String(lastUpdateRef.current))
     }, [])
 
-    const handleVisibilityChange = useCallback(() => {
-        const updateBitsQuickly = async () => {
-            setBits(currVal => currVal + currentProductionByMS * 1000)
-            await setBitsProduced(1)
-            saveLastUpdateTime(Date.now())
-        }
+    const startBitUpdate = useCallback(() => {
+        if (intervalRef.current) return
 
-        if(bitIntervals.quickUpdateIntervalId) {
-            clearInterval(bitIntervals.quickUpdateIntervalId)
-        }
+        intervalRef.current = setInterval(() => {
+            const now = Date.now()
+            lastUpdateRef.current = now
 
-        setBitIntervals((prevValue) => ({
-            ...prevValue,
-            quickUpdateIntervalId: setInterval(updateBitsQuickly, 1000)
-        }))
-    }, [bitIntervals, currentProduction, currentProductionByMS])
+            setBits(currVal => currVal + (currentProductionByMS * (updateInterval)))
+            setBitsProduced(updateInterval / 1000)
+            saveLastUpdateTime(now)
+        }, updateInterval)
+    }, [currentProductionByMS, saveLastUpdateTime, updateInterval])
 
     useEffect(() => {
-        handleVisibilityChange()
-      
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                setUpdateInterval(3000)
+            } else {
+                setUpdateInterval(200)
+            }
+        }
+
+        document.addEventListener('visibilitychange', handleVisibilityChange)
+        return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }, [])
+
+    useEffect(() => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current)
+            intervalRef.current = null
+        }
+        startBitUpdate()
+        
         return () => {
-            handleClearInterval(bitIntervals.quickUpdateIntervalId)
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current)
+                intervalRef.current = null
+            }
             saveLastUpdateTime.cancel()
         }
-    }, [
-        saveLastUpdateTime,
-        currentProduction,
-    ])
+    }, [startBitUpdate])
 
     return { setBits, bits }
 }
