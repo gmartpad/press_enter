@@ -96,7 +96,7 @@ const Bits = () => {
                     $textX={text.x}
                     $textY={text.y}
                 >
-                    +{text.value} bits
+                    +{formatLargeNumber(Number(Number(text.value).toFixed(0)), intl)} bits
                 </FloatText>
             ))}
         </Aside>
