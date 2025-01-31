@@ -9,6 +9,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 120_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',
@@ -27,6 +28,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 1_200_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',
@@ -45,6 +47,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 12_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',
@@ -63,6 +66,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 120_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',
@@ -81,6 +85,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 1_200_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',
@@ -99,6 +104,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 12_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',
@@ -117,6 +123,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 120_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',
@@ -135,6 +142,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 1_200_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',
@@ -153,6 +161,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 12_000_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',
@@ -171,6 +180,7 @@ const llmsUpgrades: Upgrade[] = [
         description: 'LLMs are twice as efficient',
         cost: 120_000_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'llms',

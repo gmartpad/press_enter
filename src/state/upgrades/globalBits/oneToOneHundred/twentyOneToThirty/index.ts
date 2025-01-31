@@ -10,6 +10,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 10_000_000_000_000
         cost: 1e13,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -29,6 +30,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 50_000_000_000_000
         cost: 5e13,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -48,6 +50,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 100_000_000_000_000
         cost: 1e14,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -67,6 +70,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 500_000_000_000_000
         cost: 5e14,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -86,6 +90,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 500_000_000_000_000
         cost: 5e14,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -105,6 +110,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 1_000_000_000_000_000
         cost: 1e15,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -124,6 +130,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 1_000_000_000_000_000
         cost: 1e15,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -143,6 +150,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 10_000_000_000_000_000
         cost: 1e16,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -162,6 +170,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 10_000_000_000_000_000
         cost: 1e16,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -181,6 +190,7 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
         // 50_000_000_000_000_000
         cost: 5e16,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05

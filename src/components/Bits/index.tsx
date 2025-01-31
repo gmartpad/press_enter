@@ -1,11 +1,10 @@
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { calculatedEnterPressBitAmountState, configState, currentProductionState, enterPressesState } from '@state/atoms'
+import { bitState, calculatedEnterPressBitAmountState, configState, currentProductionState, enterPressesState } from '@state/atoms'
 
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
 import { FloatText, Aside, EnterIcon, EnterKeyButton } from './styled'
 import React, { useCallback, useMemo, useRef, useState } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
-import useBitUpdater from '@hooks/useBitUpdater'
 import { debounce } from 'lodash'
 import { useIntl, FormattedMessage } from 'react-intl'
 
@@ -14,9 +13,9 @@ const sounds = [sound1, sound2, sound3]
 const Bits = () => {
     const intl = useIntl()
     const [enterPresses, setEnterPressesState] = useRecoilState(enterPressesState)
+    const [bits, setBits] = useRecoilState(bitState)
     const currentProduction = useRecoilValue(currentProductionState)
     const calculatedEnterPressBitAmount = useRecoilValue<number>(calculatedEnterPressBitAmountState)
-    const { setBits, bits } = useBitUpdater()
     const config = useRecoilValue(configState)
 
     const [floatTexts, setFloatTexts] = useState<
@@ -53,7 +52,13 @@ const Bits = () => {
             ? e.touches[0].clientY - 60
             : e.clientY - 60
 
-        const value = Number(calculatedEnterPressBitAmount.toFixed(2)).toLocaleString(config.currentLanguageLocale)
+        const isAmountBelowOneMillion = calculatedEnterPressBitAmount < 1_000_000
+
+        const belowOneMillionString = Number(calculatedEnterPressBitAmount.toFixed(2)).toLocaleString(config.currentLanguageLocale)
+
+        const equalOrAboveOneMillionString = (formatLargeNumber(Number(calculatedEnterPressBitAmount.toFixed(0)), intl) ?? '')
+
+        const value = isAmountBelowOneMillion ? belowOneMillionString : equalOrAboveOneMillionString
 
         setFloatTexts((prev) => [...prev, { id, x, y, value }])
 
@@ -96,7 +101,7 @@ const Bits = () => {
                     $textX={text.x}
                     $textY={text.y}
                 >
-                    +{formatLargeNumber(Number(Number(text.value).toFixed(0)), intl)} bits
+                    +{text.value} bits
                 </FloatText>
             ))}
         </Aside>

@@ -9,6 +9,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 60_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',
@@ -27,6 +28,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 2_500_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',
@@ -45,6 +47,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 25_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',
@@ -63,6 +66,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 60_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',
@@ -81,6 +85,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 2_500_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',
@@ -99,6 +104,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 25_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',
@@ -117,6 +123,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 60_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',
@@ -135,6 +142,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 2_500_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',
@@ -153,6 +161,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 25_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',
@@ -171,6 +180,7 @@ const roboMaidsUpgrades: Upgrade[] = [
         description: 'Robo-Maids are twice as efficient',
         cost: 60_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboMaids',

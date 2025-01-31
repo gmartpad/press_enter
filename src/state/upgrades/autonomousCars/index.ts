@@ -9,6 +9,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 10_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',
@@ -27,6 +28,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 30_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',
@@ -45,6 +47,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 1_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',
@@ -63,6 +66,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 10_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',
@@ -81,6 +85,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 30_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',
@@ -99,6 +104,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 1_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',
@@ -117,6 +123,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 10_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',
@@ -135,6 +142,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 30_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',
@@ -153,6 +161,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 1_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',
@@ -171,6 +180,7 @@ const autonomousCarsUpgrades: Upgrade[] = [
         description: 'Autonomous Cars are twice as efficient',
         cost: 10_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'autonomousCars',

@@ -10,6 +10,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 31_622_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 31622e45,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -29,6 +30,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 100_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e50,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -48,6 +50,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 316_227_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 316227e45,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -67,6 +70,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e51,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -86,6 +90,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 3_162_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 3162e48,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -105,6 +110,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 10_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e52,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -124,6 +130,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 31_622_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 31622e48,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -143,6 +150,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 100_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e53,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -162,6 +170,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 316_227_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 316227e48,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -181,6 +190,7 @@ const hundredAndOneToHundredTenUpgrades: Upgrade[] = [
         // 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e54,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05

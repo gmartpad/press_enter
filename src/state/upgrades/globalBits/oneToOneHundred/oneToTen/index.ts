@@ -9,6 +9,7 @@ const oneToTenUpgrades: Upgrade[] = [
         description: 'Bit production multiplier 1%',
         cost: 999_999,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.01
@@ -27,6 +28,7 @@ const oneToTenUpgrades: Upgrade[] = [
         // 5_000_000
         cost: 5e6,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.01
@@ -45,6 +47,7 @@ const oneToTenUpgrades: Upgrade[] = [
         // 10_000_000        
         cost: 1e7,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.01
@@ -64,6 +67,7 @@ const oneToTenUpgrades: Upgrade[] = [
         // 50_000_000
         cost: 5e7,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -83,6 +87,7 @@ const oneToTenUpgrades: Upgrade[] = [
         // 100_000_000
         cost: 1e8,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -102,6 +107,7 @@ const oneToTenUpgrades: Upgrade[] = [
         // 100_000_000
         cost: 1e8,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -121,6 +127,7 @@ const oneToTenUpgrades: Upgrade[] = [
         // 100_000_000
         cost: 1e8,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -140,6 +147,7 @@ const oneToTenUpgrades: Upgrade[] = [
         // 100_000_000
         cost: 1e8,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -159,6 +167,7 @@ const oneToTenUpgrades: Upgrade[] = [
         // 100_000_000
         cost: 1e8,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -178,6 +187,7 @@ const oneToTenUpgrades: Upgrade[] = [
         // 100_000_000
         cost: 1e8,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
