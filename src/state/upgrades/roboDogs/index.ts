@@ -9,6 +9,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 1_500_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',
@@ -27,6 +28,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 1_500_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',
@@ -45,6 +47,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 15_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',
@@ -63,6 +66,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 40_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',
@@ -81,6 +85,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 1_500_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',
@@ -99,6 +104,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 15_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',
@@ -117,6 +123,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 40_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',
@@ -135,6 +142,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 1_500_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',
@@ -153,6 +161,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 15_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',
@@ -171,6 +180,7 @@ const roboDogsUpgrades: Upgrade[] = [
         description: 'Robo-Dogs are twice as efficient',
         cost: 40_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'roboDogs',

@@ -10,6 +10,7 @@ const hundredFortyOneToHundredFiftyUpgrades: Upgrade[] = [
         // 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e69,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -29,6 +30,7 @@ const hundredFortyOneToHundredFiftyUpgrades: Upgrade[] = [
         // 3_162_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 3162e66,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05

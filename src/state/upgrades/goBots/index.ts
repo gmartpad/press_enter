@@ -9,6 +9,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost: 3_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',
@@ -27,6 +28,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost: 30_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',
@@ -45,6 +47,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost:70_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',
@@ -63,6 +66,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost: 3_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',
@@ -81,6 +85,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost: 30_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',
@@ -99,6 +104,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost:70_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',
@@ -117,6 +123,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost: 3_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',
@@ -135,6 +142,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost: 30_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',
@@ -153,6 +161,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost:70_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',
@@ -171,6 +180,7 @@ const goBotsUpgrades: Upgrade[] = [
         description: 'Go-Bots are twice as efficient',
         cost: 3_000_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'goBots',

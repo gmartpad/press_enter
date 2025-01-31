@@ -26,6 +26,7 @@ export type Upgrade = {
     description: string
     cost: number
     purchased: boolean
+    purchasable: boolean
     effects: {
         global?: {
             additive?: number

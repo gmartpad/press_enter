@@ -10,6 +10,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 500_000_000
         cost: 5e8,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -29,6 +30,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 500_000_000
         cost: 5e8,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -48,6 +50,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 5_000_000_000
         cost: 5e9,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -67,6 +70,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 10_000_000_000
         cost: 1e10,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -86,6 +90,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 50_000_000_000
         cost: 5e10,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -105,6 +110,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 100_000_000_000
         cost: 1e11,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -124,6 +130,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 100_000_000_000
         cost: 1e11,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.05
@@ -143,6 +150,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 500_000_000_000
         cost: 5e11,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -162,6 +170,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 1_000_000_000_000
         cost: 1e12,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02
@@ -181,6 +190,7 @@ const elevenToTwentyUpgrades: Upgrade[] = [
         // 5_000_000_000_000
         cost: 5e12,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.02

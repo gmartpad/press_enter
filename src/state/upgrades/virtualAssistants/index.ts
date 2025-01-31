@@ -9,6 +9,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 4_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',
@@ -27,6 +28,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 40_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',
@@ -45,6 +47,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 90_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',
@@ -63,6 +66,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 4_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',
@@ -81,6 +85,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 40_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',
@@ -99,6 +104,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 90_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',
@@ -117,6 +123,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 4_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',
@@ -135,6 +142,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 40_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',
@@ -153,6 +161,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 90_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',
@@ -171,6 +180,7 @@ const virtualAssistantsUpgrades: Upgrade[] = [
         description: 'Virtual Assistants are twice as efficient',
         cost: 4_000_000_000_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'virtualAssistants',

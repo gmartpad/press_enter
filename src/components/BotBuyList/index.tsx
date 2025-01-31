@@ -10,7 +10,7 @@ import {
     IncrementorAmount,
     IncrementorName,
 } from './styled'
-import { autoIncrementorsState, bitState, configState, type Config, listableUpgradesState, upgradesState, currentHoveredUpgradeItemState } from '@state/atoms'
+import { autoIncrementorsState, bitState, configState, type Config, upgradesState, currentHoveredUpgradeItemState } from '@state/atoms'
 import { useCallback } from 'react'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import BotBuyImg from '@components/BotBuyImg'
@@ -23,11 +23,14 @@ import UpgradeItem from '@components/UpgradeItem'
 import { Upgrade } from '@upgrades'
 
 const BotBuyList = () => {
+    const upgrades = useRecoilValue<Upgrade[]>(upgradesState)
     const autoIncrementors = useRecoilValue(autoIncrementorsState)
-    const listableUpgrades = useRecoilValue(listableUpgradesState)
     const [config, setConfig] = useRecoilState<Config>(configState)
     
     const handlePurchaseUpgrade = useRecoilCallback(({ snapshot, set, }) => async (upgrade: Upgrade, isUpgradeAffordable: boolean) => {
+        console.log('!upgrade: ', !upgrade)
+        console.log('upgrade.purchased: ', upgrade.purchased)
+        console.log('!isUpgradeAffordable: ', !isUpgradeAffordable)
         if (!upgrade || upgrade.purchased || !isUpgradeAffordable) return
     
         const upgrades = await snapshot.getPromise<Upgrade[]>(upgradesState)
@@ -38,6 +41,8 @@ const BotBuyList = () => {
             } 
             return u
         })
+
+        console.log('updatedUpgrades: ', updatedUpgrades)
 
         set(upgradesState, updatedUpgrades)
         set(bitState, (currVal) => (currVal - upgrade.cost))
@@ -66,11 +71,11 @@ const BotBuyList = () => {
 
     return (
         <Aside>
-            {!!listableUpgrades?.length && (
+            {!!upgrades.filter((u) => u.purchasable)?.length && (
                 <h3 style={{ margin: 0, textAlign: 'center', padding: '3px 0' }}><FormattedMessage id="botBuyList.upgrades.title" /></h3> 
             )}
             <BotUpgradeList>
-                {listableUpgrades.map((i, k) => (
+                {upgrades.filter((u) => u.purchasable && !u.purchased).map((i, k) => (
                     <UpgradeItem
                         key={k + JSON.stringify(i)}
                         upgrade={i}

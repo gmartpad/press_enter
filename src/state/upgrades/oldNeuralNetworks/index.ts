@@ -9,6 +9,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 2_500_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',
@@ -27,6 +28,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 25_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',
@@ -45,6 +47,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 60_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',
@@ -63,6 +66,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 2_500_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',
@@ -81,6 +85,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 25_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',
@@ -99,6 +104,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 60_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',
@@ -117,6 +123,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 2_500_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',
@@ -135,6 +142,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 25_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',
@@ -153,6 +161,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 60_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',
@@ -171,6 +180,7 @@ const oldNeuralNetworksUpgrades: Upgrade[] = [
         description: 'Old Neural Networks are twice as efficient',
         cost: 2_500_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'oldNeuralNetworks',

@@ -9,6 +9,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 100,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',
@@ -27,6 +28,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 1000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',
@@ -45,6 +47,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 10_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',
@@ -63,6 +66,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 100_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',
@@ -81,6 +85,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 1_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',
@@ -99,6 +104,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 10_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',
@@ -117,6 +123,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 100_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',
@@ -135,6 +142,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 1_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',
@@ -153,6 +161,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 10_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',
@@ -171,6 +180,7 @@ const pressEnterUpgrades: Upgrade[] = [
         description: 'Pressing Enter produces an additional 1% of the current BpS',
         cost: 100_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'pressEnter',

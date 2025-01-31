@@ -10,6 +10,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 50_000_000_000_000_000_000_000_000_000_000
         cost: 5e31,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04
@@ -29,6 +30,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 100_000_000_000_000_000_000_000_000_000_000
         cost: 1e32,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04
@@ -48,6 +50,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 500_000_000_000_000_000_000_000_000_000_000
         cost: 5e32,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04
@@ -67,6 +70,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 1_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e33,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04
@@ -86,6 +90,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 5_000_000_000_000_000_000_000_000_000_000_000
         cost: 5e33,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04
@@ -105,6 +110,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 10_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e34,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04
@@ -124,6 +130,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 50_000_000_000_000_000_000_000_000_000_000_000
         cost: 5e34,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04
@@ -143,6 +150,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 100_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e35,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04
@@ -162,6 +170,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 500_000_000_000_000_000_000_000_000_000_000_000
         cost: 5e35,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04
@@ -181,6 +190,7 @@ const sixtyOneToSeventyUpgrades: Upgrade[] = [
         // 1_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e36,
         purchased: false,
+        purchasable: false,
         effects: {
             global: {
                 additive: 0.04

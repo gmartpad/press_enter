@@ -9,6 +9,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 50_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',
@@ -27,6 +28,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 2_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',
@@ -45,6 +47,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 20_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',
@@ -63,6 +66,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 50_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',
@@ -81,6 +85,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 2_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',
@@ -99,6 +104,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 20_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',
@@ -117,6 +123,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 50_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',
@@ -135,6 +142,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 2_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',
@@ -153,6 +161,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 20_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',
@@ -171,6 +180,7 @@ const musicBotsUpgrades: Upgrade[] = [
         description: 'Music Bots are twice as efficient',
         cost: 50_000_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'musicBots',

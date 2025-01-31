@@ -1,17 +1,18 @@
 import { RecoilRoot } from 'recoil'
-import { BroadcastProvider, LangProvider } from '@providers'
+import { BitUpdaterProvider, BroadcastProvider, InspectProtectionProvider, LangProvider } from '@providers'
 import Content from '@components/Content'
-import InspectProtectionProvider from '@providers/InspectionProtectionProvider'
 
 function App() {
     return (
         <RecoilRoot>
             <InspectProtectionProvider>
-                <LangProvider>
-                    <BroadcastProvider>
-                        <Content/>
-                    </BroadcastProvider>
-                </LangProvider>
+                <BitUpdaterProvider>
+                    <LangProvider>
+                        <BroadcastProvider>
+                            <Content/>
+                        </BroadcastProvider>
+                    </LangProvider>
+                </BitUpdaterProvider>
             </InspectProtectionProvider>
         </RecoilRoot>
     )

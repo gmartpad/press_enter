@@ -3,7 +3,6 @@ import { atom, RecoilState, RecoilValueReadOnly, selector, selectorFamily } from
 import defaultAutoIncrementors, { Incrementor } from './defaultAutoIncrementors.ts'
 import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit.ts'
 import { defaultUpgrades, Upgrade } from '@upgrades'
-import checkUpgradeRequirements from '@utils/checkUpgradeRequirements.ts'
 import { LanguageValues } from '@components/LanguageDialog/languages.ts'
 
 // Utility function to check and parse value from localStorage
@@ -268,6 +267,7 @@ export const upgradesState = atom({
                     description: jsonStoredValue[k]?.description ?? i.description,
                     cost: jsonStoredValue[k]?.cost ?? i.cost,
                     purchased: jsonStoredValue[k]?.purchased ?? i.purchased,
+                    purchasable: jsonStoredValue[k]?.purchasable ?? i.purchasable,
                     effects: jsonStoredValue[k]?.effects ?? i.effects,
                     requirementsToBeListable: jsonStoredValue[k]?.requirementsToBeListable ?? i.requirementsToBeListable
                 }))
@@ -358,27 +358,6 @@ const calculatedEnterPressBitAmountState = selector({
     }
 })
 
-const listableUpgradesState = selector({
-    key: 'listableUpgradesState',
-    get: ({ get }) => {
-        const upgrades = get<Upgrade[]>(upgradesState)
-        const bits = get(bitState)
-        const incrementors = get(autoIncrementorsState)
-        const enterPresses = get(enterPressesState)
-        const purchasedUpgrades = upgrades.filter(u => u.purchased)
-
-        return upgrades.filter(upgrade => 
-            checkUpgradeRequirements(
-                upgrade,
-                bits,
-                incrementors,
-                purchasedUpgrades,
-                enterPresses
-            )
-        )
-    }
-})
-
 // ---------------------------------------
 
 const getSpecificIncrementor = selectorFamily({
@@ -457,11 +436,11 @@ const isUpgradeAffordableState: (upgradeId: string) => RecoilValueReadOnly<boole
         const upgrade = upgrades.find(upg => upg.id === upgradeId)
         if (!upgrade) return false // Fallback if the upgrade is not found
 
-        const { requirementsToBeListable } = upgrade
+        const { requirementsToBeListable, purchasable } = upgrade
         if (!requirementsToBeListable) return true // If no requirements, it's affordable by default
 
         // Check bit requirement
-        if (requirementsToBeListable.bits && bits < requirementsToBeListable.bits) {
+        if (requirementsToBeListable.bits && bits < requirementsToBeListable.bits && !purchasable) {
             return false
         }
 
@@ -473,7 +452,7 @@ const isUpgradeAffordableState: (upgradeId: string) => RecoilValueReadOnly<boole
                     return incrementor && incrementor.units >= requiredUnits
                 }
             )
-            if (!allRequirementsMet) return false
+            if (!allRequirementsMet && !purchasable) return false
         }
 
         // Check upgrade dependency requirements
@@ -482,7 +461,7 @@ const isUpgradeAffordableState: (upgradeId: string) => RecoilValueReadOnly<boole
             const allUpgradesMet = requirementsToBeListable.upgrades.every(reqUpgradeId =>
                 purchasedUpgrades.includes(reqUpgradeId)
             )
-            if (!allUpgradesMet) return false
+            if (!allUpgradesMet && !purchasable) return false
         }
 
         // Check the upgrade's cost
@@ -530,5 +509,4 @@ export {
     syncedHoveredBotItemState,
     bitIntervalsState,
     calculatedEnterPressBitAmountState,
-    listableUpgradesState,
 }

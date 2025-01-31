@@ -9,6 +9,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost:70,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
@@ -27,6 +28,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost:700,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
@@ -45,6 +47,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost: 30_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
@@ -63,6 +66,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost: 1_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
@@ -81,6 +85,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost: 10_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
@@ -99,6 +104,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost: 30_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
@@ -117,6 +123,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost: 1_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
@@ -135,6 +142,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost: 10_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
@@ -153,6 +161,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost: 30_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
@@ -171,6 +180,7 @@ const turingTestersUpgrades: Upgrade[] = [
         description: 'Turing Testers are twice as efficient',
         cost: 1_000_000_000_000,
         purchased: false,
+        purchasable: false,
         effects: {
             specific: {
                 incrementorId: 'turingTesters',
