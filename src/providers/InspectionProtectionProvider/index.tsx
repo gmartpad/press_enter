@@ -34,39 +34,35 @@ const InspectProtectionProvider = ({ children }: { children: React.ReactNode }) 
                 return false
             }
         }
-  
-        // DevTools detection
+
         const detectDevTools = () => {
-            const devtools = {
+            const devToolsDetector = {
+                timestamp: new Date(),
                 isOpen: false,
                 toString: function() {
                     if (!this.isOpen) {
-                        this.isOpen = true
-                        alert("DevTools detected!")
+                    this.isOpen = true;
+                        alert("DevTools detected!");
                     }
-                    return ''
+                    return this.timestamp.toString();
                 }
-            }
-  
-            const checkDevTools = () => {
-                console.log(devtools)
-                console.clear()
-            }
-  
-            setInterval(checkDevTools, 1000)
-        }
-  
-        // Add event listeners
+            };
+          
+            console.log('%c', devToolsDetector);
+            console.clear();
+          };
+
+        // Add listeners
         document.addEventListener('contextmenu', handleContextMenu)
-        document.addEventListener('keydown', handleKeyDown)
+        document.addEventListener('keydown', handleKeyDown, { passive: true })
         detectDevTools()
-  
-        // Cleanup function
+
+        // Cleanup
         return () => {
             document.removeEventListener('contextmenu', handleContextMenu)
             document.removeEventListener('keydown', handleKeyDown)
         }
-    }, []) // Empty dependency array means this runs once on mount
+    }, [])
   
     return (
         <div className="select-none">

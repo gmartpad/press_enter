@@ -2,45 +2,55 @@ import { autoIncrementorsState, bitState, configState } from '@state/atoms'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit'
 import updateSingleIncrementorValue from '@utils/updateSingleIncrementorValue'
-import { useRecoilCallback } from 'recoil'
+import { useRecoilTransaction_UNSTABLE } from 'recoil'
 
 const useUpdateAutoIncrementors = () => {
-    return useRecoilCallback(({ snapshot, set }) => async (item: Incrementor) => {
-        const bits = await snapshot.getPromise(bitState)
-        const config = await snapshot.getPromise(configState)
-        const autoIncrementors = await snapshot.getPromise(autoIncrementorsState)
+    return useRecoilTransaction_UNSTABLE(
+        ({ get, set }) => (item: Incrementor) => {
+            // Synchronous state access
+            const bits = get(bitState)
+            const config = get(configState)
+            const autoIncrementors = get(autoIncrementorsState)
+            const { name, units } = item
 
-        const { name, units } = item
+            const recalculatedArray = handleRecalculatePricePerUnit(item, config)
+            const currentPrice = recalculatedArray[0]
+            const currentSumValueOfAllSoldPrices = recalculatedArray[1]
 
-        const recalculatedArray = handleRecalculatePricePerUnit(item, config)
+            // Atomic buying transaction
+            if (config.botBulkMode === 1 && bits >= currentPrice) {
+                set(bitState, bits - currentPrice)
 
-        const currentPrice = recalculatedArray[0]
-        const currentSumValueOfAllSoldPrices = recalculatedArray[1]
+                const updatedIncrementors = updateSingleIncrementorValue(
+                    autoIncrementors,
+                    name,
+                    {
+                        units: units + config.botBulkAmount,
+                        pricePerUnit: currentPrice * 1.2,
+                    }
+                )
 
-        // Buying Bot
-        if (config.botBulkMode === 1 && bits >= currentPrice) {
-            set(bitState, bits - currentPrice)
+                set(autoIncrementorsState, updatedIncrementors)
+            }
 
-            const updatedIncrementors = updateSingleIncrementorValue(autoIncrementors, name, {
-                units: units + config.botBulkAmount,
-                pricePerUnit: currentPrice * 1.2,
-            })
+            // Atomic selling transaction
+            if (config.botBulkMode === 0 && units >= 0) {
+                set(bitState, bits + currentSumValueOfAllSoldPrices * 0.4)
 
-            set(autoIncrementorsState, updatedIncrementors)
-        }
+                const updatedIncrementors = updateSingleIncrementorValue(
+                    autoIncrementors,
+                    name,
+                    {
+                        units: units - Math.min(units, config.botBulkAmount),
+                        pricePerUnit: currentPrice,
+                    }
+                )
 
-        // Selling Bot
-        if (config.botBulkMode === 0 && units >= 0) {
-            set(bitState, bits + currentSumValueOfAllSoldPrices * 0.4)
-
-            const updatedIncrementors = updateSingleIncrementorValue(autoIncrementors, name, {
-                units: units - Math.min(units, config.botBulkAmount),
-                pricePerUnit: currentPrice,
-            })
-
-            set(autoIncrementorsState, updatedIncrementors)
-        }
-    })
+                set(autoIncrementorsState, updatedIncrementors)
+            }
+        },
+        [] // No additional dependencies needed
+    )
 }
 
 export default useUpdateAutoIncrementors

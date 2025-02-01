@@ -1,5 +1,5 @@
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { BitIntervals, bitIntervalsState, configState, type Config } from '@state/atoms'
+import { configState, type Config } from '@state/atoms'
 import { useCallback } from 'react'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
@@ -12,11 +12,9 @@ import {
     DeclineButton 
 } from './styled'
 import { useIntl } from 'react-intl'
-import handleClearInterval from '@utils/handleClearInterval'
 
 const ConfirmDialog = () => {
     const intl = useIntl()
-    const bitIntervals = useRecoilValue<BitIntervals>(bitIntervalsState)
     const [config, setConfig] = useRecoilState(configState)
 
     const handleToggleConfirmDialog = useCallback(() => {
@@ -43,8 +41,7 @@ const ConfirmDialog = () => {
 
     const additionalCallback = useCallback(() => {
         handleToggleConfirmDialog()
-        handleClearInterval(bitIntervals.quickUpdateIntervalId)
-    }, [handleToggleConfirmDialog, bitIntervals])
+    }, [handleToggleConfirmDialog])
 
     if((config as Config).confirmDialogOpen) return (
         <>

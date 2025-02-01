@@ -1,5 +1,5 @@
 import { useSetRecoilState } from 'recoil'
-import { bitState, autoIncrementorsState, configState, currentHoveredBotItemState, mouseYState, DEFAULT_BIT_STATE_VALUE, DEFAULT_AUTO_INCREMENTORS_STATE_VALUE, DEFAULT_CONFIG_STATE_VALUE, DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE, DEFAULT_MOUSE_Y_STATE_VALUE, upgradesState, DEFAULT_UPGRADES_STATE_VALUE, enterPressesState, DEFAULT_ENTER_PRESSES_STATE, currentHoveredUpgradeItemState, DEFAULT_CURRRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE, bitIntervalsState, DEFAULT_BIT_INTERVALS_STATE } from '@state/atoms'
+import { bitState, autoIncrementorsState, configState, currentHoveredBotItemState, mouseYState, DEFAULT_BIT_STATE_VALUE, DEFAULT_AUTO_INCREMENTORS_STATE_VALUE, DEFAULT_CONFIG_STATE_VALUE, DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE, DEFAULT_MOUSE_Y_STATE_VALUE, upgradesState, DEFAULT_UPGRADES_STATE_VALUE, enterPressesState, DEFAULT_ENTER_PRESSES_STATE, currentHoveredUpgradeItemState, DEFAULT_CURRRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE } from '@state/atoms'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import { Upgrade } from '@upgrades'
 
@@ -20,7 +20,6 @@ const ResetButton = ({
     const setCurrentHoveredUpgradeItemState = useSetRecoilState(currentHoveredUpgradeItemState)
     const setMouseYState = useSetRecoilState(mouseYState)
     const setUpgradesState = useSetRecoilState(upgradesState)
-    const setBitIntervalsState = useSetRecoilState(bitIntervalsState)
 
     const handleReset = () => {
         
@@ -34,7 +33,6 @@ const ResetButton = ({
         setCurrentHoveredUpgradeItemState(DEFAULT_CURRRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE as Upgrade)
         setMouseYState(DEFAULT_MOUSE_Y_STATE_VALUE)
         setUpgradesState(DEFAULT_UPGRADES_STATE_VALUE)
-        setBitIntervalsState(DEFAULT_BIT_INTERVALS_STATE)
 
         localStorage.removeItem('enterPressesState')
         localStorage.removeItem('bitState')
@@ -44,7 +42,6 @@ const ResetButton = ({
         localStorage.removeItem('currentHoveredUpgradeItemState')
         localStorage.removeItem('mouseYState')
         localStorage.removeItem('upgradesState')
-        localStorage.removeItem('bitIntervalsState')
 
     }
 

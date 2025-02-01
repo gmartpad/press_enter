@@ -1,9 +1,8 @@
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { bitState, calculatedEnterPressBitAmountState, configState, currentProductionState, enterPressesState } from '@state/atoms'
-
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
 import { FloatText, Aside, EnterIcon, EnterKeyButton } from './styled'
-import React, { useCallback, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { debounce } from 'lodash'
 import { useIntl, FormattedMessage } from 'react-intl'
@@ -22,66 +21,89 @@ const Bits = () => {
         { id: number; x: number; y: number, value: string }[]
     >([])
 
+    // Optimized memo with locale-specific dependency
     const formattedCurrentProduction = useMemo(
         () => formatLargeNumber(Number(currentProduction.toFixed(1)), intl, true),
         [currentProduction, intl]
     )
 
-    const audioRef = useRef<HTMLAudioElement>(new Audio())
+    const audioRef = useRef<HTMLAudioElement | null>(null)
+    const timeoutRef = useRef<Set<NodeJS.Timeout>>(new Set())
 
+    // Audio cleanup effect
+    useEffect(() => {
+        audioRef.current = new Audio()
+        
+        return () => {
+            if (audioRef.current) {
+                audioRef.current.pause()
+                audioRef.current.src = ''
+                audioRef.current = null
+            }
+        }
+    }, [])
+
+    // Sound handlers with proper cleanup
     const handleEnterBitClickSound = useCallback(() => {
         if (audioRef.current) {
             const randomSound = sounds[Math.floor(Math.random() * sounds.length)]
             audioRef.current.src = randomSound
             audioRef.current.volume = config.volume
-            audioRef.current.play()
+            audioRef.current.play().catch(() => {
+                // Handle audio play restrictions
+            })
         }
-    }, [config])
+    }, [config.volume])
 
-    const debouncedHandleEnterBitClickSound = useCallback(
-        debounce(handleEnterBitClickSound, 80),
+    const debouncedHandleEnterBitClickSound = useMemo(
+        () => debounce(handleEnterBitClickSound, 80),
         [handleEnterBitClickSound]
     )
 
-    const handleFloatingClickedTextValue = useCallback((e: React.MouseEvent<HTMLButtonElement, MouseEvent> | React.TouchEvent<HTMLButtonElement>) => {
+    // Floating text handler with timeout tracking
+    const handleFloatingClickedTextValue = useCallback((e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
         const id = Date.now()
         const x = 'touches' in e 
             ? e.touches[0].clientX 
             : e.clientX
-        const y = 'touches' in e 
-            ? e.touches[0].clientY - 60
-            : e.clientY - 60
+        const y = ('touches' in e 
+            ? e.touches[0].clientY 
+            : e.clientY) - 60
 
         const isAmountBelowOneMillion = calculatedEnterPressBitAmount < 1_000_000
+        const displayValue = isAmountBelowOneMillion
+            ? Number(calculatedEnterPressBitAmount.toFixed(2)).toLocaleString(config.currentLanguageLocale)
+            : formatLargeNumber(Number(calculatedEnterPressBitAmount.toFixed(0)), intl) ?? ''
 
-        const belowOneMillionString = Number(calculatedEnterPressBitAmount.toFixed(2)).toLocaleString(config.currentLanguageLocale)
+        setFloatTexts((prev) => [...prev, { id, x, y, value: displayValue }])
 
-        const equalOrAboveOneMillionString = (formatLargeNumber(Number(calculatedEnterPressBitAmount.toFixed(0)), intl) ?? '')
-
-        const value = isAmountBelowOneMillion ? belowOneMillionString : equalOrAboveOneMillionString
-
-        setFloatTexts((prev) => [...prev, { id, x, y, value }])
-
-        setTimeout(() => {
+        const timeoutId = setTimeout(() => {
             setFloatTexts((prev) => prev.filter((text) => text.id !== id))
+            timeoutRef.current.delete(timeoutId)
         }, 3000)
-    }, [setFloatTexts, calculatedEnterPressBitAmount, config])
 
+        timeoutRef.current.add(timeoutId)
+    }, [setFloatTexts, calculatedEnterPressBitAmount, config.currentLanguageLocale, intl.locale])
+
+    // Click handler with proper dependencies
     const handleEnterBitClick = useCallback(
-        async (e: React.MouseEvent<HTMLButtonElement, MouseEvent> | React.TouchEvent<HTMLButtonElement>) => {
-            setEnterPressesState((prevValue) => prevValue + 1)
+        (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
+            setEnterPressesState(prev => prev + 1)
             handleFloatingClickedTextValue(e)
-            setBits((currVal) => currVal + calculatedEnterPressBitAmount)
+            setBits(curr => curr + calculatedEnterPressBitAmount)
             debouncedHandleEnterBitClickSound()
         },
-        [
-            setEnterPressesState, 
-            setBits, 
-            debouncedHandleEnterBitClickSound, 
-            handleFloatingClickedTextValue, 
-            calculatedEnterPressBitAmount
-        ]
+        [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, debouncedHandleEnterBitClickSound]
     )
+
+    // Cleanup effect for timers and debounce
+    useEffect(() => {
+        return () => {
+            debouncedHandleEnterBitClickSound.cancel()
+            timeoutRef.current.forEach(clearTimeout)
+            timeoutRef.current.clear()
+        }
+    }, [debouncedHandleEnterBitClickSound])
 
     return (
         <Aside>
@@ -89,8 +111,8 @@ const Bits = () => {
             <h3>{formatLargeNumber(Number(bits.toFixed(0)), intl)} bits</h3>
             <h3>{enterPresses} enterPresses</h3>
             <EnterKeyButton
-                onClick={(e) => handleEnterBitClick(e)}
-                onTouchStart={(e) => handleEnterBitClick(e)}
+                onClick={handleEnterBitClick}
+                onTouchStart={handleEnterBitClick}
             >
                 <EnterIcon/>
             </EnterKeyButton>

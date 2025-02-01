@@ -60,7 +60,7 @@ const ItemInfoDialog = () => {
     const currentHoveredUpgradeItem = useRecoilValue(currentHoveredUpgradeItemState)
 
     const currentItem = useMemo<Incrementor | Upgrade | null>(() => {
-        const botEmpty = Object.keys(currentHoveredBotItem).length === 0
+        const botEmpty = Object.keys(currentHoveredBotItem ?? {}).length === 0
         const upgradeEmpty = Object.keys(currentHoveredUpgradeItem).length === 0
 
         if (!botEmpty && upgradeEmpty) return currentHoveredBotItem
