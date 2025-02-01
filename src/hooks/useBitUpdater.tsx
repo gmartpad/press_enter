@@ -5,7 +5,8 @@ import { type Upgrade } from '@upgrades'
 import { useDebouncedProduction } from './useDebouncedProduction'
 import { Incrementor } from '@state/defaultAutoIncrementors'
 import checkUpgradeRequirements from '@utils/checkUpgradeRequirements'
-import shallowEqual from '@utils/shallowEqual'
+import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
+import shallowEqualIncrementors from '@utils/shallowEqualIncrementors'
 
 const useBitUpdater = () => {
     const [autoIncrementors, setAutoIncrementors] = useRecoilState<Incrementor[]>(autoIncrementorsState)
@@ -13,9 +14,30 @@ const useBitUpdater = () => {
     const [bits, setBits] = useRecoilState(bitState)
 
     const intervalRef = useRef<NodeJS.Timeout | null>(null)
+    const updateIncrementorsIntervalRef = useRef<NodeJS.Timeout | null>(null)
     const updateUpgradesIntervalRef = useRef<NodeJS.Timeout | null>(null)
     const lastUpdateRef = useRef<number>(Date.now())
     const [updateInterval, setUpdateInterval] = useState(100)
+
+    const handleRevealIncrementors = useRecoilCallback(({ snapshot, set }) => async () => {
+        const bits = await snapshot.getPromise<number>(bitState)
+        const incrementors = await snapshot.getPromise<Incrementor[]>(autoIncrementorsState)
+
+        const revealableIncrementors = incrementors.filter((incrementor) => incrementor.bitsToBeRevealed <= bits)
+
+        const revealableIds = new Set(revealableIncrementors.map((incrementor) => incrementor.id))
+
+        const updatedIncrementors = incrementors.map(
+            (incrementor) => revealableIds.has(incrementor.id)
+                ? { ...incrementor, revealed: true }
+                : incrementor
+        )
+
+        // Update state only if changes exist
+        if (!shallowEqualIncrementors(incrementors, updatedIncrementors)) {
+            set(autoIncrementorsState, updatedIncrementors)
+        }
+    }, [])
 
     const handleUpdateUpgrades = useRecoilCallback(({ snapshot, set }) => async () => {
         // Get fresh state values from snapshot
@@ -46,15 +68,19 @@ const useBitUpdater = () => {
         )
     
         // Update state only if changes exist
-        if (!shallowEqual(upgrades, updatedUpgrades)) {
+        if (!shallowEqualUpgrades(upgrades, updatedUpgrades)) {
             set(upgradesState, updatedUpgrades)
         }
     }, [])
 
     useEffect(() => {
+        updateIncrementorsIntervalRef.current = setInterval(handleRevealIncrementors, 1000)
         updateUpgradesIntervalRef.current = setInterval(handleUpdateUpgrades, 1000)
 
         return () => {
+            if(updateIncrementorsIntervalRef.current) {
+                clearInterval(updateIncrementorsIntervalRef.current)
+            }
             if(updateUpgradesIntervalRef.current) {
                 clearInterval(updateUpgradesIntervalRef.current)
             }

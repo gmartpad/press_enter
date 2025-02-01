@@ -3,12 +3,16 @@ import { InfoImgDiv, SkeletonInfoImgDiv } from './styled'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import { type Upgrade } from '@upgrades'
 
-const InfoDialogImg = ({ item }: { item: Incrementor | Upgrade }) => {
+const QUESTION_MARK_SRC = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI0MCI+PyA8L3RleHQ+Cjwvc3ZnPg=='
+
+const InfoDialogImg = ({ item, isIncrementor }: { item: Incrementor | Upgrade, isIncrementor: boolean }) => {
     let images: Record<string, () => Promise<unknown>> | undefined
 
     const [isInfoDialogImgLoading, setIsInfoDialogImgLoading] = useState<boolean>(true)
 
     const [imageUrl, setImageUrl] = useState<string>('')
+
+    const hiddenIncrementor = isIncrementor && !(item as Incrementor).revealed
 
     const handleImageUrl = useCallback(() => {
         let imagePath = ''
@@ -37,8 +41,9 @@ const InfoDialogImg = ({ item }: { item: Incrementor | Upgrade }) => {
         <>
             {isInfoDialogImgLoading && <SkeletonInfoImgDiv />}
             <InfoImgDiv
-                src={imageUrl}
+                src={hiddenIncrementor ? QUESTION_MARK_SRC : imageUrl}
                 $isInfoDialogImgLoading={isInfoDialogImgLoading}
+                $hiddenIncrementor={hiddenIncrementor}
                 onLoad={() => setIsInfoDialogImgLoading(false)}
             />
         </>

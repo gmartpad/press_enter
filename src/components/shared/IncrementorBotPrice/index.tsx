@@ -34,6 +34,8 @@ const IncrementorBotPrice = ({ price, item, config }: IncrementorBotPriceProps) 
 
         return 0
     }, [item, config, price, intl])
+    
+    if(!item?.revealed) return <p style={{ margin: 0, color: 'red' }}>?????????</p>
 
     return (
         <IncrementorPrice $affordable={isAffordable}>

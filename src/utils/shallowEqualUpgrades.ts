@@ -1,4 +1,4 @@
-function shallowEqual <T extends { id: unknown; purchasable: boolean }>(
+function shallowEqualUpgrades <T extends { id: unknown; purchasable: boolean }>(
     a: T[],
     b: T[]
 ): boolean {
@@ -9,4 +9,4 @@ function shallowEqual <T extends { id: unknown; purchasable: boolean }>(
     ))
 }
 
-export default shallowEqual
+export default shallowEqualUpgrades

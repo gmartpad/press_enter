@@ -53,6 +53,7 @@ function IncrementorButton({ item, children }: { item: Incrementor; children: Re
             onMouseEnter={() => setCurrentHoveredBotItem(item)}
             onMouseLeave={() => setCurrentHoveredBotItem({} as Incrementor)}
             $affordable={isAffordable}
+            $revealed={item.revealed}
         >
             {children}
         </StyledIncrementorButton>

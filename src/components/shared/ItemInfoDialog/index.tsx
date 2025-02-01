@@ -95,6 +95,7 @@ const ItemInfoDialog = () => {
     }, [currentItem])
 
     const handleItemTotalWorthPercentage = useCallback(() => {
+        if(!!currentItem && isIncrementor(currentItem) && !currentItem?.revealed) return '???????'
         const relativePercentage = ((itemCost/bits) * 100).toFixed(1)
         const suffix = intl.formatMessage({ 
             id: 'percentageTotalBitsNumber.totalBits', 
@@ -103,13 +104,15 @@ const ItemInfoDialog = () => {
         return `${relativePercentage}%${suffix}`
     }, [itemCost, bits, intl])
 
-    const itemBitsPerSecondWorth = useMemo(() => 
-        formatTimeNumber(itemCost/multipliedProduction, intl),
-    [itemCost, multipliedProduction, intl]
-    )
+    const itemBitsPerSecondWorth = useMemo(() => {
+        if(!!currentItem && isIncrementor(currentItem) && !currentItem?.revealed) return '???????'
+
+        return formatTimeNumber(itemCost/multipliedProduction, intl)
+    }, [itemCost, multipliedProduction, intl])
 
     const renderItemName = () => {
         if (!currentItem) return null
+        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
         return isIncrementor(currentItem) 
             ? <FormattedMessage id={`botBuyList.${currentItem.id}.name`} />
             : <FormattedMessage id={`upgrade.${currentItem.id}.name`} />
@@ -117,6 +120,7 @@ const ItemInfoDialog = () => {
 
     const renderLabelText = () => {
         if (!currentItem) return ''
+        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
         return isIncrementor(currentItem)
             ? `${intl.formatMessage({id: 'botsOwned', defaultMessage: 'owned'})}: ${currentItem.units}`
             : 'upgrade'
@@ -124,6 +128,7 @@ const ItemInfoDialog = () => {
 
     const renderPrice = () => {
         if (!currentItem) return null
+        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
         if (isIncrementor(currentItem)) {
             return (
                 <IncrementorBotPrice
@@ -144,6 +149,8 @@ const ItemInfoDialog = () => {
 
     const renderDescription = () => {
         if (!currentItem) return null
+        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+
         return isIncrementor(currentItem)
             ? <FormattedMessage id={`botBuyList.${currentItem.id}.description`} />
             : <FormattedMessage tagName="p" id={`upgrade.${currentItem.id}.description`} />
@@ -151,6 +158,8 @@ const ItemInfoDialog = () => {
 
     const renderAdditionalInfo = () => {
         if (!currentItem || !isIncrementor(currentItem)) return null
+        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+
         
         return (
             <MoreInfoUL>
@@ -188,7 +197,7 @@ const ItemInfoDialog = () => {
             open
         >
             <MainItemInfo>
-                <InfoDialogImg key={currentItem?.id} item={currentItem} />
+                <InfoDialogImg key={currentItem?.id} item={currentItem} isIncrementor={isIncrementor(currentItem)} />
                 <ItemTitleInfo>
                     <ItemName>
                         {renderItemName()}
