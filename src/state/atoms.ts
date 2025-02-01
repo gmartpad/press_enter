@@ -6,9 +6,55 @@ import { defaultUpgrades, Upgrade } from '@upgrades'
 import { LanguageValues } from '@components/LanguageDialog/languages.ts'
 
 // Utility function to check and parse value from localStorage
-const getLocalStorageValue = (key: string, defaultValue: any) => {
-    const storedValue = localStorage.getItem(key)
-    return storedValue ? JSON.parse(storedValue) : defaultValue
+// Improved localStorage utility with type safety and error handling
+const getLocalStorageValue = <T>(key: string, defaultValue: T): T => {
+    try {
+        const storedValue = localStorage.getItem(key)
+        return storedValue ? JSON.parse(storedValue) : defaultValue
+    } catch (error) {
+        console.error(`Error reading ${key} from localStorage:`, error)
+        return defaultValue
+    }
+}
+
+// Improved localStorage effect creator with cleanup
+const createLocalStorageEffect = <T>(key: string) => ({ setSelf, onSet }: any) => {
+    const loadValue = () => {
+        const storedValue = localStorage.getItem(key)
+        if (storedValue != null) {
+            try {
+                setSelf(JSON.parse(storedValue))
+            } catch (error) {
+                console.error(`Error parsing ${key} from localStorage:`, error)
+            }
+        }
+    }
+
+    // Initial load
+    loadValue()
+
+    // Storage event listener
+    const storageEventListener = (event: StorageEvent) => {
+        if (event.key === key && event.newValue) {
+            loadValue()
+        }
+    }
+
+    window.addEventListener('storage', storageEventListener)
+
+    // Save to localStorage on changes
+    onSet((newValue: T) => {
+        try {
+            localStorage.setItem(key, JSON.stringify(newValue))
+        } catch (error) {
+            console.error(`Error saving ${key} to localStorage:`, error)
+        }
+    })
+
+    // Cleanup function
+    return () => {
+        window.removeEventListener('storage', storageEventListener)
+    }
 }
 
 // ---------------------------------------
@@ -17,22 +63,8 @@ export const DEFAULT_ENTER_PRESSES_STATE = 0
 
 const enterPressesState = atom({
     key: 'enterPressesState',
-    default: Number(getLocalStorageValue('enterPressesState', DEFAULT_ENTER_PRESSES_STATE)),
-    effects: [
-        ({ setSelf, onSet }) => {
-            // On initialization, set atom state from localStorage if available
-            const storedValue = localStorage.getItem('enterPressesState')
-
-            if (storedValue != null) {
-                setSelf(Number(JSON.parse(storedValue)))
-            }
-
-            // Save to localStorage whenever the atom state changes
-            onSet((newValue) => {
-                localStorage.setItem('enterPressesState', JSON.stringify(newValue))
-            })
-        }
-    ]
+    default: DEFAULT_ENTER_PRESSES_STATE,
+    effects: [createLocalStorageEffect<number>('enterPressesState')]
 })
 
 // ---------------------------------------
@@ -41,23 +73,15 @@ export const DEFAULT_BIT_STATE_VALUE = 0
 
 const bitState = atom({
     key: 'bitState',
-    default: Number(getLocalStorageValue('bitState', DEFAULT_BIT_STATE_VALUE)),
+    default: DEFAULT_BIT_STATE_VALUE,
     effects: [
-        ({ setSelf, onSet }) => {
-            // On initialization, set atom state from localStorage if available
-            const storedValue = localStorage.getItem('bitState')
-
-            if (storedValue != null) {
-                setSelf(Number(JSON.parse(storedValue)))
-            }
-
-            // Save to localStorage whenever the atom state changes
+        ({ onSet }) => {
             onSet(newValue => {
-                localStorage.setItem('bitState', JSON.stringify(newValue))
                 document.title = `${formatLargeNumber(Number(newValue.toFixed(0)))} bits`
             })
         },
-    ],
+        createLocalStorageEffect<number>('bitState')
+    ]
 })
 
 // ---------------------------------------
@@ -73,16 +97,19 @@ const autoIncrementorsState: RecoilState<Incrementor[]> = atom({
             const storedValue = localStorage.getItem('autoIncrementorsState')
 
             if (storedValue != null) {
-                const jsonStoredValue: Incrementor[] = JSON.parse(storedValue)
-
-                const updatedStoredValue = defaultAutoIncrementors.map((i: Incrementor, k) => ({
-                    ...i,
-                    units: jsonStoredValue[k]?.units ?? i.units,
-                    pricePerUnit: jsonStoredValue[k]?.pricePerUnit ?? i.pricePerUnit,
-                    bitsProducedSoFar: jsonStoredValue[k]?.bitsProducedSoFar ?? i.bitsProducedSoFar,
-                }))
-
-                setSelf(updatedStoredValue)
+                try {
+                    const jsonStoredValue: Incrementor[] = JSON.parse(storedValue)
+                    const updatedStoredValue = defaultAutoIncrementors.map((i: Incrementor, k) => ({
+                        ...i,
+                        units: jsonStoredValue[k]?.units ?? i.units,
+                        pricePerUnit: jsonStoredValue[k]?.pricePerUnit ?? i.pricePerUnit,
+                        bitsProducedSoFar: jsonStoredValue[k]?.bitsProducedSoFar ?? i.bitsProducedSoFar,
+                    }))
+                    setSelf(updatedStoredValue)
+                } catch (error) {
+                    console.error('Error parsing autoIncrementorsState:', error)
+                    setSelf(DEFAULT_AUTO_INCREMENTORS_STATE_VALUE)
+                }
             }
 
             // Save to localStorage whenever the atom state changes
@@ -92,8 +119,6 @@ const autoIncrementorsState: RecoilState<Incrementor[]> = atom({
         },
     ],
 })
-
-// ---------------------------------------
 
 // ---------------------------------------
 
@@ -156,52 +181,20 @@ const configState = atom({
 
 // ---------------------------------------
 
-export const DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE = {}
+export const DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE = {} as Incrementor
 
 const currentHoveredBotItemState: RecoilState<Incrementor> = atom({
     key: 'currentHoveredBotItemState',
-    default: getLocalStorageValue('currentHoveredBotItemState', DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE as Incrementor),
-    effects: [
-        ({ setSelf, onSet }) => {
-            // On initialization, set atom state from localStorage if available
-            const storedValue = localStorage.getItem('currentHoveredBotItemState')
-
-            if (storedValue != null) {
-                const jsonStoredValue: Incrementor = JSON.parse(storedValue)
-
-                setSelf(jsonStoredValue)
-            }
-
-            onSet(newValue => {
-                localStorage.setItem('currentHoveredBotItemState', JSON.stringify(newValue))
-            })
-        },
-    ],
+    default: getLocalStorageValue('currentHoveredBotItemState', DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE)
 })
 
 // ---------------------------------------
 
-export const DEFAULT_CURRRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE = {}
+export const DEFAULT_CURRRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE = {} as Upgrade
 
 const currentHoveredUpgradeItemState: RecoilState<Upgrade> = atom({
     key: 'currentHoveredUpgradeItemState',
-    default: getLocalStorageValue('currentHoveredUpgradeItemState', DEFAULT_CURRRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE as Upgrade),
-    effects: [
-        ({ setSelf, onSet }) => {
-            // On initialization, set atom state from localStorage if available
-            const storedValue = localStorage.getItem('currentHoveredUpgradeItemState')
-
-            if (storedValue !== null) {
-                const jsonStoredValue: Upgrade = JSON.parse(storedValue)
-
-                setSelf(jsonStoredValue)
-            }
-
-            onSet(newValue => {
-                localStorage.setItem('currentHoveredUpgradeItemState', JSON.stringify(newValue))
-            })
-        }
-    ]
+    default: getLocalStorageValue('currentHoveredUpgradeItemState', DEFAULT_CURRRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE),
 })
 
 // ---------------------------------------
@@ -211,18 +204,11 @@ const syncedHoveredBotItemState = selector({
     get: ({ get }) => {
         const autoIncrementors = get(autoIncrementorsState)
         const currentHovered = get(currentHoveredBotItemState)
-
-        // If there's no hovered item, return empty object
-        if (!currentHovered?.id) return {} as Incrementor
-
-        // Find the matching incrementor and return updated version
-        const updatedHoveredItem = autoIncrementors.find(inc => inc.id === currentHovered.id)
-
-        return updatedHoveredItem || ({} as Incrementor)
-    },
-    cachePolicy_UNSTABLE: {
-        eviction: 'most-recent'
+        return currentHovered?.id ? autoIncrementors.find(inc => inc.id === currentHovered.id) || null : null
     }
+    // cachePolicy_UNSTABLE: {
+    //     eviction: 'most-recent'
+    // }
 })
 
 // ---------------------------------------
@@ -285,48 +271,6 @@ export const upgradesState = atom({
 
             onSet(newValue => {
                 localStorage.setItem('upgradesState', JSON.stringify(newValue))
-            })
-        }
-    ]
-})
-
-// ---------------------------------------
-
-export interface BitIntervals {
-    quickUpdateIntervalId: NodeJS.Timeout | null,
-    slowUpdateIntervalId: NodeJS.Timeout | null
-}
-
-export const DEFAULT_BIT_INTERVALS_STATE: BitIntervals = {
-    quickUpdateIntervalId: null,
-    slowUpdateIntervalId: null
-}
-
-const bitIntervalsState = atom({
-    key: 'bitIntervalsState',
-    default: getLocalStorageValue('bitIntervalsState', DEFAULT_BIT_INTERVALS_STATE as BitIntervals),
-    effects: [
-        ({ setSelf, onSet }) => {
-            const storedValue = localStorage.getItem('bitIntervalsState')
-
-            if (storedValue !== null) {
-                const jsonStoredValue: BitIntervals = JSON.parse(storedValue)
-
-                const updatedStoredValue = {
-                    quickUpdateIntervalId: jsonStoredValue.quickUpdateIntervalId ?? DEFAULT_BIT_INTERVALS_STATE.quickUpdateIntervalId,
-                    slowUpdateIntervalId: jsonStoredValue.slowUpdateIntervalId ?? DEFAULT_BIT_INTERVALS_STATE.slowUpdateIntervalId,
-                }
-
-                setSelf(updatedStoredValue)
-            }
-
-            if (storedValue === null) {
-                localStorage.setItem('bitIntervalsState', JSON.stringify(DEFAULT_BIT_INTERVALS_STATE))
-                setSelf(DEFAULT_BIT_INTERVALS_STATE)
-            }
-
-            onSet(newValue => {
-                localStorage.setItem('bitIntervalsState', JSON.stringify(newValue))
             })
         }
     ]
@@ -500,9 +444,9 @@ const currentProductionState = selector({
 
         return totalProduction
     },
-    cachePolicy_UNSTABLE: {
-        eviction: 'most-recent'
-    }
+    // cachePolicy_UNSTABLE: {
+    //     eviction: 'most-recent'
+    // }
 })
 
 export {
@@ -519,6 +463,5 @@ export {
     getIncrementorMultiplier,
     currentProductionState,
     syncedHoveredBotItemState,
-    bitIntervalsState,
     calculatedEnterPressBitAmountState,
 }

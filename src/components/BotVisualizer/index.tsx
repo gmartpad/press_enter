@@ -85,6 +85,10 @@ const BotVisualizerItem = ({
         }
     }, [resizeCanvas])
 
+    useEffect(() => {
+        resizeCanvas()
+    }, [currentIncrementor])
+
     return (
         <canvas
             ref={canvasRef}

@@ -1,97 +1,44 @@
 import { useRecoilCallback, useRecoilState, useRecoilValue } from 'recoil'
 import { autoIncrementorsState, bitState, enterPressesState, upgradesState } from '@state/atoms'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { type Upgrade } from '@upgrades'
 import { useDebouncedProduction } from './useDebouncedProduction'
 import { Incrementor } from '@state/defaultAutoIncrementors'
 import checkUpgradeRequirements from '@utils/checkUpgradeRequirements'
 import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
 import shallowEqualIncrementors from '@utils/shallowEqualIncrementors'
+import { debounce } from 'lodash'
+
+interface IntervalConfig {
+    updateInterval: number;
+    slowUpdateInterval: number;
+}
+
+const DEFAULT_UPDATE_INTERVAL = 200
+const BACKGROUND_UPDATE_INTERVAL = 3000
+const SLOW_UPDATE_INTERVAL = 1000
 
 const useBitUpdater = () => {
     const [autoIncrementors, setAutoIncrementors] = useRecoilState<Incrementor[]>(autoIncrementorsState)
     const upgrades = useRecoilValue<Upgrade[]>(upgradesState)
     const [bits, setBits] = useRecoilState(bitState)
 
-    const intervalRef = useRef<NodeJS.Timeout | null>(null)
-    const updateIncrementorsIntervalRef = useRef<NodeJS.Timeout | null>(null)
-    const updateUpgradesIntervalRef = useRef<NodeJS.Timeout | null>(null)
     const lastUpdateRef = useRef<number>(Date.now())
-    const [updateInterval, setUpdateInterval] = useState(100)
+    const intervalsRef = useRef<Set<NodeJS.Timeout>>(new Set())
+    const configRef = useRef<IntervalConfig>({
+        updateInterval: DEFAULT_UPDATE_INTERVAL,
+        slowUpdateInterval: SLOW_UPDATE_INTERVAL
+    })
 
-    const handleRevealIncrementors = useRecoilCallback(({ snapshot, set }) => async () => {
-        const bits = await snapshot.getPromise<number>(bitState)
-        const incrementors = await snapshot.getPromise<Incrementor[]>(autoIncrementorsState)
+    const currentProduction = useDebouncedProduction()
+    const currentProductionByMS = useMemo(() => currentProduction / 1000, [currentProduction])
 
-        const revealableIncrementors = incrementors.filter((incrementor) => incrementor.bitsToBeRevealed <= bits)
-
-        const revealableIds = new Set(revealableIncrementors.map((incrementor) => incrementor.id))
-
-        const updatedIncrementors = incrementors.map(
-            (incrementor) => revealableIds.has(incrementor.id)
-                ? { ...incrementor, revealed: true }
-                : incrementor
-        )
-
-        // Update state only if changes exist
-        if (!shallowEqualIncrementors(incrementors, updatedIncrementors)) {
-            set(autoIncrementorsState, updatedIncrementors)
-        }
-    }, [])
-
-    const handleUpdateUpgrades = useRecoilCallback(({ snapshot, set }) => async () => {
-        // Get fresh state values from snapshot
-        const upgrades = await snapshot.getPromise<Upgrade[]>(upgradesState)
-        const bits = await snapshot.getPromise(bitState)
-        const incrementors = await snapshot.getPromise(autoIncrementorsState)
-        const enterPresses = await snapshot.getPromise(enterPressesState)
-        
-        // Calculate listable upgrades
-        const purchasedUpgrades = upgrades.filter(u => u.purchased)
-        const listableUpgrades = upgrades.filter(upgrade => 
-            checkUpgradeRequirements(
-                upgrade,
-                bits,
-                incrementors,
-                purchasedUpgrades,
-                enterPresses
-            )
-        )
-    
-        // Create updated array with purchasable flags
-        const listableIds = new Set(listableUpgrades.map(u => u.id))
-        
-        const updatedUpgrades = upgrades.map(upgrade => 
-            listableIds.has(upgrade.id) 
-                ? { ...upgrade, purchasable: true } 
-                : upgrade
-        )
-    
-        // Update state only if changes exist
-        if (!shallowEqualUpgrades(upgrades, updatedUpgrades)) {
-            set(upgradesState, updatedUpgrades)
-        }
-    }, [])
-
-    useEffect(() => {
-        updateIncrementorsIntervalRef.current = setInterval(handleRevealIncrementors, 1000)
-        updateUpgradesIntervalRef.current = setInterval(handleUpdateUpgrades, 1000)
-
-        return () => {
-            if(updateIncrementorsIntervalRef.current) {
-                clearInterval(updateIncrementorsIntervalRef.current)
-            }
-            if(updateUpgradesIntervalRef.current) {
-                clearInterval(updateUpgradesIntervalRef.current)
-            }
-        }
-    }, [])
-
-    const handleUpgradesMultiplicator = useCallback((incrementorId: string, upgrades: Upgrade[]) => {
+    // Memoized handlers
+    const handleUpgradesMultiplicator = useCallback((incrementorId: string, currentUpgrades: Upgrade[]) => {
         let additive = 0
         let multiplicative = 1
         
-        const selectedUpgrades = upgrades.filter(
+        const selectedUpgrades = currentUpgrades.filter(
             (upgrade) => upgrade.purchased && (!upgrade.effects?.specific || upgrade.effects.specific?.incrementorId === incrementorId)
         )
         
@@ -110,91 +57,175 @@ const useBitUpdater = () => {
         return (1 + additive) * multiplicative
     }, [])
 
-    const setBitsProduced = useRecoilCallback(({ snapshot, set }) => async (multiplier: number) => {
-        const currentIncrementors = await snapshot.getPromise(autoIncrementorsState)
-        const upgrades = await snapshot.getPromise<Upgrade[]>(upgradesState)
-
-        const updatedIncrementors = currentIncrementors.map(inc => {
-            const upgradesMultiplicator = handleUpgradesMultiplicator(inc.id, upgrades)
-
-            return {
-                ...inc,
-                bitsProducedSoFar: inc.bitsProducedSoFar + (inc.units * inc.productionPerUnit * multiplier * upgradesMultiplicator)
+    // Debounced localStorage update
+    const debouncedSaveLastUpdateTime = useCallback(
+        debounce((time: number) => {
+            try {
+                localStorage.setItem('lastUpdateTime', String(time))
+            } catch (error) {
+                console.error('Error saving last update time:', error)
             }
-        })
-        
-        set(autoIncrementorsState, updatedIncrementors)
-    })
+        }, 1000),
+        []
+    )
 
-    const currentProduction = useDebouncedProduction()
-    const currentProductionByMS = useMemo(() => currentProduction / 1000, [currentProduction])
+    // Recoil callbacks with proper error handling
+    const handleRevealIncrementors = useRecoilCallback(({ snapshot, set }) => async () => {
+        try {
+            const currentBits = await snapshot.getPromise<number>(bitState)
+            const currentIncrementors = await snapshot.getPromise<Incrementor[]>(autoIncrementorsState)
 
-    const saveLastUpdateTime = useCallback((time: number) => {
-        localStorage.setItem('lastUpdateTime', String(time))
+            const revealableIncrementors = currentIncrementors.filter(
+                (incrementor) => incrementor.bitsToBeRevealed <= currentBits
+            )
+
+            const revealableIds = new Set(revealableIncrementors.map((incrementor) => incrementor.id))
+            const updatedIncrementors = currentIncrementors.map(
+                (incrementor) => revealableIds.has(incrementor.id)
+                    ? { ...incrementor, revealed: true }
+                    : incrementor
+            )
+
+            if (!shallowEqualIncrementors(currentIncrementors, updatedIncrementors)) {
+                set(autoIncrementorsState, updatedIncrementors)
+            }
+        } catch (error) {
+            console.error('Error revealing incrementors:', error)
+        }
     }, [])
 
-    useEffect(() => {
-        const lastUpdateTime = localStorage.getItem('lastUpdateTime')
-        if (lastUpdateTime) {
-            const elapsedTime = Math.floor((Date.now() - Number(lastUpdateTime)) / 1000)
+    const handleUpdateUpgrades = useRecoilCallback(({ snapshot, set }) => async () => {
+        try {
+            const [currentUpgrades, currentBits, currentIncrementors, currentEnterPresses] = await Promise.all([
+                snapshot.getPromise<Upgrade[]>(upgradesState),
+                snapshot.getPromise(bitState),
+                snapshot.getPromise(autoIncrementorsState),
+                snapshot.getPromise(enterPressesState)
+            ])
+            
+            const purchasedUpgrades = currentUpgrades.filter(u => u.purchased)
+            const listableUpgrades = currentUpgrades.filter(upgrade => 
+                checkUpgradeRequirements(
+                    upgrade,
+                    currentBits,
+                    currentIncrementors,
+                    purchasedUpgrades,
+                    currentEnterPresses
+                )
+            )
+        
+            const listableIds = new Set(listableUpgrades.map(u => u.id))
+            const updatedUpgrades = currentUpgrades.map(upgrade => 
+                listableIds.has(upgrade.id) 
+                    ? { ...upgrade, purchasable: true } 
+                    : upgrade
+            )
+        
+            if (!shallowEqualUpgrades(currentUpgrades, updatedUpgrades)) {
+                set(upgradesState, updatedUpgrades)
+            }
+        } catch (error) {
+            console.error('Error updating upgrades:', error)
+        }
+    }, [])
 
-            setBits(currVal => currVal + elapsedTime * currentProduction)
+    const setBitsProduced = useRecoilCallback(({ snapshot, set }) => async (multiplier: number) => {
+        try {
+            const [currentIncrementors, currentUpgrades] = await Promise.all([
+                snapshot.getPromise(autoIncrementorsState),
+                snapshot.getPromise<Upgrade[]>(upgradesState)
+            ])
 
-            const elapsedUpdatedIncrementors = autoIncrementors.map(inc => {
-                const upgradesMultiplicator = handleUpgradesMultiplicator(inc.id, upgrades)
-
+            const updatedIncrementors = currentIncrementors.map(inc => {
+                const upgradesMultiplicator = handleUpgradesMultiplicator(inc.id, currentUpgrades)
                 return {
                     ...inc,
-                    bitsProducedSoFar: inc.bitsProducedSoFar + (inc.units * inc.productionPerUnit * elapsedTime * upgradesMultiplicator)
+                    bitsProducedSoFar: inc.bitsProducedSoFar + 
+                        (inc.units * inc.productionPerUnit * multiplier * upgradesMultiplicator)
                 }
             })
-            setAutoIncrementors(elapsedUpdatedIncrementors)
+            
+            set(autoIncrementorsState, updatedIncrementors)
+        } catch (error) {
+            console.error('Error setting bits produced:', error)
         }
+    }, [handleUpgradesMultiplicator])
 
-        lastUpdateRef.current = Date.now()
-        localStorage.setItem('lastUpdateTime', String(lastUpdateRef.current))
-    }, [])
-
-    const startBitUpdate = useCallback(() => {
-        if (intervalRef.current) return
-
-        intervalRef.current = setInterval(() => {
+    
+    // Initialize intervals
+    const startIntervals = useCallback(() => {
+        // Clear any existing intervals
+        const existingIntervals = Array.from(intervalsRef.current)
+        intervalsRef.current.clear()
+        existingIntervals.forEach(clearInterval)
+        
+        // Main update interval
+        const mainInterval = setInterval(() => {
             const now = Date.now()
             lastUpdateRef.current = now
+            setBits(currVal => currVal + (currentProductionByMS * configRef.current.updateInterval))
+            setBitsProduced(configRef.current.updateInterval / 1000)
+            debouncedSaveLastUpdateTime(now)
+        }, configRef.current.updateInterval)
+        
+        // Slow update interval for incrementors and upgrades
+        const slowInterval = setInterval(() => {
+            handleRevealIncrementors()
+            handleUpdateUpgrades()
+        }, configRef.current.slowUpdateInterval)
+        
+        intervalsRef.current.add(mainInterval)
+        intervalsRef.current.add(slowInterval)
+    }, [currentProductionByMS, setBitsProduced, debouncedSaveLastUpdateTime, 
+        handleRevealIncrementors, handleUpdateUpgrades])
+    
+    // Visibility change handler
+    const handleVisibilityChange = useCallback(() => {
+        configRef.current.updateInterval = document.hidden ? 
+            BACKGROUND_UPDATE_INTERVAL : 
+            DEFAULT_UPDATE_INTERVAL;
+        startIntervals(); // Restart intervals with the new delay
+    }, [startIntervals]);
 
-            setBits(currVal => currVal + (currentProductionByMS * (updateInterval)))
-            setBitsProduced(updateInterval / 1000)
-            saveLastUpdateTime(now)
-        }, updateInterval)
-    }, [currentProductionByMS, saveLastUpdateTime, updateInterval])
-
+    // Initial setup effect
     useEffect(() => {
-        const handleVisibilityChange = () => {
-            if (document.hidden) {
-                setUpdateInterval(3000)
-            } else {
-                setUpdateInterval(200)
-            }
-        }
+        try {
+            const lastUpdateTime = localStorage.getItem('lastUpdateTime')
+            if (lastUpdateTime) {
+                const elapsedTime = Math.floor((Date.now() - Number(lastUpdateTime)) / 1000)
 
-        document.addEventListener('visibilitychange', handleVisibilityChange)
-        return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
+                setBits(currVal => currVal + elapsedTime * currentProduction)
+
+                const elapsedUpdatedIncrementors = autoIncrementors.map(inc => {
+                    const upgradesMultiplicator = handleUpgradesMultiplicator(inc.id, upgrades)
+                    return {
+                        ...inc,
+                        bitsProducedSoFar: inc.bitsProducedSoFar + 
+                            (inc.units * inc.productionPerUnit * elapsedTime * upgradesMultiplicator)
+                    }
+                })
+                setAutoIncrementors(elapsedUpdatedIncrementors)
+            }
+
+            lastUpdateRef.current = Date.now()
+            debouncedSaveLastUpdateTime(lastUpdateRef.current)
+        } catch (error) {
+            console.error('Error in initial setup:', error)
+        }
     }, [])
 
+    // Main effect for intervals and event listeners
     useEffect(() => {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current)
-            intervalRef.current = null
-        }
-        startBitUpdate()
-        
+        document.addEventListener('visibilitychange', handleVisibilityChange)
+        startIntervals()
+
         return () => {
-            if (intervalRef.current) {
-                clearInterval(intervalRef.current)
-                intervalRef.current = null
-            }
+            document.removeEventListener('visibilitychange', handleVisibilityChange)
+            intervalsRef.current.forEach(interval => clearInterval(interval))
+            intervalsRef.current.clear()
+            debouncedSaveLastUpdateTime.cancel()
         }
-    }, [startBitUpdate])
+    }, [handleVisibilityChange, startIntervals, debouncedSaveLastUpdateTime])
 
     return { setBits, bits }
 }

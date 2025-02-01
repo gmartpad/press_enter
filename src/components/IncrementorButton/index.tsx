@@ -49,7 +49,10 @@ function IncrementorButton({ item, children }: { item: Incrementor; children: Re
     return (
         <StyledIncrementorButton
             className="botBuy"
-            onClick={async () => await updateAutoIncrementors(item).then(() => handleEnterBotClick())}
+            onClick={async () => {
+                updateAutoIncrementors(item)
+                handleEnterBotClick()
+            }}
             onMouseEnter={() => setCurrentHoveredBotItem(item)}
             onMouseLeave={() => setCurrentHoveredBotItem({} as Incrementor)}
             $affordable={isAffordable}

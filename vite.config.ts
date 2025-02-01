@@ -12,6 +12,7 @@ export default defineConfig({
             '@utils': path.resolve(__dirname, 'src/utils'),
             '@providers': path.resolve(__dirname, 'src/providers'),
             '@lang': path.resolve(__dirname, 'src/lang'),
+            '@state/*': path.resolve(__dirname, 'src/state/*'),
             '@state': path.resolve(__dirname, 'src/state'),
             '@hooks': path.resolve(__dirname, 'src/hooks'),
             '@upgrades': path.resolve(__dirname, 'src/state/upgrades')
