@@ -220,6 +220,9 @@ const syncedHoveredBotItemState = selector({
 
         return updatedHoveredItem || ({} as Incrementor)
     },
+    cachePolicy_UNSTABLE: {
+        eviction: 'most-recent'
+    }
 })
 
 // ---------------------------------------
@@ -336,6 +339,9 @@ const pressEnterPurchasedUpgradesState = selector({
     get: ({ get }) => {
         const upgrades = get<Upgrade[]>(upgradesState)
         return upgrades.filter((u) => u.incrementorId === 'pressEnter' && u.purchased)
+    },
+    cachePolicy_UNSTABLE: {
+        eviction: 'most-recent'
     }
 })
 
@@ -355,6 +361,9 @@ const calculatedEnterPressBitAmountState = selector({
         const enterPressBitProductionIncrease = currentProduction * percentageIncrease
 
         return 1 + enterPressBitProductionIncrease
+    },
+    cachePolicy_UNSTABLE: {
+        eviction: 'most-recent'
     }
 })
 
@@ -491,6 +500,9 @@ const currentProductionState = selector({
 
         return totalProduction
     },
+    cachePolicy_UNSTABLE: {
+        eviction: 'most-recent'
+    }
 })
 
 export {

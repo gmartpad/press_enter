@@ -11,6 +11,7 @@ const SkeletonInfoImgDiv = styled.div`
 
 const InfoImgDiv = styled.img<{
   $isInfoDialogImgLoading: boolean
+  $hiddenIncrementor: boolean
 }>`
   height: 48px;
   max-height: 48px;
@@ -19,6 +20,7 @@ const InfoImgDiv = styled.img<{
   border-radius: 8px;
   display: ${props => (props.$isInfoDialogImgLoading ? 'none' : 'block')};
   margin: auto 0px;
+  background-color: ${props => (props.$hiddenIncrementor ? '#fff' : 'inherit')};
 `
 
 export { SkeletonInfoImgDiv, InfoImgDiv }

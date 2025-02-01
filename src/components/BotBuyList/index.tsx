@@ -28,9 +28,6 @@ const BotBuyList = () => {
     const [config, setConfig] = useRecoilState<Config>(configState)
     
     const handlePurchaseUpgrade = useRecoilCallback(({ snapshot, set, }) => async (upgrade: Upgrade, isUpgradeAffordable: boolean) => {
-        console.log('!upgrade: ', !upgrade)
-        console.log('upgrade.purchased: ', upgrade.purchased)
-        console.log('!isUpgradeAffordable: ', !isUpgradeAffordable)
         if (!upgrade || upgrade.purchased || !isUpgradeAffordable) return
     
         const upgrades = await snapshot.getPromise<Upgrade[]>(upgradesState)
@@ -41,8 +38,6 @@ const BotBuyList = () => {
             } 
             return u
         })
-
-        console.log('updatedUpgrades: ', updatedUpgrades)
 
         set(upgradesState, updatedUpgrades)
         set(bitState, (currVal) => (currVal - upgrade.cost))
@@ -124,7 +119,7 @@ const BotBuyList = () => {
                         <BotBuyImg key={item.id} item={item} />
                         <BotBuyInfo>
                             <IncrementorName>
-                                <FormattedMessage id={`botBuyList.${item.id}.name`} />
+                                {item?.revealed ? <FormattedMessage id={`botBuyList.${item.id}.name`} /> : <p style={{ margin: 0 }}>???????</p>}
                             </IncrementorName>
                             <IncrementorBotPrice
                                 price={handleRecalculatePricePerUnit(item, config)}
@@ -132,7 +127,7 @@ const BotBuyList = () => {
                                 config={config}
                             />
                         </BotBuyInfo>
-                        <IncrementorAmount>{item.units}</IncrementorAmount>
+                        <IncrementorAmount>{item?.revealed ? item.units : '???'}</IncrementorAmount>
                     </IncrementorButton>
                 ))}
             </BotBuyListGrid>
