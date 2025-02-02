@@ -37,7 +37,7 @@ const UpgradeItem = ({
                 setImageUrl((module as { default: string }).default)
             })
         }
-    }, [upgrade.imgSrc])
+    }, [upgrade.imgSrc, images])
 
     useEffect(() => {
         handleImageUrl()
@@ -59,12 +59,12 @@ const UpgradeItem = ({
 
     const playSound = useCallback(() => {
         handleEnterBotClick(isUpgradeAffordable, config.volume)
-    }, [isUpgradeAffordable, config.volume])
+    }, [isUpgradeAffordable, config.volume, handleEnterBotClick])
 
     const handleOnClick = useCallback(async () => {
         await handlePurchaseUpgrade(upgrade, isUpgradeAffordable)
         playSound()
-    }, [upgrade, isUpgradeAffordable, config.volume, playSound])
+    }, [upgrade, isUpgradeAffordable, playSound, handlePurchaseUpgrade])
 
     return (
         <OuterUpgradeItem

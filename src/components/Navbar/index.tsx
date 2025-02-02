@@ -25,7 +25,7 @@ const Navbar = () => {
             ...currentConfig,
             [key]: !currentConfig[key]
         })
-    }, [handleNavClickSound, setConfig])
+    }, [handleNavClickSound, setConfig, store])
 
     const handleToggleConfigDialog = useCallback(
         () => toggleHandler('configDialogOpen'),

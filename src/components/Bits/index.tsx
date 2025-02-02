@@ -98,7 +98,7 @@ const Bits = () => {
             setBits(currentBits + calculatedEnterPressBitAmount)
             debouncedHandleEnterBitClickSound()
         },
-        [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, debouncedHandleEnterBitClickSound]
+        [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, debouncedHandleEnterBitClickSound, store]
     )
 
     useEffect(() => {

@@ -52,7 +52,7 @@ const useUpdateAutoIncrementors = () => {
             setAutoIncrementors(updatedIncrementors)
         }
     },
-    [] // No additional dependencies needed
+    [setAutoIncrementors, setBits, store] // No additional dependencies needed
     )
 }
 

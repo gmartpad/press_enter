@@ -106,7 +106,7 @@ const useBitUpdater = () => {
         } catch (error) {
             console.error('Error revealing incrementors:', error)
         }
-    }, [store])
+    }, [store, setAutoIncrementors])
 
     const handleUpdateUpgrades = useCallback(() => {
         try {
@@ -139,7 +139,7 @@ const useBitUpdater = () => {
         } catch (error) {
             console.error('Error updating upgrades:', error)
         }
-    }, [store])
+    }, [store, setUpgrades])
 
     const setBitsProduced = useCallback(
         (multiplier: number) => {
@@ -168,7 +168,7 @@ const useBitUpdater = () => {
                 console.error('Error setting bits produced:', error)
             }
         },
-        [handleUpgradesMultiplicator, store]
+        [handleUpgradesMultiplicator, store, setAutoIncrementors]
     )
 
     const startIntervals = useCallback(() => {
@@ -198,7 +198,8 @@ const useBitUpdater = () => {
         handleRevealIncrementors,
         handleUpdateUpgrades,
         setBits,
-        setBitsProduced
+        setBitsProduced,
+        store
     ])
 
     const handleVisibilityChange = useCallback(() => {
@@ -246,7 +247,7 @@ const useBitUpdater = () => {
         } catch (error) {
             console.error('Error in initial setup:', error)
         }
-    }, [setBits, store, debouncedSaveLastUpdateTime, handleUpgradesMultiplicator])
+    }, [setBits, store, debouncedSaveLastUpdateTime, handleUpgradesMultiplicator, setAutoIncrementors])
 
     useEffect(() => {
         document.addEventListener('visibilitychange', handleVisibilityChange)

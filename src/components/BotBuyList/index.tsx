@@ -60,7 +60,7 @@ const BotBuyList = () => {
         const currentBits = store.get(bitState)
         setBits(currentBits - upgrade.cost)
         setCurrentHoveredUpgradeItem(EMPTY_UPGRADE)
-    }, [EMPTY_UPGRADE])
+    }, [EMPTY_UPGRADE, setBits, setCurrentHoveredUpgradeItem, setUpgrades, store])
 
     const handleChangeBulkMode = useCallback(
         (newBotBulkModeValue: number) => {
@@ -70,7 +70,7 @@ const BotBuyList = () => {
                 botBulkMode: newBotBulkModeValue,
             })
         },
-        [setConfig]
+        [setConfig, store]
     )
 
     const handleChangeBulkAmount = useCallback(
