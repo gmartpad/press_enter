@@ -5,6 +5,8 @@ import {
     BotBuyInfo,
     BotBuyListGrid,
     BotUpgradeList,
+    BulkAmountIndicatorParagraph,
+    BulkModeIndicatorParagraph,
     BuySellContainer,
     IncrementorAmount,
     IncrementorName,
@@ -124,6 +126,9 @@ const BotBuyList = () => {
                     $active={config.botBulkMode === 1}
                 >
                     <FormattedMessage tagName="p" id="botBuyList.buy.title" />
+                    <BulkModeIndicatorParagraph>
+                        {config.botBulkMode === 1 ? '<-' : ''}
+                    </BulkModeIndicatorParagraph>
                 </BotBulkModeButton>
                 
                 <BotBulkModeButton
@@ -132,6 +137,9 @@ const BotBuyList = () => {
                     $active={config.botBulkMode === 0}
                 >
                     <FormattedMessage tagName="p" id="botBuyList.sell.title" />
+                    <BulkModeIndicatorParagraph>
+                        {config.botBulkMode === 0 ? '<-' : ''}
+                    </BulkModeIndicatorParagraph>
                 </BotBulkModeButton>
                 
                 {[1, 10, 100].map((amount) => (
@@ -141,6 +149,9 @@ const BotBuyList = () => {
                         $active={config.botBulkAmount === amount}
                     >
                         <p>{amount}</p>
+                        <BulkAmountIndicatorParagraph>
+                            {config.botBulkAmount === amount ? 'ˆ' : ''}
+                        </BulkAmountIndicatorParagraph>
                     </BotBulkAmountButton>
                 ))}
             </BuySellContainer>

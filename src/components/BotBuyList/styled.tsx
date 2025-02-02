@@ -10,6 +10,8 @@ const Aside = styled.aside`
 
 const BotBulkModeButton = styled.button<{ $bulkType: 'buy' | 'sell'; $active: boolean }>`
   position: absolute;
+  display: flex;
+  flex-direction: row;
   left: 0px;
   background-color: transparent;
   border: none;
@@ -18,7 +20,7 @@ const BotBulkModeButton = styled.button<{ $bulkType: 'buy' | 'sell'; $active: bo
   bottom: ${props => (props.$bulkType === 'sell' ? '1px' : 'auto')};
 
   & p {
-    color: ${props => (props.$active ? '#fff' : '#ccc')};
+    color: ${props => (props.$active ? '#fff' : '#bbb')};
     margin: 0px;
     font-size: 0.75rem;
   }
@@ -37,7 +39,7 @@ const BotBulkAmountButton = styled.button<{ $active: boolean }>`
   cursor: pointer;
 
   & p {
-    color: ${props => (props.$active ? '#fff' : '#ccc')};
+    color: ${props => (props.$active ? '#fff' : '#bbb')};
     margin: 0px;
     font-size: 0.75rem;
   }
@@ -97,6 +99,15 @@ const BotUpgradeList = styled.div`
   }
 `
 
+const BulkAmountIndicatorParagraph = styled.p`
+  font-size: 1.5rem !important;
+  margin: 0px !important;
+`
+
+const BulkModeIndicatorParagraph = styled.p`
+  margin-left: 0.25rem !important;
+`
+
 export {
     Aside,
     BotBulkModeButton,
@@ -106,5 +117,7 @@ export {
     IncrementorName,
     BuySellContainer,
     BotBuyListGrid,
-    BotUpgradeList
+    BotUpgradeList,
+    BulkAmountIndicatorParagraph,
+    BulkModeIndicatorParagraph
 }
