@@ -1,5 +1,5 @@
 import { atom } from 'jotai'
-import { atomWithStorage, createJSONStorage } from 'jotai/utils'
+import { atomWithStorage } from 'jotai/utils'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import defaultAutoIncrementors, { Incrementor } from './defaultAutoIncrementors.ts'
 import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit.ts'
@@ -10,13 +10,13 @@ import { LanguageValues } from '@components/LanguageDialog/languages.ts'
 // Base atoms with localStorage integration
 // ---------------------------------------
 
-export const DEFAULT_ENTER_PRESSES_STATE = 0
+export const DEFAULT_ENTER_PRESSES_STATE = Number(localStorage.getItem('enterPressesState'))
 export const enterPressesState = atomWithStorage<number>(
     'enterPressesState',
     DEFAULT_ENTER_PRESSES_STATE
 )
 
-export const DEFAULT_BIT_STATE_VALUE = 0
+export const DEFAULT_BIT_STATE_VALUE = Number(localStorage.getItem('bitState'))
 const bitStateInternal = atomWithStorage<number>('bitState', DEFAULT_BIT_STATE_VALUE)
 
 export const bitState = atom(
@@ -27,31 +27,27 @@ export const bitState = atom(
     }
 )
 
+// ------------------------------------------
+
 export const DEFAULT_AUTO_INCREMENTORS_STATE_VALUE = defaultAutoIncrementors
-export const autoIncrementorsState = atomWithStorage<Incrementor[]>(
-    'autoIncrementorsState',
-    DEFAULT_AUTO_INCREMENTORS_STATE_VALUE,
-    createJSONStorage<Incrementor[]>(() => ({
-        getItem: (key) => {
-            const storedValue = localStorage.getItem(key)
-            if (!storedValue) return null
-            try {
-                const parsed = JSON.parse(storedValue) as Incrementor[]
-                return JSON.stringify(defaultAutoIncrementors.map((i, k) => ({
-                    ...i,
-                    units: parsed[k]?.units ?? i.units,
-                    pricePerUnit: parsed[k]?.pricePerUnit ?? i.pricePerUnit,
-                    bitsProducedSoFar: parsed[k]?.bitsProducedSoFar ?? i.bitsProducedSoFar,
-                })))
-            } catch (error) {
-                console.error('Error parsing autoIncrementorsState:', error)
-                return JSON.stringify(DEFAULT_AUTO_INCREMENTORS_STATE_VALUE)
-            }
-        },
-        setItem: (key, value) => localStorage.setItem(key, JSON.stringify(value)),
-        removeItem: (key) => localStorage.removeItem(key),
-    }))
-)
+
+export const autoIncrementorsState = atomWithStorage<Incrementor[]>('autoIncrementorsState', defaultAutoIncrementors, {
+    getItem: (key) => {
+        const storedValue = localStorage.getItem(key)
+        if (!storedValue) return defaultAutoIncrementors // Return default if empty
+        try {
+            return JSON.parse(storedValue) as Incrementor[]
+        } catch (error) {
+            console.error('Error parsing localStorage:', error)
+            return defaultAutoIncrementors // Handle invalid JSON gracefully
+        }
+    },
+    setItem: (key, value) => {
+        localStorage.setItem(key, JSON.stringify(value))
+    },
+    removeItem: (key) => localStorage.removeItem(key)
+})
+
 
 export type Config = {
   volume: number
@@ -79,24 +75,24 @@ export const DEFAULT_CONFIG_STATE_VALUE = defaultConfig
 export const configState = atomWithStorage<Config>(
     'configState',
     DEFAULT_CONFIG_STATE_VALUE,
-    createJSONStorage<Config>(() => ({
+    {
         getItem: (key) => {
             const storedValue = localStorage.getItem(key)
-            if (!storedValue) return null
+            if (!storedValue) return DEFAULT_CONFIG_STATE_VALUE
             try {
                 const parsed = JSON.parse(storedValue) as Partial<Config>
-                return JSON.stringify({
+                return {
                     ...DEFAULT_CONFIG_STATE_VALUE,
                     ...parsed
-                })
+                }
             } catch (error) {
                 console.error('Error parsing configState:', error)
-                return JSON.stringify(DEFAULT_CONFIG_STATE_VALUE)
+                return DEFAULT_CONFIG_STATE_VALUE
             }
         },
         setItem: (key, value) => localStorage.setItem(key, JSON.stringify(value)),
         removeItem: (key) => localStorage.removeItem(key),
-    }))
+    }
 )
 
 export const DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE = {} as Incrementor
@@ -121,26 +117,26 @@ export const DEFAULT_UPGRADES_STATE_VALUE = defaultUpgrades
 export const upgradesState = atomWithStorage<Upgrade[]>(
     'upgradesState',
     DEFAULT_UPGRADES_STATE_VALUE,
-    createJSONStorage<Upgrade[]>(() => ({
+    {
         getItem: (key) => {
             const storedValue = localStorage.getItem(key)
-            if (!storedValue) return null
+            if (!storedValue) return DEFAULT_UPGRADES_STATE_VALUE
             try {
                 const parsed = JSON.parse(storedValue) as Upgrade[]
-                return JSON.stringify(DEFAULT_UPGRADES_STATE_VALUE.map((i, k) => ({
+                return DEFAULT_UPGRADES_STATE_VALUE.map((i, k) => ({
                     ...i,
                     ...parsed[k],
                     effects: parsed[k]?.effects ?? i.effects,
                     requirementsToBeListable: parsed[k]?.requirementsToBeListable ?? i.requirementsToBeListable
-                })))
+                }))
             } catch (error) {
                 console.error('Error parsing upgradesState:', error)
-                return JSON.stringify(DEFAULT_UPGRADES_STATE_VALUE)
+                return DEFAULT_UPGRADES_STATE_VALUE
             }
         },
         setItem: (key, value) => localStorage.setItem(key, JSON.stringify(value)),
         removeItem: (key) => localStorage.removeItem(key),
-    }))
+    }
 )
 
 // ---------------------------------------

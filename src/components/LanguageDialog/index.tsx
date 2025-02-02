@@ -35,7 +35,7 @@ const LanguageDialog = () => {
             ...currentConfig,
             languageDialogOpen: !currentConfig.languageDialogOpen
         })
-    }, [handleCloseClickSound, setConfig, config])
+    }, [handleCloseClickSound, setConfig, store])
 
     const handleChangeLanguageLocale = useCallback((newLanguageLocale: LanguageValues) => {
         const currentConfig = store.get(configState)
@@ -43,7 +43,7 @@ const LanguageDialog = () => {
             ...currentConfig,
             currentLanguageLocale: newLanguageLocale
         })
-    }, [setConfig])
+    }, [setConfig, store])
 
     if(config?.languageDialogOpen) return (
         <>

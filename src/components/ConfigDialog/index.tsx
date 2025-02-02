@@ -21,7 +21,7 @@ const ConfigDialog = () => {
                 volume: Number(e.target.value) / 100,
             })
         },
-        [setConfig]
+        [setConfig, store]
     )
 
     const audioRef = useRef<HTMLAudioElement>(new Audio())
@@ -42,7 +42,7 @@ const ConfigDialog = () => {
             ...currentConfig,
             configDialogOpen: !currentConfig.configDialogOpen,
         })
-    }, [handleCloseClickSound, setConfig, config])
+    }, [handleCloseClickSound, setConfig, store])
 
     const handleToggleConfirmDialog = useCallback(() => {
         const currentConfig = store.get(configState)
@@ -50,7 +50,7 @@ const ConfigDialog = () => {
             ...currentConfig,
             confirmDialogOpen: !currentConfig.confirmDialogOpen,
         })
-    }, [setConfig])
+    }, [setConfig, store])
 
 
     if(config.configDialogOpen) return (

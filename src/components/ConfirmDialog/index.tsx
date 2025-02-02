@@ -24,7 +24,7 @@ const ConfirmDialog = () => {
             ...currentConfig,
             confirmDialogOpen: !currentConfig.confirmDialogOpen,
         })
-    }, [setConfig])
+    }, [setConfig, store])
 
     const handleToggleConfigDialog = useCallback(() => {
         const currentConfig = store.get(configState)
@@ -32,7 +32,7 @@ const ConfirmDialog = () => {
             ...currentConfig,
             configDialogOpen: !currentConfig.configDialogOpen,
         })
-    }, [setConfig])
+    }, [setConfig, store])
 
     const confirmConfigToggle = useCallback(() => {
         handleToggleConfirmDialog()
