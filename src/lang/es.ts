@@ -2,6 +2,8 @@ const es = {
     'bits.bitsPerSecond': 'bits/segundo:',
     'botsOwned': 'tienes',
     'botBuyList.upgrades.title': 'Mejoras',
+    'botBuyList.upgrades.buyAllUpgrades.title': "Comprar todas las mejoras",
+    'botBuyList.upgrades.buyAllUpgrades.tooltip': "Compra instantáneamente todas las mejoras que puedas permitirte, comenzando por las opciones más económicas.",
     'botBuyList.buy.title': 'COMPRAR',
     'botBuyList.sell.title': 'VENDER',
     'botBuyList.globalBits.name': 'Global',

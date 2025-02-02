@@ -1,6 +1,5 @@
-import { useAtom, useSetAtom, useStore } from 'jotai'
+import { useSetAtom, useStore } from 'jotai'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
-import { debounce } from 'lodash'
 import {
     autoIncrementorsState,
     bitState,
@@ -21,11 +20,11 @@ interface IntervalConfig {
 
 const DEFAULT_UPDATE_INTERVAL = 200
 const BACKGROUND_UPDATE_INTERVAL = 3000
-const SLOW_UPDATE_INTERVAL = 1000
+const SLOW_UPDATE_INTERVAL = 600
 
 const useBitUpdater = () => {
     const store = useStore()
-    const [, setBits] = useAtom(bitState)
+    const setBits = useSetAtom(bitState)
     const setAutoIncrementors = useSetAtom(autoIncrementorsState)
     const setUpgrades = useSetAtom(upgradesState)
     const currentProduction = useDebouncedProduction() as number
@@ -71,15 +70,14 @@ const useBitUpdater = () => {
         []
     )
 
-    const debouncedSaveLastUpdateTime = useCallback(
-        debounce((time: number) => {
+    const saveLastUpdateTime = useCallback(
+        (time: number) => {
             try {
                 localStorage.setItem('lastUpdateTime', String(time))
             } catch (error) {
                 console.error('Error saving last update time:', error)
             }
-        }, 1000),
-        []
+        },[]
     )
 
     const handleRevealIncrementors = useCallback(() => {
@@ -182,7 +180,7 @@ const useBitUpdater = () => {
             lastUpdateRef.current = now
             setBits(currentBits + (currentProductionByMS * configRef.current.updateInterval))
             setBitsProduced(configRef.current.updateInterval / 1000)
-            debouncedSaveLastUpdateTime(now)
+            saveLastUpdateTime(now)
         }, configRef.current.updateInterval)
 
         const slowInterval = setInterval(() => {
@@ -194,7 +192,7 @@ const useBitUpdater = () => {
         intervalsRef.current.add(slowInterval)
     }, [
         currentProductionByMS,
-        debouncedSaveLastUpdateTime,
+        saveLastUpdateTime,
         handleRevealIncrementors,
         handleUpdateUpgrades,
         setBits,
@@ -218,7 +216,7 @@ const useBitUpdater = () => {
                     (Date.now() - Number(lastUpdateTime)) / 1000
                 )
                 const currentProductionValue = store.get(currentProductionState)
-
+                
                 setBits(currentBits + (elapsedTime * currentProductionValue))
 
                 const currentIncrementors = store.get(autoIncrementorsState)
@@ -232,22 +230,22 @@ const useBitUpdater = () => {
                     return {
                         ...inc,
                         bitsProducedSoFar:
-              inc.bitsProducedSoFar +
-              inc.units *
-                inc.productionPerUnit *
-                elapsedTime *
-                upgradesMultiplicator
+                            inc.bitsProducedSoFar +
+                            inc.units *
+                                inc.productionPerUnit *
+                                elapsedTime *
+                                upgradesMultiplicator
                     }
                 })
                 setAutoIncrementors(elapsedUpdatedIncrementors)
             }
 
             lastUpdateRef.current = Date.now()
-            debouncedSaveLastUpdateTime(lastUpdateRef.current)
+            saveLastUpdateTime(lastUpdateRef.current)
         } catch (error) {
             console.error('Error in initial setup:', error)
         }
-    }, [setBits, store, debouncedSaveLastUpdateTime, handleUpgradesMultiplicator, setAutoIncrementors])
+    }, [setBits, store, saveLastUpdateTime, handleUpgradesMultiplicator, setAutoIncrementors])
 
     useEffect(() => {
         document.addEventListener('visibilitychange', handleVisibilityChange)
@@ -257,9 +255,8 @@ const useBitUpdater = () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange)
             intervalsRef.current.forEach((interval) => clearInterval(interval))
             intervalsRef.current.clear()
-            debouncedSaveLastUpdateTime.cancel()
         }
-    }, [handleVisibilityChange, startIntervals, debouncedSaveLastUpdateTime])
+    }, [handleVisibilityChange, startIntervals, saveLastUpdateTime])
 
     return { setBits }
 }

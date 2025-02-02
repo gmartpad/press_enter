@@ -2,6 +2,8 @@ const bn = {
     'bits.bitsPerSecond': 'বিট/সেকেন্ড:',
     'botsOwned': 'অধিগৃহীত',
     'botBuyList.upgrades.title': 'আপগ্রেড',
+    'botBuyList.upgrades.buyAllUpgrades.title': "সমস্ত আপগ্রেড ক্রয় করুন",
+    'botBuyList.upgrades.buyAllUpgrades.tooltip': "আপনি যতগুলি আপগ্রেড কিনতে পারবেন তা তাত্ক্ষণিকভাবে ক্রয় করে, সস্তা অপশনগুলি দিয়ে শুরু করে।",
     'botBuyList.buy.title': 'কিনুন',
     'botBuyList.sell.title': 'বিক্রি করুন',
     'botBuyList.globalBits.name': 'বিশ্বব্যাপী',

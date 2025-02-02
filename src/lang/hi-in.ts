@@ -2,6 +2,8 @@ const hiIn = {
     'bits.bitsPerSecond': 'बिट्स/सेकंड:',
     'botsOwned': 'प्राप्त किए',
     'botBuyList.upgrades.title': 'उन्नयन',
+    'botBuyList.upgrades.buyAllUpgrades.title': "सभी अपग्रेड खरीदें",
+    'botBuyList.upgrades.buyAllUpgrades.tooltip': "तुरंत सभी सस्ते अपग्रेड खरीदता है, सबसे कम कीमत वाले विकल्पों से शुरू करके।",
     'botBuyList.buy.title': 'खरीदें',
     'botBuyList.sell.title': 'बेचें',
     'botBuyList.globalBits.name': 'वैश्विक',

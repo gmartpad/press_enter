@@ -6,13 +6,13 @@ function App() {
     return (
         <Provider>
             <InspectProtectionProvider>
-                <BitUpdaterProvider>
-                    <LangProvider>
-                        <BroadcastProvider>
+                <LangProvider>
+                    <BroadcastProvider>
+                        <BitUpdaterProvider>
                             <Content/>
-                        </BroadcastProvider>
-                    </LangProvider>
-                </BitUpdaterProvider>
+                        </BitUpdaterProvider>
+                    </BroadcastProvider>
+                </LangProvider>
             </InspectProtectionProvider>
         </Provider>
     )

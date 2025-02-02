@@ -2,6 +2,8 @@ const ur = {
     'bits.bitsPerSecond': 'بٹس/سیکنڈ:',
     'botsOwned': 'حاصل کردہ',
     'botBuyList.upgrades.title': 'اپ گریڈز',
+    'botBuyList.upgrades.buyAllUpgrades.title': "تمام اپگریڈز خریدیں",
+    'botBuyList.upgrades.buyAllUpgrades.tooltip': "فوری طور پر تمام قابل برداشت اپگریڈز خریدیں، سب سے سستے اختیارات سے شروع کرتے ہوئے۔",
     'botBuyList.buy.title': 'خریدیں',
     'botBuyList.sell.title': 'فروخت کریں',
     'botBuyList.globalBits.name': 'عالمی',
