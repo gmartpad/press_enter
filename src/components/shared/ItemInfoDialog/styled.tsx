@@ -48,6 +48,7 @@ const ItemInfoDialog = styled.dialog.attrs<{ $dialogTop: number }>(
               2px -2px 0 0 #fff, -2px 2px 0 0 #fff;
   word-break: break-word;
   word-wrap: break-word;
+  z-index: 1;
 `
 
 const ItemInfoParagraph = styled.p`

@@ -5,15 +5,15 @@ import Content from '@components/Content'
 function App() {
     return (
         <RecoilRoot>
-            <InspectProtectionProvider>
-                <BitUpdaterProvider>
-                    <LangProvider>
-                        <BroadcastProvider>
-                            <Content/>
-                        </BroadcastProvider>
-                    </LangProvider>
-                </BitUpdaterProvider>
-            </InspectProtectionProvider>
+            {/* <InspectProtectionProvider> */}
+                    <BitUpdaterProvider>
+                        <LangProvider>
+                            <BroadcastProvider>
+                                <Content/>
+                            </BroadcastProvider>
+                        </LangProvider>
+                    </BitUpdaterProvider>
+            {/* </InspectProtectionProvider> */}
         </RecoilRoot>
     )
 }

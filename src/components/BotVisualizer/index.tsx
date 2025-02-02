@@ -2,97 +2,151 @@ import { useCallback, useEffect, useRef } from 'react'
 import { getSpecificIncrementor } from '@state/atoms'
 import { useRecoilValue } from 'recoil'
 
-const BotVisualizerItem = ({
-    botId,
-}: {
-    botId: string;
-}) => {
+// Global image cache to prevent redundant loads
+const imageCache = new Map<string, HTMLImageElement>()
+
+const BotVisualizerItem = ({ botId }: { botId: string }) => {
     const currentIncrementor = useRecoilValue(getSpecificIncrementor(botId))
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
     const imageRef = useRef<HTMLImageElement | null>(null)
+    
+    // Canvas optimization refs
+    const bufferCanvas = useRef(document.createElement('canvas'))
+    const resizeFrame = useRef(0)
+    const isMounted = useRef(true)
 
-    useEffect(() => {
-        const img = new Image()
-        img.src = `/src/assets/botImages/${botId}/${botId}BotDiv.png`
-        imageRef.current = img
-
-        img.onload = () => {
-            resizeCanvas()
-        }
-
-        img.onerror = () => {
-            console.error(`Failed to load image: ${img.src}`)
-        }
-    }, [botId])
-
-    // Function to resize the canvas and redraw circles with images
-    const resizeCanvas = useCallback(() => {
+    // Unified drawing function
+    const drawCanvas = useCallback(() => {
         if (!canvasRef.current || !imageRef.current) return
 
         const canvas = canvasRef.current
         const ctx = canvas.getContext('2d')
-        if (!ctx) return
+        const bufferCtx = bufferCanvas.current.getContext('2d')
+        
+        if (!ctx || !bufferCtx) return
 
-        // Update canvas dimensions to match its container
-        canvas.width = canvas.offsetWidth
-        canvas.height = canvas.offsetHeight
+        // Set buffer dimensions
+        bufferCanvas.current.width = canvas.width
+        bufferCanvas.current.height = canvas.height
 
-        // Circle properties
+        // Clear buffers
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        bufferCtx.clearRect(0, 0, canvas.width, canvas.height)
+
+        // Circle configuration
         const circleRadius = 30
-        const circleSpacing = 70 // Distance between circles
-        const startX = 50 // Initial X offset
-        const startY = canvas.height / 2 // Centered vertically
+        const circleSpacing = 70
+        const startX = 50
+        const startY = canvas.height / 2
         const units = currentIncrementor?.units ?? 0
 
-        // Clear only the necessary part of the canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-        // Draw circles with the image
+        // Draw to buffer first
         for (let i = 0; i < units; i++) {
             const x = startX + i * circleSpacing + (i % 3 ? 10 : -10)
             const y = startY + (i % 2 ? 10 : -10)
 
-            ctx.save() // Save the current canvas state
-            ctx.beginPath()
-            ctx.arc(x, y, circleRadius, 0, Math.PI * 2)
-            ctx.closePath()
-            ctx.clip() // Clip to the circle
+            bufferCtx.save()
+            bufferCtx.beginPath()
+            bufferCtx.arc(x, y, circleRadius, 0, Math.PI * 2)
+            bufferCtx.closePath()
+            bufferCtx.clip()
 
-            // Fill the circle with a gray color
-            ctx.fillStyle = 'gray'
-            ctx.fill() // Fill the circle with gray
+            // Fill with gray background
+            bufferCtx.fillStyle = 'gray'
+            bufferCtx.fill()
 
-            // Draw the image inside the clipped circle
-            ctx.drawImage(
+            // Draw image
+            bufferCtx.drawImage(
                 imageRef.current,
-                x - circleRadius, // Center the image in the circle
+                x - circleRadius,
                 y - circleRadius,
                 circleRadius * 2,
                 circleRadius * 2
             )
 
-            ctx.restore() // Restore the canvas state
+            bufferCtx.restore()
         }
+
+        // Copy buffer to main canvas
+        ctx.drawImage(bufferCanvas.current, 0, 0)
     }, [currentIncrementor?.units])
 
-    useEffect(() => {
-        // Add window resize listener
-        window.addEventListener('resize', resizeCanvas)
+    // Throttled resize handler
+    const handleResize = useCallback(() => {
+        if (!canvasRef.current) return
 
-        // Cleanup listener on component unmount
-        return () => {
-            window.removeEventListener('resize', resizeCanvas)
+        cancelAnimationFrame(resizeFrame.current)
+        resizeFrame.current = requestAnimationFrame(() => {
+            const canvas = canvasRef.current
+            if (!canvas) return
+
+            canvas.width = canvas.offsetWidth
+            canvas.height = canvas.offsetHeight
+            drawCanvas()
+        })
+    }, [drawCanvas])
+
+    // Image loading effect
+    useEffect(() => {
+        isMounted.current = true
+
+        const loadImage = async () => {
+            if (imageCache.has(botId)) {
+                imageRef.current = imageCache.get(botId)!
+                handleResize()
+                return
+            }
+
+            const img = new Image()
+            img.src = `/src/assets/botImages/${botId}/${botId}BotDiv.png`
+
+            img.onload = () => {
+                if (!isMounted.current) return
+                imageCache.set(botId, img)
+                imageRef.current = img
+                handleResize()
+            }
+
+            img.onerror = () => {
+                console.error(`Failed to load image: ${img.src}`)
+            }
         }
-    }, [resizeCanvas])
 
+        loadImage()
+
+        return () => {
+            isMounted.current = false
+            cancelAnimationFrame(resizeFrame.current)
+        }
+    }, [botId, handleResize])
+
+    // Resize listener and cleanup
     useEffect(() => {
-        resizeCanvas()
-    }, [currentIncrementor])
+        window.addEventListener('resize', handleResize)
+        
+        return () => {
+            window.removeEventListener('resize', handleResize)
+            cancelAnimationFrame(resizeFrame.current)
+
+            // Canvas cleanup
+            const canvas = canvasRef.current
+            if (canvas) {
+                const ctx = canvas.getContext('2d')
+                ctx?.clearRect(0, 0, canvas.width, canvas.height)
+                canvas.width = 1
+                canvas.height = 1
+            }
+        }
+    }, [handleResize])
+
+    // Redraw when units change
+    useEffect(() => {
+        drawCanvas()
+    }, [currentIncrementor?.units, drawCanvas])
 
     return (
         <canvas
             ref={canvasRef}
-            id="myCanvas"
             style={{
                 height: 128,
                 width: '100%',

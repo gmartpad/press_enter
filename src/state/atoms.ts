@@ -205,10 +205,11 @@ const syncedHoveredBotItemState = selector({
         const autoIncrementors = get(autoIncrementorsState)
         const currentHovered = get(currentHoveredBotItemState)
         return currentHovered?.id ? autoIncrementors.find(inc => inc.id === currentHovered.id) || null : null
-    }
-    // cachePolicy_UNSTABLE: {
-    //     eviction: 'most-recent'
-    // }
+    },
+    cachePolicy_UNSTABLE: {
+        eviction: "lru",
+        maxSize: 15, // Adjust this based on your needs
+    },
 })
 
 // ---------------------------------------
@@ -285,8 +286,9 @@ const pressEnterPurchasedUpgradesState = selector({
         return upgrades.filter((u) => u.incrementorId === 'pressEnter' && u.purchased)
     },
     cachePolicy_UNSTABLE: {
-        eviction: 'most-recent'
-    }
+        eviction: "lru",
+        maxSize: 15, // Adjust this based on your needs
+    },
 })
 
 // ---------------------------------------
@@ -307,8 +309,9 @@ const calculatedEnterPressBitAmountState = selector({
         return 1 + enterPressBitProductionIncrease
     },
     cachePolicy_UNSTABLE: {
-        eviction: 'most-recent'
-    }
+        eviction: "lru",
+        maxSize: 15, // Adjust this based on your needs
+    },
 })
 
 // ---------------------------------------
@@ -319,7 +322,11 @@ const getSpecificIncrementor = selectorFamily({
         const autoIncrementors: Incrementor[] = get(autoIncrementorsState)
 
         return autoIncrementors.find((i) => i.id === incrementorId)
-    }
+    },
+    cachePolicy_UNSTABLE: {
+        eviction: "lru",
+        maxSize: 15, // Adjust this based on your needs
+    },
 })
 
 // ---------------------------------------
@@ -344,7 +351,11 @@ const getIncrementorMultiplier = selectorFamily({
         })
 
         return (1 + additive) * multiplicative
-    }
+    },
+    cachePolicy_UNSTABLE: {
+        eviction: "lru",
+        maxSize: 15, // Adjust this based on your needs
+    },
 })
 
 // ---------------------------------------
@@ -376,6 +387,10 @@ const isAffordableState: (botId: string) => RecoilValueReadOnly<boolean> = selec
 
             return false
         },
+    cachePolicy_UNSTABLE: {
+        eviction: "lru",
+        maxSize: 15, // Adjust this based on your needs
+    },
 })
 
 // Selector to check if an upgrade is affordable or not
@@ -420,6 +435,10 @@ const isUpgradeAffordableState: (upgradeId: string) => RecoilValueReadOnly<boole
         // Check the upgrade's cost
         return bits >= upgrade.cost
     },
+    cachePolicy_UNSTABLE: {
+        eviction: "lru",
+        maxSize: 15, // Adjust this based on your needs
+    },
 })
 
 // Selector for current production state using reduce
@@ -444,9 +463,10 @@ const currentProductionState = selector({
 
         return totalProduction
     },
-    // cachePolicy_UNSTABLE: {
-    //     eviction: 'most-recent'
-    // }
+    cachePolicy_UNSTABLE: {
+        eviction: "lru",
+        maxSize: 15, // Adjust this based on your needs
+    },
 })
 
 export {
