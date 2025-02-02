@@ -1,9 +1,9 @@
 import { mouseYState } from '@state/atoms'
+import { useAtom } from 'jotai'
 import { useCallback, useEffect } from 'react'
-import { useRecoilState } from 'recoil'
 
 const useMouseYTracker = () => {
-    const [mouseY, setMouseY] = useRecoilState(mouseYState)
+    const [mouseY, setMouseY] = useAtom(mouseYState)
 
     const handleMouseMove = useCallback(
         (event: MouseEvent) => {

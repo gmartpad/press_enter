@@ -1,12 +1,13 @@
-import { configState, type Config } from '@state/atoms'
+import { configState } from '@state/atoms'
 import { useCallback, useRef } from 'react'
-import { useRecoilState } from 'recoil'
 import { ChangeLanguageButton, Gear, Globe, Nav, SquareNavButton, Stats } from './styled'
 import { FormattedMessage } from 'react-intl'
 import { sound1 } from '@assets/sounds/sharedClick'
+import { useAtom, useStore } from 'jotai'
 
 const Navbar = () => {
-    const [config, setConfig] = useRecoilState(configState)
+    const store = useStore()
+    const [config, setConfig] = useAtom(configState)
 
     const handleNavClickSound = useCallback(() => {
         if (audioRef.current) {
@@ -17,12 +18,13 @@ const Navbar = () => {
         }
     }, [config.volume])
 
-    const toggleHandler = useCallback((key: keyof Config) => {
+    const toggleHandler = useCallback((key: keyof typeof config) => {
         handleNavClickSound()
-        setConfig((currConfig: Config) => ({
-            ...currConfig,
-            [key]: !currConfig[key]
-        }))
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
+            [key]: !currentConfig[key]
+        })
     }, [handleNavClickSound, setConfig])
 
     const handleToggleConfigDialog = useCallback(

@@ -1,4 +1,3 @@
-import { useRecoilCallback, useRecoilState, useRecoilValue } from 'recoil'
 import {
     Aside,
     BotBulkAmountButton,
@@ -10,7 +9,7 @@ import {
     IncrementorAmount,
     IncrementorName,
 } from './styled'
-import { autoIncrementorsState, bitState, configState, type Config, upgradesState, currentHoveredUpgradeItemState } from '@state/atoms'
+import { autoIncrementorsState, bitState, configState, upgradesState, currentHoveredUpgradeItemState } from '@state/atoms'
 import { useCallback, useMemo } from 'react'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import BotBuyImg from '@components/BotBuyImg'
@@ -21,12 +20,16 @@ import { FormattedMessage } from 'react-intl'
 import Divider from '@components/shared/Divider'
 import UpgradeItem from '@components/UpgradeItem'
 import { Upgrade } from '@upgrades'
+import { useAtom, useAtomValue, useSetAtom, useStore } from 'jotai'
 
 const BotBuyList = () => {
-    const upgrades = useRecoilValue<Upgrade[]>(upgradesState)
-    const autoIncrementors = useRecoilValue(autoIncrementorsState)
-    const [config, setConfig] = useRecoilState<Config>(configState)
-    
+    const store = useStore()
+    const [upgrades, setUpgrades] = useAtom(upgradesState)
+    const setBits = useSetAtom(bitState)
+    const setCurrentHoveredUpgradeItem = useSetAtom(currentHoveredUpgradeItemState)
+    const [config, setConfig] = useAtom(configState)
+    const autoIncrementors = useAtomValue(autoIncrementorsState)
+
     // Memoized derived data
     const purchasableUpgrades = useMemo(
         () => upgrades.filter(u => u.purchasable && !u.purchased),
@@ -42,28 +45,30 @@ const BotBuyList = () => {
         [config]
     )
 
-    const handlePurchaseUpgrade = useRecoilCallback(({ snapshot, set }) => async (
+    const handlePurchaseUpgrade = useCallback(async (
         upgrade: Upgrade,
         isUpgradeAffordable: boolean
     ) => {
         if (!upgrade || upgrade.purchased || !isUpgradeAffordable) return
     
-        const currentUpgrades = await snapshot.getPromise<Upgrade[]>(upgradesState)
+        const currentUpgrades = store.get(upgradesState)
         const updatedUpgrades = currentUpgrades.map(u => 
             u.id === upgrade.id ? { ...u, purchased: true } : u
         )
 
-        set(upgradesState, updatedUpgrades)
-        set(bitState, currVal => currVal - upgrade.cost)
-        set(currentHoveredUpgradeItemState, EMPTY_UPGRADE)
+        setUpgrades(updatedUpgrades)
+        const currentBits = store.get(bitState)
+        setBits(currentBits - upgrade.cost)
+        setCurrentHoveredUpgradeItem(EMPTY_UPGRADE)
     }, [EMPTY_UPGRADE])
 
     const handleChangeBulkMode = useCallback(
         (newBotBulkModeValue: number) => {
-            setConfig(currentConfig => ({
+            const currentConfig = store.get(configState)
+            setConfig({
                 ...currentConfig,
                 botBulkMode: newBotBulkModeValue,
-            }))
+            })
         },
         [setConfig]
     )

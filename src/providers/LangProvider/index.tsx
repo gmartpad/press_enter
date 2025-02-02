@@ -1,7 +1,7 @@
-import { configState, type Config } from '@state/atoms'
+import { configState } from '@state/atoms'
 import langs from '@lang'
 import { IntlProvider } from 'react-intl'
-import { useRecoilValue } from 'recoil'
+import { useAtomValue } from 'jotai'
 
 interface LangProviderProps {
     children: React.ReactNode
@@ -10,7 +10,7 @@ interface LangProviderProps {
 const LangProvider = ({
     children
 }: LangProviderProps) => {
-    const config = useRecoilValue<Config>(configState)
+    const config = useAtomValue(configState)
 
     return (
         <IntlProvider

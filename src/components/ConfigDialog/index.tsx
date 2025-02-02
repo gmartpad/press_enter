@@ -1,5 +1,4 @@
-import { useRecoilState } from 'recoil'
-import { configState, type Config } from '@state/atoms'
+import { configState } from '@state/atoms'
 import { useCallback, useRef } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
@@ -7,17 +6,20 @@ import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
 import { ConfigRow } from './styled'
 import { sound1 } from '@assets/sounds/sharedClick'
+import { useAtom, useStore } from 'jotai'
 
 const ConfigDialog = () => {
+    const store = useStore()
     const intl = useIntl()
-    const [config, setConfig] = useRecoilState(configState)
+    const [config, setConfig] = useAtom(configState)
 
     const handleVolumeChange = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
-            setConfig((currConfig: Config) => ({
-                ...currConfig,
+            const currentConfig = store.get(configState)
+            setConfig({
+                ...currentConfig,
                 volume: Number(e.target.value) / 100,
-            }))
+            })
         },
         [setConfig]
     )
@@ -35,24 +37,26 @@ const ConfigDialog = () => {
 
     const handleToggleConfigDialog = useCallback(() => {
         handleCloseClickSound()
-        setConfig((currConfig: Config) => ({
-            ...currConfig,
-            configDialogOpen: !currConfig.configDialogOpen,
-        }))
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
+            configDialogOpen: !currentConfig.configDialogOpen,
+        })
     }, [handleCloseClickSound, setConfig, config])
 
     const handleToggleConfirmDialog = useCallback(() => {
-        setConfig((currConfig: Config) => ({
-            ...currConfig,
-            confirmDialogOpen: !currConfig.confirmDialogOpen,
-        }))
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
+            confirmDialogOpen: !currentConfig.confirmDialogOpen,
+        })
     }, [setConfig])
 
 
-    if((config as Config).configDialogOpen) return (
+    if(config.configDialogOpen) return (
         <>
             <DialogBackground handleToggleDialog={handleToggleConfigDialog} />
-            <DialogContainer dialogOpen={Boolean((config as Config).configDialogOpen)}>
+            <DialogContainer dialogOpen={Boolean(config.configDialogOpen)}>
                 <DialogCloseButton handleToggleDialog={handleToggleConfigDialog} />
                 <hr />
                 <ConfigRow>

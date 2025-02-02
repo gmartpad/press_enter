@@ -1,11 +1,11 @@
 import { type Upgrade } from "@upgrades"
 import { InnerUpgradeItem, OuterUpgradeItem, UpgradeItemImg } from "./styled"
-import { useCallback, useEffect, useState } from "react"
-import { useRecoilValue, useSetRecoilState } from "recoil"
-import { configState, type Config, currentHoveredUpgradeItemState, isUpgradeAffordableState } from "@state/atoms"
+import { useCallback, useEffect, useState, useMemo } from "react"
+import { configState, currentHoveredUpgradeItemState, isUpgradeAffordableState } from "@state/atoms"
 import { debounce } from "lodash"
 
 import { buyUpgrade, wrong } from '@assets/sounds/upgradeClick'
+import { useAtomValue, useSetAtom } from "jotai"
 
 const sounds = [buyUpgrade]
 const wrongSounds = [wrong]
@@ -19,49 +19,52 @@ const UpgradeItem = ({
     upgrade,
     handlePurchaseUpgrade
 }: UpgradeItemProps) => {
-    const isUpgradeAffordable = useRecoilValue(isUpgradeAffordableState(upgrade.id))
-    const setCurrentHoveredUpgradeItem = useSetRecoilState<Upgrade>(currentHoveredUpgradeItemState)
-    const config = useRecoilValue<Config>(configState)
+    const memoizedAtom = useMemo(() => {
+        return isUpgradeAffordableState(upgrade.id)
+    }, [upgrade.id])
+    
+    const isUpgradeAffordable = useAtomValue(memoizedAtom)
+    const setCurrentHoveredUpgradeItem = useSetAtom(currentHoveredUpgradeItemState)
+    const config = useAtomValue(configState)
 
     const images = import.meta.glob('/src/assets/botUpgrades/**/*.png')
-
-    // In your component
     const [imageUrl, setImageUrl] = useState<string>('')
 
     const handleImageUrl = useCallback(() => {
         const imagePath = `/src/assets/botUpgrades/${upgrade.imgSrc}`
-
-        // Load the image dynamically
         if (images[imagePath]) {
             images[imagePath]().then(module => {
                 setImageUrl((module as { default: string }).default)
             })
         }
-    }, [images, upgrade])
+    }, [upgrade.imgSrc])
 
-    const handleEnterBotClick = useCallback(
-        debounce(async () => {
+    useEffect(() => {
+        handleImageUrl()
+    }, [handleImageUrl])
+
+    const handleEnterBotClick = useMemo(() => {
+        return debounce(async (isAffordable: boolean, volume: number) => {
             let selectedSound: string | undefined
-            if(isUpgradeAffordable) {
+            if (isAffordable) {
                 selectedSound = sounds[Math.floor(Math.random() * sounds.length)]
             } else {
                 selectedSound = wrongSounds[0]
             }
             const audio = new Audio(selectedSound)
-            audio.volume = config.volume
+            audio.volume = volume
             await audio.play()
-        }, 40),
-        [config.volume, isUpgradeAffordable]
-    )
+        }, 40)
+    }, [])
 
-    useEffect(() => {
-        handleImageUrl()
-    }, [handleImageUrl]) 
-    
+    const playSound = useCallback(() => {
+        handleEnterBotClick(isUpgradeAffordable, config.volume)
+    }, [isUpgradeAffordable, config.volume])
+
     const handleOnClick = useCallback(async () => {
         await handlePurchaseUpgrade(upgrade, isUpgradeAffordable)
-        await handleEnterBotClick()
-    }, [upgrade, isUpgradeAffordable, config.volume])
+        playSound()
+    }, [upgrade, isUpgradeAffordable, config.volume, playSound])
 
     return (
         <OuterUpgradeItem
@@ -71,7 +74,7 @@ const UpgradeItem = ({
             onMouseLeave={() => setCurrentHoveredUpgradeItem({} as Upgrade)}
         >
             <InnerUpgradeItem>
-                <UpgradeItemImg src={imageUrl}/>
+                <UpgradeItemImg src={imageUrl} />
             </InnerUpgradeItem>
         </OuterUpgradeItem>
     )

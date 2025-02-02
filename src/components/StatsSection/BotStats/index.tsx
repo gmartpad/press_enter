@@ -3,10 +3,10 @@ import { Incrementor } from '@state/defaultAutoIncrementors'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { useMemo } from 'react'
 import { useIntl } from 'react-intl'
-import { useRecoilValue } from 'recoil'
 import { Stat } from '../Stat.model'
 import SingleStat from '../SingleStat'
 import { DescriptionH3, GenericStatsContainer, NameH2 } from '../styled'
+import { useAtomValue } from 'jotai'
 
 const BotStats = ({
     incrementor
@@ -17,7 +17,11 @@ const BotStats = ({
 
     const { id, units, pricePerUnit, productionPerUnit, bitsProducedSoFar } = incrementor
 
-    const incrementorMultiplier = useRecoilValue(getIncrementorMultiplier(String(incrementor.id)))
+    const memoizedAtom = useMemo(() => {
+        return getIncrementorMultiplier(String(incrementor.id))
+    }, [incrementor.id])
+
+    const incrementorMultiplier = useAtomValue(memoizedAtom)
 
     const currentPrice = formatLargeNumber(pricePerUnit, intl)
 

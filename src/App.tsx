@@ -1,20 +1,20 @@
-import { RecoilRoot } from 'recoil'
+import { Provider } from 'jotai'
 import { BitUpdaterProvider, BroadcastProvider, InspectProtectionProvider, LangProvider } from '@providers'
 import Content from '@components/Content'
 
 function App() {
     return (
-        <RecoilRoot>
-            {/* <InspectProtectionProvider> */}
-                    <BitUpdaterProvider>
-                        <LangProvider>
-                            <BroadcastProvider>
-                                <Content/>
-                            </BroadcastProvider>
-                        </LangProvider>
-                    </BitUpdaterProvider>
-            {/* </InspectProtectionProvider> */}
-        </RecoilRoot>
+        <Provider>
+            <InspectProtectionProvider>
+                <BitUpdaterProvider>
+                    <LangProvider>
+                        <BroadcastProvider>
+                            <Content/>
+                        </BroadcastProvider>
+                    </LangProvider>
+                </BitUpdaterProvider>
+            </InspectProtectionProvider>
+        </Provider>
     )
 }
 

@@ -1,12 +1,15 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { getSpecificIncrementor } from '@state/atoms'
-import { useRecoilValue } from 'recoil'
+import { useAtomValue } from 'jotai'
 
 // Global image cache to prevent redundant loads
 const imageCache = new Map<string, HTMLImageElement>()
 
 const BotVisualizerItem = ({ botId }: { botId: string }) => {
-    const currentIncrementor = useRecoilValue(getSpecificIncrementor(botId))
+    const memoizedAtom = useMemo(() => {
+        return getSpecificIncrementor(botId)
+    }, [botId])
+    const currentIncrementor = useAtomValue(memoizedAtom)
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
     const imageRef = useRef<HTMLImageElement | null>(null)
     

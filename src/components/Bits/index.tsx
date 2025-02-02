@@ -1,5 +1,11 @@
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { bitState, calculatedEnterPressBitAmountState, configState, currentProductionState, enterPressesState } from '@state/atoms'
+import { useAtom, useAtomValue, useStore } from 'jotai'
+import { 
+    bitState, 
+    calculatedEnterPressBitAmountState, 
+    configState, 
+    currentProductionState, 
+    enterPressesState 
+} from '@state/atoms'
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
 import { FloatText, Aside, EnterIcon, EnterKeyButton } from './styled'
 import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
@@ -10,18 +16,18 @@ import { useIntl, FormattedMessage } from 'react-intl'
 const sounds = [sound1, sound2, sound3]
 
 const Bits = () => {
+    const store = useStore()
     const intl = useIntl()
-    const [enterPresses, setEnterPressesState] = useRecoilState(enterPressesState)
-    const [bits, setBits] = useRecoilState(bitState)
-    const currentProduction = useRecoilValue(currentProductionState)
-    const calculatedEnterPressBitAmount = useRecoilValue<number>(calculatedEnterPressBitAmountState)
-    const config = useRecoilValue(configState)
+    const [enterPresses, setEnterPressesState] = useAtom(enterPressesState)
+    const [bits, setBits] = useAtom(bitState)
+    const currentProduction = useAtomValue(currentProductionState)
+    const calculatedEnterPressBitAmount = useAtomValue(calculatedEnterPressBitAmountState)
+    const config = useAtomValue(configState)
 
     const [floatTexts, setFloatTexts] = useState<
         { id: number; x: number; y: number, value: string }[]
     >([])
 
-    // Optimized memo with locale-specific dependency
     const formattedCurrentProduction = useMemo(
         () => formatLargeNumber(Number(currentProduction.toFixed(1)), intl, true),
         [currentProduction, intl]
@@ -30,7 +36,6 @@ const Bits = () => {
     const audioRef = useRef<HTMLAudioElement | null>(null)
     const timeoutRef = useRef<Set<NodeJS.Timeout>>(new Set())
 
-    // Audio cleanup effect
     useEffect(() => {
         audioRef.current = new Audio()
         
@@ -43,7 +48,6 @@ const Bits = () => {
         }
     }, [])
 
-    // Sound handlers with proper cleanup
     const handleEnterBitClickSound = useCallback(() => {
         if (audioRef.current) {
             const randomSound = sounds[Math.floor(Math.random() * sounds.length)]
@@ -60,8 +64,9 @@ const Bits = () => {
         [handleEnterBitClickSound]
     )
 
-    // Floating text handler with timeout tracking
-    const handleFloatingClickedTextValue = useCallback((e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
+    const handleFloatingClickedTextValue = useCallback((
+        e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>
+    ) => {
         const id = Date.now()
         const x = 'touches' in e 
             ? e.touches[0].clientX 
@@ -83,20 +88,19 @@ const Bits = () => {
         }, 3000)
 
         timeoutRef.current.add(timeoutId)
-    }, [setFloatTexts, calculatedEnterPressBitAmount, config.currentLanguageLocale, intl.locale])
+    }, [setFloatTexts, calculatedEnterPressBitAmount, config.currentLanguageLocale, intl])
 
-    // Click handler with proper dependencies
     const handleEnterBitClick = useCallback(
         (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
+            const currentBits = store.get(bitState)
             setEnterPressesState(prev => prev + 1)
             handleFloatingClickedTextValue(e)
-            setBits(curr => curr + calculatedEnterPressBitAmount)
+            setBits(currentBits + calculatedEnterPressBitAmount)
             debouncedHandleEnterBitClickSound()
         },
         [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, debouncedHandleEnterBitClickSound]
     )
 
-    // Cleanup effect for timers and debounce
     useEffect(() => {
         return () => {
             debouncedHandleEnterBitClickSound.cancel()
