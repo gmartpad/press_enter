@@ -5,7 +5,7 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #f00;
+  background-color: transparent;
   position: relative;
 `
 

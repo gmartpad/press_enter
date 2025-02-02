@@ -17,6 +17,7 @@ const StatsSectionContainer = styled.section`
     padding: 0px 10px 10px 10px;
     box-sizing: border-box;
     transform: translateZ(0);
+    z-index: 1;
 `
 
 const TabButtonContainer = styled.div`
