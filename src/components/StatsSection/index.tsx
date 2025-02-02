@@ -1,21 +1,19 @@
 import { autoIncrementorsState, Config, configState, upgradesState } from "@state/atoms"
-import { Incrementor } from "@state/defaultAutoIncrementors"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { useRecoilValue } from "recoil"
 import BotStats from "./BotStats"
 import { StatsSectionContainer, TabButton, TabButtonContainer } from "./styled"
-import { Upgrade } from "@state/upgrades"
 import groupUpgradesByIncrementorId from "@utils/groupUpgradesByIncrementorId"
 import UpgradeStats from "./UpgradeStats"
 import { useIntl } from "react-intl"
 import { sound1 } from '@assets/sounds/sharedClick'
+import { useAtomValue } from "jotai"
 
 const StatsSection = () => {
     const intl = useIntl()
 
-    const config = useRecoilValue<Config>(configState)
-    const upgrades = useRecoilValue<Upgrade[]>(upgradesState)
-    const autoIncrementors = useRecoilValue<Incrementor[]>(autoIncrementorsState)
+    const config = useAtomValue(configState)
+    const upgrades = useAtomValue(upgradesState)
+    const autoIncrementors = useAtomValue(autoIncrementorsState)
 
     const [currentTab, setCurrentTab] = useState<'bot' | 'upgrade'>('bot')
     

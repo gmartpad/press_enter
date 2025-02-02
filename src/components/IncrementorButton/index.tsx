@@ -1,9 +1,7 @@
-import { ReactNode, useCallback, useEffect } from 'react'
+import { ReactNode, useCallback, useMemo } from 'react'
 import { IncrementorButton as StyledIncrementorButton } from './styled'
-import { useRecoilState, useRecoilValue } from 'recoil'
 import {
     configState,
-    type Config,
     currentHoveredBotItemState,
     isAffordableState,
 } from '@state/atoms'
@@ -13,15 +11,19 @@ import { debounce } from 'lodash'
 import useUpdateAutoIncrementors from '@hooks/useUpdateAutoIncrementors'
 
 import { wrong, buyBot, sellBot } from '@assets/sounds/botClick'
+import { useAtom, useAtomValue } from 'jotai'
 
 const buySounds = [buyBot]
 const sellSounds = [sellBot]
 const wrongSounds = [wrong]
 
 function IncrementorButton({ item, children }: { item: Incrementor; children: ReactNode }) {
-    const isAffordable = useRecoilValue(isAffordableState(item.id))
-    const [, setCurrentHoveredBotItem] = useRecoilState(currentHoveredBotItemState)
-    const config = useRecoilValue<Config>(configState)
+    const memoizedAtom = useMemo(() => {
+        return isAffordableState(item.id)
+    }, [item.id])
+    const isAffordable = useAtomValue(memoizedAtom)
+    const [, setCurrentHoveredBotItem] = useAtom(currentHoveredBotItemState)
+    const config = useAtomValue(configState)
 
     const updateAutoIncrementors = useUpdateAutoIncrementors()
 

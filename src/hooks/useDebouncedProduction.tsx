@@ -1,9 +1,9 @@
-import { useRecoilValue } from 'recoil'
 import { currentProductionState } from '@state/atoms'
 import { useState, useEffect } from 'react'
+import { useAtomValue } from 'jotai'
 
 export const useDebouncedProduction = (delay = 250) => {
-    const currentProduction = useRecoilValue(currentProductionState)
+    const currentProduction = useAtomValue(currentProductionState)
     const [debouncedProduction, setDebouncedProduction] = useState(currentProduction)
 
     useEffect(() => {

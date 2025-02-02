@@ -1,126 +1,57 @@
+import { atom } from 'jotai'
+import { atomWithStorage, createJSONStorage } from 'jotai/utils'
 import formatLargeNumber from '@utils/formatLargeNumber'
-import { atom, RecoilState, RecoilValueReadOnly, selector, selectorFamily } from 'recoil'
 import defaultAutoIncrementors, { Incrementor } from './defaultAutoIncrementors.ts'
 import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit.ts'
 import { defaultUpgrades, Upgrade } from '@upgrades'
 import { LanguageValues } from '@components/LanguageDialog/languages.ts'
 
-// Utility function to check and parse value from localStorage
-// Improved localStorage utility with type safety and error handling
-const getLocalStorageValue = <T>(key: string, defaultValue: T): T => {
-    try {
-        const storedValue = localStorage.getItem(key)
-        return storedValue ? JSON.parse(storedValue) : defaultValue
-    } catch (error) {
-        console.error(`Error reading ${key} from localStorage:`, error)
-        return defaultValue
-    }
-}
-
-// Improved localStorage effect creator with cleanup
-const createLocalStorageEffect = <T>(key: string) => ({ setSelf, onSet }: any) => {
-    const loadValue = () => {
-        const storedValue = localStorage.getItem(key)
-        if (storedValue != null) {
-            try {
-                setSelf(JSON.parse(storedValue))
-            } catch (error) {
-                console.error(`Error parsing ${key} from localStorage:`, error)
-            }
-        }
-    }
-
-    // Initial load
-    loadValue()
-
-    // Storage event listener
-    const storageEventListener = (event: StorageEvent) => {
-        if (event.key === key && event.newValue) {
-            loadValue()
-        }
-    }
-
-    window.addEventListener('storage', storageEventListener)
-
-    // Save to localStorage on changes
-    onSet((newValue: T) => {
-        try {
-            localStorage.setItem(key, JSON.stringify(newValue))
-        } catch (error) {
-            console.error(`Error saving ${key} to localStorage:`, error)
-        }
-    })
-
-    // Cleanup function
-    return () => {
-        window.removeEventListener('storage', storageEventListener)
-    }
-}
-
+// ---------------------------------------
+// Base atoms with localStorage integration
 // ---------------------------------------
 
 export const DEFAULT_ENTER_PRESSES_STATE = 0
-
-const enterPressesState = atom({
-    key: 'enterPressesState',
-    default: DEFAULT_ENTER_PRESSES_STATE,
-    effects: [createLocalStorageEffect<number>('enterPressesState')]
-})
-
-// ---------------------------------------
+export const enterPressesState = atomWithStorage<number>(
+    'enterPressesState',
+    DEFAULT_ENTER_PRESSES_STATE
+)
 
 export const DEFAULT_BIT_STATE_VALUE = 0
+const bitStateInternal = atomWithStorage<number>('bitState', DEFAULT_BIT_STATE_VALUE)
 
-const bitState = atom({
-    key: 'bitState',
-    default: DEFAULT_BIT_STATE_VALUE,
-    effects: [
-        ({ onSet }) => {
-            onSet(newValue => {
-                document.title = `${formatLargeNumber(Number(newValue.toFixed(0)))} bits`
-            })
-        },
-        createLocalStorageEffect<number>('bitState')
-    ]
-})
-
-// ---------------------------------------
+export const bitState = atom(
+    (get) => get(bitStateInternal),
+    (get, set, newValue: number) => {
+        set(bitStateInternal, newValue)
+        document.title = `${formatLargeNumber(Number(newValue.toFixed(0)))} bits`
+    }
+)
 
 export const DEFAULT_AUTO_INCREMENTORS_STATE_VALUE = defaultAutoIncrementors
-
-const autoIncrementorsState: RecoilState<Incrementor[]> = atom({
-    key: 'autoIncrementorsState',
-    default: getLocalStorageValue('autoIncrementorsState', DEFAULT_AUTO_INCREMENTORS_STATE_VALUE as Incrementor[]),
-    effects: [
-        ({ setSelf, onSet }) => {
-            // On initialization, set atom state from localStorage if available
-            const storedValue = localStorage.getItem('autoIncrementorsState')
-
-            if (storedValue != null) {
-                try {
-                    const jsonStoredValue: Incrementor[] = JSON.parse(storedValue)
-                    const updatedStoredValue = defaultAutoIncrementors.map((i: Incrementor, k) => ({
-                        ...i,
-                        units: jsonStoredValue[k]?.units ?? i.units,
-                        pricePerUnit: jsonStoredValue[k]?.pricePerUnit ?? i.pricePerUnit,
-                        bitsProducedSoFar: jsonStoredValue[k]?.bitsProducedSoFar ?? i.bitsProducedSoFar,
-                    }))
-                    setSelf(updatedStoredValue)
-                } catch (error) {
-                    console.error('Error parsing autoIncrementorsState:', error)
-                    setSelf(DEFAULT_AUTO_INCREMENTORS_STATE_VALUE)
-                }
+export const autoIncrementorsState = atomWithStorage<Incrementor[]>(
+    'autoIncrementorsState',
+    DEFAULT_AUTO_INCREMENTORS_STATE_VALUE,
+    createJSONStorage<Incrementor[]>(() => ({
+        getItem: (key) => {
+            const storedValue = localStorage.getItem(key)
+            if (!storedValue) return null
+            try {
+                const parsed = JSON.parse(storedValue) as Incrementor[]
+                return JSON.stringify(defaultAutoIncrementors.map((i, k) => ({
+                    ...i,
+                    units: parsed[k]?.units ?? i.units,
+                    pricePerUnit: parsed[k]?.pricePerUnit ?? i.pricePerUnit,
+                    bitsProducedSoFar: parsed[k]?.bitsProducedSoFar ?? i.bitsProducedSoFar,
+                })))
+            } catch (error) {
+                console.error('Error parsing autoIncrementorsState:', error)
+                return JSON.stringify(DEFAULT_AUTO_INCREMENTORS_STATE_VALUE)
             }
-
-            // Save to localStorage whenever the atom state changes
-            onSet(newValue => {
-                localStorage.setItem('autoIncrementorsState', JSON.stringify(newValue))
-            })
         },
-    ],
-})
-
-// ---------------------------------------
+        setItem: (key, value) => localStorage.setItem(key, JSON.stringify(value)),
+        removeItem: (key) => localStorage.removeItem(key),
+    }))
+)
 
 export type Config = {
   volume: number
@@ -128,9 +59,8 @@ export type Config = {
   confirmDialogOpen: boolean
   languageDialogOpen: boolean
   statsSectionOpen: boolean
-  currentLanguageLocale: LanguageValues 
+  currentLanguageLocale: LanguageValues
   botBulkAmount: number
-  // botBulkMode 0 is Sell, botBulkMode 1 is Buy
   botBulkMode: number
 }
 
@@ -146,342 +76,171 @@ const defaultConfig: Config = {
 }
 
 export const DEFAULT_CONFIG_STATE_VALUE = defaultConfig
-
-const configState = atom({
-    key: 'configState',
-    default: getLocalStorageValue('configState', DEFAULT_CONFIG_STATE_VALUE),
-    effects: [
-        ({ setSelf, onSet }) => {
-            // On initialization, set atom state from localStorage if available
-            const storedValue = localStorage.getItem('configState')
-
-            if (storedValue != null) {
-                const jsonStoredValue: Config = JSON.parse(storedValue)
-
-                const updatedStoredValue = {
-                    volume: jsonStoredValue?.volume ?? DEFAULT_CONFIG_STATE_VALUE.volume,
-                    configDialogOpen: jsonStoredValue?.configDialogOpen ?? DEFAULT_CONFIG_STATE_VALUE.configDialogOpen,
-                    confirmDialogOpen: jsonStoredValue?.confirmDialogOpen ?? DEFAULT_CONFIG_STATE_VALUE.confirmDialogOpen,
-                    languageDialogOpen: jsonStoredValue?.languageDialogOpen ?? DEFAULT_CONFIG_STATE_VALUE.languageDialogOpen,
-                    statsSectionOpen: jsonStoredValue?.statsSectionOpen ?? DEFAULT_CONFIG_STATE_VALUE.statsSectionOpen,
-                    currentLanguageLocale: jsonStoredValue?.currentLanguageLocale ?? DEFAULT_CONFIG_STATE_VALUE.currentLanguageLocale,
-                    botBulkAmount: jsonStoredValue?.botBulkAmount ?? DEFAULT_CONFIG_STATE_VALUE.botBulkAmount,
-                    botBulkMode: jsonStoredValue?.botBulkMode ?? DEFAULT_CONFIG_STATE_VALUE.botBulkMode,
-                }
-
-                setSelf(updatedStoredValue)
+export const configState = atomWithStorage<Config>(
+    'configState',
+    DEFAULT_CONFIG_STATE_VALUE,
+    createJSONStorage<Config>(() => ({
+        getItem: (key) => {
+            const storedValue = localStorage.getItem(key)
+            if (!storedValue) return null
+            try {
+                const parsed = JSON.parse(storedValue) as Partial<Config>
+                return JSON.stringify({
+                    ...DEFAULT_CONFIG_STATE_VALUE,
+                    ...parsed
+                })
+            } catch (error) {
+                console.error('Error parsing configState:', error)
+                return JSON.stringify(DEFAULT_CONFIG_STATE_VALUE)
             }
-
-            onSet(newValue => {
-                localStorage.setItem('configState', JSON.stringify(newValue))
-            })
         },
-    ],
-})
-
-// ---------------------------------------
+        setItem: (key, value) => localStorage.setItem(key, JSON.stringify(value)),
+        removeItem: (key) => localStorage.removeItem(key),
+    }))
+)
 
 export const DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE = {} as Incrementor
+export const currentHoveredBotItemState = atomWithStorage<Incrementor>(
+    'currentHoveredBotItemState',
+    DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE
+)
 
-const currentHoveredBotItemState: RecoilState<Incrementor> = atom({
-    key: 'currentHoveredBotItemState',
-    default: getLocalStorageValue('currentHoveredBotItemState', DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE)
-})
-
-// ---------------------------------------
-
-export const DEFAULT_CURRRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE = {} as Upgrade
-
-const currentHoveredUpgradeItemState: RecoilState<Upgrade> = atom({
-    key: 'currentHoveredUpgradeItemState',
-    default: getLocalStorageValue('currentHoveredUpgradeItemState', DEFAULT_CURRRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE),
-})
-
-// ---------------------------------------
-
-const syncedHoveredBotItemState = selector({
-    key: 'syncedHoveredBotItemState',
-    get: ({ get }) => {
-        const autoIncrementors = get(autoIncrementorsState)
-        const currentHovered = get(currentHoveredBotItemState)
-        return currentHovered?.id ? autoIncrementors.find(inc => inc.id === currentHovered.id) || null : null
-    },
-    cachePolicy_UNSTABLE: {
-        eviction: "lru",
-        maxSize: 15, // Adjust this based on your needs
-    },
-})
-
-// ---------------------------------------
+export const DEFAULT_CURRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE = {} as Upgrade
+export const currentHoveredUpgradeItemState = atomWithStorage<Upgrade>(
+    'currentHoveredUpgradeItemState',
+    DEFAULT_CURRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE
+)
 
 export const DEFAULT_MOUSE_Y_STATE_VALUE = 0
-
-const mouseYState = atom({
-    key: 'mouseYState',
-    default: getLocalStorageValue('mouseYState', DEFAULT_MOUSE_Y_STATE_VALUE),
-    effects: [
-        ({ setSelf, onSet }) => {
-            const storedValue = localStorage.getItem('mouseYState')
-
-            if (storedValue != null) {
-                setSelf(Number(JSON.parse(storedValue)))
-            }
-
-            // Save to localStorage whenever the atom state changes
-            onSet(newValue => {
-                localStorage.setItem('mouseYState', JSON.stringify(newValue))
-            })
-        },
-    ],
-})
-
-// ---------------------------------------
+export const mouseYState = atomWithStorage<number>(
+    'mouseYState',
+    DEFAULT_MOUSE_Y_STATE_VALUE
+)
 
 export const DEFAULT_UPGRADES_STATE_VALUE = defaultUpgrades
-
-export const upgradesState = atom({
-    key: 'upgradesState',
-    default: getLocalStorageValue('upgradesState', DEFAULT_UPGRADES_STATE_VALUE as Upgrade[]),
-    effects: [
-        ({ setSelf, onSet }) => {
-            const storedValue = localStorage.getItem('upgradesState')
-
-            if (storedValue !== null) {
-                const jsonStoredValue: Upgrade[] = JSON.parse(storedValue)
-
-                const updatedStoredValue = DEFAULT_UPGRADES_STATE_VALUE.map((i: Upgrade, k) => ({
+export const upgradesState = atomWithStorage<Upgrade[]>(
+    'upgradesState',
+    DEFAULT_UPGRADES_STATE_VALUE,
+    createJSONStorage<Upgrade[]>(() => ({
+        getItem: (key) => {
+            const storedValue = localStorage.getItem(key)
+            if (!storedValue) return null
+            try {
+                const parsed = JSON.parse(storedValue) as Upgrade[]
+                return JSON.stringify(DEFAULT_UPGRADES_STATE_VALUE.map((i, k) => ({
                     ...i,
-                    id: jsonStoredValue[k]?.id ?? i.id,
-                    name: jsonStoredValue[k]?.name ?? i.name,
-                    imgSrc: jsonStoredValue[k]?.imgSrc ?? i.imgSrc,
-                    description: jsonStoredValue[k]?.description ?? i.description,
-                    cost: jsonStoredValue[k]?.cost ?? i.cost,
-                    purchased: jsonStoredValue[k]?.purchased ?? i.purchased,
-                    purchasable: jsonStoredValue[k]?.purchasable ?? i.purchasable,
-                    effects: jsonStoredValue[k]?.effects ?? i.effects,
-                    requirementsToBeListable: jsonStoredValue[k]?.requirementsToBeListable ?? i.requirementsToBeListable
-                }))
-
-                setSelf(updatedStoredValue)
+                    ...parsed[k],
+                    effects: parsed[k]?.effects ?? i.effects,
+                    requirementsToBeListable: parsed[k]?.requirementsToBeListable ?? i.requirementsToBeListable
+                })))
+            } catch (error) {
+                console.error('Error parsing upgradesState:', error)
+                return JSON.stringify(DEFAULT_UPGRADES_STATE_VALUE)
             }
-
-            if (storedValue === null) {
-                localStorage.setItem('upgradesState', JSON.stringify(DEFAULT_UPGRADES_STATE_VALUE))
-                setSelf(DEFAULT_UPGRADES_STATE_VALUE)
-            }
-
-            onSet(newValue => {
-                localStorage.setItem('upgradesState', JSON.stringify(newValue))
-            })
-        }
-    ]
-})
-
-// ---------------------------------------
-
-const pressEnterPurchasedUpgradesState = selector({
-    key: 'pressEnterUpgradesState',
-    get: ({ get }) => {
-        const upgrades = get<Upgrade[]>(upgradesState)
-        return upgrades.filter((u) => u.incrementorId === 'pressEnter' && u.purchased)
-    },
-    cachePolicy_UNSTABLE: {
-        eviction: "lru",
-        maxSize: 15, // Adjust this based on your needs
-    },
-})
-
-// ---------------------------------------
-
-const calculatedEnterPressBitAmountState = selector({
-    key: 'calculatedEnterPressBitAmountState',
-    get: ({ get }) => {
-        const purchasedEnterUpgrades =  get<Upgrade[]>(pressEnterPurchasedUpgradesState)
-        const currentProduction = get<number>(currentProductionState)
-        
-        const percentageIncrease = purchasedEnterUpgrades.reduce(
-            (accumulator, currentValue) => accumulator + (currentValue?.effects?.specific?.additive ?? 0),
-            0
-        )
-
-        const enterPressBitProductionIncrease = currentProduction * percentageIncrease
-
-        return 1 + enterPressBitProductionIncrease
-    },
-    cachePolicy_UNSTABLE: {
-        eviction: "lru",
-        maxSize: 15, // Adjust this based on your needs
-    },
-})
-
-// ---------------------------------------
-
-const getSpecificIncrementor = selectorFamily({
-    key: 'specificIncrementor',
-    get: (incrementorId: string) => ({ get }) => {
-        const autoIncrementors: Incrementor[] = get(autoIncrementorsState)
-
-        return autoIncrementors.find((i) => i.id === incrementorId)
-    },
-    cachePolicy_UNSTABLE: {
-        eviction: "lru",
-        maxSize: 15, // Adjust this based on your needs
-    },
-})
-
-// ---------------------------------------
-
-const getIncrementorMultiplier = selectorFamily({
-    key: 'incrementorMultiplier',
-    get: (incrementorId: string) => ({ get }) => {
-        const upgrades = get<Upgrade[]>(upgradesState).filter(u => u.purchased)
-        let additive = 0
-        let multiplicative = 1
-
-        upgrades.forEach(upgrade => {
-            if (upgrade.effects.global) {
-                if (upgrade?.effects?.global?.additive) additive += upgrade.effects.global.additive
-                if (upgrade?.effects?.global?.multiplicative) multiplicative *= upgrade.effects.global.multiplicative
-            }
-            
-            if (upgrade.effects.specific?.incrementorId === incrementorId) {
-                if (upgrade?.effects?.specific?.additive) additive += upgrade.effects.specific.additive
-                if (upgrade?.effects?.specific?.multiplicative) multiplicative *= upgrade.effects.specific.multiplicative
-            }
-        })
-
-        return (1 + additive) * multiplicative
-    },
-    cachePolicy_UNSTABLE: {
-        eviction: "lru",
-        maxSize: 15, // Adjust this based on your needs
-    },
-})
-
-// ---------------------------------------
-
-// Selector to show if the bot is affordable or not
-const isAffordableState: (botId: string) => RecoilValueReadOnly<boolean> = selectorFamily({
-    key: 'isAffordableState',
-    get:
-    (botId: string) =>
-        ({ get }) => {
-            const autoIncrementors: Incrementor[] = get(autoIncrementorsState)
-            const bits = get(bitState)
-            const config = get(configState)
-
-            const bot = autoIncrementors.find(i => i.id === botId)
-            if (!bot) return false // Fallback if bot is not found
-
-            const price = handleRecalculatePricePerUnit(bot, config)
-
-            // Buying Mode
-            if (config?.botBulkMode === 1) {
-                return bits >= price[0] // Assuming price is an array
-            }
-
-            // Selling Mode
-            if (config?.botBulkMode === 0) {
-                return bot.units > 0
-            }
-
-            return false
         },
-    cachePolicy_UNSTABLE: {
-        eviction: "lru",
-        maxSize: 15, // Adjust this based on your needs
-    },
+        setItem: (key, value) => localStorage.setItem(key, JSON.stringify(value)),
+        removeItem: (key) => localStorage.removeItem(key),
+    }))
+)
+
+// ---------------------------------------
+// Derived atoms
+// ---------------------------------------
+
+export const syncedHoveredBotItemState = atom<Incrementor | null>((get) => {
+    const autoIncrementors = get(autoIncrementorsState) as Incrementor[]
+    const currentHovered = get(currentHoveredBotItemState)
+    return currentHovered?.id ? autoIncrementors.find(inc => inc.id === currentHovered.id) || null : null
 })
 
-// Selector to check if an upgrade is affordable or not
-const isUpgradeAffordableState: (upgradeId: string) => RecoilValueReadOnly<boolean> = selectorFamily({
-    key: 'isUpgradeAffordableState',
-    get: (upgradeId: string) => ({ get }) => {
-        const upgrades: Upgrade[] = get(upgradesState) // Assuming upgrades are stored in a Recoil atom
-        const bits = get(bitState) // Current available bits
-        const autoIncrementors: Incrementor[] = get(autoIncrementorsState) // Current incrementors
-
-        const upgrade = upgrades.find(upg => upg.id === upgradeId)
-        if (!upgrade) return false // Fallback if the upgrade is not found
-
-        const { requirementsToBeListable, purchasable } = upgrade
-        if (!requirementsToBeListable) return true // If no requirements, it's affordable by default
-
-        // Check bit requirement
-        if (requirementsToBeListable.bits && bits < requirementsToBeListable.bits && !purchasable) {
-            return false
-        }
-
-        // Check incrementor unit requirements
-        if (requirementsToBeListable.incrementorUnits) {
-            const allRequirementsMet = Object.entries(requirementsToBeListable.incrementorUnits).every(
-                ([incrementorId, requiredUnits]) => {
-                    const incrementor = autoIncrementors.find(inc => inc.id === incrementorId)
-                    return incrementor && incrementor.units >= requiredUnits
-                }
-            )
-            if (!allRequirementsMet && !purchasable) return false
-        }
-
-        // Check upgrade dependency requirements
-        if (requirementsToBeListable.upgrades) {
-            const purchasedUpgrades = upgrades.filter(upg => upg.purchased).map(upg => upg.id)
-            const allUpgradesMet = requirementsToBeListable.upgrades.every(reqUpgradeId =>
-                purchasedUpgrades.includes(reqUpgradeId)
-            )
-            if (!allUpgradesMet && !purchasable) return false
-        }
-
-        // Check the upgrade's cost
-        return bits >= upgrade.cost
-    },
-    cachePolicy_UNSTABLE: {
-        eviction: "lru",
-        maxSize: 15, // Adjust this based on your needs
-    },
+export const pressEnterPurchasedUpgradesState = atom<Upgrade[]>((get) => {
+    const upgrades = get(upgradesState) as Upgrade[]
+    return upgrades.filter((u) => u.incrementorId === 'pressEnter' && u.purchased)
 })
 
-// Selector for current production state using reduce
-const currentProductionState = selector({
-    key: 'currentProductionState', // unique ID
-    get: ({ get }) => {
-    // Get the autoIncrementorsState
-        const autoIncrementors = get(autoIncrementorsState)
-
-        // Calculate total production using reduce
-        const totalProduction = autoIncrementors.reduce(
-            (
-                total: number,
-                incrementor: Incrementor
-            ) => {
-                const multiplier = get(getIncrementorMultiplier(incrementor.id))
-                // return Number(total + incrementor.units * incrementor.productionPerUnit)
-                return Number(total + (incrementor.units * incrementor.productionPerUnit * multiplier))
-            },
-            0
-        )
-
-        return totalProduction
-    },
-    cachePolicy_UNSTABLE: {
-        eviction: "lru",
-        maxSize: 15, // Adjust this based on your needs
-    },
+export const calculatedEnterPressBitAmountState = atom<number>((get) => {
+    const purchasedEnterUpgrades = get(pressEnterPurchasedUpgradesState)
+    const currentProduction = get(currentProductionState)
+    const percentageIncrease = purchasedEnterUpgrades.reduce(
+        (acc, current) => acc + (current?.effects?.specific?.additive ?? 0),
+        0
+    )
+    const enterPressBitProductionIncrease = currentProduction * percentageIncrease
+    return 1 + enterPressBitProductionIncrease
 })
 
-export {
-    enterPressesState,
-    bitState,
-    autoIncrementorsState,
-    configState,
-    currentHoveredBotItemState,
-    currentHoveredUpgradeItemState,
-    mouseYState,
-    isAffordableState,
-    isUpgradeAffordableState,
-    getSpecificIncrementor,
-    getIncrementorMultiplier,
-    currentProductionState,
-    syncedHoveredBotItemState,
-    calculatedEnterPressBitAmountState,
-}
+export const getSpecificIncrementor = (incrementorId: string) => atom<Incrementor | undefined>((get) => {
+    const autoIncrementors = get(autoIncrementorsState) as Incrementor[]
+    return autoIncrementors.find(i => i.id === incrementorId)
+})
+
+export const getIncrementorMultiplier = (incrementorId: string) => atom<number>((get) => {
+    const upgrades = (get(upgradesState) as Upgrade[]).filter(u => u.purchased)
+    let additive = 0
+    let multiplicative = 1
+
+    upgrades.forEach(upgrade => {
+        if (upgrade.effects.global) {
+            additive += upgrade.effects.global?.additive ?? 0
+            multiplicative *= upgrade.effects.global?.multiplicative ?? 1
+        }
+        if (upgrade.effects.specific?.incrementorId === incrementorId) {
+            additive += upgrade.effects.specific?.additive ?? 0
+            multiplicative *= upgrade.effects.specific?.multiplicative ?? 1
+        }
+    })
+
+    return (1 + additive) * multiplicative
+})
+
+export const isAffordableState = (botId: string) => atom<boolean>((get) => {
+    const autoIncrementors = get(autoIncrementorsState) as Incrementor[]
+    const bits = get(bitState)
+    const config = get(configState) as Config
+    const bot = autoIncrementors.find(i => i.id === botId)
+    if (!bot) return false
+
+    const price = handleRecalculatePricePerUnit(bot, config)
+    if (config.botBulkMode === 1) return bits >= price[0]
+    if (config.botBulkMode === 0) return bot.units > 0
+    return false
+})
+
+export const isUpgradeAffordableState = (upgradeId: string) => atom<boolean>((get) => {
+    const upgrades = get(upgradesState) as Upgrade[]
+    const bits = get(bitState)
+    const autoIncrementors = get(autoIncrementorsState) as Incrementor[]
+    const upgrade = upgrades.find(upg => upg.id === upgradeId)
+    if (!upgrade) return false
+
+    const { requirementsToBeListable, purchasable } = upgrade
+    if (!requirementsToBeListable) return true
+
+    if (requirementsToBeListable.bits && bits < requirementsToBeListable.bits && !purchasable) {
+        return false
+    }
+
+    if (requirementsToBeListable.incrementorUnits) {
+        const allMet = Object.entries(requirementsToBeListable.incrementorUnits).every(([id, units]) => {
+            const inc = autoIncrementors.find(i => i.id === id)
+            return inc && inc.units >= units
+        })
+        if (!allMet && !purchasable) return false
+    }
+
+    if (requirementsToBeListable.upgrades) {
+        const purchasedIds = upgrades.filter(u => u.purchased).map(u => u.id)
+        const allMet = requirementsToBeListable.upgrades.every(id => purchasedIds.includes(id))
+        if (!allMet && !purchasable) return false
+    }
+
+    return bits >= upgrade.cost
+})
+
+export const currentProductionState = atom<number>((get) => {
+    const autoIncrementors = get(autoIncrementorsState) as Incrementor[]
+    return autoIncrementors.reduce((total, inc) => {
+        const multiplier = get(getIncrementorMultiplier(inc.id))
+        return total + inc.units * inc.productionPerUnit * multiplier
+    }, 0)
+})

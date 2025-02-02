@@ -1,11 +1,11 @@
 import { IncrementorPrice } from './styled'
 import { GiArtificialIntelligence } from 'react-icons/gi'
 import formatLargeNumber from '@utils/formatLargeNumber'
-import { type Config, isAffordableState } from '@state/atoms'
+import { Config, isAffordableState } from '@state/atoms'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import { useMemo } from 'react'
-import { useRecoilValue } from 'recoil'
 import { useIntl } from 'react-intl'
+import { useAtomValue } from 'jotai'
 
 interface IncrementorBotPriceProps {
   price: number[]
@@ -15,7 +15,10 @@ interface IncrementorBotPriceProps {
 
 const IncrementorBotPrice = ({ price, item, config }: IncrementorBotPriceProps) => {
     const intl = useIntl()
-    const isAffordable = useRecoilValue(isAffordableState(item.id))
+    const memoizedAtom = useMemo(() => {
+        return isAffordableState(item.id)
+    }, [item.id])
+    const isAffordable = useAtomValue(memoizedAtom)
     const memoedBitAmount = useMemo(() => {
     // Buying Mode
         if (config?.botBulkMode === 1) {

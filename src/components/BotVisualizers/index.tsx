@@ -1,8 +1,8 @@
-import { useRecoilValue } from "recoil"
 import { FixedSizeList as FixedSizeListType } from 'react-window'
 import { autoIncrementorsState } from "@state/atoms"
 import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react'
 import BotVisualizerItem from "@components/BotVisualizer"
+import { useAtomValue } from 'jotai'
 
 // Configuration constants
 const ITEM_SIZE = 148 // Base height for items + separator
@@ -70,7 +70,7 @@ class ErrorBoundary extends React.Component<{
 }
 
 const BotVisualizers: React.FC = () => {
-    const autoIncrementors = useRecoilValue(autoIncrementorsState)
+    const autoIncrementors = useAtomValue(autoIncrementorsState)
     const listRef = useRef<FixedSizeListType>(null)
     const { scrollOffset, handleScroll } = useScrollPreservation()
 
@@ -83,7 +83,7 @@ const BotVisualizers: React.FC = () => {
             units: item.units,
             revealed: item.revealed
         })),
-        [autoIncrementors]
+    [autoIncrementors]
     )
 
     // Error-resilient row renderer

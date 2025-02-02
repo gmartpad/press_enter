@@ -4,17 +4,18 @@ import {
     LanguageDialogTitleDiv, 
     LanguageList 
 } from './styled'
-import { useRecoilState } from 'recoil'
-import { configState, type Config } from '@state/atoms'
+import { configState } from '@state/atoms'
 import { FormattedMessage } from 'react-intl'
 import { languages, LanguageValues } from './languages'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import DialogContainer from '@components/shared/DialogContainer'
 import DialogBackground from '@components/shared/DialogBackground'
 import { sound1 } from '@assets/sounds/sharedClick'
+import { useAtom, useStore } from 'jotai'
 
 const LanguageDialog = () => {
-    const [config, setConfig] = useRecoilState<Config>(configState)
+    const store = useStore()
+    const [config, setConfig] = useAtom(configState)
 
     const audioRef = useRef<HTMLAudioElement>(new Audio())
 
@@ -29,17 +30,19 @@ const LanguageDialog = () => {
 
     const handleToggleLanguageDialog = useCallback(() => {
         handleCloseClickSound()
-        setConfig((currConfig: Config) => ({
-            ...currConfig,
-            languageDialogOpen: !currConfig.languageDialogOpen
-        }))
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
+            languageDialogOpen: !currentConfig.languageDialogOpen
+        })
     }, [handleCloseClickSound, setConfig, config])
 
     const handleChangeLanguageLocale = useCallback((newLanguageLocale: LanguageValues) => {
-        setConfig((currConfig: Config) => ({
-            ...currConfig,
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
             currentLanguageLocale: newLanguageLocale
-        }))
+        })
     }, [setConfig])
 
     if(config?.languageDialogOpen) return (

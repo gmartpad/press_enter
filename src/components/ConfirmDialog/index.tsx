@@ -1,5 +1,4 @@
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { configState, type Config } from '@state/atoms'
+import { configState } from '@state/atoms'
 import { useCallback } from 'react'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
@@ -12,23 +11,27 @@ import {
     DeclineButton 
 } from './styled'
 import { useIntl } from 'react-intl'
+import { useAtom, useStore } from 'jotai'
 
 const ConfirmDialog = () => {
+    const store = useStore()
     const intl = useIntl()
-    const [config, setConfig] = useRecoilState(configState)
+    const [config, setConfig] = useAtom(configState)
 
     const handleToggleConfirmDialog = useCallback(() => {
-        setConfig((currConfig: Config) => ({
-            ...currConfig,
-            confirmDialogOpen: !currConfig.confirmDialogOpen,
-        }))
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
+            confirmDialogOpen: !currentConfig.confirmDialogOpen,
+        })
     }, [setConfig])
 
     const handleToggleConfigDialog = useCallback(() => {
-        setConfig((currConfig: Config) => ({
-            ...currConfig,
-            configDialogOpen: !currConfig.configDialogOpen,
-        }))
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
+            configDialogOpen: !currentConfig.configDialogOpen,
+        })
     }, [setConfig])
 
     const confirmConfigToggle = useCallback(() => {
@@ -43,12 +46,12 @@ const ConfirmDialog = () => {
         handleToggleConfirmDialog()
     }, [handleToggleConfirmDialog])
 
-    if((config as Config).confirmDialogOpen) return (
+    if(config.confirmDialogOpen) return (
         <>
             <DialogBackground 
                 handleToggleDialog={confirmConfigToggle} 
             />
-            <DialogContainer dialogOpen={Boolean((config as Config).confirmDialogOpen)}>
+            <DialogContainer dialogOpen={Boolean(config.confirmDialogOpen)}>
                 <CentralizeDiv>
                     <ConfirmH2>{intl.formatMessage({ id: 'confirm.primary.title' })}</ConfirmH2>
                     <ConfirmH3>{intl.formatMessage({ id: 'confirm.secondary.title' })}</ConfirmH3>

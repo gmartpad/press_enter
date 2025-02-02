@@ -41,16 +41,16 @@ const InspectProtectionProvider = ({ children }: { children: React.ReactNode }) 
                 isOpen: false,
                 toString: function() {
                     if (!this.isOpen) {
-                    this.isOpen = true;
-                        alert("DevTools detected!");
+                        this.isOpen = true
+                        alert("DevTools detected!")
                     }
-                    return this.timestamp.toString();
+                    return this.timestamp.toString()
                 }
-            };
+            }
           
-            console.log('%c', devToolsDetector);
-            console.clear();
-          };
+            console.log('%c', devToolsDetector)
+            console.clear()
+        }
 
         // Add listeners
         document.addEventListener('contextmenu', handleContextMenu)

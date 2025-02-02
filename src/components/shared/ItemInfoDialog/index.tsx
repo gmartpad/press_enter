@@ -1,14 +1,13 @@
-import { useCallback, useMemo, useRef } from 'react'
-import { useRecoilValue } from 'recoil'
+import {  useMemo, useRef } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
 import { GiArtificialIntelligence } from 'react-icons/gi'
+import { useAtomValue } from 'jotai'
 
 import InfoDialogImg from '@components/InfoDialogImg'
 import useMouseYTracker from '@hooks/useMouseYTracker'
 import { 
     bitState, 
     configState, 
-    type Config, 
     currentHoveredUpgradeItemState,
     currentProductionState, 
     getIncrementorMultiplier, 
@@ -43,45 +42,43 @@ const isIncrementor = (item: Incrementor | Upgrade): item is Incrementor => {
     return 'productionPerUnit' in item
 }
 
-// eslint-disable-next-line
-const isUpgrade = (item: Incrementor | Upgrade): item is Upgrade => {
-    return 'effects' in item
-}
-
 const ItemInfoDialog = () => {
     const intl = useIntl()
-    const config = useRecoilValue<Config>(configState)
-    const currentProduction = useRecoilValue(currentProductionState)
-    const bits = useRecoilValue(bitState)
+    const config = useAtomValue(configState)
+    const currentProduction = useAtomValue(currentProductionState)
+    const bits = useAtomValue(bitState)
     const mouseY = useMouseYTracker()
     const dialogRef = useRef<HTMLDialogElement>(null)
 
-    const currentHoveredBotItem = useRecoilValue(syncedHoveredBotItemState)
-    const currentHoveredUpgradeItem = useRecoilValue(currentHoveredUpgradeItemState)
+    const currentHoveredBotItem = useAtomValue(syncedHoveredBotItemState)
+    const currentHoveredUpgradeItem = useAtomValue(currentHoveredUpgradeItemState)
 
-    const currentItem = useMemo<Incrementor | Upgrade | null>(() => {
-        const botEmpty = Object.keys(currentHoveredBotItem ?? {}).length === 0
-        const upgradeEmpty = Object.keys(currentHoveredUpgradeItem).length === 0
+    // Memoize current item with deep comparison
+    const currentItem = useMemo(() => {
+        const botEmpty = !currentHoveredBotItem || Object.keys(currentHoveredBotItem).length === 0
+        const upgradeEmpty = !currentHoveredUpgradeItem || Object.keys(currentHoveredUpgradeItem).length === 0
 
-        if (!botEmpty && upgradeEmpty) return currentHoveredBotItem
-        if (botEmpty && !upgradeEmpty) return currentHoveredUpgradeItem
+        if (!botEmpty) return currentHoveredBotItem
+        if (!upgradeEmpty) return currentHoveredUpgradeItem
         return null
     }, [currentHoveredBotItem, currentHoveredUpgradeItem])
 
-    const currentItemId = useMemo(() => {
-        if (!currentItem) return ''
-        return isIncrementor(currentItem) ? currentItem.id : currentItem.incrementorId
-    }, [currentItem])
+    const memoizedAtom = useMemo(() => {
+        return getIncrementorMultiplier(currentItem?.id || '')
+    }, [currentItem?.id])
 
-    const incrementorMultiplier = useRecoilValue(getIncrementorMultiplier(String(currentItemId)))
+    // Stable atom reference
+    const incrementorMultiplier = useAtomValue(memoizedAtom)
+
     const multipliedProduction = useMemo(
         () => currentProduction * incrementorMultiplier,
         [currentProduction, incrementorMultiplier]
     )
 
+    // Throttle dialog position updates
     const dialogTop = useMemo(() => {
         const mouseYWithNavbar = mouseY
-        const dialogHeight = Number(dialogRef?.current?.offsetHeight)
+        const dialogHeight = dialogRef.current?.offsetHeight || 0
         const validPosition = mouseYWithNavbar + dialogHeight
 
         return validPosition > window.innerHeight
@@ -89,46 +86,48 @@ const ItemInfoDialog = () => {
             : mouseYWithNavbar
     }, [mouseY])
 
+    // Memoize expensive calculations
     const itemCost = useMemo(() => {
         if (!currentItem) return 0
         return isIncrementor(currentItem) ? currentItem.pricePerUnit : currentItem.cost
     }, [currentItem])
 
-    const handleItemTotalWorthPercentage = useCallback(() => {
-        if(!!currentItem && isIncrementor(currentItem) && !currentItem?.revealed) return '???????'
-        const relativePercentage = ((itemCost/bits) * 100).toFixed(1)
+    const handleItemTotalWorthPercentage = useMemo(() => {
+        if (!currentItem || (isIncrementor(currentItem) && !currentItem?.revealed)) return '???????'
+        const relativePercentage = ((itemCost / bits) * 100).toFixed(1)
         const suffix = intl.formatMessage({ 
             id: 'percentageTotalBitsNumber.totalBits', 
             defaultMessage: ' of total bits' 
         })
         return `${relativePercentage}%${suffix}`
-    }, [itemCost, bits, intl])
+    }, [itemCost, bits, intl, currentItem])
 
     const itemBitsPerSecondWorth = useMemo(() => {
-        if(!!currentItem && isIncrementor(currentItem) && !currentItem?.revealed) return '???????'
+        if (!currentItem || (isIncrementor(currentItem) && !currentItem?.revealed)) return '???????'
+        return formatTimeNumber(itemCost / multipliedProduction, intl)
+    }, [itemCost, multipliedProduction, intl, currentItem])
 
-        return formatTimeNumber(itemCost/multipliedProduction, intl)
-    }, [itemCost, multipliedProduction, intl])
-
-    const renderItemName = () => {
+    // Memoized render functions
+    const renderItemName = useMemo(() => {
         if (!currentItem) return null
-        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+        if (isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
         return isIncrementor(currentItem) 
             ? <FormattedMessage id={`botBuyList.${currentItem.id}.name`} />
             : <FormattedMessage id={`upgrade.${currentItem.id}.name`} />
-    }
+    }, [currentItem])
 
-    const renderLabelText = () => {
+    const renderLabelText = useMemo(() => {
         if (!currentItem) return ''
-        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+        if (isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
         return isIncrementor(currentItem)
-            ? `${intl.formatMessage({id: 'botsOwned', defaultMessage: 'owned'})}: ${currentItem.units}`
+            ? `${intl.formatMessage({ id: 'botsOwned' })}: ${currentItem.units}`
             : 'upgrade'
-    }
+    }, [currentItem, intl])
 
-    const renderPrice = () => {
+    const renderPrice = useMemo(() => {
         if (!currentItem) return null
-        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+        if (isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+        
         if (isIncrementor(currentItem)) {
             return (
                 <IncrementorBotPrice
@@ -138,6 +137,7 @@ const ItemInfoDialog = () => {
                 />
             )
         }
+        
         const purchasable = currentItem.cost < bits && !currentItem.purchased
         return (
             <IncrementorPrice $affordable={purchasable}>
@@ -145,22 +145,18 @@ const ItemInfoDialog = () => {
                 {formatLargeNumber(currentItem.cost, intl)} bits
             </IncrementorPrice>
         )
-    }
+    }, [currentItem, config, bits, intl])
 
-    const renderDescription = () => {
-        if (!currentItem) return null
-        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
-
+    const renderDescription = useMemo(() => {
+        if (!currentItem || (isIncrementor(currentItem) && !currentItem?.revealed)) return null
         return isIncrementor(currentItem)
             ? <FormattedMessage id={`botBuyList.${currentItem.id}.description`} />
             : <FormattedMessage tagName="p" id={`upgrade.${currentItem.id}.description`} />
-    }
+    }, [currentItem])
 
-    const renderAdditionalInfo = () => {
-        if (!currentItem || !isIncrementor(currentItem)) return null
-        if(isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+    const renderAdditionalInfo = useMemo(() => {
+        if (!currentItem || !isIncrementor(currentItem) || !currentItem?.revealed) return null
 
-        
         return (
             <MoreInfoUL>
                 <MoreInfoLI>
@@ -186,7 +182,7 @@ const ItemInfoDialog = () => {
                 </MoreInfoLI>
             </MoreInfoUL>
         )
-    }
+    }, [currentItem, incrementorMultiplier, multipliedProduction, intl])
 
     if (!currentItem) return null
 
@@ -197,32 +193,32 @@ const ItemInfoDialog = () => {
             open
         >
             <MainItemInfo>
-                <InfoDialogImg key={currentItem?.id} item={currentItem} isIncrementor={isIncrementor(currentItem)} />
+                <InfoDialogImg item={currentItem} isIncrementor={isIncrementor(currentItem)} />
                 <ItemTitleInfo>
                     <ItemName>
-                        {renderItemName()}
+                        {renderItemName}
                     </ItemName>
                     <ItemInfoLabel>
                         <ItemInfoLabelParagraph>
-                            {renderLabelText()}
+                            {renderLabelText}
                         </ItemInfoLabelParagraph>
                     </ItemInfoLabel>
                 </ItemTitleInfo>
                 <ItemPriceInfo>
-                    {renderPrice()}
+                    {renderPrice}
                     <ItemInfoParagraph>
                         {itemBitsPerSecondWorth}
                     </ItemInfoParagraph>
                     <ItemInfoParagraph>
-                        {handleItemTotalWorthPercentage()}
+                        {handleItemTotalWorthPercentage}
                     </ItemInfoParagraph>
                 </ItemPriceInfo>
             </MainItemInfo>
             <hr />
             <ItemDescription>
-                {renderDescription()}
+                {renderDescription}
             </ItemDescription>
-            {renderAdditionalInfo()}
+            {renderAdditionalInfo}
         </StyledItemInfoDialog>
     )
 }
