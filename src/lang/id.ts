@@ -2,6 +2,8 @@ const id = {
     'bits.bitsPerSecond': 'bit/detik:',
     'botsOwned': 'dimiliki',
     'botBuyList.upgrades.title': 'Peningkatan',
+    'botBuyList.upgrades.buyAllUpgrades.title': "Beli Semua Peningkatan",
+    'botBuyList.upgrades.buyAllUpgrades.tooltip': "Secara instan membeli semua peningkatan yang terjangkau, dimulai dari opsi termurah.",
     'botBuyList.buy.title': 'BELI',
     'botBuyList.sell.title': 'JUAL',
     'botBuyList.globalBits.name': 'Global',

@@ -205,12 +205,17 @@ export const isAffordableState = (botId: string) => atom<boolean>((get) => {
 export const isUpgradeAffordableState = (upgradeId: string) => atom<boolean>((get) => {
     const upgrades = get(upgradesState) as Upgrade[]
     const bits = get(bitState)
+    const pressEnterClicks = get(enterPressesState)
     const autoIncrementors = get(autoIncrementorsState) as Incrementor[]
     const upgrade = upgrades.find(upg => upg.id === upgradeId)
     if (!upgrade) return false
 
     const { requirementsToBeListable, purchasable } = upgrade
     if (!requirementsToBeListable) return true
+
+    if (requirementsToBeListable.pressEnterClicks && requirementsToBeListable.pressEnterClicks > pressEnterClicks) {
+        return false
+    }
 
     if (requirementsToBeListable.bits && bits < requirementsToBeListable.bits && !purchasable) {
         return false
@@ -231,6 +236,53 @@ export const isUpgradeAffordableState = (upgradeId: string) => atom<boolean>((ge
     }
 
     return bits >= upgrade.cost
+})
+
+export const affordableUpgradesState = atom<Upgrade[]>((get) => {
+    const currentUpgrades = get(upgradesState)
+    const currentBits = get(bitState)
+    const pressEnterClicks = get(enterPressesState)
+    const autoIncrementors = get(autoIncrementorsState)
+    const purchasedUpgradeIds = currentUpgrades.filter(u => u.purchased).map(u => u.id)
+
+    return currentUpgrades.filter(upgrade => {
+        if (upgrade.purchased) return false
+
+        // Check if purchasable (ignores requirements) or meets requirements
+        if (upgrade.purchasable) {
+            return currentBits >= upgrade.cost
+        }
+
+        // Check requirements if not purchasable
+        let meetsRequirements = true
+        const requirements = upgrade.requirementsToBeListable
+        
+        if (requirements) {
+            if (requirements.pressEnterClicks !== undefined && requirements.pressEnterClicks > pressEnterClicks) {
+                meetsRequirements = false
+            }
+
+            // Check bits requirement
+            if (requirements.bits !== undefined && currentBits < requirements.bits) {
+                meetsRequirements = false
+            }
+
+            // Check incrementor units requirement
+            if (meetsRequirements && requirements.incrementorUnits) {
+                meetsRequirements = Object.entries(requirements.incrementorUnits).every(([id, units]) => {
+                    const inc = autoIncrementors.find(i => i.id === id)
+                    return inc && inc.units >= units
+                })
+            }
+
+            // Check upgrade requirements
+            if (meetsRequirements && requirements.upgrades) {
+                meetsRequirements = requirements.upgrades.every(id => purchasedUpgradeIds.includes(id))
+            }
+        }
+
+        return meetsRequirements && currentBits >= upgrade.cost
+    })
 })
 
 export const currentProductionState = atom<number>((get) => {

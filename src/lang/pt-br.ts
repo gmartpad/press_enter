@@ -2,6 +2,8 @@ const ptBr = {
     'bits.bitsPerSecond': 'bits/segundo:',
     'botsOwned': 'obtidos',
     'botBuyList.upgrades.title': 'Atualizações',
+    'botBuyList.upgrades.buyAllUpgrades.title': "Comprar todos os upgrades",
+    'botBuyList.upgrades.buyAllUpgrades.tooltip': "Compra instantaneamente todos os upgrades disponíveis, começando pelas opções mais baratas.",
     'botBuyList.buy.title': 'COMPRAR',
     'botBuyList.sell.title': 'VENDER',
     'botBuyList.globalBits.name': 'Global',

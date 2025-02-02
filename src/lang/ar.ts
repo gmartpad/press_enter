@@ -2,6 +2,8 @@ const ar = {
     'bits.bitsPerSecond': 'بت/ثانية:',
     'botsOwned': 'تم الحصول عليها',
     'botBuyList.upgrades.title': 'ترقيات',
+    'botBuyList.upgrades.buyAllUpgrades.title': "شراء جميع الترقيات",
+    'botBuyList.upgrades.buyAllUpgrades.tooltip': "يقوم بشراء جميع الترقيات المتاحة فورًا، بدءًا من الخيارات الأقل تكلفة.",
     'botBuyList.buy.title': 'شراء',
     'botBuyList.sell.title': 'بيع',
     'botBuyList.globalBits.name': 'عالمي',

@@ -2,6 +2,8 @@ const ru = {
     'bits.bitsPerSecond': 'бит/секунду:',
     'botsOwned': 'получено',
     'botBuyList.upgrades.title': 'Улучшения',
+    'botBuyList.upgrades.buyAllUpgrades.title': "Купить все улучшения",
+    'botBuyList.upgrades.buyAllUpgrades.tooltip': "Мгновенно покупает все доступные улучшения, начиная с самых дешёвых вариантов.",
     'botBuyList.buy.title': 'КУПИТЬ',
     'botBuyList.sell.title': 'ПРОДАТЬ',
     'botBuyList.globalBits.name': 'Глобальный',

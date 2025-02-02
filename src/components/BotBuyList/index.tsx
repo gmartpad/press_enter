@@ -9,18 +9,26 @@ import {
     IncrementorAmount,
     IncrementorName,
 } from './styled'
-import { autoIncrementorsState, bitState, configState, upgradesState, currentHoveredUpgradeItemState } from '@state/atoms'
+import { 
+    autoIncrementorsState, 
+    bitState, 
+    configState, 
+    upgradesState, 
+    currentHoveredUpgradeItemState, 
+    affordableUpgradesState 
+} from '@state/atoms'
 import { useCallback, useMemo } from 'react'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
-import BotBuyImg from '@components/BotBuyImg'
 import IncrementorBotPrice from '@components/shared/IncrementorBotPrice'
-import IncrementorButton from '@components/IncrementorButton'
+import IncrementorButton from '@components/BotBuyList/IncrementorButton'
 import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit'
 import { FormattedMessage } from 'react-intl'
 import Divider from '@components/shared/Divider'
-import UpgradeItem from '@components/UpgradeItem'
 import { Upgrade } from '@upgrades'
 import { useAtom, useAtomValue, useSetAtom, useStore } from 'jotai'
+import BuyAllUpgradesButton from './BuyAllUpgradesButton'
+import UpgradeItem from './UpgradeItem'
+import BotBuyImg from './BotBuyImg'
 
 const BotBuyList = () => {
     const store = useStore()
@@ -29,6 +37,7 @@ const BotBuyList = () => {
     const setCurrentHoveredUpgradeItem = useSetAtom(currentHoveredUpgradeItemState)
     const [config, setConfig] = useAtom(configState)
     const autoIncrementors = useAtomValue(autoIncrementorsState)
+    const affordableUpgrades = useAtomValue(affordableUpgradesState)
 
     // Memoized derived data
     const purchasableUpgrades = useMemo(
@@ -86,10 +95,16 @@ const BotBuyList = () => {
     return (
         <Aside>
             {purchasableUpgrades.length > 0 && (
-                <h3 style={{ margin: 0, textAlign: 'center', padding: '3px 0' }}>
-                    <FormattedMessage id="botBuyList.upgrades.title" />
-                </h3> 
+                <>
+                    <h3 style={{ margin: 0, textAlign: 'center', padding: '3px 0' }}>
+                        <FormattedMessage id="botBuyList.upgrades.title" />
+                    </h3>
+                    {affordableUpgrades.length > 0 && (
+                        <BuyAllUpgradesButton />
+                    )}
+                </>
             )}
+            
             <BotUpgradeList>
                 {purchasableUpgrades.map((upgrade) => (
                     <UpgradeItem
