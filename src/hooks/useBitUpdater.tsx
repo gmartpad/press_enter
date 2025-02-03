@@ -8,10 +8,10 @@ import {
     currentProductionState
 } from '@state/atoms'
 import { useDebouncedProduction } from './useDebouncedProduction'
-import checkUpgradeRequirements from '@utils/checkUpgradeRequirements'
 import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
 import shallowEqualIncrementors from '@utils/shallowEqualIncrementors'
 import { Upgrade } from '@state/upgrades'
+import updateUpgrades from '@utils/updateUpgrades'
 
 interface IntervalConfig {
   updateInterval: number
@@ -113,22 +113,11 @@ const useBitUpdater = () => {
             const currentIncrementors = store.get(autoIncrementorsState)
             const currentEnterPresses = store.get(enterPressesState)
 
-            const purchasedUpgrades = currentUpgrades.filter((u) => u.purchased)
-            const listableUpgrades = currentUpgrades.filter((upgrade) =>
-                checkUpgradeRequirements(
-                    upgrade,
-                    currentBits,
-                    currentIncrementors,
-                    purchasedUpgrades,
-                    currentEnterPresses
-                )
-            )
-
-            const listableIds = new Set(listableUpgrades.map((u) => u.id))
-            const updatedUpgrades = currentUpgrades.map((upgrade) =>
-                listableIds.has(upgrade.id)
-                    ? { ...upgrade, purchasable: true }
-                    : upgrade
+            const updatedUpgrades = updateUpgrades(
+                currentUpgrades,
+                currentBits,
+                currentIncrementors,
+                currentEnterPresses
             )
 
             if (!shallowEqualUpgrades(currentUpgrades, updatedUpgrades)) {
