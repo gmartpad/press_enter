@@ -1,5 +1,7 @@
 const zhCn = {
-    'bits.bitsPerSecond': '位/秒：',
+    'bits.bitsPerSecond': '比特/秒 (BpS):',
+    'bits.totalAmountOfBits': '总比特数:',
+    'bits.enterPressesAmount': '按下 Enter 键的次数:',
     'botsOwned': '已获得',
     'botBuyList.upgrades.title': '升级',
     'botBuyList.upgrades.buyAllUpgrades.title': "购买所有升级",

@@ -1,5 +1,7 @@
 const es = {
     'bits.bitsPerSecond': 'bits/segundo (BpS):',
+    'bits.totalAmountOfBits': 'Total de bits:',
+    'bits.enterPressesAmount': 'Número de veces que presionaste Enter:',
     'botsOwned': 'tienes',
     'botBuyList.upgrades.title': 'Mejoras',
     'botBuyList.upgrades.buyAllUpgrades.title': "Comprar todas las mejoras",

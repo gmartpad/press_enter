@@ -165,4 +165,12 @@ const BitsInfo = styled.div`
               2px -2px 0 0 #fff, -2px 2px 0 0 #fff;
 `
 
-export { Aside, EnterKeyButton, FloatText, EnterIcon, BitsH3, BitsInfo }
+const BitsSpan = styled.span`
+  display: flex; 
+  align-items: center; 
+  flex-direction: column; 
+  gap: 10; 
+  font-size: 1.17em;
+`
+
+export { Aside, EnterKeyButton, FloatText, EnterIcon, BitsH3, BitsInfo, BitsSpan }
