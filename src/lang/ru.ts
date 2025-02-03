@@ -1,5 +1,7 @@
 const ru = {
-    'bits.bitsPerSecond': 'бит/секунду:',
+    'bits.bitsPerSecond': 'бит/сек (BpS):',
+    'bits.totalAmountOfBits': 'Всего бит:',
+    'bits.enterPressesAmount': 'Количество нажатий на Enter:',
     'botsOwned': 'получено',
     'botBuyList.upgrades.title': 'Улучшения',
     'botBuyList.upgrades.buyAllUpgrades.title': "Купить все улучшения",

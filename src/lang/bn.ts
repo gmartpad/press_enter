@@ -1,5 +1,7 @@
 const bn = {
-    'bits.bitsPerSecond': 'বিট/সেকেন্ড:',
+    'bits.bitsPerSecond': 'বিট/সেকেন্ড (BpS):',
+    'bits.totalAmountOfBits': 'মোট বিট:' ,
+    'bits.enterPressesAmount': 'এন্টার টিপার সংখ্যা:',
     'botsOwned': 'অধিগৃহীত',
     'botBuyList.upgrades.title': 'আপগ্রেড',
     'botBuyList.upgrades.buyAllUpgrades.title': "সমস্ত আপগ্রেড ক্রয় করুন",

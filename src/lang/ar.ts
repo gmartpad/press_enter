@@ -1,5 +1,7 @@
 const ar = {
-    'bits.bitsPerSecond': 'بت/ثانية:',
+    'bits.bitsPerSecond': 'بت/ثانية (BpS):',
+    'bits.totalAmountOfBits': 'إجمالي البتات:',
+    'bits.enterPressesAmount': 'عدد المرات التي ضغطت فيها على مفتاح Enter:',
     'botsOwned': 'تم الحصول عليها',
     'botBuyList.upgrades.title': 'ترقيات',
     'botBuyList.upgrades.buyAllUpgrades.title': "شراء جميع الترقيات",

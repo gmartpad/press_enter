@@ -1,5 +1,7 @@
 const ptBr = {
     'bits.bitsPerSecond': 'bits/segundo (BpS):',
+    'bits.totalAmountOfBits': 'Total de bits:',
+    'bits.enterPressesAmount': 'Número de vezes que você pressionou Enter:',
     'botsOwned': 'obtidos',
     'botBuyList.upgrades.title': 'Atualizações',
     'botBuyList.upgrades.buyAllUpgrades.title': "Comprar todos os upgrades",

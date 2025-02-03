@@ -1,5 +1,7 @@
 const hiIn = {
-    'bits.bitsPerSecond': 'बिट्स/सेकंड:',
+    'bits.bitsPerSecond': 'बिट/सेकंड (BpS):',
+    'bits.totalAmountOfBits': 'कुल बिट्स:',
+    'bits.enterPressesAmount': 'एंटर दबाने की संख्या:',
     'botsOwned': 'प्राप्त किए',
     'botBuyList.upgrades.title': 'उन्नयन',
     'botBuyList.upgrades.buyAllUpgrades.title': "सभी अपग्रेड खरीदें",

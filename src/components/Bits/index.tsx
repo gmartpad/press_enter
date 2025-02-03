@@ -7,7 +7,7 @@ import {
     enterPressesState 
 } from '@state/atoms'
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
-import { FloatText, Aside, EnterIcon, EnterKeyButton, BitsH3, BitsInfo } from './styled'
+import { FloatText, Aside, EnterIcon, EnterKeyButton, BitsH3, BitsInfo, BitsSpan } from './styled'
 import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { debounce } from 'lodash'
@@ -112,20 +112,20 @@ const Bits = () => {
     return (
         <Aside>
             <BitsInfo>
-                <span style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 10, fontSize: '1.17em' }}>
+                <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.bitsPerSecond" /></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{" " + formattedCurrentProduction} bits</BitsH3>
-                </span>
+                </BitsSpan>
                 <span>-</span>
-                <span style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 10, fontSize: '1.17em' }}>
-                    <BitsH3>Total de bits:</BitsH3>
+                <BitsSpan>
+                    <BitsH3><FormattedMessage id="bits.totalAmountOfBits"/></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{formatLargeNumber(Number(bits.toFixed(0)), intl)} bits</BitsH3>
-                </span>
+                </BitsSpan>
                 <span>-</span>
-                <span style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 10, fontSize: '1.17em' }}>
-                    <BitsH3>Número de vezes que você pressionou o Enter:</BitsH3>
+                <BitsSpan>
+                    <BitsH3><FormattedMessage id="bits.enterPressesAmount"/></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{enterPresses}</BitsH3>
-                </span>
+                </BitsSpan>
             </BitsInfo>
             <EnterKeyButton
                 onClick={handleEnterBitClick}

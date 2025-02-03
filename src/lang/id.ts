@@ -1,5 +1,7 @@
 const id = {
-    'bits.bitsPerSecond': 'bit/detik:',
+    'bits.bitsPerSecond': 'bit/detik (BpS):',
+    'bits.totalAmountOfBits': 'Total bit:',
+    'bits.enterPressesAmount': 'Jumlah kali Anda menekan Enter:',
     'botsOwned': 'dimiliki',
     'botBuyList.upgrades.title': 'Peningkatan',
     'botBuyList.upgrades.buyAllUpgrades.title': "Beli Semua Peningkatan",
