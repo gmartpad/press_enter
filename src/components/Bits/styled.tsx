@@ -1,15 +1,25 @@
 import { AiOutlineEnter } from 'react-icons/ai'
 import styled, { keyframes } from 'styled-components'
 
-const Aside = styled.aside`
+interface AsideProps { 
+  $displayValue: string 
+}
+
+const Aside = styled.aside.attrs<{ $displayValue: string }>(
+    props => ({
+        style: {
+            display: `${props.$displayValue}`,
+        }
+    })
+)<AsideProps>`
   width: 30%;
   height: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #000;
   color: #fff;
+  overflow-y: auto;
 `
 
 const EnterKeyButton = styled.button`
@@ -20,6 +30,7 @@ const EnterKeyButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
+  margin: 0 auto 30px auto;
   display: flex;
   justify-content: flex-end;
 
@@ -99,7 +110,6 @@ const floatUp = keyframes`
 
 interface FloatTextProps { $textX: number; $textY: number }
 
-
 styled.dialog.attrs<{ $dialogTop: number }>(
     props => ({
         style: {
@@ -118,11 +128,12 @@ const FloatText = styled.p.attrs<{ $textX: number, $textY: number }>(
     })
 )<FloatTextProps>`
   position: absolute;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 255, 0);
   font-size: 1.75rem;
   animation: ${floatUp} 3s ease-out forwards;
   pointer-events: none; /* Prevent interaction with floating text */
-  z-index: 3
+  z-index: 3;
+  text-shadow: -2px 2px #555;
 `
 
 const EnterIcon = styled(AiOutlineEnter)`
@@ -149,12 +160,11 @@ const BitsH3 = styled.h3`
 
 const BitsInfo = styled.div`
   width: -webkit-fill-available;
-  margin: 0 30px 30px 30px;
+  margin: 34px 30px 30px 30px;
   padding: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
   box-sizing: border-box;
   border: none;
   box-shadow: 2px 0 0 0 #fff, 4px 0 0 0 #fff,  
@@ -169,7 +179,6 @@ const BitsSpan = styled.span`
   display: flex; 
   align-items: center; 
   flex-direction: column; 
-  gap: 10; 
   font-size: 1.17em;
 `
 

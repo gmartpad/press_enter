@@ -24,6 +24,9 @@ const Bits = () => {
     const calculatedEnterPressBitAmount = useAtomValue(calculatedEnterPressBitAmountState)
     const config = useAtomValue(configState)
 
+    const bitsInfoRef = useRef<HTMLDivElement | null>(null)
+    const enterButtonRef = useRef<HTMLButtonElement | null>(null)
+
     const [floatTexts, setFloatTexts] = useState<
         { id: number; x: number; y: number, value: string }[]
     >([])
@@ -32,6 +35,14 @@ const Bits = () => {
         () => formatLargeNumber(Number(currentProduction.toFixed(1)), intl),
         [currentProduction, intl]
     )
+
+    const asideDisplayValue = useMemo(() => {
+        if((Number(bitsInfoRef.current?.offsetHeight) + Number(enterButtonRef.current?.offsetHeight)) > window.innerHeight) {
+            return 'block'
+        }
+
+        return 'flex'
+    }, [window.innerHeight])
 
     const audioRef = useRef<HTMLAudioElement | null>(null)
     const timeoutRef = useRef<Set<NodeJS.Timeout>>(new Set())
@@ -110,24 +121,25 @@ const Bits = () => {
     }, [debouncedHandleEnterBitClickSound])
 
     return (
-        <Aside>
-            <BitsInfo>
+        <Aside $displayValue={asideDisplayValue}>
+            <BitsInfo ref={bitsInfoRef} >
                 <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.bitsPerSecond" /></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{" " + formattedCurrentProduction} bits</BitsH3>
                 </BitsSpan>
-                <span>-</span>
+                <span>-----</span>
                 <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.totalAmountOfBits"/></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{formatLargeNumber(Number(bits.toFixed(0)), intl)} bits</BitsH3>
                 </BitsSpan>
-                <span>-</span>
+                <span>-----</span>
                 <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.enterPressesAmount"/></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{enterPresses}</BitsH3>
                 </BitsSpan>
             </BitsInfo>
             <EnterKeyButton
+                ref={enterButtonRef}
                 onClick={handleEnterBitClick}
                 onTouchStart={handleEnterBitClick}
             >
