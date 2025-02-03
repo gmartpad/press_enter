@@ -17,7 +17,8 @@ import {
     configState, 
     upgradesState, 
     currentHoveredUpgradeItemState, 
-    affordableUpgradesState 
+    affordableUpgradesState, 
+    enterPressesState
 } from '@state/atoms'
 import { useCallback, useMemo } from 'react'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
@@ -31,6 +32,8 @@ import { useAtom, useAtomValue, useSetAtom, useStore } from 'jotai'
 import BuyAllUpgradesButton from './BuyAllUpgradesButton'
 import UpgradeItem from './UpgradeItem'
 import BotBuyImg from './BotBuyImg'
+import updateUpgrades from '@utils/updateUpgrades'
+import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
 
 const BotBuyList = () => {
     const store = useStore()
@@ -73,6 +76,29 @@ const BotBuyList = () => {
         setCurrentHoveredUpgradeItem(EMPTY_UPGRADE)
     }, [EMPTY_UPGRADE, setBits, setCurrentHoveredUpgradeItem, setUpgrades, store])
 
+    const handleUpdateUpgrades = useCallback(() => {
+        try {
+            const currentUpgrades = store.get(upgradesState)
+            const currentBits = store.get(bitState)
+            const currentIncrementors = store.get(autoIncrementorsState)
+            const currentEnterPresses = store.get(enterPressesState)
+
+            const updatedUpgrades = updateUpgrades(
+                currentUpgrades,
+                currentBits,
+                currentIncrementors,
+                currentEnterPresses
+            )
+
+            if (!shallowEqualUpgrades(currentUpgrades, updatedUpgrades)) {
+                setUpgrades(updatedUpgrades)
+            }
+        } catch (error) {
+            console.error('Error updating upgrades:', error)
+        }
+        console.log('handleUpdateUpgrades')
+    }, [store, setUpgrades])
+
     const handleChangeBulkMode = useCallback(
         (newBotBulkModeValue: number) => {
             const currentConfig = store.get(configState)
@@ -107,7 +133,7 @@ const BotBuyList = () => {
                 </>
             )}
             
-            <BotUpgradeList>
+            <BotUpgradeList onMouseEnter={handleUpdateUpgrades}>
                 {purchasableUpgrades.map((upgrade) => (
                     <UpgradeItem
                         key={upgrade.id}
