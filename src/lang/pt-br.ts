@@ -1,5 +1,5 @@
 const ptBr = {
-    'bits.bitsPerSecond': 'bits/segundo:',
+    'bits.bitsPerSecond': 'bits/segundo (BpS):',
     'botsOwned': 'obtidos',
     'botBuyList.upgrades.title': 'Atualizações',
     'botBuyList.upgrades.buyAllUpgrades.title': "Comprar todos os upgrades",

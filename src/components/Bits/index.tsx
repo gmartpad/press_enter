@@ -7,7 +7,7 @@ import {
     enterPressesState 
 } from '@state/atoms'
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
-import { FloatText, Aside, EnterIcon, EnterKeyButton } from './styled'
+import { FloatText, Aside, EnterIcon, EnterKeyButton, BitsH3, BitsInfo } from './styled'
 import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { debounce } from 'lodash'
@@ -29,7 +29,7 @@ const Bits = () => {
     >([])
 
     const formattedCurrentProduction = useMemo(
-        () => formatLargeNumber(Number(currentProduction.toFixed(1)), intl, true),
+        () => formatLargeNumber(Number(currentProduction.toFixed(1)), intl),
         [currentProduction, intl]
     )
 
@@ -111,9 +111,22 @@ const Bits = () => {
 
     return (
         <Aside>
-            <h3><FormattedMessage id="bits.bitsPerSecond" /> {formattedCurrentProduction}</h3>
-            <h3>{formatLargeNumber(Number(bits.toFixed(0)), intl)} bits</h3>
-            <h3>{enterPresses} enterPresses</h3>
+            <BitsInfo>
+                <span style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 10, fontSize: '1.17em' }}>
+                    <BitsH3><FormattedMessage id="bits.bitsPerSecond" /></BitsH3>
+                    <BitsH3 style={{ color: '#0f0' }}>{" " + formattedCurrentProduction} bits</BitsH3>
+                </span>
+                <span>-</span>
+                <span style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 10, fontSize: '1.17em' }}>
+                    <BitsH3>Total de bits:</BitsH3>
+                    <BitsH3 style={{ color: '#0f0' }}>{formatLargeNumber(Number(bits.toFixed(0)), intl)} bits</BitsH3>
+                </span>
+                <span>-</span>
+                <span style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 10, fontSize: '1.17em' }}>
+                    <BitsH3>Número de vezes que você pressionou o Enter:</BitsH3>
+                    <BitsH3 style={{ color: '#0f0' }}>{enterPresses}</BitsH3>
+                </span>
+            </BitsInfo>
             <EnterKeyButton
                 onClick={handleEnterBitClick}
                 onTouchStart={handleEnterBitClick}

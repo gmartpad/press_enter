@@ -139,4 +139,30 @@ const EnterIcon = styled(AiOutlineEnter)`
   transition: all .1s ease-in-out;
 `
 
-export { Aside, EnterKeyButton, FloatText, EnterIcon }
+const BitsH3 = styled.h3`
+  margin: 0px;
+  text-shadow: -2px 2px #555;
+  width: fit-content;
+  max-width: 360px;
+  text-align: center;
+`
+
+const BitsInfo = styled.div`
+  width: -webkit-fill-available;
+  margin: 0 30px 30px 30px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: 2px 0 0 0 #fff, 4px 0 0 0 #fff,  
+              0 2px 0 0 #fff, 0 4px 0 0 #fff, 
+              -2px 0 0 0 #fff, -4px 0 0 0 #fff, 
+              0 -2px 0 0 #fff, 0 -4px 0 0 #fff,  
+              2px 2px 0 0 #fff, -2px -2px 0 0 #fff, 
+              2px -2px 0 0 #fff, -2px 2px 0 0 #fff;
+`
+
+export { Aside, EnterKeyButton, FloatText, EnterIcon, BitsH3, BitsInfo }
