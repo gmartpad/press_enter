@@ -1,5 +1,5 @@
 const es = {
-    'bits.bitsPerSecond': 'bits/segundo:',
+    'bits.bitsPerSecond': 'bits/segundo (BpS):',
     'botsOwned': 'tienes',
     'botBuyList.upgrades.title': 'Mejoras',
     'botBuyList.upgrades.buyAllUpgrades.title': "Comprar todas las mejoras",

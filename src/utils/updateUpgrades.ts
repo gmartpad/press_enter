@@ -3,10 +3,10 @@ import { Upgrade } from '@state/upgrades'
 import checkUpgradeRequirements from './checkUpgradeRequirements'
 
 function updateUpgrades(
-  currentUpgrades: Upgrade[],
-  currentBits: number,
-  currentIncrementors: Incrementor[],
-  currentEnterPresses: number
+    currentUpgrades: Upgrade[],
+    currentBits: number,
+    currentIncrementors: Incrementor[],
+    currentEnterPresses: number
 ): Upgrade[] {
     const purchasedUpgrades = currentUpgrades.filter(u => u.purchased)
     
