@@ -3,7 +3,20 @@ import { IoIosStats } from "react-icons/io"
 
 import styled from 'styled-components'
 
-const Nav = styled.nav`
+interface NavProps {
+  $windowInnerWidth: number
+}
+
+const Nav = styled.nav.attrs<NavProps>(
+    props => ({
+        style: {
+            position: props.$windowInnerWidth >= 1024 ? 'unset' : 'fixed',
+            top: props.$windowInnerWidth >= 1024 ? 'unset' : 0,
+            zIndex: props.$windowInnerWidth >= 1024 ? 'unset' : 1,
+            width: props.$windowInnerWidth >= 1024 ? 'auto' : '100vw'
+        }
+    })
+)`
   height: 32px;
   background-color: #555;
   display: flex;

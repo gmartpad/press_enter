@@ -3,16 +3,20 @@ import ItemInfoDialog from '@components/shared/ItemInfoDialog'
 import BotVisualizers from '@components/BotVisualizers'
 import Navbar from '@components/Navbar'
 import StatsSection from '@components/StatsSection'
-import useWindowInnerWidth from '@hooks/useWindowInnerWidth'
+import useWindowInnerValues from '@hooks/useWindowInnerValues'
 
 const CenterMain = () => {
-    const { windowInnerWidth } = useWindowInnerWidth()
+    const { windowInnerWidth } = useWindowInnerValues()
 
     return (
         <Section $windowInnerWidth={windowInnerWidth}>
-            <StatsSection/> 
-            <Navbar />
-            <ItemInfoDialog/>
+            {windowInnerWidth >= 1024 && (
+                <>
+                    <StatsSection/> 
+                    <Navbar />
+                    <ItemInfoDialog/>
+                </>
+            )}
             <BotVisualizers/>
         </Section>
     )

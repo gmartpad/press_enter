@@ -4,8 +4,10 @@ import { ChangeLanguageButton, Gear, Globe, Nav, SquareNavButton, Stats } from '
 import { FormattedMessage } from 'react-intl'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
+import useWindowInnerValues from '@hooks/useWindowInnerValues'
 
 const Navbar = () => {
+    const { windowInnerWidth } = useWindowInnerValues()
     const store = useStore()
     const [config, setConfig] = useAtom(configState)
 
@@ -45,7 +47,7 @@ const Navbar = () => {
     const audioRef = useRef<HTMLAudioElement>(new Audio())
 
     return (
-        <Nav>
+        <Nav $windowInnerWidth={windowInnerWidth}>
             <div
                 style={{
                     display: 'flex',

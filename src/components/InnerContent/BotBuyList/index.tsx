@@ -34,10 +34,10 @@ import UpgradeItem from './UpgradeItem'
 import BotBuyImg from './BotBuyImg'
 import updateUpgrades from '@utils/updateUpgrades'
 import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
-import useWindowInnerWidth from '@hooks/useWindowInnerWidth'
+import useWindowInnerValues from '@hooks/useWindowInnerValues'
 
 const BotBuyList = () => {
-    const { windowInnerWidth } = useWindowInnerWidth()
+    const { windowInnerWidth } = useWindowInnerValues()
     const store = useStore()
     const [upgrades, setUpgrades] = useAtom(upgradesState)
     const setBits = useSetAtom(bitState)

@@ -12,14 +12,14 @@ import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { debounce } from 'lodash'
 import { useIntl, FormattedMessage } from 'react-intl'
-import useWindowInnerWidth from '@hooks/useWindowInnerWidth'
+import useWindowInnerValues from '@hooks/useWindowInnerValues'
 
 const sounds = [sound1, sound2, sound3]
 
 const Bits = () => {
     const store = useStore()
     const intl = useIntl()
-    const { windowInnerWidth } = useWindowInnerWidth()
+    const { windowInnerWidth } = useWindowInnerValues()
     const [enterPresses, setEnterPressesState] = useAtom(enterPressesState)
     const [bits, setBits] = useAtom(bitState)
     const currentProduction = useAtomValue(currentProductionState)
