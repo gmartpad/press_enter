@@ -1,7 +1,16 @@
 import styled from 'styled-components'
 
-const Aside = styled.aside`
-  width: 315px;
+type WindowInnerWidthProps = {
+  $windowInnerWidth: number
+}
+
+const Aside = styled.aside.attrs<WindowInnerWidthProps>(
+    props => ({
+        style: {
+            width: props.$windowInnerWidth >= 1024 ? '315px' : '100%'
+        }
+    })
+)<WindowInnerWidthProps>`
   flex-direction: column;
   height: 100%;
   background-color: #000;
@@ -81,18 +90,32 @@ const BuySellContainer = styled.div`
   background-color: black;
 `
 
-const BotBuyListGrid = styled.div`
+const BotBuyListGrid = styled.div.attrs<WindowInnerWidthProps>(
+    props => ({
+        style: {
+            display: props.$windowInnerWidth >= 1024 ? 'grid' : 'flex',
+            flexWrap: props.$windowInnerWidth >= 1024 ? 'unset' : 'wrap',
+            justifyContent: props.$windowInnerWidth >= 1024 ? 'unset' : 'center'
+        }
+    })
+)`
   height: fit-content;
   display: grid;
   gap: 2px;
 `
 
-const BotUpgradeList = styled.div`
+const BotUpgradeList = styled.div.attrs<WindowInnerWidthProps>(
+    props => ({
+        style: {
+            justifyContent: props.$windowInnerWidth >= 1024 ? 'unset' : 'center',
+            maxHeight: props.$windowInnerWidth >= 1024 ? '60px' : 'fit-content'
+        }
+    })
+)<WindowInnerWidthProps>`
   display: flex;
   flex-wrap: wrap;
-  // padding-top: 32px;
-  max-height: 60px;
   overflow: hidden;
+  box-sizing: border-box;
 
   &:hover {
     max-height: fit-content;
