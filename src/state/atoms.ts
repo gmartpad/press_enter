@@ -113,6 +113,12 @@ export const mouseYState = atomWithStorage<number>(
     DEFAULT_MOUSE_Y_STATE_VALUE
 )
 
+export const DEFAULT_MOUSE_X_STATE_VALUE = 0
+export const mouseXState = atomWithStorage<number>(
+    'mouseXState',
+    DEFAULT_MOUSE_X_STATE_VALUE
+)
+
 export const DEFAULT_UPGRADES_STATE_VALUE = defaultUpgrades
 export const upgradesState = atomWithStorage<Upgrade[]>(
     'upgradesState',

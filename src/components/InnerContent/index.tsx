@@ -1,9 +1,9 @@
 import DesktopInnerContent from './DesktopInnerContent'
 import MobileInnerContent from './MobileInnerContent'
-import useWindowInnerWidth from '@hooks/useWindowInnerWidth'
+import useWindowInnerValues from '@hooks/useWindowInnerValues'
 
 const InnerContent = () => {
-    const { windowInnerWidth } = useWindowInnerWidth()
+    const { windowInnerWidth } = useWindowInnerValues()
 
     if(windowInnerWidth >= 1024) {
         return <DesktopInnerContent/>

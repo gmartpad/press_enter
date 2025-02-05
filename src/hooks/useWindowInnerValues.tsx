@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useState } from 'react'
 
-const useWindowInnerWidth = () => {
+const useWindowInnerValues = () => {
+    const [windowInnerHeight, setWindowInnerHeight] = useState<number>(window.innerHeight)
     const [windowInnerWidth, setWindowInnerWidth] = useState<number>(window.innerWidth)
 
     const handleResize = useCallback(() => {
         setWindowInnerWidth(window.innerWidth)
+        setWindowInnerHeight(window.innerHeight)
     }, [])
 
     useEffect(() => {
@@ -12,7 +14,7 @@ const useWindowInnerWidth = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    return { windowInnerWidth }
+    return { windowInnerHeight, windowInnerWidth }
 }
 
-export default useWindowInnerWidth
+export default useWindowInnerValues

@@ -15,6 +15,7 @@ const Aside = styled.aside.attrs<WindowInnerWidthProps>(
   height: 100%;
   background-color: #000;
   overflow-y: auto;
+  overflow-x: hidden;
 `
 
 const BotBulkModeButton = styled.button<{ $bulkType: 'buy' | 'sell'; $active: boolean }>`
@@ -118,7 +119,7 @@ const BotUpgradeList = styled.div.attrs<WindowInnerWidthProps>(
   box-sizing: border-box;
 
   &:hover {
-    max-height: fit-content;
+    max-height: fit-content !important;
   }
 `
 

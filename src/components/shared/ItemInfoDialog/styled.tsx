@@ -1,3 +1,4 @@
+import calculateMobileItemInfoPosition from '@utils/calculateMobileItemInfoPosition'
 import styled from 'styled-components'
 
 const MainItemInfo = styled.div`
@@ -22,11 +23,24 @@ const ItemDescription = styled.div`
   overflow-wrap: break-word;
 `
 
-const ItemInfoDialog = styled.dialog.attrs<{ $dialogTop: number }>(
+interface ItemInfoDialogProps {
+  $windowInnerHeight: number
+  $windowInnerWidth: number
+  $dialogHeight: number
+  $mouseX: number
+  $mouseY: number
+}
+
+const ItemInfoDialog = styled.dialog.attrs<ItemInfoDialogProps>(
     props => ({
         style: {
-            top: `${props.$dialogTop}px`,
-            marginTop: `${props.$dialogTop >= 32 ? '-4px' : '0px'}`
+            ...calculateMobileItemInfoPosition({
+                innerHeight: props.$windowInnerHeight,
+                innerWidth: props.$windowInnerWidth,
+                mouseX: props.$mouseX,
+                mouseY: props.$mouseY,
+                dialogHeight: props.$dialogHeight
+            })
         }
     })
 )`
@@ -34,8 +48,6 @@ const ItemInfoDialog = styled.dialog.attrs<{ $dialogTop: number }>(
   max-width: 366px;
   position: absolute;
   height: auto;
-  left: auto;
-  right: 10px;
   background-color: #000;
   box-sizing: border-box;
   color: #fff;

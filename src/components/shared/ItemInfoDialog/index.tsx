@@ -1,10 +1,10 @@
-import {  useMemo, useRef } from 'react'
+import {  useEffect, useMemo, useRef, useState } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
 import { GiArtificialIntelligence } from 'react-icons/gi'
 import { useAtomValue } from 'jotai'
 
 import InfoDialogImg from '@components/InfoDialogImg'
-import useMouseYTracker from '@hooks/useMouseYTracker'
+import useMouseTracker from '@hooks/useMouseTracker'
 import { 
     bitState, 
     configState, 
@@ -36,6 +36,7 @@ import { type Incrementor } from '@state/defaultAutoIncrementors'
 import { type Upgrade } from '@upgrades'
 import { IncrementorPrice } from '../IncrementorBotPrice/styled'
 import formatLargeNumber from '@utils/formatLargeNumber'
+import useWindowInnerValues from '@hooks/useWindowInnerValues'
 
 // Type guard functions
 const isIncrementor = (item: Incrementor | Upgrade): item is Incrementor => {
@@ -44,14 +45,27 @@ const isIncrementor = (item: Incrementor | Upgrade): item is Incrementor => {
 
 const ItemInfoDialog = () => {
     const intl = useIntl()
+    const { windowInnerHeight, windowInnerWidth } = useWindowInnerValues()
+    const { mouseX, mouseY } = useMouseTracker()
     const config = useAtomValue(configState)
     const currentProduction = useAtomValue(currentProductionState)
     const bits = useAtomValue(bitState)
-    const mouseY = useMouseYTracker()
     const dialogRef = useRef<HTMLDialogElement>(null)
+
+    const [dialogHeight, setDialogHeight] = useState<number>(347)
 
     const currentHoveredBotItem = useAtomValue(syncedHoveredBotItemState)
     const currentHoveredUpgradeItem = useAtomValue(currentHoveredUpgradeItemState)
+
+    useEffect(() => {
+        if(dialogRef.current) {
+            setDialogHeight(dialogRef.current?.offsetHeight)
+        }
+
+        if(!dialogRef.current) {
+            setDialogHeight(347)
+        }
+    }, [mouseY])
 
     // Memoize current item with deep comparison
     const currentItem = useMemo(() => {
@@ -74,17 +88,6 @@ const ItemInfoDialog = () => {
         () => currentProduction * incrementorMultiplier,
         [currentProduction, incrementorMultiplier]
     )
-
-    // Throttle dialog position updates
-    const dialogTop = useMemo(() => {
-        const mouseYWithNavbar = mouseY
-        const dialogHeight = dialogRef.current?.offsetHeight || 0
-        const validPosition = mouseYWithNavbar + dialogHeight
-
-        return validPosition > window.innerHeight
-            ? window.innerHeight - dialogHeight
-            : mouseYWithNavbar
-    }, [mouseY])
 
     // Memoize expensive calculations
     const itemCost = useMemo(() => {
@@ -188,7 +191,11 @@ const ItemInfoDialog = () => {
 
     return (
         <StyledItemInfoDialog
-            $dialogTop={dialogTop}
+            $windowInnerHeight={windowInnerHeight}
+            $windowInnerWidth={windowInnerWidth}
+            $dialogHeight={dialogHeight}
+            $mouseX={mouseX}
+            $mouseY={mouseY}
             ref={dialogRef}
             open
         >
