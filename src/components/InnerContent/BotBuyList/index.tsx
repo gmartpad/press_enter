@@ -23,7 +23,7 @@ import {
 import { useCallback, useMemo } from 'react'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import IncrementorBotPrice from '@components/shared/IncrementorBotPrice'
-import IncrementorButton from '@components/BotBuyList/IncrementorButton'
+import IncrementorButton from '@components/InnerContent/BotBuyList/IncrementorButton'
 import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit'
 import { FormattedMessage } from 'react-intl'
 import Divider from '@components/shared/Divider'
@@ -34,8 +34,10 @@ import UpgradeItem from './UpgradeItem'
 import BotBuyImg from './BotBuyImg'
 import updateUpgrades from '@utils/updateUpgrades'
 import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
+import useWindowInnerWidth from '@hooks/useWindowInnerWidth'
 
 const BotBuyList = () => {
+    const { windowInnerWidth } = useWindowInnerWidth()
     const store = useStore()
     const [upgrades, setUpgrades] = useAtom(upgradesState)
     const setBits = useSetAtom(bitState)
@@ -121,7 +123,7 @@ const BotBuyList = () => {
     )
 
     return (
-        <Aside>
+        <Aside $windowInnerWidth={windowInnerWidth}>
             {purchasableUpgrades.length > 0 && (
                 <>
                     <h3 style={{ margin: 0, textAlign: 'center', padding: '3px 0' }}>
@@ -133,7 +135,7 @@ const BotBuyList = () => {
                 </>
             )}
             
-            <BotUpgradeList onMouseEnter={handleUpdateUpgrades}>
+            <BotUpgradeList $windowInnerWidth={windowInnerWidth} onMouseEnter={handleUpdateUpgrades}>
                 {purchasableUpgrades.map((upgrade) => (
                     <UpgradeItem
                         key={upgrade.id}
@@ -182,7 +184,7 @@ const BotBuyList = () => {
                 ))}
             </BuySellContainer>
             
-            <BotBuyListGrid>
+            <BotBuyListGrid $windowInnerWidth={windowInnerWidth}>
                 {autoIncrementors.map((item: Incrementor) => (
                     <IncrementorButton key={item.id} item={item}>
                         <BotBuyImg item={item} />

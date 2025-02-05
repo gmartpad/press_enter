@@ -2,17 +2,18 @@ import { AiOutlineEnter } from 'react-icons/ai'
 import styled, { keyframes } from 'styled-components'
 
 interface AsideProps { 
-  $displayValue: string 
+  $displayValue: string
+  $windowInnerWidth: number
 }
 
-const Aside = styled.aside.attrs<{ $displayValue: string }>(
+const Aside = styled.aside.attrs<AsideProps>(
     props => ({
         style: {
             display: `${props.$displayValue}`,
+            width: props.$windowInnerWidth >= 1024 ? '30%' : '100%'
         }
     })
 )<AsideProps>`
-  width: 30%;
   height: 100%;
   flex-direction: column;
   justify-content: center;
