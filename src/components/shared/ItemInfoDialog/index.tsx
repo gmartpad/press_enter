@@ -84,11 +84,6 @@ const ItemInfoDialog = () => {
     // Stable atom reference
     const incrementorMultiplier = useAtomValue(memoizedAtom)
 
-    const multipliedProduction = useMemo(
-        () => currentProduction * incrementorMultiplier,
-        [currentProduction, incrementorMultiplier]
-    )
-
     // Memoize expensive calculations
     const itemCost = useMemo(() => {
         if (!currentItem) return 0
@@ -107,8 +102,8 @@ const ItemInfoDialog = () => {
 
     const itemBitsPerSecondWorth = useMemo(() => {
         if (!currentItem || (isIncrementor(currentItem) && !currentItem?.revealed)) return '???????'
-        return formatTimeNumber(itemCost / multipliedProduction, intl)
-    }, [itemCost, multipliedProduction, intl, currentItem])
+        return formatTimeNumber(itemCost / currentProduction, intl)
+    }, [itemCost, currentProduction, intl, currentItem])
 
     // Memoized render functions
     const renderItemName = useMemo(() => {
@@ -173,7 +168,7 @@ const ItemInfoDialog = () => {
                     {formatRelativeBpS({
                         currentHoveredBotItem: currentItem,
                         intl,
-                        multipliedProduction,
+                        multipliedProduction: currentProduction,
                         incrementorMultiplier
                     })}
                 </MoreInfoLI>
@@ -185,7 +180,7 @@ const ItemInfoDialog = () => {
                 </MoreInfoLI>
             </MoreInfoUL>
         )
-    }, [currentItem, incrementorMultiplier, multipliedProduction, intl])
+    }, [currentItem, incrementorMultiplier, currentProduction, intl])
 
     if (!currentItem) return null
 
