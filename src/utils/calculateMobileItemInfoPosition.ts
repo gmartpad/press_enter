@@ -9,6 +9,13 @@ interface HorizontalPositioningProps {
     right: string | number 
 }
 
+interface VerticalPositioningProps {
+    top: string | number 
+    bottom: string | number
+    marginTop: string | number
+    marginBottom: string | number
+}
+
 function calculateMobileItemInfoPosition ({
     innerHeight,
     innerWidth,
@@ -30,10 +37,10 @@ function calculateMobileItemInfoPosition ({
         right: 'auto'
     }
 
-    let verticalPositioning = {
+    let verticalPositioning: VerticalPositioningProps = {
         top: `${mouseY + VERTICAL_MARGIN}px`,
         bottom: 'auto',
-        marginTop: IS_DESKTOP ? `${mouseY >= 32 ? '-4px' : '0px'}` : '0px',
+        marginTop: 0,
         marginBottom: 'unset'
     }
 
@@ -44,7 +51,8 @@ function calculateMobileItemInfoPosition ({
         }
         verticalPositioning = {
             ...verticalPositioning,
-            top: `${mouseY}px`,
+            top: (mouseY + dialogHeight) >= innerHeight ? 'auto' : `${mouseY >= 37 ? mouseY : 37}px`,
+            bottom: (mouseY + dialogHeight) >= innerHeight ? 4 : 'auto'
         }
     }
 
@@ -55,7 +63,7 @@ function calculateMobileItemInfoPosition ({
         }
     }
 
-    if((mouseY + dialogHeight + VERTICAL_MARGIN + VERTICAL_INCREMENTOR_GAP + DIALOG_BOX_SHADOW) > innerHeight) {
+    if(!IS_DESKTOP && (mouseY + dialogHeight + VERTICAL_MARGIN + VERTICAL_INCREMENTOR_GAP + DIALOG_BOX_SHADOW) > innerHeight) {
         verticalPositioning = {
             top: 'auto',
             bottom: `${innerHeight - mouseY + (IS_DESKTOP ? 0 : VERTICAL_MARGIN)}px`,
