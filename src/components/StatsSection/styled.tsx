@@ -39,6 +39,7 @@ const TabButton = styled.button`
     font-size: 1.5rem;
     text-shadow: -2px 2px #555;
     cursor: pointer;
+    border-width: thick;
 `
 
 const GenericStatsContainer = styled.div`

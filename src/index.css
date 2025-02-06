@@ -52,6 +52,7 @@ button.botBuy {
   background-color: #000;
   cursor: pointer;
   transition: border-color 0.25s;
+  border-width: thick;
 }
 
 @media (prefers-color-scheme: light) {
