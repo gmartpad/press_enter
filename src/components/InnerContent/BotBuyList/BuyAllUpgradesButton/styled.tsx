@@ -7,6 +7,7 @@ const UpgradeBuyAllButton = styled.button`
   max-width: 200px;
   background-color: transparent;
   cursor: pointer;
+  border-width: thick;
 
   & p {
     color: #ccc;
