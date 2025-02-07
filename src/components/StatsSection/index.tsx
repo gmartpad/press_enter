@@ -65,7 +65,7 @@ const StatsSection = () => {
                     {currentTab === 'upgrade' && '* '}{intl.formatMessage({ id: 'statsSection.upgradeStats.title' })}
                 </TabButton>
             </TabButtonContainer>
-            <div style={{ paddingTop: 100 }}>
+            <div style={{ paddingTop: 120 }}>
                 {currentTab === 'bot' && (
                     <>
                         {autoIncrementors.map((i, k) => (
