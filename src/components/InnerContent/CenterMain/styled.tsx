@@ -7,7 +7,7 @@ interface SectionProps {
 const Section = styled.section.attrs<SectionProps>(
     props => ({
         style: {
-            width: props.$windowInnerWidth >= 1024 ? 'calc(100vw - 30vw - 315px)' : '100%'
+            width: props.$windowInnerWidth > 1024 ? 'calc(100vw - 30vw - 315px)' : '100%'
         }
     })
 )<SectionProps>`

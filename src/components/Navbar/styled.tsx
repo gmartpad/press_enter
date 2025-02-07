@@ -10,10 +10,10 @@ interface NavProps {
 const Nav = styled.nav.attrs<NavProps>(
     props => ({
         style: {
-            position: props.$windowInnerWidth >= 1024 ? 'unset' : 'fixed',
-            top: props.$windowInnerWidth >= 1024 ? 'unset' : 0,
-            zIndex: props.$windowInnerWidth >= 1024 ? 'unset' : 1,
-            width: props.$windowInnerWidth >= 1024 ? 'auto' : '100vw'
+            position: props.$windowInnerWidth > 1024 ? 'unset' : 'fixed',
+            top: props.$windowInnerWidth > 1024 ? 'unset' : 0,
+            zIndex: props.$windowInnerWidth > 1024 ? 'unset' : 1,
+            width: props.$windowInnerWidth > 1024 ? 'auto' : '100vw'
         }
     })
 )`

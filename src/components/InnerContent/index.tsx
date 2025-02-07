@@ -5,7 +5,7 @@ import useWindowInnerValues from '@hooks/useWindowInnerValues'
 const InnerContent = () => {
     const { windowInnerWidth } = useWindowInnerValues()
 
-    if(windowInnerWidth >= 1024) {
+    if(windowInnerWidth > 1024) {
         return <DesktopInnerContent/>
     }
 
