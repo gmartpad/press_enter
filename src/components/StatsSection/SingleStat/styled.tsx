@@ -1,9 +1,18 @@
 import { styled } from "styled-components"
 
 const StatSpan = styled.span`
-   display: flex; 
-   align-items: center; 
-   gap: 10px;
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 0;
+        margin: 20px 0;
+        padding: 5px 0;
+        border-top: 1px dashed #fff;
+        border-bottom: 1px dashed #fff;
+    }
 `
 
 const StatLabelH3 = styled.h3`

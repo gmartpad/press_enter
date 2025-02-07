@@ -129,12 +129,10 @@ const Bits = () => {
                     <BitsH3><FormattedMessage id="bits.bitsPerSecond" /></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{" " + formattedCurrentProduction} bits</BitsH3>
                 </BitsSpan>
-                <span>-----</span>
                 <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.totalAmountOfBits"/></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{formatLargeNumber(Number(bits.toFixed(0)), intl)} bits</BitsH3>
                 </BitsSpan>
-                <span>-----</span>
                 <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.enterPressesAmount"/></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{enterPresses}</BitsH3>

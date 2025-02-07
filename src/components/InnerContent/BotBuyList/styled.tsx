@@ -7,7 +7,7 @@ type WindowInnerWidthProps = {
 const Aside = styled.aside.attrs<WindowInnerWidthProps>(
     props => ({
         style: {
-            width: props.$windowInnerWidth >= 1024 ? '315px' : '100%'
+            width: props.$windowInnerWidth > 1024 ? '315px' : '100%'
         }
     })
 )<WindowInnerWidthProps>`
@@ -94,9 +94,9 @@ const BuySellContainer = styled.div`
 const BotBuyListGrid = styled.div.attrs<WindowInnerWidthProps>(
     props => ({
         style: {
-            display: props.$windowInnerWidth >= 1024 ? 'grid' : 'flex',
-            flexWrap: props.$windowInnerWidth >= 1024 ? 'unset' : 'wrap',
-            justifyContent: props.$windowInnerWidth >= 1024 ? 'unset' : 'center'
+            display: props.$windowInnerWidth > 1024 ? 'grid' : 'flex',
+            flexWrap: props.$windowInnerWidth > 1024 ? 'unset' : 'wrap',
+            justifyContent: props.$windowInnerWidth > 1024 ? 'unset' : 'center'
         }
     })
 )`
@@ -108,8 +108,8 @@ const BotBuyListGrid = styled.div.attrs<WindowInnerWidthProps>(
 const BotUpgradeList = styled.div.attrs<WindowInnerWidthProps>(
     props => ({
         style: {
-            justifyContent: props.$windowInnerWidth >= 1024 ? 'unset' : 'center',
-            maxHeight: props.$windowInnerWidth >= 1024 ? '60px' : 'fit-content'
+            justifyContent: props.$windowInnerWidth > 1024 ? 'unset' : 'center',
+            maxHeight: props.$windowInnerWidth > 1024 ? '60px' : 'fit-content'
         }
     })
 )<WindowInnerWidthProps>`

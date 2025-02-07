@@ -7,8 +7,8 @@ interface SliderContainerProps {
 const SliderContainer = styled.div.attrs<SliderContainerProps>(
     props => ({
         style: {
-            height: props.$windowInnerWidth >= 1024 ? 'calc(100% - 80px)' : 'calc(100vh - 32px)',
-            marginTop: props.$windowInnerWidth >= 1024 ? 'unset' : '32px'
+            height: props.$windowInnerWidth > 1024 ? 'calc(100% - 80px)' : 'calc(100vh - 32px)',
+            marginTop: props.$windowInnerWidth > 1024 ? 'unset' : '32px'
         }
     })
 )`

@@ -10,7 +10,7 @@ const CenterMain = () => {
 
     return (
         <Section $windowInnerWidth={windowInnerWidth}>
-            {windowInnerWidth >= 1024 && (
+            {windowInnerWidth > 1024 && (
                 <>
                     <StatsSection/> 
                     <Navbar />

@@ -10,7 +10,7 @@ const Aside = styled.aside.attrs<AsideProps>(
     props => ({
         style: {
             display: `${props.$displayValue}`,
-            width: props.$windowInnerWidth >= 1024 ? '30%' : '100%'
+            width: props.$windowInnerWidth > 1024 ? '30%' : '100%'
         }
     })
 )<AsideProps>`
@@ -181,6 +181,12 @@ const BitsSpan = styled.span`
   align-items: center; 
   flex-direction: column; 
   font-size: 1.17em;
+
+  border-top: 1px dashed #fff;
+  border-bottom: 1px dashed #fff;
+  padding: 10px 0;
+  margin: 10px 0;
+  min-width: 100%;
 `
 
 export { Aside, EnterKeyButton, FloatText, EnterIcon, BitsH3, BitsInfo, BitsSpan }

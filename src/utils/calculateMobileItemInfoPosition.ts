@@ -30,7 +30,7 @@ function calculateMobileItemInfoPosition ({
     dialogHeight: number
 }) {
     const BITS_SECTION_WIDTH = innerWidth * 0.3
-    const IS_DESKTOP = (innerWidth >= 1024)
+    const IS_DESKTOP = (innerWidth > 1024)
 
     let horizontalPositioning: HorizontalPositioningProps = {
         left: IS_DESKTOP ? mouseX - BITS_SECTION_WIDTH - (ITEM_INFO_DIALOG_WIDTH/2) : mouseX <= ((ITEM_INFO_DIALOG_WIDTH/2) + DIALOG_BOX_SHADOW) ? '10px' : mouseX - (ITEM_INFO_DIALOG_WIDTH/2),
