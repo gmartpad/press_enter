@@ -1,6 +1,6 @@
 import { configState } from '@state/atoms'
 import { useCallback, useRef } from 'react'
-import { ChangeLanguageButton, Gear, Globe, Nav, SquareNavButton, Stats } from './styled'
+import { ChangeLanguageButton, Gear, Globe, Nav, SquareNavButton, Stats, LeftNavButtons } from './styled'
 import { FormattedMessage } from 'react-intl'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
@@ -50,13 +50,7 @@ const Navbar = () => {
 
     return (
         <Nav $windowInnerWidth={windowInnerWidth}>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    gap: 2
-                }}
-            >
+            <LeftNavButtons>
                 <SquareNavButton
                     onClick={() => {
                         if(isDesktop) {
@@ -85,7 +79,7 @@ const Navbar = () => {
                 >
                     <Stats/>
                 </SquareNavButton>
-            </div>
+            </LeftNavButtons>
             <ChangeLanguageButton
                 onClick={() => {
                     if(isDesktop) {

@@ -1,3 +1,4 @@
+import NAVBAR_HEIGHT from "@utils/NavbarHeight"
 import { styled } from "styled-components"
 
 interface SliderContainerProps {
@@ -7,8 +8,8 @@ interface SliderContainerProps {
 const SliderContainer = styled.div.attrs<SliderContainerProps>(
     props => ({
         style: {
-            height: props.$windowInnerWidth > 1024 ? 'calc(100% - 80px)' : 'calc(100vh - 32px)',
-            marginTop: props.$windowInnerWidth > 1024 ? 'unset' : '32px'
+            height: props.$windowInnerWidth > 1024 ? 'calc(100% - 80px)' : `calc(100vh - ${NAVBAR_HEIGHT}px)`,
+            marginTop: props.$windowInnerWidth > 1024 ? 'unset' : `${NAVBAR_HEIGHT}px`
         }
     })
 )`

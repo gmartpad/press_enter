@@ -1,6 +1,6 @@
 import { AiOutlineEnter } from 'react-icons/ai'
 import styled, { keyframes } from 'styled-components'
-
+import NAVBAR_HEIGHT from '@utils/NavbarHeight'
 interface AsideProps { 
   $displayValue: string
   $windowInnerWidth: number
@@ -115,7 +115,7 @@ styled.dialog.attrs<{ $dialogTop: number }>(
     props => ({
         style: {
             top: `${props.$dialogTop}px`,
-            marginTop: `${props.$dialogTop >= 32 ? '-4px' : '0px'}`
+            marginTop: `${props.$dialogTop >= NAVBAR_HEIGHT ? '-4px' : '0px'}`
         }
     })
 )
