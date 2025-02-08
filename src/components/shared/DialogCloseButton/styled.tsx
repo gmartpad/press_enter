@@ -7,17 +7,13 @@ const DialogCloseButton = styled.button`
     top: -15px;
     width: 30px;
     height: 30px;
-    border-radius: 15px;
-    border: 2px solid #fff;
+    border-width: thick;
     background-color: #000;
     color: #fff;
     transition: all .2s ease-in-out;
-
-    &:hover {
-        border: 2px solid #000;
-        background-color: #fff;
-        color: #000;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const DialogCloseButtonParagraph = styled.p`

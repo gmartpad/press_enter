@@ -17,4 +17,15 @@ const ConfigRow = styled.div`
   flex-direction: column;
 `
 
-export { ConfigDialog, ConfigRow }
+const ConfigResetButton = styled.button`
+  cursor: pointer;
+  background: #000;
+  border-width: thick;
+  padding: 10px;
+`
+
+const ConfigResetButtonH2 = styled.h2`
+  margin: 0;
+`
+
+export { ConfigDialog, ConfigRow, ConfigResetButton, ConfigResetButtonH2 }

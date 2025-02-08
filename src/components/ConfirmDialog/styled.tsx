@@ -28,6 +28,12 @@ const ConfirmButtonsContainer = styled.div`
 const DeclineButton = styled.button`
   padding: 10px;
   cursor: pointer;
+  background: black;
+  border-width: thick;
+`
+
+const DeclineButtonH2 = styled.h2`
+  margin: 0;
 `
 
 export { 
@@ -35,5 +41,6 @@ export {
     ConfirmH2, 
     ConfirmH3, 
     ConfirmButtonsContainer,
-    DeclineButton
+    DeclineButton,
+    DeclineButtonH2
 }

@@ -2,7 +2,8 @@ import { bitState, autoIncrementorsState, configState, currentHoveredBotItemStat
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import { Upgrade } from '@upgrades'
 import { useSetAtom } from 'jotai'
-
+import { StyledResetButton, StyledResetButtonH2 } from './styled'
+import useIsDesktop from '@hooks/useIsDesktop'
 interface ResetButtonProps {
     labelText: string
     additionalCallback?: () => void
@@ -12,6 +13,8 @@ const ResetButton = ({
     labelText = 'Reset All States',
     additionalCallback = () => {}
 }: ResetButtonProps) => {
+    const isDesktop = useIsDesktop()
+
     const setEnterPressesState = useSetAtom(enterPressesState)
     const setBitState = useSetAtom(bitState)
     const setAutoIncrementorsState = useSetAtom(autoIncrementorsState)
@@ -46,15 +49,22 @@ const ResetButton = ({
     }
 
     return (
-        <button
-            style={{
-                cursor: 'pointer',
-                padding: 10
+        <StyledResetButton
+            onClick={() => {
+                if(isDesktop) {
+                    handleReset()
+                }
             }}
-            onClick={handleReset}
+            onTouchStart={() => {  
+                if(!isDesktop) {
+                    handleReset()
+                }
+            }}
         >
-            {labelText}
-        </button>
+            <StyledResetButtonH2>
+                {labelText}
+            </StyledResetButtonH2>
+        </StyledResetButton>
     )
 }
 
