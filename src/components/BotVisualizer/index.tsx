@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getSpecificIncrementor } from '@state/atoms'
 import { useAtomValue } from 'jotai'
 
@@ -11,7 +11,7 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
     }, [botId])
     const currentIncrementor = useAtomValue(memoizedAtom)
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
-    const imageRef = useRef<HTMLImageElement | null>(null)
+    const [currentImage, setCurrentImage] = useState<HTMLImageElement | null>(null)
     
     // Canvas optimization refs
     const bufferCanvas = useRef(document.createElement('canvas'))
@@ -20,7 +20,7 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
 
     // Unified drawing function
     const drawCanvas = useCallback(() => {
-        if (!canvasRef.current || !imageRef.current) return
+        if (!canvasRef.current || !currentImage) return
 
         const canvas = canvasRef.current
         const ctx = canvas.getContext('2d')
@@ -60,7 +60,7 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
 
             // Draw image
             bufferCtx.drawImage(
-                imageRef.current,
+                currentImage,
                 x - circleRadius,
                 y - circleRadius,
                 circleRadius * 2,
@@ -72,7 +72,7 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
 
         // Copy buffer to main canvas
         ctx.drawImage(bufferCanvas.current, 0, 0)
-    }, [currentIncrementor?.units])
+    }, [currentIncrementor?.units, currentImage])
 
     // Throttled resize handler
     const handleResize = useCallback(() => {
@@ -95,7 +95,7 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
 
         const loadImage = async () => {
             if (imageCache.has(botId)) {
-                imageRef.current = imageCache.get(botId)!
+                setCurrentImage(imageCache.get(botId)!)
                 handleResize()
                 return
             }
@@ -106,7 +106,7 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
             img.onload = () => {
                 if (!isMounted.current) return
                 imageCache.set(botId, img)
-                imageRef.current = img
+                setCurrentImage(img)
                 handleResize()
             }
 
