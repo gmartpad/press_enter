@@ -3,6 +3,7 @@ import { autoIncrementorsState } from "@state/atoms"
 import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react'
 import BotVisualizerItem from "@components/BotVisualizer"
 import { useAtomValue } from 'jotai'
+import NAVBAR_HEIGHT from '@utils/NavbarHeight'
 
 // Configuration constants
 const ITEM_SIZE = 148 // Base height for items + separator
@@ -74,7 +75,7 @@ const BotVisualizers: React.FC = () => {
     const listRef = useRef<FixedSizeListType>(null)
     const { scrollOffset, handleScroll } = useScrollPreservation()
 
-    const [windowHeight, setWindowHeight] = useState(window.innerHeight - 32)
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight - NAVBAR_HEIGHT)
 
     // Memoize the list data for stable reference
     const memoizedIncrementors = useMemo(() =>
@@ -105,7 +106,7 @@ const BotVisualizers: React.FC = () => {
 
 
     useEffect(() => {
-        const handleResize = () => setWindowHeight(window.innerHeight - 32)
+        const handleResize = () => setWindowHeight(window.innerHeight - NAVBAR_HEIGHT)
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])

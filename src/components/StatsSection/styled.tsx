@@ -1,19 +1,18 @@
 import { styled } from "styled-components"
-
+import NAVBAR_HEIGHT from "@utils/NavbarHeight"
 const StatsSectionContainer = styled.section`
     position: absolute;
-    top: 29px;
+    top: ${NAVBAR_HEIGHT}px;
     display: flex;
     flex-direction: column;
     background-color: #000;
     width: 100%;
-    height: calc(100% - 29px);
+    height: calc(100% - ${NAVBAR_HEIGHT}px);
     overflow-y: auto;
     overflow-x: hidden;
-    border-left: 1px solid #fff;
-    border-left-style: dashed;
-    border-right: 1px solid #fff;
-    border-right-style: dashed;
+    border-top: 1px dashed #fff;
+    border-left: 1px dashed #fff;
+    border-right: 1px dashed #fff;
     padding: 0px 10px 10px 10px;
     box-sizing: border-box;
     transform: translateZ(0);

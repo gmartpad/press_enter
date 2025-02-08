@@ -1,3 +1,4 @@
+import NAVBAR_HEIGHT from '@utils/NavbarHeight'
 import { FaGear, FaGlobe } from 'react-icons/fa6'
 import { IoIosStats } from "react-icons/io"
 
@@ -17,24 +18,30 @@ const Nav = styled.nav.attrs<NavProps>(
         }
     })
 )`
-  height: 32px;
-  background-color: #555;
+  height: ${NAVBAR_HEIGHT}px;
+  background-color: #000;
+  border-left: 1px dashed #fff;
+  border-right: 1px dashed #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 4px;
+  padding: 0px 10px;
   box-sizing: border-box;
+`
+
+const LeftNavButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 `
 
 const SquareNavButton = styled.button`
   background-color: #000;
   padding: 4px;
-  border: none;
-  border-radius: 8px;
+  border-width: thick;
   width: fit-content;
   height: fit-content;
   display: flex;
-  margin-right: 8px;
   cursor: pointer;
   transition: all .2s ease-in-out;
 
@@ -45,9 +52,8 @@ const SquareNavButton = styled.button`
 
 const ChangeLanguageButton = styled.button`
   cursor: pointer;
-  border-radius: 8px;
+  border-width: thick;
   background-color: #000;
-  border: none;
   height: fit-content;
   padding: 5px 7px;
   transition: all .2s ease-in-out;
@@ -82,4 +88,4 @@ const Stats = styled(IoIosStats)`
   background-color: transparent;
 `
 
-export { Nav, SquareNavButton, ChangeLanguageButton, Gear, Globe, Stats }
+export { Nav, SquareNavButton, ChangeLanguageButton, Gear, Globe, Stats, LeftNavButtons }

@@ -1,3 +1,5 @@
+import NAVBAR_HEIGHT from "@utils/NavbarHeight"
+
 const ITEM_INFO_DIALOG_WIDTH = 366
 const VERTICAL_INCREMENTOR_GAP = 12
 const VERTICAL_MARGIN = 15
@@ -68,7 +70,7 @@ function calculateMobileItemInfoPosition ({
             top: 'auto',
             bottom: `${innerHeight - mouseY + (IS_DESKTOP ? 0 : VERTICAL_MARGIN)}px`,
             marginTop: 'unset',
-            marginBottom: IS_DESKTOP ? `${(innerHeight - mouseY) <= 32 ? '-4px' : '0px'}` : `${(innerHeight - mouseY - VERTICAL_MARGIN) <= 32 ? '15px' : '0px'}`
+            marginBottom: IS_DESKTOP ? `${(innerHeight - mouseY) <= NAVBAR_HEIGHT ? '-4px' : '0px'}` : `${(innerHeight - mouseY - VERTICAL_MARGIN) <= NAVBAR_HEIGHT ? '15px' : '0px'}`
         }
     }
 
