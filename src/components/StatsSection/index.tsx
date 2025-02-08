@@ -19,6 +19,8 @@ const StatsSection = () => {
     
     const upgradesGroupedByIncrementorId = useMemo(() => groupUpgradesByIncrementorId(upgrades.filter((u) => u.purchased)), [upgrades])
     
+    const revealedIncrementors = useMemo(() => autoIncrementors.filter((i) => i.revealed), [autoIncrementors])
+
     const scrollRef = useRef<HTMLDivElement | null>(null)
     const scrollPositionRef = useRef<number>(0)
 
@@ -68,7 +70,7 @@ const StatsSection = () => {
             <div style={{ paddingTop: 120 }}>
                 {currentTab === 'bot' && (
                     <>
-                        {autoIncrementors.map((i, k) => (
+                        {revealedIncrementors.map((i, k) => (
                             <BotStats incrementor={i} key={k}/>
                         ))}
                     </>
