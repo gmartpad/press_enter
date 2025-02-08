@@ -7,10 +7,8 @@ import UpgradeStats from "./UpgradeStats"
 import { useIntl } from "react-intl"
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtomValue } from "jotai"
-
 const StatsSection = () => {
     const intl = useIntl()
-
     const config = useAtomValue(configState)
     const upgrades = useAtomValue(upgradesState)
     const autoIncrementors = useAtomValue(autoIncrementorsState)
@@ -56,13 +54,12 @@ const StatsSection = () => {
             <TabButtonContainer>
                 <TabButton
                     onClick={() => handleTabClick('bot')}
-                    onTouchStart={() => handleTabClick('bot')}
                 >
                     {currentTab === 'bot' && '* '}{intl.formatMessage({ id: 'statsSection.botStats.title' })}
                 </TabButton>
                 <TabButton
                     onClick={() => handleTabClick('upgrade')}
-                    onTouchStart={() => handleTabClick('upgrade')}
+                    
                 >
                     {currentTab === 'upgrade' && '* '}{intl.formatMessage({ id: 'statsSection.upgradeStats.title' })}
                 </TabButton>
