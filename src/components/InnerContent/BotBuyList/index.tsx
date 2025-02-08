@@ -10,6 +10,7 @@ import {
     BuySellContainer,
     IncrementorAmount,
     IncrementorName,
+    NoUpgradesH5,
 } from './styled'
 import { 
     autoIncrementorsState, 
@@ -124,18 +125,21 @@ const BotBuyList = () => {
 
     return (
         <Aside $windowInnerWidth={windowInnerWidth}>
-            {purchasableUpgrades.length > 0 && (
-                <>
-                    <h3 style={{ margin: 0, textAlign: 'center', padding: '3px 0' }}>
-                        <FormattedMessage id="botBuyList.upgrades.title" />
-                    </h3>
-                    {affordableUpgrades.length > 0 && (
-                        <BuyAllUpgradesButton />
-                    )}
-                </>
-            )}
+            <>
+                <h3 style={{ margin: 0, textAlign: 'center', padding: '12px 0 3px 0', textShadow: '-2px 2px #555' }}>
+                    <FormattedMessage id="botBuyList.upgrades.title" />
+                </h3>
+                {affordableUpgrades.length > 0 && (
+                    <BuyAllUpgradesButton />
+                )}
+            </>
             
             <BotUpgradeList $windowInnerWidth={windowInnerWidth} onMouseEnter={handleUpdateUpgrades}>
+                {purchasableUpgrades?.length === 0 && (
+                    <NoUpgradesH5>
+                        <FormattedMessage id="botBuyList.upgrades.noUpgrades.title" />
+                    </NoUpgradesH5>
+                )}
                 {purchasableUpgrades.map((upgrade) => (
                     <UpgradeItem
                         key={upgrade.id}

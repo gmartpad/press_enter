@@ -4,6 +4,7 @@ const ptBr = {
     'bits.enterPressesAmount': 'Número de vezes que você pressionou Enter:',
     'botsOwned': 'obtidos',
     'botBuyList.upgrades.title': 'Atualizações',
+    'botBuyList.upgrades.noUpgrades.title': 'Não há atualizações disponíveis para compra no momento',
     'botBuyList.upgrades.buyAllUpgrades.title': "Comprar todos os upgrades",
     'botBuyList.upgrades.buyAllUpgrades.tooltip': "Compra instantaneamente todos os upgrades disponíveis, começando pelas opções mais baratas.",
     'botBuyList.buy.title': 'COMPRAR',

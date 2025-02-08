@@ -4,6 +4,7 @@ const bn = {
     'bits.enterPressesAmount': 'এন্টার টিপার সংখ্যা:',
     'botsOwned': 'অধিগৃহীত',
     'botBuyList.upgrades.title': 'আপগ্রেড',
+    'botBuyList.upgrades.noUpgrades.title': 'বর্তমানে কোনো আপগ্রেড ক্রয় করা যায় না',
     'botBuyList.upgrades.buyAllUpgrades.title': "সমস্ত আপগ্রেড ক্রয় করুন",
     'botBuyList.upgrades.buyAllUpgrades.tooltip': "আপনি যতগুলি আপগ্রেড কিনতে পারবেন তা তাত্ক্ষণিকভাবে ক্রয় করে, সস্তা অপশনগুলি দিয়ে শুরু করে।",
     'botBuyList.buy.title': 'কিনুন',

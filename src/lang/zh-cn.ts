@@ -4,6 +4,7 @@ const zhCn = {
     'bits.enterPressesAmount': '按下 Enter 键的次数:',
     'botsOwned': '已获得',
     'botBuyList.upgrades.title': '升级',
+    'botBuyList.upgrades.noUpgrades.title': '当前没有可购买的升级',
     'botBuyList.upgrades.buyAllUpgrades.title': "购买所有升级",
     'botBuyList.upgrades.buyAllUpgrades.tooltip': "立即购买所有可负担的升级，从最便宜的选项开始。",
     'botBuyList.buy.title': '购买',

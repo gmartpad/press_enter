@@ -4,6 +4,7 @@ const es = {
     'bits.enterPressesAmount': 'Número de veces que presionaste Enter:',
     'botsOwned': 'tienes',
     'botBuyList.upgrades.title': 'Mejoras',
+    'botBuyList.upgrades.noUpgrades.title': 'No hay mejoras disponibles para comprar actualmente',
     'botBuyList.upgrades.buyAllUpgrades.title': "Comprar todas las mejoras",
     'botBuyList.upgrades.buyAllUpgrades.tooltip': "Compra instantáneamente todas las mejoras que puedas permitirte, comenzando por las opciones más económicas.",
     'botBuyList.buy.title': 'COMPRAR',

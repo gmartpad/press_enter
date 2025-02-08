@@ -3,7 +3,7 @@ import { styled } from "styled-components"
 
 const UpgradeBuyAllButton = styled.button`
   display: flex;
-  margin: 6px auto;
+  margin: 6px auto 15px auto;
   max-width: 200px;
   background-color: transparent;
   cursor: pointer;
