@@ -13,6 +13,7 @@ import formatLargeNumber from '@utils/formatLargeNumber'
 import { debounce } from 'lodash'
 import { useIntl, FormattedMessage } from 'react-intl'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
+import useIsDesktop from '@hooks/useIsDesktop'
 
 const sounds = [sound1, sound2, sound3]
 
@@ -20,6 +21,7 @@ const Bits = () => {
     const store = useStore()
     const intl = useIntl()
     const { windowInnerWidth } = useWindowInnerValues()
+    const isDesktop = useIsDesktop()
     const [enterPresses, setEnterPressesState] = useAtom(enterPressesState)
     const [bits, setBits] = useAtom(bitState)
     const currentProduction = useAtomValue(currentProductionState)
@@ -140,8 +142,16 @@ const Bits = () => {
             </BitsInfo>
             <EnterKeyButton
                 ref={enterButtonRef}
-                onClick={handleEnterBitClick}
-                onTouchStart={handleEnterBitClick}
+                onClick={(e) => {
+                    if(isDesktop) {
+                        handleEnterBitClick(e)
+                    }
+                }}
+                onTouchStart={(e) => {  
+                    if(!isDesktop) {
+                        handleEnterBitClick(e)
+                    }
+                }}
             >
                 <EnterIcon/>
             </EnterKeyButton>

@@ -1,3 +1,4 @@
+import useIsDesktop from '@hooks/useIsDesktop'
 import { DialogBackground as StyledDialogBackground } from './styled'
 
 interface DialogBackgroundProps {
@@ -7,10 +8,19 @@ interface DialogBackgroundProps {
 const DialogBackground = ({
     handleToggleDialog
 }: DialogBackgroundProps) => {
+    const isDesktop = useIsDesktop()
     return (
         <StyledDialogBackground
-            onClick={handleToggleDialog}
-            onTouchStart={handleToggleDialog}
+            onClick={() => {
+                if(isDesktop) {
+                    handleToggleDialog()
+                }
+            }}
+            onTouchStart={() => {
+                if(!isDesktop) {
+                    handleToggleDialog()
+                }
+            }}
         />
     )
 }

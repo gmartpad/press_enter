@@ -12,9 +12,11 @@ import DialogContainer from '@components/shared/DialogContainer'
 import DialogBackground from '@components/shared/DialogBackground'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
+import useIsDesktop from '@hooks/useIsDesktop'
 
 const LanguageDialog = () => {
     const store = useStore()
+    const isDesktop = useIsDesktop()
     const [config, setConfig] = useAtom(configState)
 
     const audioRef = useRef<HTMLAudioElement>(new Audio())
@@ -62,8 +64,16 @@ const LanguageDialog = () => {
                     {languages.map((language) => (
                         <ChangeLanguageButton
                             active={config.currentLanguageLocale === language.value} 
-                            onMouseDown={() => handleChangeLanguageLocale(language.value)}
-                            onTouchStart={() => handleChangeLanguageLocale(language.value)}
+                            onClick={() => {
+                                if(isDesktop) {
+                                    handleChangeLanguageLocale(language.value)
+                                }
+                            }}
+                            onTouchStart={() => {
+                                if(!isDesktop) {
+                                    handleChangeLanguageLocale(language.value)
+                                }
+                            }}
                         >
                             {language.Flag && (<language.Flag style={{ width: 24, height: 16 }}/>)}
                             <p style={{ textTransform: 'uppercase' }}>{language.label}</p>

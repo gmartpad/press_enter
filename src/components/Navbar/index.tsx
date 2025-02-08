@@ -5,9 +5,11 @@ import { FormattedMessage } from 'react-intl'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
+import useIsDesktop from '@hooks/useIsDesktop'
 
 const Navbar = () => {
     const { windowInnerWidth } = useWindowInnerValues()
+    const isDesktop = useIsDesktop()
     const store = useStore()
     const [config, setConfig] = useAtom(configState)
 
@@ -56,21 +58,45 @@ const Navbar = () => {
                 }}
             >
                 <SquareNavButton
-                    onClick={handleToggleConfigDialog}
-                    onTouchStart={handleToggleConfigDialog}
+                    onClick={() => {
+                        if(isDesktop) {
+                            handleToggleConfigDialog()
+                        }
+                    }}
+                    onTouchStart={() => {
+                        if(!isDesktop) {
+                            handleToggleConfigDialog()
+                        }
+                    }}
                 >
                     <Gear/>
                 </SquareNavButton>
                 <SquareNavButton
-                    onClick={handleToggleStatsSection}
-                    onTouchStart={handleToggleStatsSection}
+                    onClick={() => {
+                        if(isDesktop) {
+                            handleToggleStatsSection()
+                        }
+                    }}
+                    onTouchStart={() => {
+                        if(!isDesktop) {
+                            handleToggleStatsSection() 
+                        }
+                    }}
                 >
                     <Stats/>
                 </SquareNavButton>
             </div>
             <ChangeLanguageButton
-                onClick={handleToggleLanguageDialog}
-                onTouchStart={handleToggleLanguageDialog}
+                onClick={() => {
+                    if(isDesktop) {
+                        handleToggleLanguageDialog()
+                    }
+                }}
+                onTouchStart={() => {
+                    if(!isDesktop) {
+                        handleToggleLanguageDialog()
+                    }
+                }}
             >
                 <Globe/>
                 <FormattedMessage tagName="p" id="navbar.changeLanguage.title"/>
