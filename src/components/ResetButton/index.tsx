@@ -26,7 +26,7 @@ const ResetButton = ({
         additionalCallback()
         
         setEnterPressesState(DEFAULT_ENTER_PRESSES_STATE)
-        setBitState(DEFAULT_BIT_STATE_VALUE)
+        setBitState(0)
         setAutoIncrementorsState(DEFAULT_AUTO_INCREMENTORS_STATE_VALUE)
         setConfigState(DEFAULT_CONFIG_STATE_VALUE)
         setCurrentHoveredBotItemState(DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE as Incrementor)

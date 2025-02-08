@@ -4,6 +4,7 @@ const ur = {
     'bits.enterPressesAmount': 'انٹر دبانے کی تعداد:',
     'botsOwned': 'حاصل کردہ',
     'botBuyList.upgrades.title': 'اپ گریڈز',
+    'botBuyList.upgrades.noUpgrades.title': 'کوئی اپ گریڈ خریدنے کے لئے اب تک دستیاب نہیں ہے',
     'botBuyList.upgrades.buyAllUpgrades.title': "تمام اپگریڈز خریدیں",
     'botBuyList.upgrades.buyAllUpgrades.tooltip': "فوری طور پر تمام قابل برداشت اپگریڈز خریدیں، سب سے سستے اختیارات سے شروع کرتے ہوئے۔",
     'botBuyList.buy.title': 'خریدیں',

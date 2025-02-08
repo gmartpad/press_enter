@@ -4,6 +4,7 @@ const hiIn = {
     'bits.enterPressesAmount': 'एंटर दबाने की संख्या:',
     'botsOwned': 'प्राप्त किए',
     'botBuyList.upgrades.title': 'उन्नयन',
+    'botBuyList.upgrades.noUpgrades.title': 'वर्तमान में कोई अपग्रेड खरीदने के लिए उपलब्ध नहीं है',
     'botBuyList.upgrades.buyAllUpgrades.title': "सभी अपग्रेड खरीदें",
     'botBuyList.upgrades.buyAllUpgrades.tooltip': "तुरंत सभी सस्ते अपग्रेड खरीदता है, सबसे कम कीमत वाले विकल्पों से शुरू करके।",
     'botBuyList.buy.title': 'खरीदें',

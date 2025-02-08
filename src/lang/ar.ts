@@ -4,6 +4,7 @@ const ar = {
     'bits.enterPressesAmount': 'عدد المرات التي ضغطت فيها على مفتاح Enter:',
     'botsOwned': 'تم الحصول عليها',
     'botBuyList.upgrades.title': 'ترقيات',
+    'botBuyList.upgrades.noUpgrades.title': 'لا توجد ترقيات لشراء حالياً',
     'botBuyList.upgrades.buyAllUpgrades.title': "شراء جميع الترقيات",
     'botBuyList.upgrades.buyAllUpgrades.tooltip': "يقوم بشراء جميع الترقيات المتاحة فورًا، بدءًا من الخيارات الأقل تكلفة.",
     'botBuyList.buy.title': 'شراء',

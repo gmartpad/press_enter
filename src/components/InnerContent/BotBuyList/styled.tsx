@@ -132,6 +132,13 @@ const BulkModeIndicatorParagraph = styled.p`
   margin-left: 0.25rem !important;
 `
 
+const NoUpgradesH5 = styled.h5`
+  margin: 10px auto;
+  padding: 0 5px;
+  text-align: center;
+  text-shadow: -2px 2px #555;
+`
+
 export {
     Aside,
     BotBulkModeButton,
@@ -143,5 +150,6 @@ export {
     BotBuyListGrid,
     BotUpgradeList,
     BulkAmountIndicatorParagraph,
-    BulkModeIndicatorParagraph
+    BulkModeIndicatorParagraph,
+    NoUpgradesH5
 }
