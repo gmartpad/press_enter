@@ -11,7 +11,6 @@ const LanguageDialogBackground = styled.div`
 const LanguageList = styled.div`
     display: flex;
     flex-wrap: wrap;
-    // flex-direction: column;
     gap: 10px;
     overflow-y: auto;
     max-height: 400px;
@@ -21,9 +20,8 @@ const ChangeLanguageButton = styled.button<{ active: boolean }>`
     cursor: pointer;
     background-color: ${props => props.active ? '#fff' : '#000'};
     color:${props => props.active ? '#000' : '#fff'};
-    border: 2px solid ${props => props.active ? '#000' : '#fff'};
+    border-width: thick;
     transition: all .2s ease-in-out;
-    // width: 100%;
     flex: 1 0 45%;
     box-sizing: border-box;
     display: flex;
@@ -35,7 +33,6 @@ const ChangeLanguageButton = styled.button<{ active: boolean }>`
     &:hover {
         background-color: #fff;
         color: #000;
-        border: 2px solid #000;
     }
 `
 
