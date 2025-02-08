@@ -8,14 +8,16 @@ import {
     ConfirmButtonsContainer, 
     ConfirmH2, 
     ConfirmH3, 
-    DeclineButton 
+    DeclineButton,
+    DeclineButtonH2
 } from './styled'
 import { useIntl } from 'react-intl'
 import { useAtom, useStore } from 'jotai'
-
+import useIsDesktop from '@hooks/useIsDesktop'
 const ConfirmDialog = () => {
     const store = useStore()
     const intl = useIntl()
+    const isDesktop = useIsDesktop()
     const [config, setConfig] = useAtom(configState)
 
     const handleToggleConfirmDialog = useCallback(() => {
@@ -60,8 +62,19 @@ const ConfirmDialog = () => {
                             labelText={intl.formatMessage({ id: 'confirm.resetButton.label' })}
                             additionalCallback={additionalCallback}
                         />
-                        <DeclineButton onClick={confirmConfigToggle}>
-                            {intl.formatMessage({ id: 'confirm.declineButton.label' })}
+                        <DeclineButton 
+                            onClick={() => {
+                                if(isDesktop) {
+                                    confirmConfigToggle()
+                                }
+                            }}
+                            onTouchStart={() => {
+                                if(!isDesktop) {
+                                    confirmConfigToggle()
+                                }
+                            }}
+                        >
+                            <DeclineButtonH2>{intl.formatMessage({ id: 'confirm.declineButton.label' })}</DeclineButtonH2>
                         </DeclineButton>
                     </ConfirmButtonsContainer>
                 </CentralizeDiv>

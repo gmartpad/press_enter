@@ -4,7 +4,7 @@ import { FormattedMessage, useIntl } from 'react-intl'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
-import { ConfigRow } from './styled'
+import { ConfigResetButton, ConfigResetButtonH2, ConfigRow } from './styled'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
 
@@ -71,17 +71,16 @@ const ConfigDialog = () => {
                 </ConfigRow>
                 <hr />
                 <ConfigRow>
-                    <button
-                        style={{
-                            cursor: 'pointer'
-                        }}
+                    <ConfigResetButton
                         onClick={() => {
                             handleToggleConfigDialog()
                             handleToggleConfirmDialog()
                         }}
                     >
-                        {intl.formatMessage({ id: 'config.reset' })}
-                    </button>
+                        <ConfigResetButtonH2>
+                            {intl.formatMessage({ id: 'config.reset' })}
+                        </ConfigResetButtonH2>
+                    </ConfigResetButton>
                 </ConfigRow>
             </DialogContainer>
         </>
