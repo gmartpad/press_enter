@@ -1,4 +1,4 @@
-import useIsDesktop from '@hooks/useIsDesktop'
+import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 import { DialogCloseButton as StyledDialogCloseButton, DialogCloseButtonParagraph } from './styled'
 
 interface DialogCloseButtonProps {
@@ -8,16 +8,17 @@ interface DialogCloseButtonProps {
 const DialogCloseButton = ({
     handleToggleDialog
 }: DialogCloseButtonProps) => {
-    const isDesktop = useIsDesktop()
+    const isClick = useDetectButtonClickBoolean()
+
     return (
         <StyledDialogCloseButton
             onClick={() => {
-                if(isDesktop) {
+                if(isClick) {
                     handleToggleDialog()
                 }
             }}
             onTouchStart={() => {
-                if(!isDesktop) {
+                if(!isClick) {
                     handleToggleDialog()
                 }
             }}

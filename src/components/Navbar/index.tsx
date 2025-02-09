@@ -5,11 +5,11 @@ import { FormattedMessage } from 'react-intl'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
-import useIsDesktop from '@hooks/useIsDesktop'
+import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 
 const Navbar = () => {
     const { windowInnerWidth } = useWindowInnerValues()
-    const isDesktop = useIsDesktop()
+    const isClick = useDetectButtonClickBoolean()
     const store = useStore()
     const [config, setConfig] = useAtom(configState)
 
@@ -53,12 +53,12 @@ const Navbar = () => {
             <LeftNavButtons>
                 <SquareNavButton
                     onClick={() => {
-                        if(isDesktop) {
+                        if(isClick) {
                             handleToggleConfigDialog()
                         }
                     }}
                     onTouchStart={() => {
-                        if(!isDesktop) {
+                        if(!isClick) {
                             handleToggleConfigDialog()
                         }
                     }}
@@ -67,12 +67,12 @@ const Navbar = () => {
                 </SquareNavButton>
                 <SquareNavButton
                     onClick={() => {
-                        if(isDesktop) {
+                        if(isClick) {
                             handleToggleStatsSection()
                         }
                     }}
                     onTouchStart={() => {
-                        if(!isDesktop) {
+                        if(!isClick) {
                             handleToggleStatsSection() 
                         }
                     }}
@@ -82,12 +82,12 @@ const Navbar = () => {
             </LeftNavButtons>
             <ChangeLanguageButton
                 onClick={() => {
-                    if(isDesktop) {
+                    if(isClick) {
                         handleToggleLanguageDialog()
                     }
                 }}
                 onTouchStart={() => {
-                    if(!isDesktop) {
+                    if(!isClick) {
                         handleToggleLanguageDialog()
                     }
                 }}
