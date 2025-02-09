@@ -6,14 +6,14 @@ import { useAtomValue, useSetAtom, useStore } from 'jotai'
 import { affordableUpgradesState, bitState, configState, currentHoveredUpgradeItemState, upgradesState } from '@state/atoms'
 import { Upgrade } from '@state/upgrades'
 import { useIntl } from 'react-intl'
-import useIsDesktop from '@hooks/useIsDesktop'
+import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 
 const sounds = [buyUpgrade]
 
 function BuyAllUpgradesButton() {
     const intl = useIntl()
     const store = useStore()
-    const isDesktop = useIsDesktop()
+    const isClick = useDetectButtonClickBoolean()
     const config = useAtomValue(configState)
     const setUpgrades = useSetAtom(upgradesState)
     const setBits = useSetAtom(bitState)
@@ -72,12 +72,12 @@ function BuyAllUpgradesButton() {
         <>
             <UpgradeBuyAllButton
                 onClick={() => {
-                    if(isDesktop) {
+                    if(isClick) {
                         handleClick()
                     }
                 }}
                 onTouchStart={() => {
-                    if(!isDesktop) {
+                    if(!isClick) {
                         handleClick()
                     }
                 }}

@@ -3,7 +3,7 @@ import { type Incrementor } from '@state/defaultAutoIncrementors'
 import { Upgrade } from '@upgrades'
 import { useSetAtom } from 'jotai'
 import { StyledResetButton, StyledResetButtonH2 } from './styled'
-import useIsDesktop from '@hooks/useIsDesktop'
+import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 interface ResetButtonProps {
     labelText: string
     additionalCallback?: () => void
@@ -13,7 +13,7 @@ const ResetButton = ({
     labelText = 'Reset All States',
     additionalCallback = () => {}
 }: ResetButtonProps) => {
-    const isDesktop = useIsDesktop()
+    const isClick = useDetectButtonClickBoolean()
 
     const setEnterPressesState = useSetAtom(enterPressesState)
     const setBitState = useSetAtom(bitState)
@@ -51,12 +51,12 @@ const ResetButton = ({
     return (
         <StyledResetButton
             onClick={() => {
-                if(isDesktop) {
+                if(isClick) {
                     handleReset()
                 }
             }}
             onTouchStart={() => {  
-                if(!isDesktop) {
+                if(!isClick) {
                     handleReset()
                 }
             }}

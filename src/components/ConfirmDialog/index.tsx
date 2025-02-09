@@ -13,11 +13,12 @@ import {
 } from './styled'
 import { useIntl } from 'react-intl'
 import { useAtom, useStore } from 'jotai'
-import useIsDesktop from '@hooks/useIsDesktop'
+import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
+
 const ConfirmDialog = () => {
     const store = useStore()
     const intl = useIntl()
-    const isDesktop = useIsDesktop()
+    const isClick = useDetectButtonClickBoolean()
     const [config, setConfig] = useAtom(configState)
 
     const handleToggleConfirmDialog = useCallback(() => {
@@ -64,12 +65,12 @@ const ConfirmDialog = () => {
                         />
                         <DeclineButton 
                             onClick={() => {
-                                if(isDesktop) {
+                                if(isClick) {
                                     confirmConfigToggle()
                                 }
                             }}
                             onTouchStart={() => {
-                                if(!isDesktop) {
+                                if(!isClick) {
                                     confirmConfigToggle()
                                 }
                             }}

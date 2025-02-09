@@ -7,11 +7,11 @@ import {
     upgradesState,
     currentProductionState
 } from '@state/atoms'
-import { useDebouncedProduction } from './useDebouncedProduction'
 import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
 import shallowEqualIncrementors from '@utils/shallowEqualIncrementors'
 import { Upgrade } from '@state/upgrades'
 import updateUpgrades from '@utils/updateUpgrades'
+import useDebouncedProduction from './useDebouncedProduction'
 
 interface IntervalConfig {
   updateInterval: number

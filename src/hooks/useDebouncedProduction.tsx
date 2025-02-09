@@ -2,7 +2,7 @@ import { currentProductionState } from '@state/atoms'
 import { useState, useEffect } from 'react'
 import { useAtomValue } from 'jotai'
 
-export const useDebouncedProduction = (delay = 250) => {
+const useDebouncedProduction = (delay = 250) => {
     const currentProduction = useAtomValue(currentProductionState)
     const [debouncedProduction, setDebouncedProduction] = useState(currentProduction)
 
@@ -18,3 +18,5 @@ export const useDebouncedProduction = (delay = 250) => {
 
     return debouncedProduction
 }
+
+export default useDebouncedProduction
