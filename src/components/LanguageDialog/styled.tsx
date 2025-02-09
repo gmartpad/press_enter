@@ -8,12 +8,14 @@ const LanguageDialogBackground = styled.div`
     height: 100vh;
 `
 
-const LanguageList = styled.div`
+const LanguageList = styled.div<{ $languageListMaxHeight: number }>`
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     overflow-y: auto;
-    max-height: 400px;
+    max-height: ${props => props.$languageListMaxHeight}px;
+    padding-bottom: 1em;
+    box-sizing: border-box;
 `
 
 const ChangeLanguageButton = styled.button<{ active: boolean }>`

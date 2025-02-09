@@ -10,7 +10,6 @@ const StatsSectionContainer = styled.section`
     height: calc(100% - ${NAVBAR_HEIGHT}px);
     overflow-y: auto;
     overflow-x: hidden;
-    border-top: 1px dashed #fff;
     border-left: 1px dashed #fff;
     border-right: 1px dashed #fff;
     padding: 0px 10px 10px 10px;
@@ -35,7 +34,7 @@ const TabButton = styled.button`
     background-color: #000;
     width: calc(50% - 10px);
     padding: 10px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-shadow: -2px 2px #555;
     cursor: pointer;
     border-width: thick;

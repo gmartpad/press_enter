@@ -4,7 +4,8 @@ const Dialog = styled.dialog`
     z-index: 1002;
     position: absolute;
     inset: 0;
-    width: 500px;
+    max-width: 500px;
+    width: calc(100% - 80px);
     height: 500px;
     background-color: #000;
     color: #fff;
