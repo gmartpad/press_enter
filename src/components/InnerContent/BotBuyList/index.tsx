@@ -99,7 +99,6 @@ const BotBuyList = () => {
         } catch (error) {
             console.error('Error updating upgrades:', error)
         }
-        console.log('handleUpdateUpgrades')
     }, [store, setUpgrades])
 
     const handleChangeBulkMode = useCallback(

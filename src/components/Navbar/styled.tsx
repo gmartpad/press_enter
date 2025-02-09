@@ -22,6 +22,7 @@ const Nav = styled.nav.attrs<NavProps>(
   background-color: #000;
   border-left: 1px dashed #fff;
   border-right: 1px dashed #fff;
+  border-bottom: 1px dashed #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;

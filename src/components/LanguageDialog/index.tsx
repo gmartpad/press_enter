@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { 
     ChangeLanguageButton, 
     LanguageDialogTitleDiv, 
@@ -20,6 +20,15 @@ const LanguageDialog = () => {
     const [config, setConfig] = useAtom(configState)
 
     const audioRef = useRef<HTMLAudioElement>(new Audio())
+    const dialogTitleRef = useRef<HTMLHeadingElement | null>(null)
+
+    const [languageListMaxHeight, setLanguageListMaxHeight] = useState(388)
+
+    useEffect(() => {
+        if(dialogTitleRef.current) {
+            setLanguageListMaxHeight(460 - dialogTitleRef.current.offsetHeight)
+        }
+    }, [config.currentLanguageLocale])
 
     const handleCloseClickSound = useCallback(() => {
         if (audioRef.current) {
@@ -54,13 +63,13 @@ const LanguageDialog = () => {
                 <DialogCloseButton
                     handleToggleDialog={handleToggleLanguageDialog}
                 />
-                <LanguageDialogTitleDiv>
+                <LanguageDialogTitleDiv ref={dialogTitleRef}>
                     <FormattedMessage 
                         tagName='h2' 
                         id='languageDialog.chooseYourLanguage.title'
                     />
                 </LanguageDialogTitleDiv>
-                <LanguageList>
+                <LanguageList $languageListMaxHeight={languageListMaxHeight}>
                     {languages.map((language) => (
                         <ChangeLanguageButton
                             active={config.currentLanguageLocale === language.value} 
