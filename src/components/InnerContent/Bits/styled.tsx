@@ -13,8 +13,8 @@ const Aside = styled.aside.attrs<AsideProps>(
             flexDirection: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? 'row' :'column-reverse',
             width: props.$windowInnerWidth > 1024 ? '30%' : '100%',
             height: props.$windowInnerWidth > 1024 ? '100%' : '-webkit-fill-available',
-            paddingBottom: '3em',
-            paddingTop: '3em'
+            paddingBottom: '0em',
+            paddingTop: '0em'
         }
     })
 )<AsideProps>`
@@ -35,8 +35,8 @@ interface MobileSpacerProps {
 const MobileSpacer = styled.div.attrs<MobileSpacerProps>(
     props => ({
         style: {
-            paddingTop: props.$top ? '10em' : '0px',
-            paddingBottom: !props.$top ? '2em' : '0px',
+            paddingTop: props.$top ? '0em' : '0px',
+            paddingBottom: !props.$top ? '0em' : '0px',
             display: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? 'none' : 'flex'
         }
     })
