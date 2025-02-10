@@ -7,7 +7,7 @@ import {
     enterPressesState 
 } from '@state/atoms'
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
-import { FloatText, Aside, EnterIcon, EnterKeyButton, BitsH3, BitsInfo, BitsSpan } from './styled'
+import { FloatText, Aside, EnterIcon, EnterKeyButton, BitsH3, BitsInfo, BitsSpan, MobileSpacer } from './styled'
 import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { debounce } from 'lodash'
@@ -20,7 +20,7 @@ const sounds = [sound1, sound2, sound3]
 const Bits = () => {
     const store = useStore()
     const intl = useIntl()
-    const { windowInnerWidth } = useWindowInnerValues()
+    const { windowInnerWidth, windowInnerHeight } = useWindowInnerValues()
     const isClick = useDetectButtonClickBoolean()
     const [enterPresses, setEnterPressesState] = useAtom(enterPressesState)
     const [bits, setBits] = useAtom(bitState)
@@ -126,7 +126,8 @@ const Bits = () => {
 
     return (
         <Aside $displayValue={asideDisplayValue} $windowInnerWidth={windowInnerWidth}>
-            <BitsInfo ref={bitsInfoRef} >
+            <MobileSpacer $top={true} $windowInnerWidth={windowInnerWidth} $windowInnerHeight={windowInnerHeight}    />
+            <BitsInfo $windowInnerWidth={windowInnerWidth} ref={bitsInfoRef} >
                 <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.bitsPerSecond" /></BitsH3>
                     <BitsH3 style={{ color: '#0f0' }}>{" " + formattedCurrentProduction} bits</BitsH3>
@@ -141,6 +142,7 @@ const Bits = () => {
                 </BitsSpan>
             </BitsInfo>
             <EnterKeyButton
+                $windowInnerWidth={windowInnerWidth}
                 ref={enterButtonRef}
                 onClick={(e) => {
                     if(isClick) {
@@ -155,6 +157,7 @@ const Bits = () => {
             >
                 <EnterIcon/>
             </EnterKeyButton>
+            <MobileSpacer $top={false} $windowInnerWidth={windowInnerWidth} $windowInnerHeight={windowInnerHeight}    />
 
             {floatTexts.map((text) => (
                 <FloatText

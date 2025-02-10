@@ -1,6 +1,18 @@
 import { styled } from "styled-components"
 import NAVBAR_HEIGHT from "@utils/NavbarHeight"
-const StatsSectionContainer = styled.section`
+
+interface StatsSectionContainerProps {
+    $windowInnerWidth: number
+    $tabHeight: number
+}
+
+const StatsSectionContainer = styled.section.attrs<StatsSectionContainerProps>(
+    props => ({
+        style: {
+            padding: `0px 10px ${props.$windowInnerWidth > 1024 ? '10px' : `calc(10px + ${props.$tabHeight}px)`} 10px`
+        }
+    })
+)<StatsSectionContainerProps>`
     position: absolute;
     top: ${NAVBAR_HEIGHT}px;
     display: flex;
@@ -12,7 +24,6 @@ const StatsSectionContainer = styled.section`
     overflow-x: hidden;
     border-left: 1px dashed #fff;
     border-right: 1px dashed #fff;
-    padding: 0px 10px 10px 10px;
     box-sizing: border-box;
     transform: translateZ(0);
     z-index: 1;

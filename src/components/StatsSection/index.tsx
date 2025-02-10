@@ -7,14 +7,21 @@ import UpgradeStats from "./UpgradeStats"
 import { useIntl } from "react-intl"
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtomValue } from "jotai"
+import useWindowInnerValues from "@hooks/useWindowInnerValues"
+import { useTabNavigator } from "@contexts/TabNavigatorContext"
 const StatsSection = () => {
     const intl = useIntl()
     const config = useAtomValue(configState)
     const upgrades = useAtomValue(upgradesState)
     const autoIncrementors = useAtomValue(autoIncrementorsState)
-
+    const { windowInnerWidth } = useWindowInnerValues()
+    const { tabHeight } = useTabNavigator()
     const [currentTab, setCurrentTab] = useState<'bot' | 'upgrade'>('bot')
     
+    useEffect(() => {
+        console.log(tabHeight)
+    }, [tabHeight])
+
     const upgradesGroupedByIncrementorId = useMemo(() => groupUpgradesByIncrementorId(upgrades.filter((u) => u.purchased)), [upgrades])
     
     const revealedIncrementors = useMemo(() => autoIncrementors.filter((i) => i.revealed), [autoIncrementors])
@@ -46,6 +53,8 @@ const StatsSection = () => {
 
     if((config as Config).statsSectionOpen) return (
         <StatsSectionContainer
+            $windowInnerWidth={windowInnerWidth}
+            $tabHeight={tabHeight}
             ref={scrollRef}
             onScroll={() => {
                 scrollPositionRef.current = Number(scrollRef.current?.scrollTop)

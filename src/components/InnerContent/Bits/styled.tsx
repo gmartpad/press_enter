@@ -10,20 +10,52 @@ const Aside = styled.aside.attrs<AsideProps>(
     props => ({
         style: {
             display: `${props.$displayValue}`,
-            width: props.$windowInnerWidth > 1024 ? '30%' : '100%'
+            flexDirection: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? 'row' :'column-reverse',
+            width: props.$windowInnerWidth > 1024 ? '30%' : '100%',
+            height: props.$windowInnerWidth > 1024 ? '100%' : '-webkit-fill-available',
+            paddingBottom: '3em',
+            paddingTop: '3em'
         }
     })
 )<AsideProps>`
-  height: 100%;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #000;
   color: #fff;
   overflow-y: auto;
+  gap: 30px;
 `
 
-const EnterKeyButton = styled.button`
+interface MobileSpacerProps {
+  $top: boolean
+  $windowInnerWidth: number
+  $windowInnerHeight: number
+}
+
+const MobileSpacer = styled.div.attrs<MobileSpacerProps>(
+    props => ({
+        style: {
+            paddingTop: props.$top ? '10em' : '0px',
+            paddingBottom: !props.$top ? '2em' : '0px',
+            display: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? 'none' : 'flex'
+        }
+    })
+)<MobileSpacerProps>`
+  height: 0px;
+  width: 100%;
+`
+
+interface EnterKeyButtonProps {
+  $windowInnerWidth: number
+}
+
+const EnterKeyButton = styled.button.attrs<EnterKeyButtonProps>(
+    props => ({
+        style: {
+            margin: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? '0px' : '0 auto 30px auto',
+        }
+    })
+)<EnterKeyButtonProps>`
   position: relative;
   width: 76px;
   height: 90px; /* Taller to accommodate the L shape */
@@ -31,7 +63,6 @@ const EnterKeyButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-  margin: 0 auto 30px auto;
   display: flex;
   justify-content: flex-end;
 
@@ -157,10 +188,22 @@ const BitsH3 = styled.h3`
   width: fit-content;
   max-width: 360px;
   text-align: center;
+  font-size: 1.17rem;
 `
 
-const BitsInfo = styled.div`
-  width: -webkit-fill-available;
+interface BitsInfoProps {
+  $windowInnerWidth: number
+}
+
+const BitsInfo = styled.div.attrs<BitsInfoProps>(
+    props => ({
+        style: {
+            margin: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? '34px 0px 30px 0px' : '34px 30px 30px 30px',
+            width: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? '100%' : '-webkit-fill-available',
+            maxWidth: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? '64%' : 'inherit',
+        }
+    })
+)<BitsInfoProps>`
   margin: 34px 30px 30px 30px;
   padding: 30px;
   display: flex;
@@ -189,4 +232,4 @@ const BitsSpan = styled.span`
   min-width: 100%;
 `
 
-export { Aside, EnterKeyButton, FloatText, EnterIcon, BitsH3, BitsInfo, BitsSpan }
+export { Aside, MobileSpacer, EnterKeyButton, FloatText, EnterIcon, BitsH3, BitsInfo, BitsSpan }
