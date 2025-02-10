@@ -1,5 +1,5 @@
 import 'swiper/css'
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
 import { useRef, useState } from 'react'
 import Bits from '@components/InnerContent/Bits'
 import BotBuyList from '@components/InnerContent/BotBuyList'
@@ -9,38 +9,43 @@ import { SliderContainer } from './styled'
 import StatsSection from '@components/StatsSection'
 import Navbar from '@components/Navbar'
 import ItemInfoDialog from '@components/shared/ItemInfoDialog'
-
+import TabNavigator from './TabNavigator'
+import { useTabNavigator } from '@contexts/TabNavigatorContext'
 const MobileInnerContent = () => {
-    const swiperRef = useRef<SwiperClass | null>(null)
+    const swiperRef = useRef<SwiperRef>(null)
     const { windowInnerWidth } = useWindowInnerValues()
-    // eslint-disable-next-line
     const [activeSlide, setActiveSlide] = useState<number>(0)
+    const { tabHeight } = useTabNavigator()
+
+    const handleTabClick = (index: number) => {
+        setActiveSlide(index)
+        swiperRef?.current?.swiper.slideTo(index)
+    }
 
     return (
         <>
-            <SliderContainer $windowInnerWidth={windowInnerWidth}>
+            <SliderContainer $windowInnerWidth={windowInnerWidth} $tabHeight={tabHeight}>
                 <Swiper
-                    onSwiper={(swiper: SwiperClass) => {
-                        swiperRef.current = swiper
-                    }}
+                    ref={swiperRef}
                     onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
                     slidesPerView={1}
                     resistance={true}
                     resistanceRatio={0.85}
                 >
-                    <SwiperSlide>
+                    <SwiperSlide style={{ overflow: 'hidden' }}>
                         <Bits />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide style={{ overflow: 'hidden' }}>
                         <CenterMain />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide style={{ overflow: 'hidden' }}>
                         <BotBuyList />
                     </SwiperSlide>
                 </Swiper>
             </SliderContainer>
-            <StatsSection/> 
-            <ItemInfoDialog/>
+            <TabNavigator activeSlide={activeSlide} onTabClick={handleTabClick} />
+            <StatsSection /> 
+            <ItemInfoDialog />
             <Navbar />
         </>
     )

@@ -25,6 +25,7 @@
     "paths": {
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
+      "@contexts/*": ["contexts/*"],
       "@utils/*": ["utils/*"],
       "@providers/*": ["providers/*"],
       "@lang/*": ["lang/*"],
@@ -33,6 +34,7 @@
       "@upgrades/*": ["state/upgrades/*"],
       "@assets": ["assets/index.tsx"],
       "@components": ["components/index.tsx"],
+      "@contexts": ["contexts/index.tsx"],
       "@utils": ["utils/index.tsx"],
       "@providers": ["providers/index.tsx"],
       "@lang": ["lang/index.tsx"],
