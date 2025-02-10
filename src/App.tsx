@@ -1,7 +1,7 @@
 import { Provider } from 'jotai'
 import { BitUpdaterProvider, BroadcastProvider, InspectProtectionProvider, LangProvider } from '@providers'
 import Content from '@components/Content'
-import { TabNavigatorProvider } from './contexts/TabNavigatorContext'
+import { TabNavigatorProvider } from '@contexts/TabNavigatorContext'
 
 function App() {
     return (
