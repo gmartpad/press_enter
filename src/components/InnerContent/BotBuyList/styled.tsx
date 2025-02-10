@@ -96,10 +96,11 @@ const BotBuyListGrid = styled.div.attrs<WindowInnerWidthProps>(
         style: {
             display: props.$windowInnerWidth > 1024 ? 'grid' : 'flex',
             flexWrap: props.$windowInnerWidth > 1024 ? 'unset' : 'wrap',
-            justifyContent: props.$windowInnerWidth > 1024 ? 'unset' : 'center'
+            paddingBottom: props.$windowInnerWidth > 1024 ? '0em' : '1.5em'
         }
     })
 )`
+  justify-content: center;
   height: fit-content;
   display: grid;
   gap: 2px;

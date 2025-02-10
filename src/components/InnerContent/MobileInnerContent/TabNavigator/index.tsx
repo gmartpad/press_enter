@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { TabContainer } from './styled'
 import TabButton from './TabButton'
-import { useTabNavigator } from '../../../../contexts/TabNavigatorContext'
+import { useTabNavigator } from '@contexts/TabNavigatorContext'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
+import { FormattedMessage } from 'react-intl'
 interface TabNavigatorProps {
     activeSlide: number;
     onTabClick: (index: number) => void;
@@ -21,9 +22,24 @@ const TabNavigator = ({ activeSlide, onTabClick }: TabNavigatorProps) => {
 
     return (
         <TabContainer ref={containerRef}>
-            <TabButton active={activeSlide === 0} onClick={() => onTabClick(0)}>{activeSlide === 0 && '* '}Bits</TabButton>
-            <TabButton active={activeSlide === 1} onClick={() => onTabClick(1)}>{activeSlide === 1 && '* '}Center Main</TabButton>
-            <TabButton active={activeSlide === 2} onClick={() => onTabClick(2)}>{activeSlide === 2 && '* '}Bot Buy List</TabButton>
+            <TabButton 
+                active={activeSlide === 0} 
+                onClick={() => onTabClick(0)}
+            >
+                {activeSlide === 0 && '* '}<FormattedMessage id="tabNavigator.pressEnter" />
+            </TabButton>
+            <TabButton 
+                active={activeSlide === 1} 
+                onClick={() => onTabClick(1)}
+            >
+                {activeSlide === 1 && '* '}<FormattedMessage id="tabNavigator.botVisualizers" />
+            </TabButton>
+            <TabButton 
+                active={activeSlide === 2} 
+                onClick={() => onTabClick(2)}
+            >
+                {activeSlide === 2 && '* '}<FormattedMessage id="tabNavigator.botsAndUpgrades" />
+            </TabButton>
         </TabContainer>
     )
 }
