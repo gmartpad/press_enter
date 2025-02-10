@@ -10,7 +10,11 @@ import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 
 const sounds = [buyUpgrade]
 
-function BuyAllUpgradesButton() {
+function BuyAllUpgradesButton({
+    disabled = false
+}: {
+    disabled?: boolean
+}) {
     const intl = useIntl()
     const store = useStore()
     const isClick = useDetectButtonClickBoolean()
@@ -71,6 +75,7 @@ function BuyAllUpgradesButton() {
     return (
         <>
             <UpgradeBuyAllButton
+                disabled={disabled}
                 onClick={() => {
                     if(isClick) {
                         handleClick()
@@ -83,7 +88,7 @@ function BuyAllUpgradesButton() {
                 }}
             >
                 <UpgradeBuyAllAnchor className="buy-all-button">
-                    <p style={{ textTransform: 'uppercase' }}>
+                    <p style={{ textTransform: 'uppercase', color: disabled ? '#888' : '#fff' }}>
                         {intl.formatMessage({ id: 'botBuyList.upgrades.buyAllUpgrades.title' })}
                     </p>
                 </UpgradeBuyAllAnchor>
