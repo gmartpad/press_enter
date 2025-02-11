@@ -19,10 +19,10 @@ import {
     upgradesState, 
     currentHoveredUpgradeItemState, 
     affordableUpgradesState, 
-    enterPressesState
+    enterPressesState,
 } from '@state/atoms'
 import { useCallback, useMemo } from 'react'
-import { type Incrementor } from '@state/defaultAutoIncrementors'
+import { Incrementor } from '@state/defaultAutoIncrementors'
 import IncrementorBotPrice from '@components/shared/IncrementorBotPrice'
 import IncrementorButton from '@components/InnerContent/BotBuyList/IncrementorButton'
 import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit'
@@ -46,7 +46,7 @@ const BotBuyList = () => {
     const [config, setConfig] = useAtom(configState)
     const autoIncrementors = useAtomValue(autoIncrementorsState)
     const affordableUpgrades = useAtomValue(affordableUpgradesState)
-
+    
     // Memoized derived data
     const purchasableUpgrades = useMemo(
         () => upgrades.filter(u => u.purchasable && !u.purchased),
@@ -114,12 +114,13 @@ const BotBuyList = () => {
 
     const handleChangeBulkAmount = useCallback(
         (newBotBulkAmountValue: number) => {
-            setConfig(currentConfig => ({
+            const currentConfig = store.get(configState)
+            setConfig({
                 ...currentConfig,
                 botBulkAmount: newBotBulkAmountValue,
-            }))
+            })
         },
-        [setConfig]
+        [setConfig, store]
     )
 
     return (

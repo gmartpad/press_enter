@@ -18,10 +18,6 @@ const StatsSection = () => {
     const { tabHeight } = useTabNavigator()
     const [currentTab, setCurrentTab] = useState<'bot' | 'upgrade'>('bot')
     
-    useEffect(() => {
-        console.log(tabHeight)
-    }, [tabHeight])
-
     const upgradesGroupedByIncrementorId = useMemo(() => groupUpgradesByIncrementorId(upgrades.filter((u) => u.purchased)), [upgrades])
     
     const revealedIncrementors = useMemo(() => autoIncrementors.filter((i) => i.revealed), [autoIncrementors])

@@ -1,4 +1,4 @@
-import { autoIncrementorsState, bitState, configState } from '@state/atoms'
+import { autoIncrementorsState, bitState, configState, saveGameState } from '@state/atoms'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit'
 import updateSingleIncrementorValue from '@utils/updateSingleIncrementorValue'
@@ -51,6 +51,8 @@ const useUpdateAutoIncrementors = () => {
 
             setAutoIncrementors(updatedIncrementors)
         }
+        saveGameState(store.get)
+
     },
     [setAutoIncrementors, setBits, store] // No additional dependencies needed
     )

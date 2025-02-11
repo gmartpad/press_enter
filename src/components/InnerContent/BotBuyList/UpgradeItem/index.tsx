@@ -1,11 +1,11 @@
 import { type Upgrade } from "@upgrades"
 import { InnerUpgradeItem, OuterUpgradeItem, UpgradeItemImg } from "./styled"
 import { useCallback, useEffect, useState, useMemo } from "react"
-import { configState, currentHoveredUpgradeItemState, isUpgradeAffordableState } from "@state/atoms"
+import { configState, currentHoveredUpgradeItemState, isUpgradeAffordableState, saveGameState } from "@state/atoms"
 import { debounce } from "lodash"
 
 import { buyUpgrade, wrong } from '@assets/sounds/upgradeClick'
-import { useAtomValue, useSetAtom } from "jotai"
+import { useAtomValue, useSetAtom, useStore } from "jotai"
 
 const sounds = [buyUpgrade]
 const wrongSounds = [wrong]
@@ -19,6 +19,7 @@ const UpgradeItem = ({
     upgrade,
     handlePurchaseUpgrade
 }: UpgradeItemProps) => {
+    const store = useStore()
     const memoizedAtom = useMemo(() => {
         return isUpgradeAffordableState(upgrade.id)
     }, [upgrade.id])
@@ -64,6 +65,7 @@ const UpgradeItem = ({
     const handleOnClick = useCallback(async () => {
         await handlePurchaseUpgrade(upgrade, isUpgradeAffordable)
         playSound()
+        saveGameState(store.get)
     }, [upgrade, isUpgradeAffordable, playSound, handlePurchaseUpgrade])
 
     return (

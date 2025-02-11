@@ -1,54 +1,12 @@
 import { atom } from 'jotai'
-import { atomWithStorage } from 'jotai/utils'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import defaultAutoIncrementors, { Incrementor } from './defaultAutoIncrementors.ts'
-import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit.ts'
 import { defaultUpgrades, Upgrade } from '@upgrades'
 import { LanguageValues } from '@components/LanguageDialog/languages.ts'
+import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit.ts'
+import { decodeSaveData, encodeSaveData } from '@utils/saveEncoder.ts'
 
-// ---------------------------------------
-// Base atoms with localStorage integration
-// ---------------------------------------
-
-export const DEFAULT_ENTER_PRESSES_STATE = Number(localStorage.getItem('enterPressesState'))
-export const enterPressesState = atomWithStorage<number>(
-    'enterPressesState',
-    DEFAULT_ENTER_PRESSES_STATE
-)
-
-export const DEFAULT_BIT_STATE_VALUE = Number(localStorage.getItem('bitState'))
-const bitStateInternal = atomWithStorage<number>('bitState', DEFAULT_BIT_STATE_VALUE)
-
-export const bitState = atom(
-    (get) => get(bitStateInternal),
-    (get, set, newValue: number) => {
-        set(bitStateInternal, newValue)
-        document.title = `${formatLargeNumber(Number(newValue.toFixed(0)))} bits`
-    }
-)
-
-// ------------------------------------------
-
-export const DEFAULT_AUTO_INCREMENTORS_STATE_VALUE = defaultAutoIncrementors
-
-export const autoIncrementorsState = atomWithStorage<Incrementor[]>('autoIncrementorsState', defaultAutoIncrementors, {
-    getItem: (key) => {
-        const storedValue = localStorage.getItem(key)
-        if (!storedValue) return defaultAutoIncrementors // Return default if empty
-        try {
-            return JSON.parse(storedValue) as Incrementor[]
-        } catch (error) {
-            console.error('Error parsing localStorage:', error)
-            return defaultAutoIncrementors // Handle invalid JSON gracefully
-        }
-    },
-    setItem: (key, value) => {
-        localStorage.setItem(key, JSON.stringify(value))
-    },
-    removeItem: (key) => localStorage.removeItem(key)
-})
-
-
+// Types
 export type Config = {
   volume: number
   configDialogOpen: boolean
@@ -60,7 +18,8 @@ export type Config = {
   botBulkMode: number
 }
 
-const defaultConfig: Config = {
+// Default values
+const DEFAULT_CONFIG: Config = {
     volume: 0.5,
     configDialogOpen: false,
     confirmDialogOpen: false,
@@ -71,77 +30,149 @@ const defaultConfig: Config = {
     botBulkMode: 1,
 }
 
-export const DEFAULT_CONFIG_STATE_VALUE = defaultConfig
-export const configState = atomWithStorage<Config>(
-    'configState',
-    DEFAULT_CONFIG_STATE_VALUE,
-    {
-        getItem: (key) => {
-            const storedValue = localStorage.getItem(key)
-            if (!storedValue) return DEFAULT_CONFIG_STATE_VALUE
-            try {
-                const parsed = JSON.parse(storedValue) as Partial<Config>
-                return {
-                    ...DEFAULT_CONFIG_STATE_VALUE,
-                    ...parsed
-                }
-            } catch (error) {
-                console.error('Error parsing configState:', error)
-                return DEFAULT_CONFIG_STATE_VALUE
-            }
-        },
-        setItem: (key, value) => localStorage.setItem(key, JSON.stringify(value)),
-        removeItem: (key) => localStorage.removeItem(key),
+export type SaveData = {
+  enterPresses: number
+  bits: number
+  autoIncrementors: Incrementor[]
+  config: Config
+  // currentHoveredBotItem: Incrementor
+  // currentHoveredUpgradeItem: Upgrade
+  // mouseY: number
+  // mouseX: number
+  upgrades: Upgrade[]
+  lastUpdateTime?: number
+}
+
+// Get initial state from gameState if it exists
+const savedState = (() => {
+    const encoded = localStorage.getItem('gameState')
+    if (!encoded) return null
+    return decodeSaveData(encoded)
+})()
+
+// Helper function to save game state
+export const saveGameState = (get: any) => {
+    console.log('Saving game state')
+    const oldEncoded = localStorage.getItem('gameState')
+    const oldSaveData = oldEncoded ? decodeSaveData(oldEncoded) : null
+    const saveData: SaveData = {
+        ...oldSaveData,
+        enterPresses: get(enterPressesState),
+        bits: get(bitState),
+        autoIncrementors: get(autoIncrementorsState),
+        config: get(configState),
+        upgrades: get(upgradesState),
+    }
+    const encoded = encodeSaveData(saveData)
+    localStorage.setItem('gameState', encoded)
+}
+
+// Validation helper functions
+const validateNumber = (value: unknown, defaultValue: number): number => {
+    return typeof value === 'number' && !isNaN(value) ? value : defaultValue
+}
+
+const validateArray = <T>(value: unknown, defaultValue: T[]): T[] => {
+    return Array.isArray(value) && value.length > 0 ? value : defaultValue
+}
+
+const validateObject = <T extends object>(value: unknown, defaultValue: T): T => {
+    return value && typeof value === 'object' ? value as T : defaultValue
+}
+
+// Internal atoms with validated initial values
+const enterPressesStateInternal = atom<number>(
+    validateNumber(savedState?.enterPresses, 0)
+)
+
+const bitStateInternal = atom<number>(
+    validateNumber(savedState?.bits, 0)
+)
+
+const autoIncrementorsStateInternal = atom<Incrementor[]>(
+    validateArray(savedState?.autoIncrementors, defaultAutoIncrementors)
+)
+
+const configStateInternal = atom<Config>(
+    validateObject(savedState?.config, DEFAULT_CONFIG)
+)
+
+const upgradesStateInternal = atom<Upgrade[]>(
+    validateArray(savedState?.upgrades, defaultUpgrades)
+)
+
+// External atoms with validation on updates
+export const enterPressesState = atom<number, [number], void>(
+    (get) => get(enterPressesStateInternal),
+    (get, set, newValue: number) => {
+        const current = get(enterPressesStateInternal)
+        const valueToSet = validateNumber(newValue, current)
+        set(enterPressesStateInternal, valueToSet)
     }
 )
 
-export const DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE = {} as Incrementor
-export const currentHoveredBotItemState = atomWithStorage<Incrementor>(
-    'currentHoveredBotItemState',
-    DEFAULT_CURRENT_HOVERED_BOT_ITEM_STATE_VALUE
+export const bitState = atom<number, [number], void>(
+    (get) => get(bitStateInternal),
+    (get, set, newValue: number) => {
+        const current = get(bitStateInternal)
+        const valueToSet = validateNumber(newValue, current)
+        set(bitStateInternal, valueToSet)
+        document.title = `${formatLargeNumber(Number(valueToSet.toFixed(0)))} bits`
+    }
 )
 
-export const DEFAULT_CURRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE = {} as Upgrade
-export const currentHoveredUpgradeItemState = atomWithStorage<Upgrade>(
-    'currentHoveredUpgradeItemState',
-    DEFAULT_CURRENT_HOVERED_UPGRADE_ITEM_STATE_VALUE
+export const autoIncrementorsState = atom<Incrementor[], [Incrementor[]], void>(
+    (get) => get(autoIncrementorsStateInternal),
+    (get, set, newValue: Incrementor[]) => {
+        const current = get(autoIncrementorsStateInternal)
+        const valueToSet = validateArray(newValue, current)
+        set(autoIncrementorsStateInternal, valueToSet)
+    }
 )
 
-export const DEFAULT_MOUSE_Y_STATE_VALUE = 0
-export const mouseYState = atomWithStorage<number>(
-    'mouseYState',
-    DEFAULT_MOUSE_Y_STATE_VALUE
+export const configState = atom<Config, [Config], void>(
+    (get) => get(configStateInternal),
+    (get, set, newValue: Config) => {
+        const current = get(configStateInternal)
+        const valueToSet = validateObject(newValue, current)
+        set(configStateInternal, valueToSet)
+    }
 )
 
-export const DEFAULT_MOUSE_X_STATE_VALUE = 0
-export const mouseXState = atomWithStorage<number>(
-    'mouseXState',
-    DEFAULT_MOUSE_X_STATE_VALUE
+export const currentHoveredBotItemState = atom<Incrementor, [Incrementor], void>(
+  {} as Incrementor,
+  (get, set, newValue: Incrementor) => {
+      set(currentHoveredBotItemState, newValue)
+  }
 )
 
-export const DEFAULT_UPGRADES_STATE_VALUE = defaultUpgrades
-export const upgradesState = atomWithStorage<Upgrade[]>(
-    'upgradesState',
-    DEFAULT_UPGRADES_STATE_VALUE,
-    {
-        getItem: (key) => {
-            const storedValue = localStorage.getItem(key)
-            if (!storedValue) return DEFAULT_UPGRADES_STATE_VALUE
-            try {
-                const parsed = JSON.parse(storedValue) as Upgrade[]
-                return DEFAULT_UPGRADES_STATE_VALUE.map((i, k) => ({
-                    ...i,
-                    ...parsed[k],
-                    effects: parsed[k]?.effects ?? i.effects,
-                    requirementsToBeListable: parsed[k]?.requirementsToBeListable ?? i.requirementsToBeListable
-                }))
-            } catch (error) {
-                console.error('Error parsing upgradesState:', error)
-                return DEFAULT_UPGRADES_STATE_VALUE
-            }
-        },
-        setItem: (key, value) => localStorage.setItem(key, JSON.stringify(value)),
-        removeItem: (key) => localStorage.removeItem(key),
+export const currentHoveredUpgradeItemState = atom<Upgrade, [Upgrade], void>(
+  {} as Upgrade,
+  (get, set, newValue: Upgrade) => {
+      set(currentHoveredUpgradeItemState, newValue)
+  }
+)
+
+export const mouseYState = atom<number, [number], void>(
+    0,
+    (get, set, newValue: number) => {
+        set(mouseYState, newValue)
+    }
+)
+
+export const mouseXState = atom<number, [number], void>(
+    0,
+    (get, set, newValue: number) => {
+        set(mouseXState, newValue)
+    }
+)
+
+export const upgradesState = atom<Upgrade[], [Upgrade[]], void>(
+    (get) => get(upgradesStateInternal),
+    (get, set, newValue: Upgrade[]) => {
+        const current = get(upgradesStateInternal)
+        const valueToSet = validateArray(newValue, current)
+        set(upgradesStateInternal, valueToSet)
     }
 )
 
@@ -262,18 +293,16 @@ export const affordableUpgradesState = atom<Upgrade[]>((get) => {
         // Check requirements if not purchasable
         let meetsRequirements = true
         const requirements = upgrade.requirementsToBeListable
-        
+    
         if (requirements) {
             if (requirements.pressEnterClicks !== undefined && requirements.pressEnterClicks > pressEnterClicks) {
                 meetsRequirements = false
             }
 
-            // Check bits requirement
             if (requirements.bits !== undefined && currentBits < requirements.bits) {
                 meetsRequirements = false
             }
 
-            // Check incrementor units requirement
             if (meetsRequirements && requirements.incrementorUnits) {
                 meetsRequirements = Object.entries(requirements.incrementorUnits).every(([id, units]) => {
                     const inc = autoIncrementors.find(i => i.id === id)
@@ -281,7 +310,6 @@ export const affordableUpgradesState = atom<Upgrade[]>((get) => {
                 })
             }
 
-            // Check upgrade requirements
             if (meetsRequirements && requirements.upgrades) {
                 meetsRequirements = requirements.upgrades.every(id => purchasedUpgradeIds.includes(id))
             }

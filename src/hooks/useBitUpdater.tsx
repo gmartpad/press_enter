@@ -5,13 +5,15 @@ import {
     bitState,
     enterPressesState,
     upgradesState,
-    currentProductionState
+    currentProductionState,
+    saveGameState
 } from '@state/atoms'
 import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
 import shallowEqualIncrementors from '@utils/shallowEqualIncrementors'
 import { Upgrade } from '@state/upgrades'
 import updateUpgrades from '@utils/updateUpgrades'
 import useDebouncedProduction from './useDebouncedProduction'
+import { decodeSaveData, encodeSaveData } from '@utils/saveEncoder' 
 
 interface IntervalConfig {
   updateInterval: number
@@ -21,12 +23,14 @@ interface IntervalConfig {
 const DEFAULT_UPDATE_INTERVAL = 200
 const BACKGROUND_UPDATE_INTERVAL = 3000
 const SLOW_UPDATE_INTERVAL = 600
+const SAVE_INTERVAL = 10_000
 
 const useBitUpdater = () => {
     const store = useStore()
     const setBits = useSetAtom(bitState)
     const setAutoIncrementors = useSetAtom(autoIncrementorsState)
     const setUpgrades = useSetAtom(upgradesState)
+
     const currentProduction = useDebouncedProduction() as number
 
     const lastUpdateRef = useRef<number>(Date.now())
@@ -73,7 +77,15 @@ const useBitUpdater = () => {
     const saveLastUpdateTime = useCallback(
         (time: number) => {
             try {
-                localStorage.setItem('lastUpdateTime', String(time))
+                const encoded = localStorage.getItem('gameState')
+                if (encoded) {
+                    const saveData = decodeSaveData(encoded)
+                    if (saveData) {
+                        saveData.lastUpdateTime = time
+                        const encoded = encodeSaveData(saveData)
+                        localStorage.setItem('gameState', encoded)
+                    }
+                }
             } catch (error) {
                 console.error('Error saving last update time:', error)
             }
@@ -177,8 +189,13 @@ const useBitUpdater = () => {
             handleUpdateUpgrades()
         }, configRef.current.slowUpdateInterval)
 
+        const saveInterval = setInterval(() => {
+            saveGameState(store.get)
+        }, SAVE_INTERVAL)
+
         intervalsRef.current.add(mainInterval)
         intervalsRef.current.add(slowInterval)
+        intervalsRef.current.add(saveInterval)
     }, [
         currentProductionByMS,
         saveLastUpdateTime,
@@ -198,35 +215,37 @@ const useBitUpdater = () => {
 
     useEffect(() => {
         try {
-            const lastUpdateTime = localStorage.getItem('lastUpdateTime')
-            if (lastUpdateTime) {
-                const currentBits = store.get(bitState)
-                const elapsedTime = Math.floor(
-                    (Date.now() - Number(lastUpdateTime)) / 1000
-                )
-                const currentProductionValue = store.get(currentProductionState)
-                
-                setBits(currentBits + (elapsedTime * currentProductionValue))
-
-                const currentIncrementors = store.get(autoIncrementorsState)
-                const currentUpgrades = store.get(upgradesState)
-
-                const elapsedUpdatedIncrementors = currentIncrementors.map((inc) => {
-                    const upgradesMultiplicator = handleUpgradesMultiplicator(
-                        inc.id,
-                        currentUpgrades
+            const encoded = localStorage.getItem('gameState')
+            if (encoded) {
+                const saveData = decodeSaveData(encoded)
+                if (saveData && 'lastUpdateTime' in saveData) {
+                    const currentBits = store.get(bitState)
+                    const elapsedTime = Math.floor(
+                        (Date.now() - Number(saveData.lastUpdateTime)) / 1000
                     )
-                    return {
-                        ...inc,
-                        bitsProducedSoFar:
-                            inc.bitsProducedSoFar +
-                            inc.units *
-                                inc.productionPerUnit *
-                                elapsedTime *
-                                upgradesMultiplicator
-                    }
-                })
-                setAutoIncrementors(elapsedUpdatedIncrementors)
+                    const currentProductionValue = store.get(currentProductionState)
+                    setBits(currentBits + (elapsedTime * currentProductionValue))
+    
+                    const currentIncrementors = store.get(autoIncrementorsState)
+                    const currentUpgrades = store.get(upgradesState)
+    
+                    const elapsedUpdatedIncrementors = currentIncrementors.map((inc) => {
+                        const upgradesMultiplicator = handleUpgradesMultiplicator(
+                            inc.id,
+                            currentUpgrades
+                        )
+                        return {
+                            ...inc,
+                            bitsProducedSoFar:
+                                inc.bitsProducedSoFar +
+                                inc.units *
+                                    inc.productionPerUnit *
+                                    elapsedTime *
+                                    upgradesMultiplicator
+                        }
+                    })
+                    setAutoIncrementors(elapsedUpdatedIncrementors)
+                }
             }
 
             lastUpdateRef.current = Date.now()
@@ -234,6 +253,7 @@ const useBitUpdater = () => {
         } catch (error) {
             console.error('Error in initial setup:', error)
         }
+        saveGameState(store.get)
     }, [setBits, store, saveLastUpdateTime, handleUpgradesMultiplicator, setAutoIncrementors])
 
     useEffect(() => {

@@ -20,6 +20,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    "types": ["node"],
+
     /* Aliases */
     "baseUrl": "./src",
     "paths": {
@@ -43,5 +45,5 @@
       "@upgrades": ["state/upgrades/index.ts"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "node_modules", "../src/utils/saveEncoder.ts"]
 }

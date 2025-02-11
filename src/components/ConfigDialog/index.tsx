@@ -7,7 +7,7 @@ import DialogContainer from '@components/shared/DialogContainer'
 import { ConfigResetButton, ConfigResetButtonH2, ConfigRow } from './styled'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
-
+import LoadSaveStringButton from '@components/LoadSaveStringButton'
 const ConfigDialog = () => {
     const store = useStore()
     const intl = useIntl()
@@ -82,6 +82,8 @@ const ConfigDialog = () => {
                         </ConfigResetButtonH2>
                     </ConfigResetButton>
                 </ConfigRow>
+                <hr />
+                <LoadSaveStringButton />
             </DialogContainer>
         </>
     )
