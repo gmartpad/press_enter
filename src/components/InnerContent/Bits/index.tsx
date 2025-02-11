@@ -108,7 +108,8 @@ const Bits = () => {
     const handleEnterBitClick = useCallback(
         (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
             const currentBits = store.get(bitState)
-            setEnterPressesState(prev => prev + 1)
+            const currentEnterPresses = store.get(enterPressesState)
+            setEnterPressesState(currentEnterPresses + 1)
             handleFloatingClickedTextValue(e)
             setBits(currentBits + calculatedEnterPressBitAmount)
             debouncedHandleEnterBitClickSound()
