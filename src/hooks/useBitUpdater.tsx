@@ -22,7 +22,7 @@ interface IntervalConfig {
 
 const DEFAULT_UPDATE_INTERVAL = 200
 const BACKGROUND_UPDATE_INTERVAL = 3000
-const SLOW_UPDATE_INTERVAL = 600
+const SLOW_UPDATE_INTERVAL = 200
 const SAVE_INTERVAL = 10_000
 
 const useBitUpdater = () => {
@@ -154,11 +154,11 @@ const useBitUpdater = () => {
                     return {
                         ...inc,
                         bitsProducedSoFar:
-              inc.bitsProducedSoFar +
-              inc.units *
-                inc.productionPerUnit *
-                multiplier *
-                upgradesMultiplicator
+                        inc.bitsProducedSoFar +
+                        inc.units *
+                            inc.productionPerUnit *
+                            multiplier *
+                            upgradesMultiplicator
                     }
                 })
 
