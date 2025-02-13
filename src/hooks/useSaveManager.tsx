@@ -9,24 +9,30 @@ import {
     currentHoveredUpgradeItemState,
     mouseYState,
     mouseXState,
-    upgradesState
+    upgradesState,
+    clearIntervalsState,
+    autoIncrementorsStateInternal,
+    upgradesStateInternal
 } from '@state/atoms'
-import { Upgrade } from '@state/upgrades'
-import { Incrementor } from '@state/defaultAutoIncrementors'
+import { defaultUpgrades, Upgrade } from '@state/upgrades'
+import defaultAutoIncrementors, { Incrementor } from '@state/defaultAutoIncrementors'
 
 const useSaveManager = () => {
     const setEnterPresses = useSetAtom(enterPressesState)
     const setBits = useSetAtom(bitState)
     const setAutoIncrementors = useSetAtom(autoIncrementorsState)
+    const setAutoIncrementorsInternal = useSetAtom(autoIncrementorsStateInternal)
     const setConfig = useSetAtom(configState)
     const setCurrentHoveredBotItem = useSetAtom(currentHoveredBotItemState)
     const setCurrentHoveredUpgradeItem = useSetAtom(currentHoveredUpgradeItemState)
     const setMouseY = useSetAtom(mouseYState)
     const setMouseX = useSetAtom(mouseXState)
     const setUpgrades = useSetAtom(upgradesState)
+    const setUpgradesInternal = useSetAtom(upgradesStateInternal)
+    const setClearIntervals = useSetAtom(clearIntervalsState)
 
-    const loadGame = () => {
-        const encoded = localStorage.getItem('gameState')
+    const loadGame = (alternativeEncoded?: string) => {
+        const encoded = alternativeEncoded ? alternativeEncoded : localStorage.getItem('gameState')
         if (!encoded) return false
 
         const saveData = decodeSaveData(encoded)
@@ -35,28 +41,31 @@ const useSaveManager = () => {
         setEnterPresses(saveData.enterPresses)
         setBits(saveData.bits)
         setAutoIncrementors(saveData.autoIncrementors)
-        setConfig(saveData.config)
-        // setCurrentHoveredBotItem(saveData.currentHoveredBotItem as Incrementor)
-        // setCurrentHoveredUpgradeItem(saveData.currentHoveredUpgradeItem as Upgrade)
-        // setMouseY(saveData.mouseY)
-        // setMouseX(saveData.mouseX)
+        setConfig({
+            ...saveData.config,
+            importSaveFileDialogOpen: false
+        })
         setUpgrades(saveData.upgrades)
-    
+        setClearIntervals(false)
         return true
     }
 
     const resetGame = () => {
         localStorage.removeItem('gameState')
-    
+        
+        // Clear all intervals
+        setClearIntervals(true)
+        setAutoIncrementorsInternal(defaultAutoIncrementors)
         setEnterPresses(0)
         setBits(0)
-        setAutoIncrementors([])
         setConfig({
             volume: 0.5,
             configDialogOpen: false,
             confirmDialogOpen: false,
             languageDialogOpen: false,
             statsSectionOpen: false,
+            exportSaveFileDialogOpen: false,
+            importSaveFileDialogOpen: false,
             currentLanguageLocale: 'en',
             botBulkMode: 1,
             botBulkAmount: 1
@@ -65,7 +74,7 @@ const useSaveManager = () => {
         setCurrentHoveredUpgradeItem({} as Upgrade)
         setMouseY(0)
         setMouseX(0)
-        setUpgrades([])
+        setUpgradesInternal(defaultUpgrades)
     }
 
     return { loadGame, resetGame }

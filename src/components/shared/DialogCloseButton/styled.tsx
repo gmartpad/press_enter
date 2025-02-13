@@ -1,9 +1,19 @@
 import { styled } from "styled-components"
 
-const DialogCloseButton = styled.button`
+interface DialogCloseButtonProps {
+    $orientation: 'left' | 'right'
+}
+
+const DialogCloseButton = styled.button.attrs<DialogCloseButtonProps>(
+    props => ({
+        style: {
+            right: props.$orientation === 'left' ? 'auto' : '-15px',
+            left: props.$orientation === 'right' ? 'auto' : '-15px'
+        }
+    })
+)<DialogCloseButtonProps>`
     cursor: pointer;
     position: absolute;
-    right: -15px;
     top: -15px;
     width: 30px;
     height: 30px;
@@ -16,8 +26,13 @@ const DialogCloseButton = styled.button`
     align-items: center;
 `
 
-const DialogCloseButtonParagraph = styled.p`
-    margin: 2px 0px 0px 2px; 
+const DialogCloseButtonParagraph = styled.p.attrs<DialogCloseButtonProps>(
+    props => ({
+        style: {
+            margin: props.$orientation === 'right' ? '2px 0px 0px 2px' : '0px' 
+        }
+    })
+)<DialogCloseButtonProps>`
     font-size: 1.125rem;
 `
 

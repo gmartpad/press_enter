@@ -1,7 +1,9 @@
-import { useAtom, useAtomValue, useStore } from 'jotai'
+import { useAtom, useAtomValue, useSetAtom, useStore } from 'jotai'
 import { 
+    autoIncrementorsState,
     bitState, 
     calculatedEnterPressBitAmountState, 
+    clearIntervalsState, 
     configState, 
     currentProductionState, 
     enterPressesState 
@@ -23,6 +25,7 @@ const Bits = () => {
     const { windowInnerWidth, windowInnerHeight } = useWindowInnerValues()
     const isClick = useDetectButtonClickBoolean()
     const [enterPresses, setEnterPressesState] = useAtom(enterPressesState)
+    const setClearIntervals = useSetAtom(clearIntervalsState)
     const [bits, setBits] = useAtom(bitState)
     const currentProduction = useAtomValue(currentProductionState)
     const calculatedEnterPressBitAmount = useAtomValue(calculatedEnterPressBitAmountState)
@@ -37,7 +40,7 @@ const Bits = () => {
 
     const formattedCurrentProduction = useMemo(
         () => formatLargeNumber(Number(currentProduction.toFixed(1)), intl),
-        [currentProduction, intl]
+        [currentProduction, intl, autoIncrementorsState]
     )
 
     const asideDisplayValue = useMemo(() => {
@@ -109,6 +112,9 @@ const Bits = () => {
         (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
             const currentBits = store.get(bitState)
             const currentEnterPresses = store.get(enterPressesState)
+            if(currentBits === 0 && currentEnterPresses === 0) {
+                setClearIntervals(false)
+            }
             setEnterPressesState(currentEnterPresses + 1)
             handleFloatingClickedTextValue(e)
             setBits(currentBits + calculatedEnterPressBitAmount)
