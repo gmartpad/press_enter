@@ -17,7 +17,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         order: 0,
         name: 'Turing Testers',
         units: 0,
-        revealed: false,
+        revealed: true,
         pricePerUnit: 20,
         productionPerUnit: 0.2,
         description:
@@ -30,7 +30,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         order: 1,
         name: "Robo-Turtles",
         units: 0,
-        revealed: false,
+        revealed: true,
         pricePerUnit: 300,
         productionPerUnit: 2,
         description:
@@ -43,7 +43,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         order: 2,
         name: 'Old Neural Networks',
         units: 0,
-        revealed: false,
+        revealed: true,
         pricePerUnit: 50_000,
         productionPerUnit: 40,
         description:

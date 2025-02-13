@@ -3,15 +3,20 @@ import { DialogCloseButton as StyledDialogCloseButton, DialogCloseButtonParagrap
 
 interface DialogCloseButtonProps {
     handleToggleDialog: () => void
+    orientation: 'left' | 'right'
+    children: React.ReactNode
 }
 
 const DialogCloseButton = ({
-    handleToggleDialog
+    handleToggleDialog,
+    orientation,
+    children
 }: DialogCloseButtonProps) => {
     const isClick = useDetectButtonClickBoolean()
 
     return (
         <StyledDialogCloseButton
+            $orientation={orientation}
             onClick={() => {
                 if(isClick) {
                     handleToggleDialog()
@@ -23,8 +28,10 @@ const DialogCloseButton = ({
                 }
             }}
         >
-            <DialogCloseButtonParagraph>
-                X
+            <DialogCloseButtonParagraph
+                $orientation={orientation}
+            >
+                {children}
             </DialogCloseButtonParagraph>
         </StyledDialogCloseButton>
     )

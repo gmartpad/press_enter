@@ -14,7 +14,7 @@ import {
 import { useIntl } from 'react-intl'
 import { useAtom, useStore } from 'jotai'
 import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
-
+import DialogCloseButton from '@components/shared/DialogCloseButton'
 const ConfirmDialog = () => {
     const store = useStore()
     const intl = useIntl()
@@ -56,6 +56,12 @@ const ConfirmDialog = () => {
             />
             <DialogContainer dialogOpen={Boolean(config.confirmDialogOpen)}>
                 <CentralizeDiv>
+                    <DialogCloseButton
+                        handleToggleDialog={confirmConfigToggle}
+                        orientation='left'
+                    >
+                        {'<'}
+                    </DialogCloseButton>
                     <ConfirmH2>{intl.formatMessage({ id: 'confirm.primary.title' })}</ConfirmH2>
                     <ConfirmH3>{intl.formatMessage({ id: 'confirm.secondary.title' })}</ConfirmH3>
                     <ConfirmButtonsContainer>

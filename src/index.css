@@ -53,6 +53,7 @@ button.botBuy {
   cursor: pointer;
   transition: border-color 0.25s;
   border-width: thick;
+  min-width: 288px;
 }
 
 @media (prefers-color-scheme: light) {

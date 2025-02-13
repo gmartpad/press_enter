@@ -13,6 +13,8 @@ export type Config = {
   confirmDialogOpen: boolean
   languageDialogOpen: boolean
   statsSectionOpen: boolean
+  exportSaveFileDialogOpen: boolean
+  importSaveFileDialogOpen: boolean
   currentLanguageLocale: LanguageValues
   botBulkAmount: number
   botBulkMode: number
@@ -25,6 +27,8 @@ const DEFAULT_CONFIG: Config = {
     confirmDialogOpen: false,
     languageDialogOpen: false,
     statsSectionOpen: false,
+    exportSaveFileDialogOpen: false,
+    importSaveFileDialogOpen: false,
     currentLanguageLocale: 'en',
     botBulkAmount: 1,
     botBulkMode: 1,
@@ -52,7 +56,6 @@ const savedState = (() => {
 
 // Helper function to save game state
 export const saveGameState = (get: any) => {
-    console.log('Saving game state')
     const oldEncoded = localStorage.getItem('gameState')
     const oldSaveData = oldEncoded ? decodeSaveData(oldEncoded) : null
     const saveData: SaveData = {
@@ -89,7 +92,7 @@ const bitStateInternal = atom<number>(
     validateNumber(savedState?.bits, 0)
 )
 
-const autoIncrementorsStateInternal = atom<Incrementor[]>(
+export const autoIncrementorsStateInternal = atom<Incrementor[]>(
     validateArray(savedState?.autoIncrementors, defaultAutoIncrementors)
 )
 
@@ -97,7 +100,7 @@ const configStateInternal = atom<Config>(
     validateObject(savedState?.config, DEFAULT_CONFIG)
 )
 
-const upgradesStateInternal = atom<Upgrade[]>(
+export const upgradesStateInternal = atom<Upgrade[]>(
     validateArray(savedState?.upgrades, defaultUpgrades)
 )
 
@@ -326,3 +329,5 @@ export const currentProductionState = atom<number>((get) => {
         return total + inc.units * inc.productionPerUnit * multiplier
     }, 0)
 })
+
+export const clearIntervalsState = atom<boolean>(false)

@@ -28,4 +28,16 @@ const ConfigResetButtonH2 = styled.h2`
   margin: 0;
 `
 
-export { ConfigDialog, ConfigRow, ConfigResetButton, ConfigResetButtonH2 }
+const SaveFileButton = styled.button`
+  cursor: pointer;
+  background: #000;
+  border-width: thick;
+  padding: 10px;
+  width: 100%;
+`
+
+const SaveFileButtonH2 = styled.h2`
+  margin: 0;
+`
+
+export { ConfigDialog, ConfigRow, ConfigResetButton, ConfigResetButtonH2, SaveFileButton, SaveFileButtonH2 }

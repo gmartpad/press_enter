@@ -62,7 +62,10 @@ const LanguageDialog = () => {
             <DialogContainer dialogOpen={!!config?.languageDialogOpen}>
                 <DialogCloseButton
                     handleToggleDialog={handleToggleLanguageDialog}
-                />
+                    orientation='right'
+                >
+                    X
+                </DialogCloseButton>
                 <LanguageDialogTitleDiv ref={dialogTitleRef}>
                     <FormattedMessage 
                         tagName='h2' 

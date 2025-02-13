@@ -1,13 +1,13 @@
-import { configState } from '@state/atoms'
+import { configState, saveGameState } from '@state/atoms'
 import { useCallback, useRef } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
-import { ConfigResetButton, ConfigResetButtonH2, ConfigRow } from './styled'
+import { ConfigResetButton, ConfigResetButtonH2, ConfigRow, SaveFileButton, SaveFileButtonH2 } from './styled'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
-import LoadSaveStringButton from '@components/LoadSaveStringButton'
+
 const ConfigDialog = () => {
     const store = useStore()
     const intl = useIntl()
@@ -52,12 +52,32 @@ const ConfigDialog = () => {
         })
     }, [setConfig, store])
 
+    const handleToggleExportSaveFileDialog = useCallback(() => {
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
+            exportSaveFileDialogOpen: !currentConfig.exportSaveFileDialogOpen,
+        })
+    }, [setConfig, store])
+
+    const handleToggleImportSaveFileDialog = useCallback(() => {
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
+            importSaveFileDialogOpen: !currentConfig.importSaveFileDialogOpen,
+        })
+    }, [setConfig, store])
 
     if(config.configDialogOpen) return (
         <>
             <DialogBackground handleToggleDialog={handleToggleConfigDialog} />
             <DialogContainer dialogOpen={Boolean(config.configDialogOpen)}>
-                <DialogCloseButton handleToggleDialog={handleToggleConfigDialog} />
+                <DialogCloseButton 
+                    handleToggleDialog={handleToggleConfigDialog}
+                    orientation='right'
+                >
+                    X
+                </DialogCloseButton>
                 <hr />
                 <ConfigRow>
                     <FormattedMessage id="config.volume.title" values={{ volumeValue: (config.volume * 100).toFixed(0) }} tagName="p" />
@@ -68,6 +88,38 @@ const ConfigDialog = () => {
                         value={config.volume * 100}
                         onChange={handleVolumeChange}
                     />
+                </ConfigRow>
+                <hr />
+                <ConfigRow>
+                    <div
+                        style={{
+                            width: '100%',
+                            display: 'flex',
+                            gap: '10px',
+                        }}
+                    >
+                        <SaveFileButton 
+                            onClick={() => {
+                                saveGameState(store.get)
+                                handleToggleConfigDialog()
+                                handleToggleExportSaveFileDialog()
+                            }}
+                        >
+                            <SaveFileButtonH2>
+                                <FormattedMessage id="config.exportSaveFile.title" />
+                            </SaveFileButtonH2>
+                        </SaveFileButton>
+                        <SaveFileButton 
+                            onClick={() => {
+                                handleToggleConfigDialog()
+                                handleToggleImportSaveFileDialog()
+                            }}
+                        >
+                            <SaveFileButtonH2>
+                                <FormattedMessage id="config.importSaveFile.title" />
+                            </SaveFileButtonH2>
+                        </SaveFileButton>
+                    </div>
                 </ConfigRow>
                 <hr />
                 <ConfigRow>
@@ -82,8 +134,6 @@ const ConfigDialog = () => {
                         </ConfigResetButtonH2>
                     </ConfigResetButton>
                 </ConfigRow>
-                <hr />
-                <LoadSaveStringButton />
             </DialogContainer>
         </>
     )

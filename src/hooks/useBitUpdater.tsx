@@ -1,4 +1,4 @@
-import { useSetAtom, useStore } from 'jotai'
+import { useSetAtom, useStore, useAtomValue } from 'jotai'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
 import {
     autoIncrementorsState,
@@ -6,7 +6,8 @@ import {
     enterPressesState,
     upgradesState,
     currentProductionState,
-    saveGameState
+    saveGameState,
+    clearIntervalsState
 } from '@state/atoms'
 import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
 import shallowEqualIncrementors from '@utils/shallowEqualIncrementors'
@@ -29,6 +30,7 @@ const useBitUpdater = () => {
     const store = useStore()
     const setBits = useSetAtom(bitState)
     const setAutoIncrementors = useSetAtom(autoIncrementorsState)
+    const enterPresses = useAtomValue(enterPressesState)
     const setUpgrades = useSetAtom(upgradesState)
 
     const currentProduction = useDebouncedProduction() as number
@@ -44,6 +46,8 @@ const useBitUpdater = () => {
         () => currentProduction / 1000,
         [currentProduction]
     )
+
+    const clearIntervals = useAtomValue(clearIntervalsState)
 
     const handleUpgradesMultiplicator = useCallback(
         (incrementorId: string, currentUpgrades: Upgrade[]) => {
@@ -257,15 +261,25 @@ const useBitUpdater = () => {
     }, [setBits, store, saveLastUpdateTime, handleUpgradesMultiplicator, setAutoIncrementors])
 
     useEffect(() => {
-        document.addEventListener('visibilitychange', handleVisibilityChange)
-        startIntervals()
+        if(!clearIntervals) {
+            document.addEventListener('visibilitychange', handleVisibilityChange)
+            startIntervals()
+        }
 
         return () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange)
             intervalsRef.current.forEach((interval) => clearInterval(interval))
             intervalsRef.current.clear()
         }
-    }, [handleVisibilityChange, startIntervals, saveLastUpdateTime])
+    }, [handleVisibilityChange, startIntervals, saveLastUpdateTime, clearIntervals, enterPresses])
+
+    useEffect(() => {
+        if (clearIntervals) {
+            document.removeEventListener('visibilitychange', handleVisibilityChange)
+            intervalsRef.current.forEach((interval) => clearInterval(interval))
+            intervalsRef.current.clear()
+        }
+    }, [handleVisibilityChange, clearIntervals])
 
     return { setBits }
 }
