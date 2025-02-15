@@ -23,6 +23,7 @@ const CopyButton = styled.button`
   width: 80%;
   margin-top: 8px;
   box-sizing: border-box;
+  text-shadow: -2px 2px #555;
 `
 
 export { SaveInput, CopyButton }
