@@ -20,7 +20,7 @@ const CopyButton = styled.button`
   background: black;
   border-width: thick;
   color: white;
-  width: 80%;
+  width: 100%;
   margin-top: 8px;
   box-sizing: border-box;
   text-shadow: -2px 2px #555;

@@ -1,5 +1,5 @@
 import { configState } from '@state/atoms'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
 import { useIntl } from 'react-intl'
@@ -22,10 +22,38 @@ const ExportSaveFileDialog = () => {
         }
     }, [])
 
+    const hasWriteText = useMemo(() => Boolean(navigator.clipboard?.writeText), [navigator.clipboard?.writeText])
+
     const handleCopy = useCallback(() => {
-        if (inputRef.current) {
+        if (!inputRef.current) return
+
+        try {
             inputRef.current.select()
-            navigator.clipboard.writeText(inputRef.current.value)
+            if (hasWriteText) {
+                navigator.clipboard.writeText(inputRef.current.value)
+            } else {
+                // Fallback to execCommand
+                document.execCommand('copy')
+            }
+        } catch (err) {
+            console.error(err)
+        }
+    }, [hasWriteText])
+
+    const handleDownloadSave = useCallback(() => {
+        try {
+            const saveData = localStorage.getItem('gameState') || ''
+            const blob = new Blob([saveData], { type: 'text/plain' })
+            const url = URL.createObjectURL(blob)
+            const a = document.createElement('a')
+            a.href = url
+            a.download = 'save-file.txt'
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+            URL.revokeObjectURL(url)
+        } catch (err) {
+            console.error(err)
         }
     }, [])
 
@@ -74,20 +102,33 @@ const ExportSaveFileDialog = () => {
                         value={localStorage.getItem('gameState') || ''}
                         readOnly
                     />
-                    <CopyButton
-                        onClick={() => {
-                            if(isClick) {
-                                handleCopy()
-                            }
-                        }}
-                        onTouchStart={() => {
-                            if(!isClick) {
-                                handleCopy()
-                            }
+                    <div
+                        style={{
+                            display: 'flex',
+                            gap: '10px',
+                            width: '80%',
                         }}
                     >
-                        {intl.formatMessage({ id: 'config.exportSaveFile.copyButton' })}
-                    </CopyButton>
+                        {hasWriteText && (
+                            <CopyButton
+                                onClick={() => {
+                                    if(isClick) {
+                                        handleCopy()
+                                    }
+                                }}
+                                onTouchStart={() => {
+                                    if(!isClick) {
+                                        handleCopy()
+                                    }
+                                }}
+                            >
+                                {intl.formatMessage({ id: 'config.exportSaveFile.copyButton' })}
+                            </CopyButton>
+                        )}
+                        <CopyButton onClick={handleDownloadSave}>
+                            {intl.formatMessage({ id: 'config.exportSaveFile.downloadButton' })}
+                        </CopyButton>
+                    </div>
                 </CentralizeDiv>
             </DialogContainer>
         </>

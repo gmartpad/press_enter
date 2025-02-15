@@ -1,5 +1,5 @@
 import { configState } from '@state/atoms'
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useAtom, useStore } from 'jotai'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
@@ -18,6 +18,8 @@ const ImportSaveFileDialog = () => {
     const { loadGame } = useSaveManager()
     const [saveString, setSaveString] = useState('')
     const [error, setError] = useState('')
+
+    const hasReadText = useMemo(() => Boolean(navigator.clipboard?.readText), [navigator.clipboard?.readText])
 
     const handleToggleImportSaveFileDialog = useCallback((fixedValue?: boolean) => {
         const currentConfig = store.get(configState)
@@ -70,13 +72,42 @@ const ImportSaveFileDialog = () => {
 
     const handlePasteFromClipboard = useCallback(async () => {
         try {
-            const clipboardText = await navigator.clipboard.readText()
-            setSaveString(clipboardText)
+            if (hasReadText) {
+                const clipboardText = await navigator.clipboard.readText()
+                setSaveString(clipboardText)
+            } else {
+                // Fallback to execCommand
+                const textarea = document.createElement('textarea')
+                document.body.appendChild(textarea)
+                textarea.focus()
+                document.execCommand('paste')
+                const pastedText = textarea.value
+                document.body.removeChild(textarea)
+                if (pastedText) {
+                    setSaveString(pastedText)
+                } else {
+                    setError(intl.formatMessage({ id: 'config.importSaveFile.clipboardNotSupported' }))
+                }
+            }
         } catch (err) {
             console.error(err)
             setError(intl.formatMessage({ id: 'config.importSaveFile.clipboardError' }))
         }
-    }, [intl])
+    }, [hasReadText, intl])
+
+    const handleFileUpload = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0]
+        if (!file) return
+
+        const reader = new FileReader()
+        reader.onload = (e) => {
+            const text = e.target?.result
+            if (typeof text === 'string') {
+                setSaveString(text)
+            }
+        }
+        reader.readAsText(file)
+    }, [])
 
     if (!config.importSaveFileDialogOpen) return null
 
@@ -98,11 +129,29 @@ const ImportSaveFileDialog = () => {
                         placeholder={intl.formatMessage({ id: 'config.importSaveFile.placeholder' })}
                     />
                     <ButtonContainer>
-                        <ImportButton
-                            onClick={handlePasteFromClipboard}
-                        >
-                            {intl.formatMessage({ id: 'config.importSaveFile.pasteFromClipboard' })}
-                        </ImportButton>
+                        <div style={{
+                            display: 'flex',
+                            gap: '10px',
+                            width: '100%',
+                        }}>
+                            {hasReadText && (
+                                <ImportButton onClick={handlePasteFromClipboard}>
+                                    {intl.formatMessage({ id: 'config.importSaveFile.pasteFromClipboard' })}
+                                </ImportButton>
+                            )}
+                            <ImportButton
+                                onClick={() => document.getElementById('file-upload')?.click()}
+                            >
+                                {intl.formatMessage({ id: 'config.importSaveFile.uploadFile' })}
+                            </ImportButton>
+                        </div>
+                        <input
+                            id="file-upload"
+                            type="file"
+                            accept=".txt"
+                            onChange={handleFileUpload}
+                            style={{ display: 'none' }}
+                        />
                         <ImportButton
                             onClick={handleLoad}
                             disabled={!saveString}
