@@ -10,7 +10,7 @@ import {
 } from '@state/atoms'
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
 import { FloatText, Aside, EnterIcon, EnterKeyButton, BitsH3, BitsInfo, BitsSpan, MobileSpacer } from './styled'
-import React, { useCallback, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { useIntl, FormattedMessage } from 'react-intl'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
@@ -34,6 +34,10 @@ const Bits = () => {
     const [floatTexts, setFloatTexts] = useState<
         { id: number; x: number; y: number, value: string }[]
     >([])
+
+    useEffect(() => {
+        console.log('floatTexts', floatTexts)
+    }, [floatTexts])
 
     const formattedCurrentProduction = useMemo(
         () => formatLargeNumber(Number(currentProduction.toFixed(1)), intl),
@@ -87,9 +91,9 @@ const Bits = () => {
 
         setFloatTexts((prev) => [...prev, { id, x, y, value: displayValue }])
 
-        // const timeoutId = setTimeout(() => {
-        //     setFloatTexts((prev) => prev.filter((text) => text.id !== id))
-        // }, 3000)
+        setTimeout(() => {
+            setFloatTexts((prev) => prev.filter((text) => text.id !== id))
+        }, 3000)
     }, [setFloatTexts, calculatedEnterPressBitAmount, config.currentLanguageLocale, intl])
 
     const handleEnterBitClick = useCallback(
