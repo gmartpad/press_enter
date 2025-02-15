@@ -52,7 +52,7 @@ interface EnterKeyButtonProps {
 const EnterKeyButton = styled.button.attrs<EnterKeyButtonProps>(
     props => ({
         style: {
-            margin: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? '0px' : '0 auto 30px auto',
+            margin: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? '0px' : '15px',
         }
     })
 )<EnterKeyButtonProps>`
@@ -132,11 +132,11 @@ const EnterKeyButton = styled.button.attrs<EnterKeyButtonProps>(
 const floatUp = keyframes`
   0% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
   100% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateX(-50%) translateY(-30px);
   }
 `
 
@@ -166,6 +166,7 @@ const FloatText = styled.p.attrs<{ $textX: number, $textY: number }>(
   pointer-events: none; /* Prevent interaction with floating text */
   z-index: 3;
   text-shadow: -2px 2px #555;
+  text-align: center;
 `
 
 const EnterIcon = styled(AiOutlineEnter)`
