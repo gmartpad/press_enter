@@ -9,6 +9,7 @@ import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtomValue } from "jotai"
 import useWindowInnerValues from "@hooks/useWindowInnerValues"
 import { useTabNavigator } from "@contexts/TabNavigatorContext"
+
 const StatsSection = () => {
     const intl = useIntl()
     const config = useAtomValue(configState)
@@ -58,13 +59,14 @@ const StatsSection = () => {
         >
             <TabButtonContainer>
                 <TabButton
+                    active={currentTab === 'bot'}
                     onClick={() => handleTabClick('bot')}
                 >
                     {currentTab === 'bot' && '* '}{intl.formatMessage({ id: 'statsSection.botStats.title' })}
                 </TabButton>
                 <TabButton
+                    active={currentTab === 'upgrade'}
                     onClick={() => handleTabClick('upgrade')}
-                    
                 >
                     {currentTab === 'upgrade' && '* '}{intl.formatMessage({ id: 'statsSection.upgradeStats.title' })}
                 </TabButton>
