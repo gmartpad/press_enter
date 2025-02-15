@@ -31,6 +31,8 @@ const MobileInnerContent = () => {
                     slidesPerView={1}
                     resistance={true}
                     resistanceRatio={0.85}
+                    allowSlideNext={activeSlide < 2}
+                    allowSlidePrev={activeSlide > 0}
                 >
                     <SwiperSlide style={{ overflow: 'hidden' }}>
                         <Bits />
