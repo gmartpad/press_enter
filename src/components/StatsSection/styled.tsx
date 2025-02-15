@@ -27,6 +27,7 @@ const StatsSectionContainer = styled.section.attrs<StatsSectionContainerProps>(
     box-sizing: border-box;
     transform: translateZ(0);
     z-index: 1;
+    color: #fff;
 `
 
 const TabButtonContainer = styled.div`
@@ -41,7 +42,13 @@ const TabButtonContainer = styled.div`
     width: calc(100% - 20px);
 `
 
-const TabButton = styled.button`
+const TabButton = styled.button.attrs<{ active: boolean }>(
+    props => ({
+        style: {
+            color: props.active ? '#fff' : '#bbb'
+        }
+    })
+)<{ active: boolean }>`
     background-color: #000;
     width: calc(50% - 10px);
     padding: 10px;
