@@ -31,15 +31,18 @@ const ChangeLanguageButton = styled.button<{ active: boolean }>`
     align-items: center;
     justify-content: center;
     gap: 10px;
+    text-shadow: -2px 2px ${props => props.active ? '#bbb' : '#555'};
 
     &:hover {
         background-color: #fff;
         color: #000;
+        text-shadow: -2px 2px #bbb;
     }
 `
 
 const LanguageDialogTitleDiv = styled.div`
     text-align: center;
+    text-shadow: -2px 2px #555;
 `
 
 export {

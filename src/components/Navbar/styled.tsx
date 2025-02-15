@@ -61,7 +61,9 @@ const ChangeLanguageButton = styled.button`
   margin: 3px 0px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 6px;
+  text-shadow: -2px 2px #555;
 
   &:hover {
     background-color: #333;
