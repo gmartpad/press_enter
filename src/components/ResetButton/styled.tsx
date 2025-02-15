@@ -10,6 +10,7 @@ const StyledResetButton = styled.button`
 const StyledResetButtonH2 = styled.h2`
   margin: 0;
   text-shadow: -2px 2px #555;
+  color: #fff;
 `
 
 export { StyledResetButton, StyledResetButtonH2 }

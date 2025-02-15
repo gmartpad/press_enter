@@ -16,6 +16,7 @@ const ConfigRow = styled.div`
   display: flex;
   flex-direction: column;
   text-shadow: -2px 2px #555;
+  color: #fff;
 `
 
 const ConfigResetButton = styled.button`
@@ -28,6 +29,7 @@ const ConfigResetButton = styled.button`
 const ConfigResetButtonH2 = styled.h2`
   margin: 0;
   text-shadow: -2px 2px #555;
+  color: #fff;
 `
 
 const SaveFileButton = styled.button`
@@ -36,11 +38,12 @@ const SaveFileButton = styled.button`
   border-width: thick;
   padding: 10px;
   width: 100%;
-  text-shadow: -2px 2px #555;
 `
 
 const SaveFileButtonH2 = styled.h2`
   margin: 0;
+  text-shadow: -2px 2px #555;
+  color: #fff;
 `
 
 export { ConfigDialog, ConfigRow, ConfigResetButton, ConfigResetButtonH2, SaveFileButton, SaveFileButtonH2 }
