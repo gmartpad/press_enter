@@ -61,6 +61,7 @@ const ItemInfoDialog = styled.dialog.attrs<ItemInfoDialogProps>(
   word-break: break-word;
   word-wrap: break-word;
   z-index: 1;
+  text-shadow: -2px 2px #555;
 `
 
 const ItemInfoParagraph = styled.p`
@@ -82,6 +83,7 @@ const MoreInfoLI = styled.li`
   color: #000;
   padding: 4px;
   font-size: 0.75rem;
+  text-shadow: -2px 2px #bbb;
 
   &::marker {
     color: #fff;
@@ -105,6 +107,7 @@ const ItemInfoLabelParagraph = styled.p`
   font-size: 0.6875rem; 
   color: #000; 
   margin: 0px;
+  text-shadow: -2px 2px #bbb;
 `
 
 export { 
