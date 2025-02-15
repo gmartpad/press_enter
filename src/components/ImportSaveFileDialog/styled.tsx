@@ -23,7 +23,7 @@ const ImportButton = styled.button`
   width: 100%;
   margin-top: 8px;
   box-sizing: border-box;
-
+  text-shadow: -2px 2px #555;
   &:disabled {
     background: #222;
     cursor: not-allowed;

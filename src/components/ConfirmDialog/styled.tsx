@@ -7,6 +7,7 @@ const CentralizeDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-shadow: -2px 2px #555;
 `
 
 const ConfirmH2 = styled.h2`
@@ -34,6 +35,7 @@ const DeclineButton = styled.button`
 
 const DeclineButtonH2 = styled.h2`
   margin: 0;
+  text-shadow: -2px 2px #555;
 `
 
 export { 
