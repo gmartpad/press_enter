@@ -26,19 +26,19 @@ const TabNavigator = ({ activeSlide, onTabClick }: TabNavigatorProps) => {
                 active={activeSlide === 0} 
                 onClick={() => onTabClick(0)}
             >
-                {activeSlide === 0 && '* '}<FormattedMessage id="tabNavigator.pressEnter" />
+                <p style={{ margin: 0 }}>{activeSlide === 0 && '* '}</p><FormattedMessage id="tabNavigator.pressEnter" />
             </TabButton>
             <TabButton 
                 active={activeSlide === 1} 
                 onClick={() => onTabClick(1)}
             >
-                {activeSlide === 1 && '* '}<FormattedMessage id="tabNavigator.botVisualizers" />
+                <p style={{ margin: 0 }}>{activeSlide === 1 && '* '}</p><FormattedMessage id="tabNavigator.botVisualizers" />
             </TabButton>
             <TabButton 
                 active={activeSlide === 2} 
                 onClick={() => onTabClick(2)}
             >
-                {activeSlide === 2 && '* '}<FormattedMessage id="tabNavigator.botsAndUpgrades" />
+                <p style={{ margin: 0 }}>{activeSlide === 2 && '* '}</p><FormattedMessage id="tabNavigator.botsAndUpgrades" />
             </TabButton>
         </TabContainer>
     )

@@ -8,12 +8,16 @@ const TabButton = styled.button.attrs<{ active: boolean }>(
     })
 )<{ active: boolean }>`
     flex: 1;
-    padding: 10px;
+    padding: 4px;
     background: none;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-width: thick;
     cursor: pointer;
-    font-size: 16px;
+    max-width: calc((100% - 20px)/3);
+    word-break: break-word;
 
     &:hover {
         color: #fff;
@@ -22,7 +26,7 @@ const TabButton = styled.button.attrs<{ active: boolean }>(
 
 const TabButtonText = styled.h2`
     margin: 0;
-    font-size: 1rem;
+    font-size: .78rem;
     text-shadow: -2px 2px #555;
 `
 
