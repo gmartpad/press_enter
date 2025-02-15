@@ -20,6 +20,7 @@ import {
     currentHoveredUpgradeItemState, 
     affordableUpgradesState, 
     enterPressesState,
+    currentHoveredBotItemState,
 } from '@state/atoms'
 import { useCallback, useMemo } from 'react'
 import { Incrementor } from '@state/defaultAutoIncrementors'
@@ -36,6 +37,7 @@ import BotBuyImg from './BotBuyImg'
 import updateUpgrades from '@utils/updateUpgrades'
 import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
+import useIsDesktop from '@hooks/useIsDesktop'
 
 const BotBuyList = () => {
     const { windowInnerWidth } = useWindowInnerValues()
@@ -43,9 +45,11 @@ const BotBuyList = () => {
     const [upgrades, setUpgrades] = useAtom(upgradesState)
     const setBits = useSetAtom(bitState)
     const setCurrentHoveredUpgradeItem = useSetAtom(currentHoveredUpgradeItemState)
+    const setCurrentHoveredBotItem = useSetAtom(currentHoveredBotItemState)
     const [config, setConfig] = useAtom(configState)
     const autoIncrementors = useAtomValue(autoIncrementorsState)
     const affordableUpgrades = useAtomValue(affordableUpgradesState)
+    const isDesktop = useIsDesktop()
     
     // Memoized derived data
     const purchasableUpgrades = useMemo(
@@ -55,6 +59,7 @@ const BotBuyList = () => {
 
     // Stable empty object reference
     const EMPTY_UPGRADE = useMemo(() => ({} as Upgrade), [])
+    const EMPTY_INCREMENTOR = useMemo(() => ({} as Incrementor), [])
 
     // Memoized price calculator
     const getPrice = useCallback(
@@ -124,7 +129,10 @@ const BotBuyList = () => {
     )
 
     return (
-        <Aside $windowInnerWidth={windowInnerWidth}>
+        <Aside 
+            $windowInnerWidth={windowInnerWidth}
+            
+        >
             <>
                 <h3 style={{ margin: 0, textAlign: 'center', padding: '12px 0 3px 0', textShadow: '-2px 2px #555' }}>
                     <FormattedMessage id="botBuyList.upgrades.title" />
@@ -132,7 +140,10 @@ const BotBuyList = () => {
                 <BuyAllUpgradesButton disabled={affordableUpgrades.length <= 0} />
             </>
             
-            <BotUpgradeList $windowInnerWidth={windowInnerWidth} onMouseEnter={handleUpdateUpgrades}>
+            <BotUpgradeList 
+                $windowInnerWidth={windowInnerWidth} 
+                onMouseEnter={handleUpdateUpgrades}
+            >
                 {purchasableUpgrades?.length === 0 && (
                     <NoUpgradesH5>
                         <FormattedMessage id="botBuyList.upgrades.noUpgrades.title" />
@@ -186,7 +197,14 @@ const BotBuyList = () => {
                 ))}
             </BuySellContainer>
             
-            <BotBuyListGrid $windowInnerWidth={windowInnerWidth}>
+            <BotBuyListGrid 
+                $windowInnerWidth={windowInnerWidth}
+                onMouseLeave={() => {
+                    if (isDesktop) {
+                        setCurrentHoveredBotItem(EMPTY_INCREMENTOR)
+                    }
+                }}
+            >
                 {autoIncrementors.map((item: Incrementor) => (
                     <IncrementorButton key={item.id} item={item}>
                         <BotBuyImg item={item} />

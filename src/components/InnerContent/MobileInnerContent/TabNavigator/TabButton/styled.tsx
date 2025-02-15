@@ -8,7 +8,7 @@ const TabButton = styled.button.attrs<{ active: boolean }>(
     })
 )<{ active: boolean }>`
     flex: 1;
-    padding: 4px;
+    padding: 2px 4px 6px 4px;
     background: none;
     display: flex;
     flex-direction: column;
