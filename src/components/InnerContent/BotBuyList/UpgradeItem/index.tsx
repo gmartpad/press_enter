@@ -3,7 +3,7 @@ import { InnerUpgradeItem, OuterUpgradeItem, UpgradeItemImg } from "./styled"
 import { useCallback, useEffect, useState, useMemo } from "react"
 import { configState, currentHoveredUpgradeItemState, isUpgradeAffordableState, saveGameState } from "@state/atoms"
 import { debounce } from "lodash"
-
+import useIsDesktop from "@hooks/useIsDesktop"
 import { buyUpgrade, wrong } from '@assets/sounds/upgradeClick'
 import { useAtomValue, useSetAtom, useStore } from "jotai"
 
@@ -27,6 +27,7 @@ const UpgradeItem = ({
     const isUpgradeAffordable = useAtomValue(memoizedAtom)
     const setCurrentHoveredUpgradeItem = useSetAtom(currentHoveredUpgradeItemState)
     const config = useAtomValue(configState)
+    const isDesktop = useIsDesktop()
 
     const images = import.meta.glob('/src/assets/botUpgrades/**/*.png')
     const [imageUrl, setImageUrl] = useState<string>('')
@@ -72,8 +73,17 @@ const UpgradeItem = ({
         <OuterUpgradeItem
             $purchasable={isUpgradeAffordable}
             onClick={handleOnClick}
-            onMouseEnter={() => setCurrentHoveredUpgradeItem(upgrade)}
-            onMouseLeave={() => setCurrentHoveredUpgradeItem({} as Upgrade)}
+
+            onMouseEnter={() => {
+                if (isDesktop) {
+                    setCurrentHoveredUpgradeItem(upgrade)
+                }
+            }}
+            onMouseLeave={() => {
+                if (isDesktop) {
+                    setCurrentHoveredUpgradeItem({} as Upgrade)
+                }
+            }}
         >
             <InnerUpgradeItem>
                 <UpgradeItemImg src={imageUrl} />

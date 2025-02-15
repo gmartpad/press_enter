@@ -9,7 +9,7 @@ import { type Incrementor } from '@state/defaultAutoIncrementors'
 import { debounce } from 'lodash'
 
 import useUpdateAutoIncrementors from '@hooks/useUpdateAutoIncrementors'
-
+import useIsDesktop from '@hooks/useIsDesktop'
 import { wrong, buyBot, sellBot } from '@assets/sounds/botClick'
 import { useAtom, useAtomValue } from 'jotai'
 
@@ -24,6 +24,7 @@ function IncrementorButton({ item, children }: { item: Incrementor; children: Re
     const isAffordable = useAtomValue(memoizedAtom)
     const [, setCurrentHoveredBotItem] = useAtom(currentHoveredBotItemState)
     const config = useAtomValue(configState)
+    const isDesktop = useIsDesktop()
 
     const updateAutoIncrementors = useUpdateAutoIncrementors()
 
@@ -55,8 +56,16 @@ function IncrementorButton({ item, children }: { item: Incrementor; children: Re
                 updateAutoIncrementors(item)
                 handleEnterBotClick()
             }}
-            onMouseEnter={() => setCurrentHoveredBotItem(item)}
-            onMouseLeave={() => setCurrentHoveredBotItem({} as Incrementor)}
+            onMouseEnter={() => {
+                if (isDesktop) {
+                    setCurrentHoveredBotItem(item)
+                }
+            }}
+            onMouseLeave={() => {
+                if (!isDesktop) {
+                    setCurrentHoveredBotItem({} as Incrementor)
+                }
+            }}
             $affordable={isAffordable}
             $revealed={item.revealed}
         >

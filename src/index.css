@@ -42,6 +42,8 @@ h1 {
 
 button {
   font-family: inherit;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button.botBuy {
