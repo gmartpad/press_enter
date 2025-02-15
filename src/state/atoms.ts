@@ -139,6 +139,7 @@ export const configState = atom<Config, [Config], void>(
         const current = get(configStateInternal)
         const valueToSet = validateObject(newValue, current)
         set(configStateInternal, valueToSet)
+        saveGameState(get)
     }
 )
 
