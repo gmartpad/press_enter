@@ -28,6 +28,7 @@ const BotBulkModeButton = styled.button<{ $bulkType: 'buy' | 'sell'; $active: bo
   cursor: pointer;
   top: ${props => (props.$bulkType === 'buy' ? '0px' : 'auto')};
   bottom: ${props => (props.$bulkType === 'sell' ? '1px' : 'auto')};
+  text-shadow: -2px 2px #555;
 
   & p {
     color: ${props => (props.$active ? '#fff' : '#bbb')};
@@ -47,6 +48,7 @@ const BotBulkAmountButton = styled.button<{ $active: boolean }>`
   background-color: transparent;
   border: none;
   cursor: pointer;
+  text-shadow: -2px 2px #555;
 
   & p {
     color: ${props => (props.$active ? '#fff' : '#bbb')};
@@ -86,7 +88,7 @@ const BuySellContainer = styled.div`
   box-sizing: border-box;
   padding: 0px;
   padding-left: 60px;
-  height: 32px;
+  height: 40px;
   overflow: hidden;
   background-color: black;
 `

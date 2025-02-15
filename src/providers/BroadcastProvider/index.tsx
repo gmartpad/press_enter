@@ -7,7 +7,16 @@ interface BroadcastProviderProps {
 }
 
 const BroadcastProvider = ({ children }: BroadcastProviderProps) => {
-    const [tabId,] = useState<string>(crypto.randomUUID())
+    const [tabId,] = useState<string>(() => {
+        // Fallback for browsers that don't support randomUUID
+        if (crypto.randomUUID) {
+            return crypto.randomUUID()
+        }
+        // Generate a random string using crypto.getRandomValues
+        const array = new Uint8Array(16)
+        crypto.getRandomValues(array)
+        return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('')
+    })
     const [loading, setLoading] = useState<boolean>(true)
     const accessDeniedRef = useRef<boolean>(true)
     const channel = new BroadcastChannel("tab_counter_channel")
