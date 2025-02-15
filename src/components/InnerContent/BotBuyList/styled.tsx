@@ -16,6 +16,7 @@ const Aside = styled.aside.attrs<WindowInnerWidthProps>(
   background-color: #000;
   overflow-y: auto;
   overflow-x: hidden;
+  color: #fff;
 `
 
 const BotBulkModeButton = styled.button<{ $bulkType: 'buy' | 'sell'; $active: boolean }>`
