@@ -88,7 +88,7 @@ function BuyAllUpgradesButton({
                 }}
             >
                 <UpgradeBuyAllAnchor className="buy-all-button">
-                    <p style={{ textTransform: 'uppercase', color: disabled ? '#888' : '#fff' }}>
+                    <p style={{ textTransform: 'uppercase', color: disabled ? '#888' : '#fff', textShadow: '2px 2px #555' }}>
                         {intl.formatMessage({ id: 'botBuyList.upgrades.buyAllUpgrades.title' })}
                     </p>
                 </UpgradeBuyAllAnchor>

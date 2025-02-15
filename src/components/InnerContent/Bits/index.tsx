@@ -10,14 +10,11 @@ import {
 } from '@state/atoms'
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
 import { FloatText, Aside, EnterIcon, EnterKeyButton, BitsH3, BitsInfo, BitsSpan, MobileSpacer } from './styled'
-import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
+import React, { useCallback, useMemo, useRef, useState } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
-import { debounce } from 'lodash'
 import { useIntl, FormattedMessage } from 'react-intl'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
 import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
-
-const sounds = [sound1, sound2, sound3]
 
 const Bits = () => {
     const store = useStore()
@@ -51,36 +48,26 @@ const Bits = () => {
         return 'flex'
     }, [window.innerHeight])
 
-    const audioRef = useRef<HTMLAudioElement | null>(null)
-    const timeoutRef = useRef<Set<NodeJS.Timeout>>(new Set())
-
-    useEffect(() => {
-        audioRef.current = new Audio()
-        
-        return () => {
-            if (audioRef.current) {
-                audioRef.current.pause()
-                audioRef.current.src = ''
-                audioRef.current = null
-            }
-        }
-    }, [])
-
+    const audioRefs = useRef<HTMLAudioElement[]>([
+        new Audio(sound1),
+        new Audio(sound2),
+        new Audio(sound3)
+    ])
+    const currentAudioIndex = useRef(0)
+    
     const handleEnterBitClickSound = useCallback(() => {
-        if (audioRef.current) {
-            const randomSound = sounds[Math.floor(Math.random() * sounds.length)]
-            audioRef.current.src = randomSound
-            audioRef.current.volume = config.volume
-            audioRef.current.play().catch(() => {
-                // Handle audio play restrictions
-            })
+        const audioElements = audioRefs.current
+        const currentAudio = audioElements[currentAudioIndex.current]
+        
+        if (currentAudio) {
+            currentAudio.volume = config.volume
+            currentAudio.currentTime = 0 // Reset the audio to start
+            currentAudio.play()
+            
+            // Cycle through audio elements
+            currentAudioIndex.current = (currentAudioIndex.current + 1) % audioElements.length
         }
     }, [config.volume])
-
-    const debouncedHandleEnterBitClickSound = useMemo(
-        () => debounce(handleEnterBitClickSound, 80),
-        [handleEnterBitClickSound]
-    )
 
     const handleFloatingClickedTextValue = useCallback((
         e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>
@@ -100,12 +87,9 @@ const Bits = () => {
 
         setFloatTexts((prev) => [...prev, { id, x, y, value: displayValue }])
 
-        const timeoutId = setTimeout(() => {
-            setFloatTexts((prev) => prev.filter((text) => text.id !== id))
-            timeoutRef.current.delete(timeoutId)
-        }, 3000)
-
-        timeoutRef.current.add(timeoutId)
+        // const timeoutId = setTimeout(() => {
+        //     setFloatTexts((prev) => prev.filter((text) => text.id !== id))
+        // }, 3000)
     }, [setFloatTexts, calculatedEnterPressBitAmount, config.currentLanguageLocale, intl])
 
     const handleEnterBitClick = useCallback(
@@ -118,18 +102,10 @@ const Bits = () => {
             setEnterPressesState(currentEnterPresses + 1)
             handleFloatingClickedTextValue(e)
             setBits(currentBits + calculatedEnterPressBitAmount)
-            debouncedHandleEnterBitClickSound()
+            handleEnterBitClickSound()
         },
-        [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, debouncedHandleEnterBitClickSound, store]
+        [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, store]
     )
-
-    useEffect(() => {
-        return () => {
-            debouncedHandleEnterBitClickSound.cancel()
-            timeoutRef.current.forEach(clearTimeout)
-            timeoutRef.current.clear()
-        }
-    }, [debouncedHandleEnterBitClickSound])
 
     return (
         <Aside $displayValue={asideDisplayValue} $windowInnerWidth={windowInnerWidth}>
