@@ -30,7 +30,6 @@ const useBitUpdater = () => {
     const store = useStore()
     const setBits = useSetAtom(bitState)
     const setAutoIncrementors = useSetAtom(autoIncrementorsState)
-    const enterPresses = useAtomValue(enterPressesState)
     const setUpgrades = useSetAtom(upgradesState)
 
     const currentProduction = useDebouncedProduction() as number
