@@ -3,9 +3,9 @@ import { type Upgrade } from "@upgrades"
 const fortyOneToFiftyUpgrades: Upgrade[] = [
     {
         id: 'globalBitsUpgrade041',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XLI',
+        name: 'A Bit More XLI',
         description: 'Bit production multiplier 4%',
         // 5_000_000_000_000_000_000_000
         cost: 5e21,
@@ -23,9 +23,9 @@ const fortyOneToFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade042',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XLII',
+        name: 'A Bit More XLII',
         description: 'Bit production multiplier 4%',
         // 10_000_000_000_000_000_000_000
         cost: 1e22,
@@ -43,9 +43,9 @@ const fortyOneToFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade043',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XLIII',
+        name: 'A Bit More XLIII',
         description: 'Bit production multiplier 4%',
         // 50_000_000_000_000_000_000_000
         cost: 5e22,
@@ -63,9 +63,9 @@ const fortyOneToFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade044',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XLIV',
+        name: 'A Bit More XLIV',
         description: 'Bit production multiplier 4%',
         // 100_000_000_000_000_000_000_000
         cost: 1e23,
@@ -83,9 +83,9 @@ const fortyOneToFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade045',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XLV',
+        name: 'A Bit More XLV',
         description: 'Bit production multiplier 4%',
         // 500_000_000_000_000_000_000_000
         cost: 5e23,
@@ -103,9 +103,9 @@ const fortyOneToFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade046',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XLVI',
+        name: 'A Bit More XLVI',
         description: 'Bit production multiplier 4%',
         // 1_000_000_000_000_000_000_000_000
         cost: 1e24,
@@ -123,9 +123,9 @@ const fortyOneToFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade047',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XLVII',
+        name: 'A Bit More XLVII',
         description: 'Bit production multiplier 4%',
         // 5_000_000_000_000_000_000_000_000
         cost: 5e24,
@@ -143,9 +143,9 @@ const fortyOneToFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade048',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XLVIII',
+        name: 'A Bit More XLVIII',
         description: 'Bit production multiplier 4%',
         // 10_000_000_000_000_000_000_000_000
         cost: 1e25,
@@ -163,9 +163,9 @@ const fortyOneToFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade049',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XLIX',
+        name: 'A Bit More XLIX',
         description: 'Bit production multiplier 4%',
         // 50_000_000_000_000_000_000_000_000
         cost: 5e25,
@@ -183,9 +183,9 @@ const fortyOneToFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade050',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit L',
+        name: 'A Bit More L',
         description: 'Bit production multiplier 4%',
         // 100_000_000_000_000_000_000_000_000
         cost: 1e26,

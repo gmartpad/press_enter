@@ -3,9 +3,9 @@ import { type Upgrade } from "@upgrades"
 const seventyOneToEightyUpgrades: Upgrade[] = [
     {
         id: 'globalBitsUpgrade071',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXI',
+        name: 'A Bit More LXXI',
         description: 'Bit production multiplier 4%',
         // 5_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 5e36,
@@ -23,9 +23,9 @@ const seventyOneToEightyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade072',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXII',
+        name: 'A Bit More LXXII',
         description: 'Bit production multiplier 4%',
         // 10_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e37,
@@ -43,9 +43,9 @@ const seventyOneToEightyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade073',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXIII',
+        name: 'A Bit More LXXIII',
         description: 'Bit production multiplier 4%',
         // 50_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 5e37,
@@ -63,9 +63,9 @@ const seventyOneToEightyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade074',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXIV',
+        name: 'A Bit More LXXIV',
         description: 'Bit production multiplier 4%',
         // 100_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e38,
@@ -83,9 +83,9 @@ const seventyOneToEightyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade075',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXV',
+        name: 'A Bit More LXXV',
         description: 'Bit production multiplier 5%',
         // 500_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 5e38,
@@ -103,9 +103,9 @@ const seventyOneToEightyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade076',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXVI',
+        name: 'A Bit More LXXVI',
         description: 'Bit production multiplier 5%',
         // 1_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e39,
@@ -123,9 +123,9 @@ const seventyOneToEightyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade077',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXVII',
+        name: 'A Bit More LXXVII',
         description: 'Bit production multiplier 5%',
         // 3_162_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 3162e36,
@@ -143,9 +143,9 @@ const seventyOneToEightyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade078',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXVIII',
+        name: 'A Bit More LXXVIII',
         description: 'Bit production multiplier 5%',
         // 10_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e40,
@@ -163,9 +163,9 @@ const seventyOneToEightyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade079',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXIX',
+        name: 'A Bit More LXXIX',
         description: 'Bit production multiplier 5%',
         // 31_622_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 31622e36,
@@ -183,9 +183,9 @@ const seventyOneToEightyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade080',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit LXXX',
+        name: 'A Bit More LXXX',
         description: 'Bit production multiplier 5%',
         // 31_622_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 31622e36,

@@ -3,9 +3,9 @@ import { type Upgrade } from "@upgrades"
 const twentyOneToThirtyUpgrades: Upgrade[] = [
     {
         id: 'globalBitsUpgrade021',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXI',
+        name: 'A Bit More XXI',
         description: 'Bit production multiplier 2%',
         // 10_000_000_000_000
         cost: 1e13,
@@ -23,9 +23,9 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade022',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXII',
+        name: 'A Bit More XXII',
         description: 'Bit production multiplier 2%',
         // 50_000_000_000_000
         cost: 5e13,
@@ -43,9 +43,9 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade023',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXIII',
+        name: 'A Bit More XXIII',
         description: 'Bit production multiplier 2%',
         // 100_000_000_000_000
         cost: 1e14,
@@ -63,9 +63,9 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade024',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXIV',
+        name: 'A Bit More XXIV',
         description: 'Bit production multiplier 2%',
         // 500_000_000_000_000
         cost: 5e14,
@@ -83,9 +83,9 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade025',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXV',
+        name: 'A Bit More XXV',
         description: 'Bit production multiplier 2%',
         // 500_000_000_000_000
         cost: 5e14,
@@ -103,9 +103,9 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade026',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXVI',
+        name: 'A Bit More XXVI',
         description: 'Bit production multiplier 2%',
         // 1_000_000_000_000_000
         cost: 1e15,
@@ -123,9 +123,9 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade027',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXVII',
+        name: 'A Bit More XXVII',
         description: 'Bit production multiplier 2%',
         // 1_000_000_000_000_000
         cost: 1e15,
@@ -143,9 +143,9 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade028',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXVIII',
+        name: 'A Bit More XXVIII',
         description: 'Bit production multiplier 2%',
         // 10_000_000_000_000_000
         cost: 1e16,
@@ -163,9 +163,9 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade029',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXIX',
+        name: 'A Bit More XXIX',
         description: 'Bit production multiplier 2%',
         // 10_000_000_000_000_000
         cost: 1e16,
@@ -183,9 +183,9 @@ const twentyOneToThirtyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade030',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XXX',
+        name: 'A Bit More XXX',
         description: 'Bit production multiplier 5%',
         // 50_000_000_000_000_000
         cost: 5e16,

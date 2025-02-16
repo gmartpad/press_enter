@@ -3,9 +3,9 @@ import { type Upgrade } from "@upgrades"
 const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     {
         id: 'globalBitsUpgrade111',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXI',
+        name: 'A Bit More CXI',
         description: 'Bit production multiplier 5%',
         // 3_162_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 3162e51,
@@ -23,9 +23,9 @@ const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade112',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXII',
+        name: 'A Bit More CXII',
         description: 'Bit production multiplier 5%',
         // 10_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e55,
@@ -43,9 +43,9 @@ const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade113',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXIII',
+        name: 'A Bit More CXIII',
         description: 'Bit production multiplier 5%',
         // 31_622_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 31622e51,
@@ -63,9 +63,9 @@ const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade114',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXIV',
+        name: 'A Bit More CXIV',
         description: 'Bit production multiplier 5%',
         // 100_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e56,
@@ -83,9 +83,9 @@ const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade115',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXV',
+        name: 'A Bit More CXV',
         description: 'Bit production multiplier 5%',
         // 316_227_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 316227e51,
@@ -103,9 +103,9 @@ const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade116',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXVI',
+        name: 'A Bit More CXVI',
         description: 'Bit production multiplier 5%',
         // 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e57,
@@ -123,9 +123,9 @@ const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade117',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXVII',
+        name: 'A Bit More CXVII',
         description: 'Bit production multiplier 5%',
         // 3_162_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 3162e54,
@@ -143,9 +143,9 @@ const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade118',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXVIII',
+        name: 'A Bit More CXVIII',
         description: 'Bit production multiplier 5%',
         // 10_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e58,
@@ -163,9 +163,9 @@ const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade119',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXIX',
+        name: 'A Bit More CXIX',
         description: 'Bit production multiplier 5%',
         // 31_622_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 31622e54,
@@ -183,9 +183,9 @@ const hundredElevenToHundredTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade120',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXX',
+        name: 'A Bit More CXX',
         description: 'Bit production multiplier 5%',
         // 100_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e59,

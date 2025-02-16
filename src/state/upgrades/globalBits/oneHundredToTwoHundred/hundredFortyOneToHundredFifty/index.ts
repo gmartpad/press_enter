@@ -3,9 +3,9 @@ import { type Upgrade } from "@upgrades"
 const hundredFortyOneToHundredFiftyUpgrades: Upgrade[] = [
     {
         id: 'globalBitsUpgrade141',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXLI',
+        name: 'A Bit More CXLI',
         description: 'Bit production multiplier 5%',
         // 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 1e69,
@@ -23,9 +23,9 @@ const hundredFortyOneToHundredFiftyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade142',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit CXLII',
+        name: 'A Bit More CXLII',
         description: 'Bit production multiplier 5%',
         // 3_162_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000
         cost: 3162e66,
