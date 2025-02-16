@@ -3,9 +3,9 @@ import { type Upgrade } from "@upgrades"
 const elevenToTwentyUpgrades: Upgrade[] = [
     {
         id: 'globalBitsUpgrade011',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XI',
+        name: 'A Bit More XI',
         description: 'Bit production multiplier 2%',
         // 500_000_000
         cost: 5e8,
@@ -23,9 +23,9 @@ const elevenToTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade012',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XII',
+        name: 'A Bit More XII',
         description: 'Bit production multiplier 2%',
         // 500_000_000
         cost: 5e8,
@@ -43,9 +43,9 @@ const elevenToTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade013',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XIII',
+        name: 'A Bit More XIII',
         description: 'Bit production multiplier 2%',
         // 5_000_000_000
         cost: 5e9,
@@ -63,9 +63,9 @@ const elevenToTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade014',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XIV',
+        name: 'A Bit More XIV',
         description: 'Bit production multiplier 2%',
         // 10_000_000_000
         cost: 1e10,
@@ -83,9 +83,9 @@ const elevenToTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade015',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XV',
+        name: 'A Bit More XV',
         description: 'Bit production multiplier 2%',
         // 50_000_000_000
         cost: 5e10,
@@ -103,9 +103,9 @@ const elevenToTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade016',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XVI',
+        name: 'A Bit More XVI',
         description: 'Bit production multiplier 5%',
         // 100_000_000_000
         cost: 1e11,
@@ -123,9 +123,9 @@ const elevenToTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade017',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XVII',
+        name: 'A Bit More XVII',
         description: 'Bit production multiplier 5%',
         // 100_000_000_000
         cost: 1e11,
@@ -143,9 +143,9 @@ const elevenToTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade018',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XVIII',
+        name: 'A Bit More XVIII',
         description: 'Bit production multiplier 2%',
         // 500_000_000_000
         cost: 5e11,
@@ -163,9 +163,9 @@ const elevenToTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade019',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XIX',
+        name: 'A Bit More XIX',
         description: 'Bit production multiplier 2%',
         // 1_000_000_000_000
         cost: 1e12,
@@ -183,9 +183,9 @@ const elevenToTwentyUpgrades: Upgrade[] = [
     },
     {
         id: 'globalBitsUpgrade020',
-        imgSrc: '',
+        imgSrc: 'globalBits/globalBitsUpgrade001.png',
         incrementorId: 'globalBits',
-        name: 'The First Bit XX',
+        name: 'A Bit More XX',
         description: 'Bit production multiplier 2%',
         // 5_000_000_000_000
         cost: 5e12,

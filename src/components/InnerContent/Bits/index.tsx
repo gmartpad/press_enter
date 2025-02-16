@@ -16,6 +16,13 @@ import { useIntl, FormattedMessage } from 'react-intl'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
 import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 
+// At the top of the file, outside the component
+const audioFiles = [
+    new Audio(sound1),
+    new Audio(sound2),
+    new Audio(sound3)
+]
+
 const Bits = () => {
     const store = useStore()
     const intl = useIntl()
@@ -35,28 +42,8 @@ const Bits = () => {
         { id: number; x: number; y: number, value: string }[]
     >([])
 
-    useEffect(() => {
-        console.log('floatTexts', floatTexts)
-    }, [floatTexts])
-
-    const formattedCurrentProduction = useMemo(
-        () => formatLargeNumber(Number(currentProduction.toFixed(1)), intl),
-        [currentProduction, intl, autoIncrementorsState]
-    )
-
-    const asideDisplayValue = useMemo(() => {
-        if((Number(bitsInfoRef.current?.offsetHeight) + Number(enterButtonRef.current?.offsetHeight)) > window.innerHeight) {
-            return 'block'
-        }
-
-        return 'flex'
-    }, [window.innerHeight])
-
-    const audioRefs = useRef<HTMLAudioElement[]>([
-        new Audio(sound1),
-        new Audio(sound2),
-        new Audio(sound3)
-    ])
+    const audioRefs = useRef(audioFiles)
+    
     const currentAudioIndex = useRef(0)
     
     const handleEnterBitClickSound = useCallback(() => {
@@ -65,10 +52,8 @@ const Bits = () => {
         
         if (currentAudio) {
             currentAudio.volume = config.volume
-            currentAudio.currentTime = 0 // Reset the audio to start
+            currentAudio.currentTime = 0
             currentAudio.play()
-            
-            // Cycle through audio elements
             currentAudioIndex.current = (currentAudioIndex.current + 1) % audioElements.length
         }
     }, [config.volume])
@@ -93,16 +78,18 @@ const Bits = () => {
 
         setTimeout(() => {
             setFloatTexts((prev) => prev.filter((text) => text.id !== id))
-        }, 3000)
+        }, 2000)
     }, [setFloatTexts, calculatedEnterPressBitAmount, config.currentLanguageLocale, intl])
 
     const handleEnterBitClick = useCallback(
         (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
             const currentBits = store.get(bitState)
             const currentEnterPresses = store.get(enterPressesState)
+            
             if(currentBits === 0 && currentEnterPresses === 0) {
                 setClearIntervals(false)
             }
+
             setEnterPressesState(currentEnterPresses + 1)
             handleFloatingClickedTextValue(e)
             setBits(currentBits + calculatedEnterPressBitAmount)
@@ -110,6 +97,23 @@ const Bits = () => {
         },
         [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, store]
     )
+
+    const formattedCurrentProduction = useMemo(
+        () => formatLargeNumber(Number(currentProduction.toFixed(1)), intl),
+        [currentProduction, intl, autoIncrementorsState]
+    )
+
+    const asideDisplayValue = useMemo(() => {
+        if((Number(bitsInfoRef.current?.offsetHeight) + Number(enterButtonRef.current?.offsetHeight)) > window.innerHeight) {
+            return 'block'
+        }
+
+        return 'flex'
+    }, [window.innerHeight])
+
+    useEffect(() => {
+        console.log('floatTexts', floatTexts)
+    }, [floatTexts])
 
     return (
         <Aside $displayValue={asideDisplayValue} $windowInnerWidth={windowInnerWidth}>

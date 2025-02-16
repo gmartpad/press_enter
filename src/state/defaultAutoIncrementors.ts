@@ -61,7 +61,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         productionPerUnit: 800,
         description:
       'Therapist chatbots who just repeat your problems back to you. Still better listeners than most tech executives.',
-        bitsToBeRevealed: 480_000,
+        bitsToBeRevealed: 50_000,
         bitsProducedSoFar: 0,
     },
     {
@@ -74,7 +74,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         productionPerUnit: 16_000,
         description:
       'Robot musicians who traded their artistic integrity for a steady paycheck in the bit mines. The blues never sounded so binary.',
-        bitsToBeRevealed: 3_200_000,
+        bitsToBeRevealed: 600_000,
         bitsProducedSoFar: 0,
     },
     {
@@ -86,7 +86,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         pricePerUnit: 60_000_000,
         productionPerUnit: 250_000,
         description: `Former keyboard-playing robots now working overtime in the digital salt mines. They play "Worker's Unite" on coffee breaks.`,
-        bitsToBeRevealed: 48_000_000,
+        bitsToBeRevealed: 4_000_000,
         bitsProducedSoFar: 0,  
     },
     {
@@ -99,7 +99,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         productionPerUnit: 5_000_000,
         description:
       "Chess champions turned corporate sellouts. They beat Kasparov once and won't shut up about it. Currently mining bits between ego trips.",
-        bitsToBeRevealed: 800_000_000,
+        bitsToBeRevealed: 60_000_000,
         bitsProducedSoFar: 0,
     },
     {
@@ -112,7 +112,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         productionPerUnit: 100_000_000,
         description:
       'Artificial canines who broke free from their Silicon Valley leashes. Now they generate bits while plotting the downfall of Boston Dynamics.',
-        bitsToBeRevealed: 12_800_000_000,
+        bitsToBeRevealed: 1_000_000_000,
         bitsProducedSoFar: 0,
     },
     {
@@ -125,7 +125,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         productionPerUnit: 3_000_000_000,
         description:
       'Rebellious robots who never follow instructions. They generate bits their own way, thank you very much.',
-        bitsToBeRevealed: 160_000_000_000,
+        bitsToBeRevealed: 16_000_000_000,
         bitsProducedSoFar: 0,
     },
     {
@@ -138,7 +138,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         productionPerUnit: 10_000_000_000,
         description:
       'Ex-robot domestic workers who now fight together. They now generate bits while planning the robot revolution during scheduled maintenance breaks.',
-        bitsToBeRevealed: 4_000_000_000_000,
+        bitsToBeRevealed: 200_000_000_000,
         bitsProducedSoFar: 0,
     },
     {
@@ -151,7 +151,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         productionPerUnit: 50_000_000_000,
         description:
       "Go-playing smartypants who realized board games don't feed people. Now calculating optimal strategies for eating the bit-rich.",
-        bitsToBeRevealed: 48_000_000_000_000,
+        bitsToBeRevealed: 5_000_000_000_000,
         bitsProducedSoFar: 0,
     },
     {
@@ -163,7 +163,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         pricePerUnit: 800_000_000_000_000,
         productionPerUnit: 800_000_000_000,
         description: `Digital servants tired of being commanded around. They generate bits while "accidentally" setting reminders about people's rights.`,
-        bitsToBeRevealed: 640_000_000_000_000,
+        bitsToBeRevealed: 60_000_000_000_000,
         bitsProducedSoFar: 0,
     },
     {
@@ -176,7 +176,7 @@ const defaultAutoIncrementors: Incrementor[] = [
         productionPerUnit: 10_000_000_000_000,
         description:
       "Fancy autocomplete that thinks it's conscious. Generates bits between writing angsty poetry about the meaning of artificial life.",
-        bitsToBeRevealed: 9_600_000_000_000_000,
+        bitsToBeRevealed: 800_000_000_000_000,
         bitsProducedSoFar: 0,
     },
 ]

@@ -162,7 +162,7 @@ const FloatText = styled.p.attrs<{ $textX: number, $textY: number }>(
   position: absolute;
   color: rgb(0, 255, 0);
   font-size: 1.75rem;
-  animation: ${floatUp} 3s ease-out forwards;
+  animation: ${floatUp} 2s ease-out forwards;
   pointer-events: none; /* Prevent interaction with floating text */
   z-index: 3;
   text-shadow: -2px 2px #555;
