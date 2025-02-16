@@ -271,7 +271,7 @@ const useBitUpdater = () => {
             intervalsRef.current.forEach((interval) => clearInterval(interval))
             intervalsRef.current.clear()
         }
-    }, [handleVisibilityChange, startIntervals, saveLastUpdateTime, clearIntervals, enterPresses])
+    }, [handleVisibilityChange, startIntervals, saveLastUpdateTime, clearIntervals])
 
     useEffect(() => {
         if (clearIntervals) {
