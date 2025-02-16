@@ -1,9 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getSpecificIncrementor } from '@state/atoms'
 import { useAtomValue } from 'jotai'
+import { StyledCanvas } from './styled'
 
 // Global image cache to prevent redundant loads
 const imageCache = new Map<string, HTMLImageElement>()
+
+// Add after the existing imageCache
+const backgroundCache = new Map<string, string>()
 
 const BotVisualizerItem = ({ botId }: { botId: string }) => {
     const memoizedAtom = useMemo(() => {
@@ -18,6 +22,9 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
     const resizeFrame = useRef(0)
     const isMounted = useRef(true)
 
+    // Add new state for background
+    const [background, setBackground] = useState<string>('')
+    
     // Unified drawing function
     const drawCanvas = useCallback(() => {
         if (!canvasRef.current || !currentImage) return
@@ -32,9 +39,15 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
         bufferCanvas.current.width = canvas.width
         bufferCanvas.current.height = canvas.height
 
-        // Clear buffers
+        // Clear buffers with transparent background
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         bufferCtx.clearRect(0, 0, canvas.width, canvas.height)
+
+        // Make background transparent to show styled background
+        ctx.fillStyle = 'transparent'
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        bufferCtx.fillStyle = 'transparent'
+        bufferCtx.fillRect(0, 0, canvas.width, canvas.height)
 
         // Circle configuration
         const circleRadius = 30
@@ -49,14 +62,26 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
             const y = startY + (i % 2 ? 10 : -10)
 
             bufferCtx.save()
+
+            // Draw shadow circle first
+            bufferCtx.shadowColor = '#000'
+            bufferCtx.shadowBlur = 6
+            bufferCtx.shadowOffsetX = -3
+            bufferCtx.shadowOffsetY = 3
+            
+            // Draw a filled circle for the shadow
             bufferCtx.beginPath()
             bufferCtx.arc(x, y, circleRadius, 0, Math.PI * 2)
-            bufferCtx.closePath()
-            bufferCtx.clip()
-
-            // Fill with gray background
             bufferCtx.fillStyle = 'gray'
             bufferCtx.fill()
+            
+            // Clear shadow for the actual content
+            bufferCtx.shadowColor = 'transparent'
+            
+            // Clip for the image
+            bufferCtx.beginPath()
+            bufferCtx.arc(x, y, circleRadius, 0, Math.PI * 2)
+            bufferCtx.clip()
 
             // Draw image
             bufferCtx.drawImage(
@@ -147,14 +172,38 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
         drawCanvas()
     }, [currentIncrementor?.units, drawCanvas])
 
+    // Add new background loading effect
+    useEffect(() => {
+        const loadBackground = async () => {
+            const backgroundPath = '/src/assets/botVisualizer/botVisualizerBackground.png'
+            
+            if (backgroundCache.has(backgroundPath)) {
+                setBackground(backgroundCache.get(backgroundPath)!)
+                return
+            }
+
+            try {
+                const images = import.meta.glob('/src/assets/botVisualizer/*.png')
+                if (images[backgroundPath]) {
+                    const module = await images[backgroundPath]()
+                    if (isMounted.current) {
+                        const imageUrl = (module as { default: string }).default
+                        backgroundCache.set(backgroundPath, imageUrl)
+                        setBackground(imageUrl)
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to load background:', error)
+            }
+        }
+
+        loadBackground()
+    }, [])
+
     return (
-        <canvas
+        <StyledCanvas
             ref={canvasRef}
-            style={{
-                height: 128,
-                width: '100%',
-                backgroundColor: '#fff',
-            }}
+            style={{ background: background ? `url(${background})` : 'none' }}
         />
     )
 }
