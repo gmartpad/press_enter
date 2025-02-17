@@ -2,7 +2,7 @@ import { Upgrade } from '@state/upgrades'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { useMemo } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
-import { StatLabelH3, StatSpan, StatValueH3 } from '../SingleStat/styled'
+import { StatLabel, StatSpan, StatValue } from '../SingleStat/styled'
 import { GenericStatsContainer, NameH2 } from '../styled'
 
 
@@ -86,54 +86,54 @@ const UpgradeStats = ({
         <GenericStatsContainer>
             <NameH2>{intl.formatMessage({ id: `botBuyList.${upgrades[0].incrementorId}.name` })}</NameH2>
             <StatSpan>
-                <StatLabelH3>
+                <StatLabel>
                     <FormattedMessage 
                         id="statsSection.upgradeStats.upgradesBought.label"
                     />
-                </StatLabelH3>
-                <StatValueH3>{upgrades.length}</StatValueH3>
+                </StatLabel>
+                <StatValue>{upgrades.length}</StatValue>
             </StatSpan>
 
             <StatSpan>
-                <StatLabelH3>
+                <StatLabel>
                     <FormattedMessage 
                         id="statsSection.upgradeStats.upgradesBitCost.label" 
                     />
-                </StatLabelH3>
-                <StatValueH3>{costOfUpgrades}</StatValueH3>
+                </StatLabel>
+                <StatValue>{costOfUpgrades}</StatValue>
             </StatSpan>
 
             {hasAdditiveEffects && isGlobalBits && (
                 <StatSpan>
-                    <StatLabelH3>
+                    <StatLabel>
                         <FormattedMessage
                             id="statsSection.upgradeStats.globalProduction.label"
                             values={{
                                 percentage: currentAdditiveEffects,
-                                green: (chunks) => <StatValueH3>{chunks}</StatValueH3>
+                                green: (chunks) => <StatValue>{chunks}</StatValue>
                             }}
                         />
-                    </StatLabelH3>
+                    </StatLabel>
                 </StatSpan>
             )}
 
             {hasAdditiveEffects && isPressEnter && (
                 <StatSpan>
-                    <StatLabelH3>
+                    <StatLabel>
                         <FormattedMessage
                             id="statsSection.upgradeStats.enterProduction.label"
                             values={{
                                 percentage: currentAdditiveEffects,
-                                green: (chunks) => <StatValueH3>{chunks}</StatValueH3>
+                                green: (chunks) => <StatValue>{chunks}</StatValue>
                             }}
                         />
-                    </StatLabelH3>
+                    </StatLabel>
                 </StatSpan>
             )}
 
             {hasMultiplicativeEffects && (
                 <StatSpan>
-                    <StatLabelH3>
+                    <StatLabel>
                         <FormattedMessage
                             id="statsSection.upgradeStats.multiplicativeEfficiency.label"
                             values={{
@@ -141,10 +141,10 @@ const UpgradeStats = ({
                                     id: `botBuyList.${upgrades[0].incrementorId}.name` 
                                 }),
                                 multiplier: currentMultiplicativeEffects,
-                                green: (chunks) => <StatValueH3>{chunks}</StatValueH3>
+                                green: (chunks) => <StatValue>{chunks}</StatValue>
                             }}
                         />
-                    </StatLabelH3>
+                    </StatLabel>
                 </StatSpan>
             )}
         </GenericStatsContainer>
