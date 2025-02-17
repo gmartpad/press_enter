@@ -26,7 +26,7 @@ const ConfigDialog = () => {
 
     const audioRef = useRef<HTMLAudioElement>(new Audio())
 
-    const handleCloseClickSound = useCallback(() => {
+    const handleClickSound = useCallback(() => {
         if (audioRef.current) {
             const randomSound = sound1
             audioRef.current.src = randomSound
@@ -36,37 +36,40 @@ const ConfigDialog = () => {
     }, [config.volume])
 
     const handleToggleConfigDialog = useCallback(() => {
-        handleCloseClickSound()
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             configDialogOpen: !currentConfig.configDialogOpen,
         })
-    }, [handleCloseClickSound, setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const handleToggleConfirmDialog = useCallback(() => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             confirmDialogOpen: !currentConfig.confirmDialogOpen,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const handleToggleExportSaveFileDialog = useCallback(() => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             exportSaveFileDialogOpen: !currentConfig.exportSaveFileDialogOpen,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const handleToggleImportSaveFileDialog = useCallback(() => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             importSaveFileDialogOpen: !currentConfig.importSaveFileDialogOpen,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     if(config.configDialogOpen) return (
         <>

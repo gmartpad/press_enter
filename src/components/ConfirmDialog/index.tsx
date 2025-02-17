@@ -1,5 +1,5 @@
 import { configState } from '@state/atoms'
-import { useCallback } from 'react'
+import { useCallback, useRef } from 'react'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
 import ResetButton from '@components/ResetButton'
@@ -15,27 +15,42 @@ import { useIntl } from 'react-intl'
 import { useAtom, useStore } from 'jotai'
 import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
+import { sound1 } from '@assets/sounds/sharedClick'
+
 const ConfirmDialog = () => {
     const store = useStore()
     const intl = useIntl()
     const isClick = useDetectButtonClickBoolean()
     const [config, setConfig] = useAtom(configState)
 
+    const audioRef = useRef<HTMLAudioElement>(new Audio())
+
+    const handleClickSound = useCallback(() => {
+        if (audioRef.current) {
+            const randomSound = sound1
+            audioRef.current.src = randomSound
+            audioRef.current.volume = config.volume
+            audioRef.current.play()
+        }
+    }, [config.volume])
+
     const handleToggleConfirmDialog = useCallback(() => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             confirmDialogOpen: !currentConfig.confirmDialogOpen,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const handleToggleConfigDialog = useCallback(() => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             configDialogOpen: !currentConfig.configDialogOpen,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const confirmConfigToggle = useCallback(() => {
         handleToggleConfirmDialog()

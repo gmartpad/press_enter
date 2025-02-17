@@ -8,6 +8,7 @@ import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 import { CentralizeDiv } from '@components/ConfirmDialog/styled'
 import { SaveInput, CopyButton } from './styled'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
+import { sound1 } from '@assets/sounds/sharedClick'
 
 const ExportSaveFileDialog = () => {
     const store = useStore()
@@ -25,6 +26,7 @@ const ExportSaveFileDialog = () => {
     const hasWriteText = useMemo(() => Boolean(navigator.clipboard?.writeText), [navigator.clipboard?.writeText])
 
     const handleCopy = useCallback(() => {
+        handleClickSound()
         if (!inputRef.current) return
 
         try {
@@ -57,21 +59,34 @@ const ExportSaveFileDialog = () => {
         }
     }, [])
 
+    const audioRef = useRef<HTMLAudioElement>(new Audio())
+
+    const handleClickSound = useCallback(() => {
+        if (audioRef.current) {
+            const randomSound = sound1
+            audioRef.current.src = randomSound
+            audioRef.current.volume = config.volume
+            audioRef.current.play()
+        }
+    }, [config.volume])
+
     const handleToggleExportSaveFileDialog = useCallback(() => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             exportSaveFileDialogOpen: !currentConfig.exportSaveFileDialogOpen,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const handleToggleConfigDialog = useCallback(() => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             configDialogOpen: !currentConfig.configDialogOpen,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const confirmConfigToggle = useCallback(() => {
         handleToggleExportSaveFileDialog()

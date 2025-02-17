@@ -59,13 +59,13 @@ const StatsSection = () => {
         >
             <TabButtonContainer>
                 <TabButton
-                    active={currentTab === 'bot'}
+                    $active={currentTab === 'bot'}
                     onClick={() => handleTabClick('bot')}
                 >
                     {currentTab === 'bot' && '* '}{intl.formatMessage({ id: 'statsSection.botStats.title' })}
                 </TabButton>
                 <TabButton
-                    active={currentTab === 'upgrade'}
+                    $active={currentTab === 'upgrade'}
                     onClick={() => handleTabClick('upgrade')}
                 >
                     {currentTab === 'upgrade' && '* '}{intl.formatMessage({ id: 'statsSection.upgradeStats.title' })}

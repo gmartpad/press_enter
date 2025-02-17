@@ -1,5 +1,5 @@
 import { configState } from '@state/atoms'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import { useAtom, useStore } from 'jotai'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
@@ -9,6 +9,7 @@ import useSaveManager from '@hooks/useSaveManager'
 import { decodeSaveData } from '@utils/saveEncoder'
 import { SaveInput, ImportButton, ButtonContainer, ErrorMessage } from './styled'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
+import { sound1 } from '@assets/sounds/sharedClick'
 
 
 const ImportSaveFileDialog = () => {
@@ -21,21 +22,34 @@ const ImportSaveFileDialog = () => {
 
     const hasReadText = useMemo(() => Boolean(navigator.clipboard?.readText), [navigator.clipboard?.readText])
 
+    const audioRef = useRef<HTMLAudioElement>(new Audio())
+
+    const handleClickSound = useCallback(() => {
+        if (audioRef.current) {
+            const randomSound = sound1
+            audioRef.current.src = randomSound
+            audioRef.current.volume = config.volume
+            audioRef.current.play()
+        }
+    }, [config.volume])
+
     const handleToggleImportSaveFileDialog = useCallback((fixedValue?: boolean) => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             importSaveFileDialogOpen: fixedValue ? fixedValue : !currentConfig.importSaveFileDialogOpen,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const handleToggleConfigDialog = useCallback(() => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             configDialogOpen: !currentConfig.configDialogOpen,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const confirmConfigToggle = useCallback(() => {
         handleToggleImportSaveFileDialog()
@@ -46,6 +60,7 @@ const ImportSaveFileDialog = () => {
     ])
 
     const handleLoad = useCallback(() => {
+        handleClickSound()
         try {
             // First validate if it can be decoded
             const decoded = decodeSaveData(saveString)
@@ -68,9 +83,10 @@ const ImportSaveFileDialog = () => {
             console.error(err)
             setError(intl.formatMessage({ id: 'config.importSaveFile.invalidSave' }))
         }
-    }, [saveString, loadGame, intl, handleToggleImportSaveFileDialog])
+    }, [handleClickSound, saveString, loadGame, intl, handleToggleImportSaveFileDialog])
 
     const handlePasteFromClipboard = useCallback(async () => {
+        handleClickSound()
         try {
             if (hasReadText) {
                 const clipboardText = await navigator.clipboard.readText()

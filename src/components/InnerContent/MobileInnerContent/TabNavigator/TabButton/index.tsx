@@ -6,13 +6,13 @@ import { configState } from '@state/atoms'
 
 interface TabButtonProps {
     children: ReactNode,
-    active: boolean,
+    $active: boolean,
     onClick: () => void
 }
 
 const TabButton = ({
     children,
-    active,
+    $active,
     onClick
 }: TabButtonProps) => {
     const audioRef = useRef<HTMLAudioElement>(new Audio(sound1))
@@ -31,7 +31,7 @@ const TabButton = ({
     }, [onClick, handleClickSound])
 
     return (
-        <StyledTabButton active={active} onClick={handleClick}>
+        <StyledTabButton $active={$active} onClick={handleClick}>
             <TabButtonText>{children}</TabButtonText>
         </StyledTabButton>
     )
