@@ -15,23 +15,24 @@ const StatSpan = styled.span`
     }
 `
 
-const StatLabelH3 = styled.h3`
+const StatLabel = styled.span`
     margin: 0px;
     text-shadow: -2px 2px #555;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
+    font-size: 1.17em;
+    font-weight: bold;
+    text-align: center;
 `
 
-const StatValueH3 = styled.h3`
+const StatValue = styled.span`
     color: #0f0; 
     margin: 0px;
     text-shadow: -2px 2px #555;
+    font-size: 1.17em;
+    font-weight: bold;
 `
 
 export {
     StatSpan,
-    StatLabelH3,
-    StatValueH3
+    StatLabel,
+    StatValue
 }
