@@ -8,7 +8,7 @@ const ReloadButton = ({
 }) => {
     return (
         <button 
-            style={{ cursor: 'pointer' }} 
+            style={{ cursor: 'pointer', backgroundColor: '#000', borderWidth: 'thick', padding: '4px 8px' }} 
             onClick={() => location.reload()}
         >
             {intl.formatMessage({ id: 'broadcastProvider.accessDenied.clickHere' })}
