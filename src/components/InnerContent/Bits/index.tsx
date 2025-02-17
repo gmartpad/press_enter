@@ -121,11 +121,15 @@ const Bits = () => {
             <BitsInfo $windowInnerWidth={windowInnerWidth} ref={bitsInfoRef} >
                 <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.bitsPerSecond" /></BitsH3>
-                    <BitsH3 style={{ color: '#0f0' }}>{" " + formattedCurrentProduction} bits</BitsH3>
+                    <BitsH3 style={{ color: '#0f0' }}>
+                        <FormattedMessage id="bits.currentProduction" values={{ production: formattedCurrentProduction }} />
+                    </BitsH3>
                 </BitsSpan>
                 <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.totalAmountOfBits"/></BitsH3>
-                    <BitsH3 style={{ color: '#0f0' }}>{formatLargeNumber(Number(bits.toFixed(0)), intl)} bits</BitsH3>
+                    <BitsH3 style={{ color: '#0f0' }}>
+                        {formatLargeNumber(Number(bits.toFixed(0)), intl)} <FormattedMessage id="bits.bits" />
+                    </BitsH3>
                 </BitsSpan>
                 <BitsSpan>
                     <BitsH3><FormattedMessage id="bits.enterPressesAmount"/></BitsH3>
@@ -156,7 +160,7 @@ const Bits = () => {
                     $textX={text.x}
                     $textY={text.y}
                 >
-                    +{text.value} bits
+                    +{text.value} <FormattedMessage id="bits.bits" />
                 </FloatText>
             ))}
         </Aside>

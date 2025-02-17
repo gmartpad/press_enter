@@ -1,9 +1,15 @@
 import { type IntlShape } from "react-intl"
 
+interface Scale {
+    value: number
+    key: string
+    requiresPlural?: boolean
+}
+
 function formatLargeNumber(number: number, intl?: IntlShape, bitsComponent: boolean = false) {
     // Define number scales up to 1e180
-    const scales = [
-        { value: 1e180, key: 'sexagintillion' },
+    const scales: Scale[] = [
+        { value: 1e180, key: 'sexagintillion', requiresPlural: true },
         { value: 1e177, key: 'novemquinquagintillion' },
         { value: 1e174, key: 'octoquinquagintillion' },
         { value: 1e171, key: 'septenquinquagintillion' },
@@ -61,7 +67,7 @@ function formatLargeNumber(number: number, intl?: IntlShape, bitsComponent: bool
         { value: 1e15, key: 'quadrillion' },
         { value: 1e12, key: 'trillion' },
         { value: 1e9, key: 'billion' },
-        { value: 1e6, key: 'million' },
+        { value: 1e6, key: 'million', requiresPlural: true },
     ]
 
     // If the number is less than a million, return as is
@@ -81,8 +87,35 @@ function formatLargeNumber(number: number, intl?: IntlShape, bitsComponent: bool
 
             // If intl is provided, use it to translate the scale name
             if(intl) {
+                // Get the base message ID
+                const baseMessageId = `bitNumber.${scale.key}`
+
+                // For languages that need plural forms
+                if (scale.requiresPlural && trimmedNumber > 1 && 
+                    ['pt-br', 'fr', 'ar', 'ru'].includes(intl.locale)) {
+                    // Try to get plural form first, fallback to singular
+                    try {
+                        const pluralName = intl.formatMessage({
+                            id: `${baseMessageId}.plural`,
+                            defaultMessage: intl.formatMessage({
+                                id: baseMessageId,
+                                defaultMessage: scale.key
+                            })
+                        })
+                        return `${trimmedNumber} ${pluralName}${intl.locale !== 'en' && !bitsComponent ? ' de' : ''}`
+                    } catch {
+                        // If plural form doesn't exist, use singular
+                        const singularName = intl.formatMessage({
+                            id: baseMessageId,
+                            defaultMessage: scale.key
+                        })
+                        return `${trimmedNumber} ${singularName}${intl.locale !== 'en' && !bitsComponent ? ' de' : ''}`
+                    }
+                }
+                
+                // For other cases, use the base message
                 const scaleName = intl.formatMessage({
-                    id: `bitNumber.${scale.key}`,
+                    id: baseMessageId,
                     defaultMessage: scale.key
                 })
                 return `${trimmedNumber} ${scaleName}${intl.locale !== 'en' && !bitsComponent ? ' de' : ''}`

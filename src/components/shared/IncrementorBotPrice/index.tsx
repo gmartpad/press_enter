@@ -43,7 +43,7 @@ const IncrementorBotPrice = ({ price, item, config }: IncrementorBotPriceProps) 
     return (
         <IncrementorPrice $affordable={isAffordable}>
             <GiArtificialIntelligence size={16} />
-            {isNaN(Number(memoedBitAmount)) ? memoedBitAmount : Number(memoedBitAmount).toFixed(0)} bits
+            {isNaN(Number(memoedBitAmount)) ? memoedBitAmount : Number(memoedBitAmount).toFixed(0)} {intl.formatMessage({ id: 'bits.bits' })}
         </IncrementorPrice>
     )
 }

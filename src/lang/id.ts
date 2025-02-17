@@ -1,7 +1,9 @@
 const id = {
+    'bits.bits': 'bit',
     'bits.bitsPerSecond': 'bit/detik (BpS):',
     'bits.totalAmountOfBits': 'Total bit:',
     'bits.enterPressesAmount': 'Jumlah kali Anda menekan Enter:',
+    'bits.currentProduction': '{production} bit',
     'botsOwned': 'dimiliki',
     'botBuyList.upgrades.title': 'Peningkatan',
     'botBuyList.upgrades.noUpgrades.title': 'Tidak ada peningkatan yang tersedia untuk dibeli saat ini',
@@ -600,7 +602,7 @@ const id = {
     'upgrade.globalBitsUpgrade034.description': 'Pengganda produksi bit 3%',
     'upgrade.globalBitsUpgrade035.description': 'Pengganda produksi bit 3%',
     'upgrade.globalBitsUpgrade036.description': 'Pengganda produksi bit 3%',
-    'upgrade.globalBitsUpgrade037.description': 'Pengganda produksi bit 3%',
+    'upgrade.globalBitsUpgrade037.description': 'Pengganda produksi bit 4%',
     'upgrade.globalBitsUpgrade038.description': 'Pengganda produksi bit 4%',
     'upgrade.globalBitsUpgrade039.description': 'Pengganda produksi bit 4%',
     'upgrade.globalBitsUpgrade040.description': 'Pengganda produksi bit 4%',
