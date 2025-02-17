@@ -36,15 +36,15 @@ const BotStats = ({
         },
         {
             label: intl.formatMessage({ id: 'statsSection.botStats.unitPrice.label' }),
-            value: `${currentPrice} bits`
+            value: `${currentPrice} ${intl.formatMessage({ id: 'bits.bits' })}`
         },
         {
             label: intl.formatMessage({ id: 'statsSection.botStats.unitProduction.label' }),
-            value: `${currentUnitProduction} bits`
+            value: `${currentUnitProduction} ${intl.formatMessage({ id: 'bits.bits' })}`
         },
         {
             label: intl.formatMessage({ id: 'statsSection.botStats.bitsProducedSoFar.label' }),
-            value: `${currentBitsProducedSoFar} bits`
+            value: `${currentBitsProducedSoFar} ${intl.formatMessage({ id: 'bits.bits' })}`
         }
     ], [intl, units, currentPrice, currentUnitProduction, currentBitsProducedSoFar])
 

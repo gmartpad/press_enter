@@ -1,7 +1,9 @@
 const en = {
+    'bits.bits': 'bits',
     'bits.bitsPerSecond': 'bits/second (BpS):',
     'bits.totalAmountOfBits': 'Total bits:',
     'bits.enterPressesAmount': 'Amount of times you pressed Enter:',
+    'bits.currentProduction': '{production} bits',
     'botsOwned': 'owned',
     'botBuyList.upgrades.title': 'Upgrades',
     'botBuyList.upgrades.noUpgrades.title': 'There are no upgrades to purchase currently',

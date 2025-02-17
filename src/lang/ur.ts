@@ -1,7 +1,9 @@
 const ur = {
+    'bits.bits': 'بٹس',
     'bits.bitsPerSecond': 'بٹس/سیکنڈ (BpS):',
     'bits.totalAmountOfBits': 'کل بٹس:',
-    'bits.enterPressesAmount': 'انٹر دبانے کی تعداد:',
+    'bits.enterPressesAmount': 'آپ نے Enter کتنی بار دبایا:',
+    'bits.currentProduction': '{production} بٹس',
     'botsOwned': 'حاصل کردہ',
     'botBuyList.upgrades.title': 'اپ گریڈز',
     'botBuyList.upgrades.noUpgrades.title': 'کوئی اپ گریڈ خریدنے کے لئے اب تک دستیاب نہیں ہے',

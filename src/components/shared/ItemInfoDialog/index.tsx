@@ -140,7 +140,7 @@ const ItemInfoDialog = () => {
         return (
             <IncrementorPrice $affordable={purchasable}>
                 <GiArtificialIntelligence size={16} />
-                {formatLargeNumber(currentItem.cost, intl)} bits
+                {formatLargeNumber(currentItem.cost, intl)} {intl.formatMessage({ id: 'bits.bits' })}
             </IncrementorPrice>
         )
     }, [currentItem, config, bits, intl])

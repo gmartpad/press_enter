@@ -21,7 +21,7 @@ const UpgradeStats = ({
 
     const costOfUpgrades = useMemo(() => {
         const cost = upgrades.reduce((acc, value) => acc + value.cost, 0)
-        return formatLargeNumber(cost, intl) + ' bits'
+        return `${formatLargeNumber(cost, intl)} ${intl.formatMessage({ id: 'bits.bits' })}`
     }, [upgrades, intl])  
 
     const hasAdditiveEffects = useMemo(() => {
