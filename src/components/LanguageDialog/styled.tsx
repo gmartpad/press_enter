@@ -18,10 +18,10 @@ const LanguageList = styled.div<{ $languageListMaxHeight: number }>`
     box-sizing: border-box;
 `
 
-const ChangeLanguageButton = styled.button<{ active: boolean }>`
+const ChangeLanguageButton = styled.button<{ $active: boolean }>`
     cursor: pointer;
-    background-color: ${props => props.active ? '#fff' : '#000'};
-    color:${props => props.active ? '#000' : '#fff'};
+    background-color: ${props => props.$active ? '#fff' : '#000'};
+    color:${props => props.$active ? '#000' : '#fff'};
     border-width: thick;
     transition: all .2s ease-in-out;
     flex: 1 0 45%;
@@ -31,7 +31,7 @@ const ChangeLanguageButton = styled.button<{ active: boolean }>`
     align-items: center;
     justify-content: center;
     gap: 10px;
-    text-shadow: -2px 2px ${props => props.active ? '#bbb' : '#555'};
+    text-shadow: -2px 2px ${props => props.$active ? '#bbb' : '#555'};
 
     &:hover {
         background-color: #fff;

@@ -30,7 +30,7 @@ const LanguageDialog = () => {
         }
     }, [config.currentLanguageLocale])
 
-    const handleCloseClickSound = useCallback(() => {
+    const handleClickSound = useCallback(() => {
         if (audioRef.current) {
             const randomSound = sound1
             audioRef.current.src = randomSound
@@ -40,21 +40,22 @@ const LanguageDialog = () => {
     }, [config.volume])
 
     const handleToggleLanguageDialog = useCallback(() => {
-        handleCloseClickSound()
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             languageDialogOpen: !currentConfig.languageDialogOpen
         })
-    }, [handleCloseClickSound, setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     const handleChangeLanguageLocale = useCallback((newLanguageLocale: LanguageValues) => {
+        handleClickSound()
         const currentConfig = store.get(configState)
         setConfig({
             ...currentConfig,
             currentLanguageLocale: newLanguageLocale
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     if(config?.languageDialogOpen) return (
         <>
@@ -75,7 +76,7 @@ const LanguageDialog = () => {
                 <LanguageList $languageListMaxHeight={languageListMaxHeight}>
                     {languages.map((language) => (
                         <ChangeLanguageButton
-                            active={config.currentLanguageLocale === language.value} 
+                            $active={config.currentLanguageLocale === language.value} 
                             onClick={() => {
                                 if(isClick) {
                                     handleChangeLanguageLocale(language.value)

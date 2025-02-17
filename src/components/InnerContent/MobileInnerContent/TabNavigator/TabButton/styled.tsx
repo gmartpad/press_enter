@@ -1,12 +1,12 @@
 import { styled } from "styled-components"
 
-const TabButton = styled.button.attrs<{ active: boolean }>(
+const TabButton = styled.button.attrs<{ $active: boolean }>(
     props => ({
         style: {
-            color: props.active ? '#fff' : '#bbb'
+            color: props.$active ? '#fff' : '#bbb'
         }
     })
-)<{ active: boolean }>`
+)<{ $active: boolean }>`
     flex: 1;
     padding: 2px 4px 6px 4px;
     background: none;

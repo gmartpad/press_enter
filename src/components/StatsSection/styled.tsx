@@ -42,13 +42,13 @@ const TabButtonContainer = styled.div`
     width: calc(100% - 20px);
 `
 
-const TabButton = styled.button.attrs<{ active: boolean }>(
+const TabButton = styled.button.attrs<{ $active: boolean }>(
     props => ({
         style: {
-            color: props.active ? '#fff' : '#bbb'
+            color: props.$active ? '#fff' : '#bbb'
         }
     })
-)<{ active: boolean }>`
+)<{ $active: boolean }>`
     background-color: #000;
     width: calc(50% - 10px);
     padding: 10px;
