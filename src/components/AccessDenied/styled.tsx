@@ -7,6 +7,9 @@ const NotValidContainer = styled.div<{ $flexDirection: 'row' | 'column' }>`
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background-color: #000;
+    color: #fff;
+    text-shadow: -2px 2px #555;
 `
 
 export {
