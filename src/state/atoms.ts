@@ -75,8 +75,15 @@ const validateNumber = (value: unknown, defaultValue: number): number => {
     return typeof value === 'number' && !isNaN(value) ? value : defaultValue
 }
 
-const validateArray = <T>(value: unknown, defaultValue: T[]): T[] => {
-    return Array.isArray(value) && value.length > 0 ? value : defaultValue
+function validateArray<T>(saved: T[] | undefined, defaults: T[]): T[] {
+    if (!saved) return defaults
+    
+    // If the saved array is shorter than defaults, append the new items
+    if (saved.length < defaults.length) {
+        return [...saved, ...defaults.slice(saved.length)]
+    }
+    
+    return saved
 }
 
 const validateObject = <T extends object>(value: unknown, defaultValue: T): T => {
