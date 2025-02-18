@@ -148,8 +148,8 @@ const ItemInfoDialog = () => {
     const renderDescription = useMemo(() => {
         if (!currentItem || (isIncrementor(currentItem) && !currentItem?.revealed)) return null
         return isIncrementor(currentItem)
-            ? <FormattedMessage id={`botBuyList.${currentItem.id}.description`} />
-            : <FormattedMessage tagName="p" id={`upgrade.${currentItem.id}.description`} />
+            ? <FormattedMessage id={`botBuyList.${currentItem.id}.description`} defaultMessage={currentItem.description} />
+            : <FormattedMessage tagName="p" id={`upgrade.${currentItem.id}.description`} defaultMessage={currentItem.description} />
     }, [currentItem])
 
     const renderAdditionalInfo = useMemo(() => {
