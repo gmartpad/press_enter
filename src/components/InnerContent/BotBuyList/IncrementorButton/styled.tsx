@@ -12,6 +12,7 @@ const IncrementorButton = styled.button<{ $affordable: boolean, $revealed: boole
   max-width: 288px;
   margin: 4px 6px;
   text-shadow: -2px 2px #555;
+  word-break: break-word;
 `
 
 export { IncrementorButton }
