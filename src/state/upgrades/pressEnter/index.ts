@@ -7,7 +7,7 @@ const pressEnterUpgrades: Upgrade[] = [
         imgSrc: 'pressEnter/pressEnterUpgrade001.png',
         name: 'Quick Fingers I',
         description: 'Pressing Enter produces an additional 1% of the current BpS',
-        cost: 100,
+        cost: 1e2,
         purchased: false,
         purchasable: false,
         effects: {
@@ -26,7 +26,7 @@ const pressEnterUpgrades: Upgrade[] = [
         imgSrc: 'pressEnter/pressEnterUpgrade001.png',
         name: 'Quick Fingers II',
         description: 'Pressing Enter produces an additional 1% of the current BpS',
-        cost: 1000,
+        cost: 1e3,
         purchased: false,
         purchasable: false,
         effects: {
@@ -45,7 +45,7 @@ const pressEnterUpgrades: Upgrade[] = [
         imgSrc: 'pressEnter/pressEnterUpgrade001.png',
         name: 'Quick Fingers III',
         description: 'Pressing Enter produces an additional 1% of the current BpS',
-        cost: 10_000,
+        cost: 1e4,
         purchased: false,
         purchasable: false,
         effects: {
@@ -64,7 +64,7 @@ const pressEnterUpgrades: Upgrade[] = [
         imgSrc: 'pressEnter/pressEnterUpgrade001.png',
         name: 'Quick Fingers IV',
         description: 'Pressing Enter produces an additional 1% of the current BpS',
-        cost: 100_000,
+        cost: 1e5,
         purchased: false,
         purchasable: false,
         effects: {
@@ -178,7 +178,7 @@ const pressEnterUpgrades: Upgrade[] = [
         imgSrc: 'pressEnter/pressEnterUpgrade001.png',
         name: 'Quick Fingers X',
         description: 'Pressing Enter produces an additional 1% of the current BpS',
-        cost: 100_000_000_000,
+        cost: 1e11,
         purchased: false,
         purchasable: false,
         effects: {

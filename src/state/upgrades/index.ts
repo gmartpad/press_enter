@@ -15,7 +15,7 @@ import goBotsUpgrades from "./goBots"
 import virtualAssistantsUpgrades from "./virtualAssistants"
 import llmsUpgrades from "./llms"
 import globalBitsUpgrades from "./globalBits"
-
+// import quantumComputersUpgrades from "./quantumComputers"
 // 
 
 export type Upgrade = {
@@ -75,5 +75,7 @@ export const defaultUpgrades: Upgrade[] = [
     // Virtual Assistants Upgrades
     virtualAssistantsUpgrades,
     // LLMs Upgrades
-    llmsUpgrades
+    llmsUpgrades,
+    // Quantum Computers Upgrades
+    // quantumComputersUpgrades
 ].flatMap(upgrade => upgrade)
