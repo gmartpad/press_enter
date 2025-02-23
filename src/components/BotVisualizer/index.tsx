@@ -125,18 +125,28 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
                 return
             }
 
-            const img = new Image()
-            img.src = `/src/assets/botImages/${botId}/${botId}BotDiv.png`
+            try {
+                const images = import.meta.glob('/src/assets/botImages/**/*.png')
+                const imagePath = `/src/assets/botImages/${botId}/${botId}BotDiv.png`
+                
+                if (images[imagePath]) {
+                    const module = await images[imagePath]()
+                    const img = new Image()
+                    img.src = (module as { default: string }).default
+                    
+                    img.onload = () => {
+                        if (!isMounted.current) return
+                        imageCache.set(botId, img)
+                        setCurrentImage(img)
+                        handleResize()
+                    }
 
-            img.onload = () => {
-                if (!isMounted.current) return
-                imageCache.set(botId, img)
-                setCurrentImage(img)
-                handleResize()
-            }
-
-            img.onerror = () => {
-                console.error(`Failed to load image: ${img.src}`)
+                    img.onerror = () => {
+                        console.error(`Failed to load image: ${img.src}`)
+                    }
+                }
+            } catch (error) {
+                console.error(`Failed to load image for bot ${botId}:`, error)
             }
         }
 
