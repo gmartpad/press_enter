@@ -24,7 +24,7 @@ interface IntervalConfig {
 const DEFAULT_UPDATE_INTERVAL = 200
 const BACKGROUND_UPDATE_INTERVAL = 3000
 const SLOW_UPDATE_INTERVAL = 200
-const SAVE_INTERVAL = 10_000
+const SAVE_INTERVAL = 3000
 
 const useBitUpdater = () => {
     const store = useStore()

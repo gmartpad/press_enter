@@ -18,7 +18,7 @@ const LangProvider = ({
             defaultLocale='en'
             messages={langs[config.currentLanguageLocale]}
         >
-            {children}
+            <>{children}</>
         </IntlProvider>
     )
 }

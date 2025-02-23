@@ -19,6 +19,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.html, body {
+  background-color: #000;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -49,6 +53,7 @@ button {
   font-family: inherit;
   outline: none;
   -webkit-tap-highlight-color: transparent;
+  cursor: pointer !important;
 }
 
 button.botBuy {

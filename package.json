@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/gensync": "^1.0.4",
     "@types/lodash": "^4.17.13",
     "@types/node": "^22.7.4",
     "@types/react": "^19.0.8",
