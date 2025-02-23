@@ -1,6 +1,6 @@
 import { type Upgrade } from "@upgrades"
 import { InnerUpgradeItem, OuterUpgradeItem, UpgradeItemImg } from "./styled"
-import { useCallback, useEffect, useState, useMemo } from "react"
+import { useCallback, useEffect, useState, useMemo, useRef } from "react"
 import { configState, currentHoveredUpgradeItemState, isUpgradeAffordableState, saveGameState } from "@state/atoms"
 import { debounce } from "lodash"
 import useIsDesktop from "@hooks/useIsDesktop"
@@ -14,6 +14,8 @@ interface UpgradeItemProps {
     upgrade: Upgrade
     handlePurchaseUpgrade: (upgrade: Upgrade, isUpgradeAffordable: boolean) => Promise<void>
 }
+
+const QUESTION_MARK_SRC = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI0MCI+PyA8L3RleHQ+Cjwvc3ZnPg=='
 
 const UpgradeItem = ({
     upgrade,
@@ -29,21 +31,55 @@ const UpgradeItem = ({
     const config = useAtomValue(configState)
     const isDesktop = useIsDesktop()
 
-    const images = import.meta.glob('/src/assets/botUpgrades/**/*.png')
     const [imageUrl, setImageUrl] = useState<string>('')
+    const [isLoading, setIsLoading] = useState(true)
+    const currentRequest = useRef<symbol | undefined>(undefined)
+    const imagePaths = useMemo(
+        () => import.meta.glob('/src/assets/botUpgrades/**/*.png'),
+        []
+    )
 
-    const handleImageUrl = useCallback(() => {
+    const loadImage = useCallback(async () => {
+        const requestId = Symbol()
+        currentRequest.current = requestId
+        setIsLoading(true)
+        
         const imagePath = `/src/assets/botUpgrades/${upgrade.imgSrc}`
-        if (images[imagePath]) {
-            images[imagePath]().then(module => {
-                setImageUrl((module as { default: string }).default)
-            })
+        
+        try {
+            const module = imagePaths[imagePath] 
+                ? await imagePaths[imagePath]() as { default: string }
+                : null
+            
+            if (currentRequest.current === requestId) {
+                if (module?.default) {
+                    // Create a new image to preload
+                    const img = new Image()
+                    img.onload = () => {
+                        setImageUrl(module.default)
+                        setIsLoading(false)
+                    }
+                    img.src = module.default
+                } else {
+                    setImageUrl('')
+                    setIsLoading(false)
+                }
+            }
+        } catch {
+            if (currentRequest.current === requestId) {
+                setImageUrl('')
+                setIsLoading(false)
+            }
         }
-    }, [upgrade.imgSrc, images])
+    }, [upgrade.imgSrc, imagePaths])
 
     useEffect(() => {
-        handleImageUrl()
-    }, [handleImageUrl])
+        loadImage()
+        
+        return () => {
+            currentRequest.current = undefined
+        }
+    }, [loadImage])
 
     const handleEnterBotClick = useMemo(() => {
         return debounce(async (isAffordable: boolean, volume: number) => {
@@ -73,7 +109,6 @@ const UpgradeItem = ({
         <OuterUpgradeItem
             $purchasable={isUpgradeAffordable}
             onClick={handleOnClick}
-
             onMouseEnter={() => {
                 if (isDesktop) {
                     setCurrentHoveredUpgradeItem(upgrade)
@@ -86,7 +121,10 @@ const UpgradeItem = ({
             }}
         >
             <InnerUpgradeItem>
-                <UpgradeItemImg src={imageUrl} />
+                <UpgradeItemImg 
+                    src={isLoading ? QUESTION_MARK_SRC : imageUrl}
+                    $isLoading={isLoading}
+                />
             </InnerUpgradeItem>
         </OuterUpgradeItem>
     )
