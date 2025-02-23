@@ -10,7 +10,7 @@ import {
 } from '@state/atoms'
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
 import { FloatText, Aside, EnterIcon, EnterKeyButton, BitsH3, BitsInfo, BitsSpan, MobileSpacer } from './styled'
-import React, { useCallback, useMemo, useRef, useState, useEffect } from 'react'
+import React, { useCallback, useMemo, useRef, useState } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { useIntl, FormattedMessage } from 'react-intl'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
@@ -110,10 +110,6 @@ const Bits = () => {
 
         return 'flex'
     }, [window.innerHeight])
-
-    useEffect(() => {
-        console.log('floatTexts', floatTexts)
-    }, [floatTexts])
 
     return (
         <Aside $displayValue={asideDisplayValue} $windowInnerWidth={windowInnerWidth}>
