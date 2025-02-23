@@ -31,6 +31,12 @@ const ImportButton = styled.button`
   }
 `
 
+const ImportButtonContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  width: 100%;
+`
+
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,4 +52,15 @@ const ErrorMessage = styled.div`
   text-align: center;
 `
 
-export { SaveInput, ImportButton, ButtonContainer, ErrorMessage }
+const InvisibleFileUploadInput = styled.input`
+  display: none;
+`
+
+export { 
+    SaveInput, 
+    ImportButton, 
+    ButtonContainer, 
+    ErrorMessage,
+    ImportButtonContainer,
+    InvisibleFileUploadInput
+}

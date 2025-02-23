@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-
+import { InspectionProtectionProviderContainer } from "./styled"
 const InspectProtectionProvider = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         // Prevent right click
@@ -65,9 +65,9 @@ const InspectProtectionProvider = ({ children }: { children: React.ReactNode }) 
     }, [])
   
     return (
-        <div style={{ backgroundColor: '#000' }} className="select-none">
+        <InspectionProtectionProviderContainer className="select-none">
             {children}
-        </div>
+        </InspectionProtectionProviderContainer>
     )
 }
 

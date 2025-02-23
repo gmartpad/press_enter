@@ -1,7 +1,12 @@
 import { autoIncrementorsState, Config, configState, upgradesState } from "@state/atoms"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import BotStats from "./BotStats"
-import { StatsSectionContainer, TabButton, TabButtonContainer } from "./styled"
+import { 
+    StatsSectionContainer, 
+    TabButton, 
+    TabButtonContainer, 
+    StatsSectionContentContainer 
+} from "./styled"
 import groupUpgradesByIncrementorId from "@utils/groupUpgradesByIncrementorId"
 import UpgradeStats from "./UpgradeStats"
 import { useIntl } from "react-intl"
@@ -71,7 +76,7 @@ const StatsSection = () => {
                     {currentTab === 'upgrade' && '* '}{intl.formatMessage({ id: 'statsSection.upgradeStats.title' })}
                 </TabButton>
             </TabButtonContainer>
-            <div style={{ paddingTop: 120 }}>
+            <StatsSectionContentContainer>
                 {currentTab === 'bot' && (
                     <>
                         {revealedIncrementors.map((i, k) => (
@@ -86,7 +91,7 @@ const StatsSection = () => {
                         ))}
                     </>
                 )}
-            </div>
+            </StatsSectionContentContainer>
         </StatsSectionContainer>
     )
 }

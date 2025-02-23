@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { 
     ChangeLanguageButton, 
     LanguageDialogTitleDiv, 
-    LanguageList 
+    LanguageList,
+    LanguageLabelParagraph
 } from './styled'
 import { configState } from '@state/atoms'
 import { FormattedMessage } from 'react-intl'
@@ -89,7 +90,7 @@ const LanguageDialog = () => {
                             }}
                         >
                             {language.Flag && (<language.Flag style={{ width: 24, height: 16 }}/>)}
-                            <p style={{ textTransform: 'uppercase' }}>{language.label}</p>
+                            <LanguageLabelParagraph>{language.label}</LanguageLabelParagraph>
                         </ChangeLanguageButton>
                     ))}
                 </LanguageList>

@@ -77,11 +77,16 @@ const DescriptionH3 = styled.h3`
     text-shadow: -2px 2px #555;
 `
 
+const StatsSectionContentContainer = styled.div`
+    padding-top: 120px;
+`
+
 export {
     StatsSectionContainer,
     TabButtonContainer,
     TabButton,
     GenericStatsContainer,
     NameH2,
-    DescriptionH3
+    DescriptionH3,
+    StatsSectionContentContainer
 }

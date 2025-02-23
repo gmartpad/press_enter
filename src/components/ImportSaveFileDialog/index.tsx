@@ -7,10 +7,16 @@ import { useIntl } from 'react-intl'
 import { CentralizeDiv } from '@components/ConfirmDialog/styled'
 import useSaveManager from '@hooks/useSaveManager'
 import { decodeSaveData } from '@utils/saveEncoder'
-import { SaveInput, ImportButton, ButtonContainer, ErrorMessage } from './styled'
+import { 
+    SaveInput, 
+    ImportButton, 
+    ButtonContainer, 
+    ErrorMessage, 
+    ImportButtonContainer, 
+    InvisibleFileUploadInput 
+} from './styled'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import { sound1 } from '@assets/sounds/sharedClick'
-
 
 const ImportSaveFileDialog = () => {
     const store = useStore()
@@ -145,11 +151,7 @@ const ImportSaveFileDialog = () => {
                         placeholder={intl.formatMessage({ id: 'config.importSaveFile.placeholder' })}
                     />
                     <ButtonContainer>
-                        <div style={{
-                            display: 'flex',
-                            gap: '10px',
-                            width: '100%',
-                        }}>
+                        <ImportButtonContainer>
                             {hasReadText && (
                                 <ImportButton onClick={handlePasteFromClipboard}>
                                     {intl.formatMessage({ id: 'config.importSaveFile.pasteFromClipboard' })}
@@ -160,13 +162,12 @@ const ImportSaveFileDialog = () => {
                             >
                                 {intl.formatMessage({ id: 'config.importSaveFile.uploadFile' })}
                             </ImportButton>
-                        </div>
-                        <input
+                        </ImportButtonContainer>
+                        <InvisibleFileUploadInput
                             id="file-upload"
                             type="file"
                             accept=".txt"
                             onChange={handleFileUpload}
-                            style={{ display: 'none' }}
                         />
                         <ImportButton
                             onClick={handleLoad}

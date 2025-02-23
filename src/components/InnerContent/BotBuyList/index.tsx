@@ -11,6 +11,8 @@ import {
     IncrementorAmount,
     IncrementorName,
     NoUpgradesH5,
+    BotUpgradeTitle,
+    QuestionMarkParagraph
 } from './styled'
 import { 
     autoIncrementorsState, 
@@ -129,14 +131,11 @@ const BotBuyList = () => {
     )
 
     return (
-        <Aside 
-            $windowInnerWidth={windowInnerWidth}
-            
-        >
+        <Aside $windowInnerWidth={windowInnerWidth}>
             <>
-                <h3 style={{ margin: 0, textAlign: 'center', padding: '12px 0 3px 0', textShadow: '-2px 2px #555' }}>
+                <BotUpgradeTitle>
                     <FormattedMessage id="botBuyList.upgrades.title" />
-                </h3>
+                </BotUpgradeTitle>
                 <BuyAllUpgradesButton disabled={affordableUpgrades.length <= 0} />
             </>
             
@@ -213,7 +212,7 @@ const BotBuyList = () => {
                                 {item?.revealed ? (
                                     <FormattedMessage id={`botBuyList.${item.id}.name`} />
                                 ) : (
-                                    <p style={{ margin: 0 }}>???????</p>
+                                    <QuestionMarkParagraph>???????</QuestionMarkParagraph>
                                 )}
                             </IncrementorName>
                             <IncrementorBotPrice
