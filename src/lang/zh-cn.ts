@@ -177,7 +177,7 @@ const zhCn = {
     'botInfoDialog.bitsProducedSoFar': '目前已生产{bitsProduced}比特',
     'broadcastProvider.loading': '加载中',
     'broadcastProvider.accessDenied.title': '访问被拒绝',
-    'broadcastProvider.accessDenied.primaryDescription': '当前浏览器中已有另一个游戏标签页打开。',
+    'broadcastProvider.accessDenied.primaryDescription': '当前已有另一个游戏标签页打开。',
     'broadcastProvider.accessDenied.secondaryDescription': '如果没有其他游戏标签页打开，{reloadButton}',
     'broadcastProvider.accessDenied.clickHere': '点击这里',
     'upgrade.autonomousCarsUpgrade001.name': '竖中指诱导超车 I',

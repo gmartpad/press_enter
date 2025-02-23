@@ -176,7 +176,7 @@ const ur = {
     'botInfoDialog.bitsProducedSoFar': 'اب تک {bitsProduced} بٹس پیدا کیے گئے',
     'broadcastProvider.loading': 'لوڈ ہو رہا ہے',
     'broadcastProvider.accessDenied.title': 'رسائی مسترد',
-    'broadcastProvider.accessDenied.primaryDescription': 'اس براؤزر میں گیم کی دوسری ٹیب اس وقت کھلی ہوئی ہے۔',
+    'broadcastProvider.accessDenied.primaryDescription': 'گیم کی ایک اور ٹیب فی الحال کھلی ہوئی ہے۔',
     'broadcastProvider.accessDenied.secondaryDescription': 'اگر گیم کی کوئی دوسری ٹیب نہیں کھلی ہے تو، {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'یہاں کلک کریں',
     'upgrade.autonomousCarsUpgrade001.name': 'درمیانی انگلی سے آگے نکل جانا I',

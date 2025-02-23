@@ -205,7 +205,7 @@ const ru = {
     'botInfoDialog.bitsProducedSoFar': '{bitsProduced} бит произведено на данный момент',
     'broadcastProvider.loading': 'загрузка',
     'broadcastProvider.accessDenied.title': 'доступ запрещен',
-    'broadcastProvider.accessDenied.primaryDescription': 'В данный момент в этом браузере открыта другая вкладка с игрой.',
+    'broadcastProvider.accessDenied.primaryDescription': 'В настоящее время открыта другая вкладка игры.',
     'broadcastProvider.accessDenied.secondaryDescription': 'Если нет другой открытой вкладки с игрой, {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'нажмите здесь',
     'upgrade.autonomousCarsUpgrade001.name': 'Средний палец, вызывающий обгон I',

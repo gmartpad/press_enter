@@ -206,7 +206,7 @@ const ptBr = {
     'botInfoDialog.bitsProducedSoFar': '{bitsProduced} bits produzidos até agora',
     'broadcastProvider.loading': 'carregando',
     'broadcastProvider.accessDenied.title': 'acesso negado',
-    'broadcastProvider.accessDenied.primaryDescription': 'Atualmente há outra aba do jogo aberta neste navegador.',
+    'broadcastProvider.accessDenied.primaryDescription': 'Há outra aba do jogo aberta no momento.',
     'broadcastProvider.accessDenied.secondaryDescription': 'Caso não haja outra aba do jogo aberta, {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'clique aqui',
     'upgrade.autonomousCarsUpgrade001.name': 'Ultrapassagem Indutora de Dedo Médio I',

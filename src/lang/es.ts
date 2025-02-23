@@ -165,7 +165,7 @@ const es = {
     'botInfoDialog.bitsProducedSoFar': '{bitsProduced} bits producidos hasta ahora',
     'broadcastProvider.loading': 'cargando',
     'broadcastProvider.accessDenied.title': 'acceso denegado',
-    'broadcastProvider.accessDenied.primaryDescription': 'Actualmente hay otra pestaña de juego abierta en este navegador.',
+    'broadcastProvider.accessDenied.primaryDescription': 'Hay otra pestaña del juego abierta actualmente.',
     'broadcastProvider.accessDenied.secondaryDescription': 'En el caso de que no haya otra pestaña de juego abierta, {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'haga clic aquí',
     'upgrade.autonomousCarsUpgrade001.name': 'Adelantamiento que induce al dedo medio I',

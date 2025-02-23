@@ -206,7 +206,7 @@ const fr = {
     'botInfoDialog.bitsProducedSoFar': '{bitsProduced} bits produits jusqu\'à présent',
     'broadcastProvider.loading': 'chargement',
     'broadcastProvider.accessDenied.title': 'accès refusé',
-    'broadcastProvider.accessDenied.primaryDescription': 'Un autre onglet du jeu est actuellement ouvert dans ce navigateur.',
+    'broadcastProvider.accessDenied.primaryDescription': 'Il y a actuellement un autre onglet du jeu ouvert.',
     'broadcastProvider.accessDenied.secondaryDescription': 'S\'il n\'y a pas d\'autre onglet de jeu ouvert, {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'cliquez ici',
     'upgrade.autonomousCarsUpgrade001.name': "Doigt d'honneur incitant au dépassement I",

@@ -177,7 +177,7 @@ const bn = {
     'botInfoDialog.bitsProducedSoFar': 'এখন পর্যন্ত {bitsProduced} বিট উৎপাদিত হয়েছে',
     'broadcastProvider.loading': 'লোড হচ্ছে',
     'broadcastProvider.accessDenied.title': 'প্রবেশাধিকার অস্বীকৃত',
-    'broadcastProvider.accessDenied.primaryDescription': 'বর্তমানে এই ব্রাউজারে গেমের আরেকটি ট্যাব খোলা আছে।',
+    'broadcastProvider.accessDenied.primaryDescription': 'এই ব্রাউজারে গেমের আরেকটি ট্যাব বর্তমানে খোলা আছে।',
     'broadcastProvider.accessDenied.secondaryDescription': 'যদি গেমের অন্য কোন ট্যাব খোলা না থাকে, {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'এখানে ক্লিক করুন',
     'upgrade.autonomousCarsUpgrade001.name': 'মধ্যমাঙ্গুলি প্ররোচিত ওভারটেকিং I',
