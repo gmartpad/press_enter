@@ -57,9 +57,21 @@ const InnerUpgradeItem = styled.div`
     cursor: pointer !important;
 `
 
-const UpgradeItemImg = styled.img`
-    height: 32px;
-    width: 32px;
+
+const UpgradeItemImg = styled.img<{ $isLoading: boolean }>`
+    width: 48px;
+    height: 48px;
+    transition: opacity 0.3s ease;
+    ${({ $isLoading }) => $isLoading && `
+        opacity: 0.7;
+        animation: pulse 1.5s ease-in-out infinite;
+    `}
+
+    @keyframes pulse {
+        0% { opacity: 0.7; }
+        50% { opacity: 0.4; }
+        100% { opacity: 0.7; }
+    }
 `
 
 export { 
