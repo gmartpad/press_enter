@@ -213,7 +213,7 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
     return (
         <StyledCanvas
             ref={canvasRef}
-            style={{ background: background ? `url(${background})` : 'none' }}
+            $background={background}
         />
     )
 }

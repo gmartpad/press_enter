@@ -183,13 +183,14 @@ const EnterIcon = styled(AiOutlineEnter)`
   transition: all .1s ease-in-out;
 `
 
-const BitsH3 = styled.h3`
+const BitsH3 = styled.h3<{ $color?: string }>`
   margin: 0px;
   text-shadow: -2px 2px #555;
   width: fit-content;
   max-width: 360px;
   text-align: center;
   font-size: 1.17rem;
+  color: ${props => props.$color || '#fff'};
 `
 
 interface BitsInfoProps {

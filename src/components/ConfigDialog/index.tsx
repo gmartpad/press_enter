@@ -4,7 +4,15 @@ import { FormattedMessage, useIntl } from 'react-intl'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
-import { ConfigResetButton, ConfigResetButtonH2, ConfigRow, SaveFileButton, SaveFileButtonH2, VolumeSlider } from './styled'
+import { 
+    ConfigResetButton, 
+    ConfigResetButtonH2, 
+    ConfigRow, 
+    SaveFileButton, 
+    SaveFileButtonH2, 
+    VolumeSlider, 
+    ConfigRowButtonContainer 
+} from './styled'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
 
@@ -94,13 +102,7 @@ const ConfigDialog = () => {
                 </ConfigRow>
                 <hr />
                 <ConfigRow>
-                    <div
-                        style={{
-                            width: '100%',
-                            display: 'flex',
-                            gap: '10px',
-                        }}
-                    >
+                    <ConfigRowButtonContainer>
                         <SaveFileButton 
                             onClick={() => {
                                 saveGameState(store.get)
@@ -122,7 +124,7 @@ const ConfigDialog = () => {
                                 <FormattedMessage id="config.importSaveFile.title" />
                             </SaveFileButtonH2>
                         </SaveFileButton>
-                    </div>
+                    </ConfigRowButtonContainer>
                 </ConfigRow>
                 <hr />
                 <ConfigRow>

@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl'
 import { useAtom, useStore } from 'jotai'
 import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 import { CentralizeDiv } from '@components/ConfirmDialog/styled'
-import { SaveInput, CopyButton } from './styled'
+import { SaveInput, CopyButton, CopyButtonContainer } from './styled'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import { sound1 } from '@assets/sounds/sharedClick'
 
@@ -117,13 +117,7 @@ const ExportSaveFileDialog = () => {
                         value={localStorage.getItem('gameState') || ''}
                         readOnly
                     />
-                    <div
-                        style={{
-                            display: 'flex',
-                            gap: '10px',
-                            width: '80%',
-                        }}
-                    >
+                    <CopyButtonContainer>
                         {hasWriteText && (
                             <CopyButton
                                 onClick={() => {
@@ -143,7 +137,7 @@ const ExportSaveFileDialog = () => {
                         <CopyButton onClick={handleDownloadSave}>
                             {intl.formatMessage({ id: 'config.exportSaveFile.downloadButton' })}
                         </CopyButton>
-                    </div>
+                    </CopyButtonContainer>
                 </CentralizeDiv>
             </DialogContainer>
         </>

@@ -9,4 +9,9 @@ const IncrementorPrice = styled.h4<{ $affordable: boolean }>`
   line-height: 12px;
 `
 
-export { IncrementorPrice }
+const QuestionMarkParagraph = styled.p`
+  margin: 0;
+  color: red;
+`
+
+export { IncrementorPrice, QuestionMarkParagraph }

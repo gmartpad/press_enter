@@ -109,6 +109,13 @@ const BotBuyListGrid = styled.div.attrs<WindowInnerWidthProps>(
   gap: 2px;
 `
 
+const BotUpgradeTitle = styled.h3`
+  margin: 0;
+  text-align: center;
+  padding: 12px 0 3px 0;
+  text-shadow: -2px 2px #555;
+`
+
 const BotUpgradeList = styled.div.attrs<WindowInnerWidthProps>(
     props => ({
         style: {
@@ -143,6 +150,10 @@ const NoUpgradesH5 = styled.h5`
   text-shadow: -2px 2px #555;
 `
 
+const QuestionMarkParagraph = styled.p`
+  margin: 0;
+`
+
 export {
     Aside,
     BotBulkModeButton,
@@ -155,5 +166,7 @@ export {
     BotUpgradeList,
     BulkAmountIndicatorParagraph,
     BulkModeIndicatorParagraph,
-    NoUpgradesH5
+    NoUpgradesH5,
+    BotUpgradeTitle,
+    QuestionMarkParagraph
 }

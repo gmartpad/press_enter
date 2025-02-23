@@ -30,7 +30,8 @@ import {
     ItemTitleInfo, 
     MainItemInfo, 
     MoreInfoLI, 
-    MoreInfoUL 
+    MoreInfoUL,
+    QuestionMarkParagraph
 } from '@components/shared/ItemInfoDialog/styled'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import { type Upgrade } from '@upgrades'
@@ -108,7 +109,7 @@ const ItemInfoDialog = () => {
     // Memoized render functions
     const renderItemName = useMemo(() => {
         if (!currentItem) return null
-        if (isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+        if (isIncrementor(currentItem) && !currentItem?.revealed) return <QuestionMarkParagraph>???????</QuestionMarkParagraph>
         return isIncrementor(currentItem) 
             ? <FormattedMessage id={`botBuyList.${currentItem.id}.name`} />
             : <FormattedMessage id={`upgrade.${currentItem.id}.name`} />
@@ -116,7 +117,7 @@ const ItemInfoDialog = () => {
 
     const renderLabelText = useMemo(() => {
         if (!currentItem) return ''
-        if (isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+        if (isIncrementor(currentItem) && !currentItem?.revealed) return <QuestionMarkParagraph>???????</QuestionMarkParagraph>
         return isIncrementor(currentItem)
             ? `${intl.formatMessage({ id: 'botsOwned' })}: ${currentItem.units}`
             : 'upgrade'
@@ -124,7 +125,7 @@ const ItemInfoDialog = () => {
 
     const renderPrice = useMemo(() => {
         if (!currentItem) return null
-        if (isIncrementor(currentItem) && !currentItem?.revealed) return <p style={{ margin: 0 }}>???????</p>
+        if (isIncrementor(currentItem) && !currentItem?.revealed) return <QuestionMarkParagraph>???????</QuestionMarkParagraph>
         
         if (isIncrementor(currentItem)) {
             return (

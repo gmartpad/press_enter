@@ -15,6 +15,14 @@ const NotValidContainer = styled.div<{ $flexDirection: 'row' | 'column' }>`
     text-align: center;
 `
 
+const StyledReloadButton = styled.button`
+    cursor: pointer;
+    background-color: #000;
+    border-width: thick;
+    padding: 4px 8px;
+`
+
 export {
-    NotValidContainer
+    NotValidContainer,
+    StyledReloadButton
 }

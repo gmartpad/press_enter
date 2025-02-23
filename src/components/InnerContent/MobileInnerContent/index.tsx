@@ -1,11 +1,11 @@
 import 'swiper/css'
-import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperRef } from 'swiper/react'
 import { useRef, useState } from 'react'
 import Bits from '@components/InnerContent/Bits'
 import BotBuyList from '@components/InnerContent/BotBuyList'
 import CenterMain from '@components/InnerContent/CenterMain'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
-import { SliderContainer } from './styled'
+import { SliderContainer, OverFlowHiddenSwiperSlide } from './styled'
 import StatsSection from '@components/StatsSection'
 import Navbar from '@components/Navbar'
 import ItemInfoDialog from '@components/shared/ItemInfoDialog'
@@ -34,15 +34,15 @@ const MobileInnerContent = () => {
                     allowSlideNext={activeSlide < 2}
                     allowSlidePrev={activeSlide > 0}
                 >
-                    <SwiperSlide style={{ overflow: 'hidden' }}>
+                    <OverFlowHiddenSwiperSlide>
                         <Bits />
-                    </SwiperSlide>
-                    <SwiperSlide style={{ overflow: 'hidden' }}>
+                    </OverFlowHiddenSwiperSlide>
+                    <OverFlowHiddenSwiperSlide>
                         <CenterMain />
-                    </SwiperSlide>
-                    <SwiperSlide style={{ overflow: 'hidden' }}>
+                    </OverFlowHiddenSwiperSlide>
+                    <OverFlowHiddenSwiperSlide>
                         <BotBuyList />
-                    </SwiperSlide>
+                    </OverFlowHiddenSwiperSlide>
                 </Swiper>
             </SliderContainer>
             <TabNavigator activeSlide={activeSlide} onTabClick={handleTabClick} />

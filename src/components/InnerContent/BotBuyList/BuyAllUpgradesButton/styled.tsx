@@ -24,6 +24,12 @@ const UpgradeBuyAllAnchor = styled.a`
     padding: 6px;
 `
 
+const UpgradeBuyAllAnchorParagraph = styled.p<{ $disabled?: boolean }>`
+  text-transform: uppercase; 
+  color: ${props => props.$disabled ? '#888' : '#fff'};
+  text-shadow: 2px 2px #555;
+`
+
 const UpgradeBuyAllTooltip = styled(Tooltip)`
     z-index: 2;
     backgroundColor: #000;
@@ -34,5 +40,6 @@ const UpgradeBuyAllTooltip = styled(Tooltip)`
 export {
     UpgradeBuyAllButton,
     UpgradeBuyAllAnchor,
-    UpgradeBuyAllTooltip
+    UpgradeBuyAllTooltip,
+    UpgradeBuyAllAnchorParagraph
 }

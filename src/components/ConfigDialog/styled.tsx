@@ -19,6 +19,12 @@ const ConfigRow = styled.div`
   color: #fff;
 `
 
+const ConfigRowButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 10px;
+`
+
 const ConfigResetButton = styled.button`
   cursor: pointer;
   background: #000;
@@ -78,4 +84,13 @@ const VolumeSlider = styled.input`
   }
 `
 
-export { ConfigDialog, ConfigRow, ConfigResetButton, ConfigResetButtonH2, SaveFileButton, SaveFileButtonH2, VolumeSlider }
+export { 
+    ConfigDialog, 
+    ConfigRow, 
+    ConfigResetButton, 
+    ConfigResetButtonH2, 
+    SaveFileButton, 
+    SaveFileButtonH2, 
+    VolumeSlider,
+    ConfigRowButtonContainer
+}

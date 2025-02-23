@@ -110,6 +110,10 @@ const ItemInfoLabelParagraph = styled.p`
   text-shadow: -2px 2px #bbb;
 `
 
+const QuestionMarkParagraph = styled.p`
+  margin: 0;
+`
+
 export { 
     MainItemInfo, 
     ItemName, 
@@ -121,5 +125,6 @@ export {
     MoreInfoLI,
     ItemTitleInfo,
     ItemInfoLabel,
-    ItemInfoLabelParagraph
+    ItemInfoLabelParagraph,
+    QuestionMarkParagraph
 }

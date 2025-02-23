@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { TabContainer } from './styled'
+import { TabContainer, TabButtonParagraph } from './styled'
 import TabButton from './TabButton'
 import { useTabNavigator } from '@contexts/TabNavigatorContext'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
@@ -26,19 +26,19 @@ const TabNavigator = ({ activeSlide, onTabClick }: TabNavigatorProps) => {
                 $active={activeSlide === 0} 
                 onClick={() => onTabClick(0)}
             >
-                <p style={{ margin: 0 }}>{activeSlide === 0 && '* '}</p><FormattedMessage id="tabNavigator.pressEnter" />
+                <TabButtonParagraph>{activeSlide === 0 && '* '}</TabButtonParagraph><FormattedMessage id="tabNavigator.pressEnter" />
             </TabButton>
             <TabButton 
                 $active={activeSlide === 1} 
                 onClick={() => onTabClick(1)}
             >
-                <p style={{ margin: 0 }}>{activeSlide === 1 && '* '}</p><FormattedMessage id="tabNavigator.botVisualizers" />
+                <TabButtonParagraph>{activeSlide === 1 && '* '}</TabButtonParagraph><FormattedMessage id="tabNavigator.botVisualizers" />
             </TabButton>
             <TabButton 
                 $active={activeSlide === 2} 
                 onClick={() => onTabClick(2)}
             >
-                <p style={{ margin: 0 }}>{activeSlide === 2 && '* '}</p><FormattedMessage id="tabNavigator.botsAndUpgrades" />
+                <TabButtonParagraph>{activeSlide === 2 && '* '}</TabButtonParagraph><FormattedMessage id="tabNavigator.botsAndUpgrades" />
             </TabButton>
         </TabContainer>
     )

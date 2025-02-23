@@ -17,4 +17,8 @@ const TabContainer = styled.div`
     border-right: 1px dashed #fff;
 `
 
-export { TabContainer }
+const TabButtonParagraph = styled.p`
+    margin: 0;
+`
+
+export { TabContainer, TabButtonParagraph }
