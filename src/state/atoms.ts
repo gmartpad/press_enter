@@ -152,28 +152,28 @@ export const configState = atom<Config, [Config], void>(
 
 export const currentHoveredBotItemState = atom<Incrementor, [Incrementor], void>(
   {} as Incrementor,
-  (get, set, newValue: Incrementor) => {
+  (_, set, newValue: Incrementor) => {
       set(currentHoveredBotItemState, newValue)
   }
 )
 
 export const currentHoveredUpgradeItemState = atom<Upgrade, [Upgrade], void>(
   {} as Upgrade,
-  (get, set, newValue: Upgrade) => {
+  (_, set, newValue: Upgrade) => {
       set(currentHoveredUpgradeItemState, newValue)
   }
 )
 
 export const mouseYState = atom<number, [number], void>(
     0,
-    (get, set, newValue: number) => {
+    (_, set, newValue: number) => {
         set(mouseYState, newValue)
     }
 )
 
 export const mouseXState = atom<number, [number], void>(
     0,
-    (get, set, newValue: number) => {
+    (_, set, newValue: number) => {
         set(mouseXState, newValue)
     }
 )

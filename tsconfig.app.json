@@ -45,5 +45,6 @@
       "@upgrades": ["state/upgrades/index.ts"]
     }
   },
-  "include": ["src", "node_modules", "../src/utils/saveEncoder.ts"]
+  "include": ["src", "../src/utils/saveEncoder.ts"],
+  "exclude": ["node_modules"]
 }

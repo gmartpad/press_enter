@@ -46,4 +46,36 @@ const SaveFileButtonH2 = styled.h2`
   color: #fff;
 `
 
-export { ConfigDialog, ConfigRow, ConfigResetButton, ConfigResetButtonH2, SaveFileButton, SaveFileButtonH2 }
+const VolumeSlider = styled.input`
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  width: 100%;
+  height: 25px;
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    background: #ccc;
+    border: 2px solid #888;
+    border-radius: 5px;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 2px solid #888;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -7px;
+  }
+
+  &:hover::-webkit-slider-thumb {
+    background: #ddd;
+  }
+`
+
+export { ConfigDialog, ConfigRow, ConfigResetButton, ConfigResetButtonH2, SaveFileButton, SaveFileButtonH2, VolumeSlider }

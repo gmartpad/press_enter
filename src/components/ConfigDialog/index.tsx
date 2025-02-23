@@ -4,7 +4,7 @@ import { FormattedMessage, useIntl } from 'react-intl'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
-import { ConfigResetButton, ConfigResetButtonH2, ConfigRow, SaveFileButton, SaveFileButtonH2 } from './styled'
+import { ConfigResetButton, ConfigResetButtonH2, ConfigRow, SaveFileButton, SaveFileButtonH2, VolumeSlider } from './styled'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
 
@@ -84,7 +84,7 @@ const ConfigDialog = () => {
                 <hr />
                 <ConfigRow>
                     <FormattedMessage id="config.volume.title" values={{ volumeValue: (config.volume * 100).toFixed(0) }} tagName="p" />
-                    <input
+                    <VolumeSlider
                         type="range"
                         max={100}
                         min={0}

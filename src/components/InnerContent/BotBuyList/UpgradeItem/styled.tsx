@@ -20,7 +20,7 @@ const OuterUpgradeItem = styled.button<{
     align-items: center;
     overflow: hidden;
     border: none;
-    cursor: pointer;
+    cursor: pointer !important;
     transition: all .2s ease-in-out;
 
     &:hover {
@@ -54,10 +54,12 @@ const InnerUpgradeItem = styled.div`
     align-items: center;
     box-sizing: border-box;
     padding: 6px;
+    cursor: pointer !important;
 `
 
 const UpgradeItemImg = styled.img`
-    height: -webkit-fill-available;
+    height: 32px;
+    width: 32px;
 `
 
 export { 

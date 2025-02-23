@@ -42,7 +42,7 @@ const InspectProtectionProvider = ({ children }: { children: React.ReactNode }) 
                 toString: function() {
                     if (!this.isOpen) {
                         this.isOpen = true
-                        alert("DevTools detected!")
+                        // alert("DevTools detected!")
                     }
                     return this.timestamp.toString()
                 }
@@ -65,7 +65,7 @@ const InspectProtectionProvider = ({ children }: { children: React.ReactNode }) 
     }, [])
   
     return (
-        <div className="select-none">
+        <div style={{ backgroundColor: '#000' }} className="select-none">
             {children}
         </div>
     )
