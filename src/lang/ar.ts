@@ -204,7 +204,7 @@ const ar = {
     'botInfoDialog.bitsProducedSoFar': 'تم إنتاج {bitsProduced} بت حتى الآن',
     'broadcastProvider.loading': 'جارٍ التحميل',
     'broadcastProvider.accessDenied.title': 'تم رفض الوصول',
-    'broadcastProvider.accessDenied.primaryDescription': 'هناك علامة تبويب أخرى للعبة مفتوحة حالياً في هذا المتصفح.',
+    'broadcastProvider.accessDenied.primaryDescription': 'هناك علامة تبويب أخرى للعبة مفتوحة حاليًا.',
     'broadcastProvider.accessDenied.secondaryDescription': 'إذا لم تكن هناك علامة تبويب أخرى مفتوحة، {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'انقر هنا',
     'upgrade.autonomousCarsUpgrade001.name': 'التجاوز الذي يؤدي إلى رفع الإصبع الأوسط I',

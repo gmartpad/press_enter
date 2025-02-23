@@ -177,7 +177,7 @@ const hiIn = {
     'botInfoDialog.bitsProducedSoFar': 'अब तक {bitsProduced} बिट्स उत्पन्न किए गए हैं',
     'broadcastProvider.loading': 'लोड हो रहा है',
     'broadcastProvider.accessDenied.title': 'पहुंच अस्वीकृत',
-    'broadcastProvider.accessDenied.primaryDescription': 'इस ब्राउज़र में गेम का दूसरा टैब पहले से खुला है।',
+    'broadcastProvider.accessDenied.primaryDescription': 'गेम का एक और टैब वर्तमान में खुला हुआ है।',
     'broadcastProvider.accessDenied.secondaryDescription': 'अगर कोई दूसरा टैब नहीं खुला है, तो {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'यहां क्लिक करें',
     'upgrade.autonomousCarsUpgrade001.name': 'मध्यमा अंगुली दिखाकर ओवरटेक करना I',

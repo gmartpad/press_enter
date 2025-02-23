@@ -165,7 +165,7 @@ const en = {
     'botInfoDialog.bitsProducedSoFar': '{bitsProduced} bits produced so far',
     'broadcastProvider.loading': 'loading',
     'broadcastProvider.accessDenied.title': 'access denied',
-    'broadcastProvider.accessDenied.primaryDescription': 'There is currently another tab of the game open in this browser.',
+    'broadcastProvider.accessDenied.primaryDescription': 'There is currently another tab of the game open.',
     'broadcastProvider.accessDenied.secondaryDescription': 'In the case that there is no other game tab still open, {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'click here',
     'upgrade.autonomousCarsUpgrade001.name': 'Middle-Finger Inducing Overtaking I',

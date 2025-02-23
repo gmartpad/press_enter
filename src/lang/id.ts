@@ -177,7 +177,7 @@ const id = {
     'botInfoDialog.bitsProducedSoFar': '{bitsProduced} bit telah dihasilkan sejauh ini',
     'broadcastProvider.loading': 'memuat',
     'broadcastProvider.accessDenied.title': 'akses ditolak',
-    'broadcastProvider.accessDenied.primaryDescription': 'Saat ini ada tab game lain yang terbuka di browser ini.',
+    'broadcastProvider.accessDenied.primaryDescription': 'Saat ini ada tab lain dari permainan yang sedang terbuka.',
     'broadcastProvider.accessDenied.secondaryDescription': 'Jika tidak ada tab game lain yang terbuka, {reloadButton}',
     'broadcastProvider.accessDenied.clickHere': 'klik di sini',
     'upgrade.autonomousCarsUpgrade001.name': 'Menyalip dengan Jari Tengah I',
