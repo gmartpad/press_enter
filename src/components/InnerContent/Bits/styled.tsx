@@ -13,8 +13,6 @@ const Aside = styled.aside.attrs<AsideProps>(
             flexDirection: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? 'row' :'column-reverse',
             width: props.$windowInnerWidth > 1024 ? '30%' : '100%',
             height: props.$windowInnerWidth > 1024 ? '100%' : '-webkit-fill-available',
-            paddingBottom: '0em',
-            paddingTop: '0em'
         }
     })
 )<AsideProps>`
@@ -24,6 +22,8 @@ const Aside = styled.aside.attrs<AsideProps>(
   color: #fff;
   overflow-y: auto;
   gap: 30px;
+  padding-bottom: '0em';
+  padding-top: '0em';
 `
 
 interface MobileSpacerProps {
