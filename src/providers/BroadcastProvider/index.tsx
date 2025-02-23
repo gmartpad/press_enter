@@ -7,6 +7,7 @@ interface BroadcastProviderProps {
 }
 
 const BroadcastProvider = ({ children }: BroadcastProviderProps) => {
+    const [gameStateExists, ] = useState<boolean>(!!localStorage.getItem('gameState'))
     const [tabId,] = useState<string>(() => {
         // Fallback for browsers that don't support randomUUID
         if (crypto.randomUUID) {
@@ -79,7 +80,7 @@ const BroadcastProvider = ({ children }: BroadcastProviderProps) => {
         <Loading/>
     )
 
-    if(accessDeniedRef.current) return (
+    if(accessDeniedRef.current && gameStateExists) return (
         <AccessDenied/>
     )
 
