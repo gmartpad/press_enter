@@ -45,9 +45,14 @@ const LanguageDialogTitleDiv = styled.div`
     text-shadow: -2px 2px #555;
 `
 
+const LanguageLabelParagraph = styled.p`
+    text-transform: uppercase;
+`
+
 export {
     LanguageDialogBackground,
     LanguageList,
     ChangeLanguageButton,
-    LanguageDialogTitleDiv
+    LanguageDialogTitleDiv,
+    LanguageLabelParagraph
 }

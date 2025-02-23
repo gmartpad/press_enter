@@ -1,4 +1,4 @@
-import { IncrementorPrice } from './styled'
+import { IncrementorPrice, QuestionMarkParagraph } from './styled'
 import { GiArtificialIntelligence } from 'react-icons/gi'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { Config, isAffordableState } from '@state/atoms'
@@ -38,7 +38,7 @@ const IncrementorBotPrice = ({ price, item, config }: IncrementorBotPriceProps) 
         return 0
     }, [item, config, price, intl])
     
-    if(!item?.revealed) return <p style={{ margin: 0, color: 'red' }}>?????????</p>
+    if(!item?.revealed) return <QuestionMarkParagraph>?????????</QuestionMarkParagraph>
 
     return (
         <IncrementorPrice $affordable={isAffordable}>

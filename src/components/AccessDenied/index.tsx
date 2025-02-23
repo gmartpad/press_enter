@@ -1,5 +1,5 @@
 import { FormattedMessage, type IntlShape, useIntl } from 'react-intl'
-import { NotValidContainer } from './styled'
+import { NotValidContainer, StyledReloadButton } from './styled'
 
 const ReloadButton = ({
     intl
@@ -7,12 +7,11 @@ const ReloadButton = ({
     intl: IntlShape
 }) => {
     return (
-        <button 
-            style={{ cursor: 'pointer', backgroundColor: '#000', borderWidth: 'thick', padding: '4px 8px' }} 
+        <StyledReloadButton 
             onClick={() => location.reload()}
         >
             {intl.formatMessage({ id: 'broadcastProvider.accessDenied.clickHere' })}
-        </button>
+        </StyledReloadButton>
     )
 }
 

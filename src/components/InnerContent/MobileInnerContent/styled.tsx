@@ -1,5 +1,7 @@
 import NAVBAR_HEIGHT from "@utils/NavbarHeight"
 import { styled } from "styled-components"
+import { SwiperSlide } from "swiper/react"
+
 interface SliderContainerProps {
     $windowInnerWidth: number
     $tabHeight: number
@@ -27,6 +29,11 @@ const SliderContainer = styled.div.attrs<SliderContainerProps>(
     }
 `
 
+const OverFlowHiddenSwiperSlide = styled(SwiperSlide)`
+    overflow: hidden;
+`
+
 export {
-    SliderContainer
+    SliderContainer,
+    OverFlowHiddenSwiperSlide
 }

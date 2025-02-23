@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react'
-import { UpgradeBuyAllAnchor, UpgradeBuyAllButton, UpgradeBuyAllTooltip } from './styled'
+import { UpgradeBuyAllAnchor, UpgradeBuyAllButton, UpgradeBuyAllTooltip, UpgradeBuyAllAnchorParagraph } from './styled'
 import { debounce } from 'lodash'
 import { buyUpgrade } from '@assets/sounds/upgradeClick'
 import { useAtomValue, useSetAtom, useStore } from 'jotai'
@@ -88,9 +88,9 @@ function BuyAllUpgradesButton({
                 }}
             >
                 <UpgradeBuyAllAnchor className="buy-all-button">
-                    <p style={{ textTransform: 'uppercase', color: disabled ? '#888' : '#fff', textShadow: '2px 2px #555' }}>
+                    <UpgradeBuyAllAnchorParagraph $disabled={disabled}>
                         {intl.formatMessage({ id: 'botBuyList.upgrades.buyAllUpgrades.title' })}
-                    </p>
+                    </UpgradeBuyAllAnchorParagraph>
                 </UpgradeBuyAllAnchor>
             </UpgradeBuyAllButton>
             <UpgradeBuyAllTooltip 

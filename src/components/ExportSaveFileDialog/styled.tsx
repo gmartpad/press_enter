@@ -26,4 +26,10 @@ const CopyButton = styled.button`
   text-shadow: -2px 2px #555;
 `
 
-export { SaveInput, CopyButton }
+const CopyButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 10px;
+`
+
+export { SaveInput, CopyButton, CopyButtonContainer }
