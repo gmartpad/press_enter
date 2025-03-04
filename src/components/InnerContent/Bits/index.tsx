@@ -83,17 +83,20 @@ const Bits = () => {
 
     const handleEnterBitClick = useCallback(
         (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
-            const currentBits = store.get(bitState)
-            const currentEnterPresses = store.get(enterPressesState)
-            
-            if(currentBits === 0 && currentEnterPresses === 0) {
-                setClearIntervals(false)
-            }
+            const trueUserInteraction = e.isTrusted && !('key' in e) && e.type !== 'keydown' && e.type !== 'keypress' && e.type !== 'keyup'
+            if(trueUserInteraction) {
+                const currentBits = store.get(bitState)
+                const currentEnterPresses = store.get(enterPressesState)
+                
+                if(currentBits === 0 && currentEnterPresses === 0) {
+                    setClearIntervals(false)
+                }
 
-            setEnterPressesState(currentEnterPresses + 1)
-            handleFloatingClickedTextValue(e)
-            setBits(currentBits + calculatedEnterPressBitAmount)
-            handleEnterBitClickSound()
+                setEnterPressesState(currentEnterPresses + 1)
+                handleFloatingClickedTextValue(e)
+                setBits(currentBits + calculatedEnterPressBitAmount)
+                handleEnterBitClickSound()
+            }
         },
         [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, store]
     )
@@ -136,12 +139,14 @@ const Bits = () => {
                 $windowInnerWidth={windowInnerWidth}
                 ref={enterButtonRef}
                 onClick={(e) => {
-                    if(isClick) {
+                    const trueClick = isClick && e.isTrusted && e.detail > 0
+                    if(trueClick) {
                         handleEnterBitClick(e)
                     }
                 }}
                 onTouchStart={(e) => {  
-                    if(!isClick) {
+                    const trueTouch = !isClick && e.isTrusted && e.touches.length > 0
+                    if(trueTouch) {
                         handleEnterBitClick(e)
                     }
                 }}
