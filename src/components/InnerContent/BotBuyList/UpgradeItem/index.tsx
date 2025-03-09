@@ -46,9 +46,6 @@ const UpgradeItem = ({
         
         const imagePath = `/src/assets/botUpgrades/${upgrade.imgSrc}`
         
-        console.log('imagePath', imagePath)
-        console.log('upgrade', upgrade)
-
         try {
             const module = imagePaths[imagePath] 
                 ? await imagePaths[imagePath]() as { default: string }
@@ -107,13 +104,6 @@ const UpgradeItem = ({
         playSound()
         saveGameState(store.get)
     }, [upgrade, isUpgradeAffordable, playSound, handlePurchaseUpgrade])
-
-    useEffect(() => {
-        console.log("=-=-=-==-=-=-=-=-=-=")
-        console.log('upgrade.name', upgrade.name)
-        console.log('upgrade', upgrade)
-        console.log('imageUrl', imageUrl)
-    }, [upgrade, imageUrl])
 
     return (
         <OuterUpgradeItem

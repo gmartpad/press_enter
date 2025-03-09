@@ -53,7 +53,7 @@ const AdComponent = (
                             setAdFailed(true)
                         }
                         window.removeEventListener('error', errorHandler)
-                    }, 100)
+                    }, 500)
                     
                     return () => {
                         clearTimeout(adCheckTimer)
@@ -67,7 +67,7 @@ const AdComponent = (
                 console.error("Google AdSense failed to load:", e)
                 setAdFailed(true)
             }
-        }, 100)
+        }, 500)
         
         return () => clearTimeout(timer)
     }, [$windowInnerWidth]) // Re-run when window width changes
