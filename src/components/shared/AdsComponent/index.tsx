@@ -82,8 +82,6 @@ const AdComponent = (
             ref={adRef}
             className="ad-container" 
             style={{
-                width: "300px", // Fixed width for Medium Rectangle
-                height: "250px", // Fixed height for Medium Rectangle
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center"
@@ -91,15 +89,10 @@ const AdComponent = (
         >
             <ins 
                 className="adsbygoogle"
-                style={{
-                    display: "block",
-                    width: "300px", // Exact Medium Rectangle width
-                    height: "250px" // Exact Medium Rectangle height
-                }}
                 data-ad-client="ca-pub-5989837191196250"
                 data-ad-slot="5076717803"
                 data-ad-format="rectangle" // Specify rectangle format
-                data-full-width-responsive="false" // Disable responsive behavior
+                data-full-width-responsive="true" // Disable responsive behavior
             >
             </ins>
         </div>

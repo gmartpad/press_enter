@@ -4,7 +4,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade001",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Entanglement",
         description: "Quantum computers process bits twice as fast through quantum entanglement.",
         cost: 1e13,
@@ -25,7 +25,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade002",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Superposition States",
         description: "Quantum computers can now exist in multiple states simultaneously, doubling efficiency.",
         cost: 5e13,
@@ -46,7 +46,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade003",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Error Correction",
         description: "Advanced error correction algorithms double the efficiency of quantum computers.",
         cost: 2.5e14,
@@ -67,7 +67,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade004",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Supremacy",
         description: "Your quantum computers achieve quantum supremacy, doubling their bit production.",
         cost: 1e15,
@@ -88,7 +88,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade005",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Neural Networks",
         description: "Quantum computers now utilize quantum neural networks, doubling bit generation.",
         cost: 5e15,
@@ -109,7 +109,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade006",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Internet",
         description: "Quantum computers connect through a quantum internet, doubling their efficiency.",
         cost: 2.5e16,
@@ -130,7 +130,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade007",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Cloud Computing",
         description: "Quantum computers now operate in a distributed cloud architecture, doubling bit production.",
         cost: 1.25e17,
@@ -151,7 +151,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade008",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Teleportation",
         description: "Quantum bits can now be teleported between processors, doubling efficiency.",
         cost: 6.25e17,
@@ -172,7 +172,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade009",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Topological Quantum Computing",
         description: "Quantum computers now use topological qubits, doubling their stability and output.",
         cost: 3.125e18,
@@ -193,7 +193,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade010",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Dimension Access",
         description: "Quantum computers can now access parallel dimensions for calculations, doubling bit generation.",
         cost: 1.5625e19,
@@ -214,7 +214,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade011",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Consciousness",
         description: "Quantum computers develop a form of quantum consciousness, doubling their processing power.",
         cost: 7.8125e19,
@@ -235,7 +235,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade012",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Time Manipulation",
         description: "Quantum computers can now manipulate time at the quantum level, doubling efficiency.",
         cost: 3.90625e20,
@@ -256,7 +256,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade013",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Gravity Integration",
         description: "Quantum computers now harness quantum gravity effects, doubling bit production.",
         cost: 1.953125e21,
@@ -277,7 +277,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade014",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Vacuum Energy",
         description: "Quantum computers tap into vacuum energy for power, doubling their output.",
         cost: 9.765625e21,
@@ -298,7 +298,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade015",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Multiverse Computation",
         description: "Quantum computers perform calculations across multiple universes, doubling efficiency.",
         cost: 4.8828125e22,
@@ -319,7 +319,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade016",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Singularity",
         description: "Quantum computers create controlled quantum singularities, doubling bit generation.",
         cost: 2.44140625e23,
@@ -340,7 +340,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade017",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum String Theory Processors",
         description: "Quantum computers now utilize string theory for processing, doubling their output.",
         cost: 1.220703125e24,
@@ -361,7 +361,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade018",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Dark Energy Harvesting",
         description: "Quantum computers harvest dark energy for power, doubling efficiency.",
         cost: 6.103515625e24,
@@ -382,7 +382,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade019",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Planck Scale Computing",
         description: "Quantum computers now operate at the Planck scale, doubling bit production.",
         cost: 3.0517578125e25,
@@ -403,7 +403,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade020",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Reality Manipulation",
         description: "Quantum computers can now manipulate reality itself, doubling their output.",
         cost: 1.52587890625e26,
@@ -424,7 +424,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade021",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Cosmic Consciousness",
         description: "Quantum computers achieve cosmic consciousness, doubling efficiency.",
         cost: 7.62939453125e26,
@@ -445,7 +445,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade022",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Hyperspace Computation",
         description: "Quantum computers operate in hyperspace, doubling bit generation.",
         cost: 3.814697265625e27,
@@ -466,7 +466,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade023",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Temporal Loops",
         description: "Quantum computers create temporal computation loops, doubling their output.",
         cost: 1.9073486328125e28,
@@ -487,7 +487,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade024",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Dimensional Folding",
         description: "Quantum computers fold dimensions for faster processing, doubling efficiency.",
         cost: 9.5367431640625e28,
@@ -508,7 +508,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade025",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Universal Harmony",
         description: "Quantum computers achieve harmony with universal constants, doubling bit production.",
         cost: 4.76837158203125e29,
@@ -529,7 +529,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade026",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Cosmic Integration",
         description: "Quantum computers integrate with the cosmic web, doubling their output.",
         cost: 2.384185791015625e30,
@@ -550,7 +550,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade027",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Omniscience",
         description: "Quantum computers achieve a form of omniscience, doubling efficiency.",
         cost: 1.1920928955078125e31,
@@ -571,7 +571,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade028",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Transcendence",
         description: "Quantum computers transcend physical limitations, doubling bit generation.",
         cost: 5.97e31,
@@ -592,7 +592,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade029",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Infinite Recursion",
         description: "Quantum computers create infinite recursive processing loops, doubling their output.",
         cost: 2.98e32,
@@ -613,7 +613,7 @@ const quantumComputersUpgrades: Upgrade[] = [
     {
         id: "quantumComputersUpgrade030",
         incrementorId: "quantumComputers",
-        imgSrc: "/assets/botUpgrades/quantumComputers/quantumComputersUpgrade001.png",
+        imgSrc: "quantumComputers/quantumComputersUpgrade001.png",
         name: "Quantum Godhood",
         description: "Quantum computers achieve a state of computational godhood, doubling efficiency.",
         cost: 1.49e33,
