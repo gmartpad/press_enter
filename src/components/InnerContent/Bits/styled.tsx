@@ -12,7 +12,7 @@ const Aside = styled.aside.attrs<AsideProps>(
             display: `${props.$displayValue}`,
             flexDirection: props.$windowInnerWidth <= 1024 && props.$windowInnerWidth > 425 ? 'row' :'column-reverse',
             width: props.$windowInnerWidth > 1024 ? '30%' : '100%',
-            height: props.$windowInnerWidth > 1024 ? '100%' : '-webkit-fill-available',
+            height: props.$windowInnerWidth > 1024 ? '100vh' : '-webkit-fill-available',
         }
     })
 )<AsideProps>`
