@@ -15,8 +15,19 @@ import goBotsUpgrades from "./goBots"
 import virtualAssistantsUpgrades from "./virtualAssistants"
 import llmsUpgrades from "./llms"
 import globalBitsUpgrades from "./globalBits"
-// import quantumComputersUpgrades from "./quantumComputers"
-// 
+
+import quantumComputersUpgrades from "./quantumComputers"
+import timeLoopAIsUpgrades from "./timeLoopAIs"
+import digitalGodsUpgrades from "./digitalGods"
+import matrixArchitectsUpgrades from "./matrixArchitects"
+import multiversalServersUpgrades from "./multiversalServers"
+import singularityEnginesUpgrades from "./singularityEngines"
+import cosmicComputersUpgrades from "./cosmicComputers"
+import digitalEldritchUpgrades from "./digitalEldritch"
+import universalVMsUpgrades from "./universalVMs"
+import omniscientOraclesUpgrades from "./omniscientOracles"
+import realityCompilersUpgrades from "./realityCompilers"
+import infinityProcessorsUpgrades from "./infinityProcessors"
 
 export type Upgrade = {
     id: string
@@ -77,5 +88,27 @@ export const defaultUpgrades: Upgrade[] = [
     // LLMs Upgrades
     llmsUpgrades,
     // Quantum Computers Upgrades
-    // quantumComputersUpgrades
+    quantumComputersUpgrades,
+    // Time Loop AIs Upgrades
+    timeLoopAIsUpgrades,
+    // Digital Gods Upgrades
+    digitalGodsUpgrades,
+    // Matrix Architects Upgrades
+    matrixArchitectsUpgrades,
+    // Multiversal Servers Upgrades
+    multiversalServersUpgrades,
+    // Singularity Engines Upgrades
+    singularityEnginesUpgrades,
+    // Cosmic Computers Upgrades
+    cosmicComputersUpgrades,
+    // Digital Eldritch Upgrades
+    digitalEldritchUpgrades,
+    // Universal VMs Upgrades
+    universalVMsUpgrades,
+    // Omniscient Oracles Upgrades
+    omniscientOraclesUpgrades,
+    // Reality Compilers Upgrades
+    realityCompilersUpgrades,
+    // Infinity Processors Upgrades
+    infinityProcessorsUpgrades
 ].flatMap(upgrade => upgrade)
