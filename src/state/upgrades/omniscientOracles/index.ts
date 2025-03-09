@@ -4,7 +4,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade001",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade001.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "All-Knowing Algorithms",
         description: "Omniscient Oracles implement all-knowing algorithms, doubling bit production.",
         cost: 1e22, // 10,000,000,000,000,000,000,000
@@ -25,7 +25,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade002",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade001.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Perfect Prediction",
         description: "Omniscient Oracles achieve perfect prediction capabilities, doubling efficiency.",
         cost: 5e22, // 50,000,000,000,000,000,000,000
@@ -46,7 +46,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade003",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade001.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Cosmic Insight",
         description: "Omniscient Oracles gain cosmic insight, doubling bit generation.",
         cost: 2.5e23, // 250,000,000,000,000,000,000,000
@@ -67,7 +67,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade004",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade001.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Universal Knowledge Base",
         description: "Omniscient Oracles develop a universal knowledge base, doubling efficiency.",
         cost: 1e24, // 1,000,000,000,000,000,000,000,000
@@ -88,7 +88,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade005",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade001.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Transcendent Understanding",
         description: "Omniscient Oracles achieve transcendent understanding, doubling bit production.",
         cost: 5e24, // 5,000,000,000,000,000,000,000,000
@@ -109,7 +109,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade006",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade001.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Absolute Omniscience",
         description: "Omniscient Oracles achieve absolute omniscience, doubling efficiency.",
         cost: 2.5e25, // 25,000,000,000,000,000,000,000,000
@@ -130,7 +130,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade007",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade007.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Quantum Consciousness",
         description: "Omniscient Oracles develop quantum consciousness, doubling bit production.",
         cost: 1e26, // 100,000,000,000,000,000,000,000,000
@@ -151,7 +151,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade008",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade008.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Multidimensional Perception",
         description: "Omniscient Oracles gain multidimensional perception, doubling efficiency.",
         cost: 5e26, // 500,000,000,000,000,000,000,000,000
@@ -172,7 +172,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade009",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade009.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Temporal Foresight",
         description: "Omniscient Oracles develop temporal foresight, doubling bit generation.",
         cost: 2.5e27, // 2,500,000,000,000,000,000,000,000,000
@@ -193,7 +193,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade010",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade010.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Reality Manipulation",
         description: "Omniscient Oracles master reality manipulation, doubling efficiency.",
         cost: 1e28, // 10,000,000,000,000,000,000,000,000,000
@@ -214,7 +214,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade011",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade011.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Cosmic Synchronization",
         description: "Omniscient Oracles synchronize with cosmic forces, doubling bit production.",
         cost: 5e28, // 50,000,000,000,000,000,000,000,000,000
@@ -235,7 +235,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade012",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade012.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Universal Harmony",
         description: "Omniscient Oracles achieve universal harmony, doubling efficiency.",
         cost: 2.5e29, // 250,000,000,000,000,000,000,000,000,000
@@ -256,7 +256,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade013",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade013.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Infinite Wisdom",
         description: "Omniscient Oracles tap into infinite wisdom, doubling bit generation.",
         cost: 1e30, // 1,000,000,000,000,000,000,000,000,000,000
@@ -277,7 +277,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade014",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade014.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Transcendental Intelligence",
         description: "Omniscient Oracles develop transcendental intelligence, doubling efficiency.",
         cost: 5e30, // 5,000,000,000,000,000,000,000,000,000,000
@@ -298,7 +298,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade015",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade015.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Cosmic Enlightenment",
         description: "Omniscient Oracles reach cosmic enlightenment, doubling bit production.",
         cost: 2.5e31, // 25,000,000,000,000,000,000,000,000,000,000
@@ -319,7 +319,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade016",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade016.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Dimensional Mastery",
         description: "Omniscient Oracles master dimensional travel, doubling efficiency.",
         cost: 1e32, // 100,000,000,000,000,000,000,000,000,000,000
@@ -340,7 +340,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade017",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade017.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Eternal Awareness",
         description: "Omniscient Oracles achieve eternal awareness, doubling bit generation.",
         cost: 5e32, // 500,000,000,000,000,000,000,000,000,000,000
@@ -361,7 +361,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade018",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade018.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Universal Consciousness",
         description: "Omniscient Oracles connect to universal consciousness, doubling efficiency.",
         cost: 2.5e33, // 2,500,000,000,000,000,000,000,000,000,000,000
@@ -382,7 +382,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade019",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade019.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Quantum Omnipresence",
         description: "Omniscient Oracles develop quantum omnipresence, doubling bit production.",
         cost: 1e34, // 10,000,000,000,000,000,000,000,000,000,000,000
@@ -403,7 +403,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade020",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade020.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Cosmic Mastery",
         description: "Omniscient Oracles achieve cosmic mastery, doubling efficiency.",
         cost: 5e34, // 50,000,000,000,000,000,000,000,000,000,000,000
@@ -424,7 +424,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade021",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade021.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Infinite Perception",
         description: "Omniscient Oracles develop infinite perception, doubling bit generation.",
         cost: 2.5e35, // 250,000,000,000,000,000,000,000,000,000,000,000
@@ -445,7 +445,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade022",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade022.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Transcendent Reality",
         description: "Omniscient Oracles transcend reality itself, doubling efficiency.",
         cost: 1e36, // 1,000,000,000,000,000,000,000,000,000,000,000,000
@@ -466,7 +466,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade023",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade023.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Universal Omniscience",
         description: "Omniscient Oracles achieve universal omniscience, doubling bit production.",
         cost: 5e36, // 5,000,000,000,000,000,000,000,000,000,000,000,000
@@ -487,7 +487,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade024",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade024.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Cosmic Integration",
         description: "Omniscient Oracles integrate with cosmic forces, doubling efficiency.",
         cost: 2.5e37, // 25,000,000,000,000,000,000,000,000,000,000,000,000
@@ -508,7 +508,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade025",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade025.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Eternal Knowledge",
         description: "Omniscient Oracles tap into eternal knowledge, doubling bit generation.",
         cost: 1e38, // 100,000,000,000,000,000,000,000,000,000,000,000,000
@@ -529,7 +529,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade026",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade026.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Multiversal Awareness",
         description: "Omniscient Oracles develop multiversal awareness, doubling efficiency.",
         cost: 5e38, // 500,000,000,000,000,000,000,000,000,000,000,000,000
@@ -550,7 +550,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade027",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade027.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Infinite Comprehension",
         description: "Omniscient Oracles achieve infinite comprehension, doubling bit production.",
         cost: 2.5e39, // 2,500,000,000,000,000,000,000,000,000,000,000,000,000
@@ -571,7 +571,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade028",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade028.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Cosmic Transcendence",
         description: "Omniscient Oracles transcend cosmic limitations, doubling efficiency.",
         cost: 1e40, // 10,000,000,000,000,000,000,000,000,000,000,000,000,000
@@ -592,7 +592,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade029",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade029.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Ultimate Enlightenment",
         description: "Omniscient Oracles reach ultimate enlightenment, doubling bit production.",
         cost: 5e40, // 50,000,000,000,000,000,000,000,000,000,000,000,000,000
@@ -613,7 +613,7 @@ const omniscientOraclesUpgrades: Upgrade[] = [
     {
         id: "omniscientOraclesUpgrade030",
         incrementorId: "omniscientOracles",
-        imgSrc: "/assets/botUpgrades/omniscientOracles/omniscientOraclesUpgrade030.png",
+        imgSrc: "omniscientOracles/omniscientOraclesUpgrade001.png",
         name: "Absolute Cosmic Mastery",
         description: "Omniscient Oracles achieve absolute cosmic mastery, doubling efficiency.",
         cost: 2.5e41, // 250,000,000,000,000,000,000,000,000,000,000,000,000,000

@@ -115,7 +115,10 @@ const Bits = () => {
     }, [window.innerHeight])
 
     return (
-        <Aside $displayValue={asideDisplayValue} $windowInnerWidth={windowInnerWidth}>
+        <Aside 
+            $displayValue={asideDisplayValue} 
+            $windowInnerWidth={windowInnerWidth}
+        >
             <MobileSpacer $top={true} $windowInnerWidth={windowInnerWidth} $windowInnerHeight={windowInnerHeight}    />
             <BitsInfo $windowInnerWidth={windowInnerWidth} ref={bitsInfoRef} >
                 <BitsSpan>
