@@ -131,7 +131,12 @@ const BotBuyList = () => {
     )
 
     return (
-        <Aside $windowInnerWidth={windowInnerWidth}>
+        <Aside 
+            $windowInnerWidth={windowInnerWidth}
+            style={{
+                height: '100vh'
+            }}
+        >
             <AdComponent $windowInnerWidth={windowInnerWidth}/>
             <>
                 <BotUpgradeTitle>
