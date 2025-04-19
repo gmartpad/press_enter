@@ -96,8 +96,8 @@ const AdComponent = (
                 }}
                 data-ad-client="ca-pub-5989837191196250"
                 data-ad-slot="5076717803"
-                data-ad-format="rectangle" // Specify rectangle format
-                data-full-width-responsive="true" // Disable responsive behavior
+                data-ad-format="auto"
+                data-full-width-responsive="true"
             >
             </ins>
         </div>
