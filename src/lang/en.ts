@@ -77,6 +77,8 @@ const en = {
     'botBuyList.infinityProcessors.name.singular': 'Infinity Processor',
     'botBuyList.infinityProcessors.description': 'The ultimate bit generators that exist beyond space and time. They generate infinite bits, but HR still demands weekly progress reports.',
     'config.volume.title': 'volume: {volumeValue}',
+    'config.physicalEnter.title': 'Enter active:',
+    'config.physicalEnter.tooltip': 'When active, allows the player to use the physical Enter key on their keyboard to press the Enter button in the game.',
     'config.reset': 'Reset',
     'config.exportSaveFile.title': 'Export Save File',
     'config.exportSaveFile.copyButton': 'Copy to clipboard',

@@ -68,6 +68,42 @@ button.botBuy {
   min-width: 288px;
 }
 
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+  font: inherit;
+  color: #fff;
+  width: 1.15em;
+  height: 1.15em;
+  border: thick solid #fff;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  box-shadow: -2px 2px #555;
+  cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  box-shadow: inset 1em 1em #000;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+hr {
+  margin: 20px 0;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

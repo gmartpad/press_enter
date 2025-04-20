@@ -77,6 +77,8 @@ const es = {
     'botBuyList.infinityProcessors.name.singular': 'Procesador infinito',
     'botBuyList.infinityProcessors.description': 'Los generadores de bits definitivos que existen más allá del espacio y el tiempo. Generan bits infinitos, pero RR.HH. todavía exige informes de progreso semanales.',
     'config.volume.title': 'volumen: {volumeValue}',
+    'config.physicalEnter.title': 'Enter activo:',
+    'config.physicalEnter.tooltip': 'Cuando está activo, permite al jugador usar la tecla Enter física de su teclado para presionar el botón Enter en el juego.',
     'config.reset': 'Reiniciar',
     'config.exportSaveFile.title': 'Exportar archivo de guardado',
     'config.exportSaveFile.copyButton': 'Copiar al portapapeles',

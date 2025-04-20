@@ -10,7 +10,7 @@ import {
 } from '@state/atoms'
 import { sound1, sound2, sound3 } from '@assets/sounds/enter'
 import { FloatText, Aside, EnterIcon, EnterKeyButton, BitsH3, BitsInfo, BitsSpan, MobileSpacer } from './styled'
-import React, { useCallback, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { useIntl, FormattedMessage } from 'react-intl'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
@@ -34,6 +34,7 @@ const Bits = () => {
     const calculatedEnterPressBitAmount = useAtomValue(calculatedEnterPressBitAmountState)
     const config = useAtomValue(configState)
 
+    const asideRef = useRef<HTMLDivElement | null>(null)
     const bitsInfoRef = useRef<HTMLDivElement | null>(null)
     const enterButtonRef = useRef<HTMLButtonElement | null>(null)
 
@@ -58,15 +59,37 @@ const Bits = () => {
     }, [config.volume])
 
     const handleFloatingClickedTextValue = useCallback((
-        e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>
+        e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement> | globalThis.KeyboardEvent
     ) => {
         const id = Date.now()
-        const x = 'touches' in e 
-            ? e.touches[0].clientX 
-            : e.clientX
-        const y = ('touches' in e 
-            ? e.touches[0].clientY 
-            : e.clientY) - 60
+
+        const x = (() => {
+            if('touches' in e) {
+                return e.touches[0].clientX 
+            }
+
+            if('clientX' in e) {
+                return e.clientX
+            }
+
+            const rect = enterButtonRef.current?.getBoundingClientRect()
+            
+            return ((rect?.right ?? 0) + (rect?.left ?? 0)) / 2
+        })()
+
+        const y = (() => {
+            if('touches' in e) {
+                return e.touches[0].clientY 
+            }
+
+            if('clientX' in e) {
+                return e.clientY - 60
+            }
+
+            const rect = enterButtonRef.current?.getBoundingClientRect()
+
+            return (rect?.y ?? 0) - 60
+        })()
 
         const isAmountBelowOneMillion = calculatedEnterPressBitAmount < 1_000_000
         const displayValue = isAmountBelowOneMillion
@@ -81,8 +104,15 @@ const Bits = () => {
     }, [setFloatTexts, calculatedEnterPressBitAmount, config.currentLanguageLocale, intl])
 
     const handleEnterBitClick = useCallback(
-        (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
-            const trueUserInteraction = e.isTrusted && !('key' in e) && e.type !== 'keydown' && e.type !== 'keypress' && e.type !== 'keyup'
+        (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement> | globalThis.KeyboardEvent) => {
+            const trueUserInteraction = e.isTrusted && 
+            (!('key' in e) || ((e as globalThis.KeyboardEvent).key === 'Enter') && config.physicalEnter) && 
+            (
+                e.type !== 'keydown' && 
+              e.type !== 'keypress' && 
+              e.type !== 'keyup' || 
+              ((e as globalThis.KeyboardEvent).key === 'Enter' && config.physicalEnter)
+            )
             if(trueUserInteraction) {
                 const currentBits = store.get(bitState)
                 const currentEnterPresses = store.get(enterPressesState)
@@ -97,7 +127,7 @@ const Bits = () => {
                 handleEnterBitClickSound()
             }
         },
-        [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, store]
+        [setEnterPressesState, handleFloatingClickedTextValue, setBits, calculatedEnterPressBitAmount, store, config]
     )
 
     const formattedCurrentProduction = useMemo(
@@ -113,8 +143,23 @@ const Bits = () => {
         return 'flex'
     }, [window.innerHeight])
 
+    useEffect(() => {
+        const handleKeyDown = (e: globalThis.KeyboardEvent) => {
+            if (e.key === 'Enter' && !e.repeat) {
+                handleEnterBitClick(e)
+            }
+        }
+      
+        window.addEventListener('keydown', handleKeyDown)
+      
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [handleEnterBitClick])
+
     return (
         <Aside 
+            ref={asideRef}
             $displayValue={asideDisplayValue} 
             $windowInnerWidth={windowInnerWidth}
         >
