@@ -96,7 +96,7 @@ const AdComponent = (
                 }}
                 data-ad-client="ca-pub-5989837191196250"
                 data-ad-slot="5076717803"
-                data-ad-format="auto"
+                data-ad-format="rectangle"
                 data-full-width-responsive="true"
             >
             </ins>
