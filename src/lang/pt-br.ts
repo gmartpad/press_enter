@@ -89,6 +89,8 @@ const ptBr = {
     'botBuyList.infinityProcessors.name.singular': 'Processador de Infinito',
     'botBuyList.infinityProcessors.description': 'Os geradores de bits definitivos que existem além do espaço e do tempo. Eles geram bits infinitos, mas o RH ainda exige relatórios de progresso semanais.',
     'config.volume.title': 'volume: {volumeValue}',
+    'config.physicalEnter.title': 'Enter ativo:',
+    'config.physicalEnter.tooltip': 'Quando ativo, permite que o jogador use a tecla Enter física de seu teclado para pressionar o botão de Enter no jogo.',
     'config.reset': 'Reiniciar',
     'config.exportSaveFile.title': 'Exportar arquivo de salvamento',
     'config.exportSaveFile.copyButton': 'Copiar',

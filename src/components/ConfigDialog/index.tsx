@@ -11,7 +11,8 @@ import {
     SaveFileButton, 
     SaveFileButtonH2, 
     VolumeSlider, 
-    ConfigRowButtonContainer 
+    ConfigRowButtonContainer, 
+    PhysicalEnterTooltip
 } from './styled'
 import { sound1 } from '@assets/sounds/sharedClick'
 import { useAtom, useStore } from 'jotai'
@@ -79,6 +80,15 @@ const ConfigDialog = () => {
         })
     }, [handleClickSound, setConfig, store])
 
+    const handlePhysicalEnterActiveChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+        handleClickSound()
+        const currentConfig = store.get(configState)
+        setConfig({
+            ...currentConfig,
+            physicalEnter: e.target.checked,
+        })
+    }, [setConfig, store])
+
     if(config.configDialogOpen) return (
         <>
             <DialogBackground handleToggleDialog={handleToggleConfigDialog} />
@@ -89,7 +99,6 @@ const ConfigDialog = () => {
                 >
                     X
                 </DialogCloseButton>
-                <hr />
                 <ConfigRow>
                     <FormattedMessage id="config.volume.title" values={{ volumeValue: (config.volume * 100).toFixed(0) }} tagName="p" />
                     <VolumeSlider
@@ -101,6 +110,29 @@ const ConfigDialog = () => {
                     />
                 </ConfigRow>
                 <hr />
+                <ConfigRow flexDirection='row'>
+                    <label
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            cursor: 'pointer',
+                            alignItems: 'center',
+                        }}
+                        className="physical-enter-row"
+                    >
+                        <FormattedMessage id="config.physicalEnter.title" tagName="h3" />
+                        <input 
+                            type="checkbox" 
+                            checked={config.physicalEnter} 
+                            onChange={handlePhysicalEnterActiveChange}
+                            style={{ margin: '0px 10px' }}
+                        />
+                    </label>
+                </ConfigRow>
+                <PhysicalEnterTooltip anchorSelect=".physical-enter-row" place="top">
+                    <FormattedMessage id="config.physicalEnter.tooltip" />
+                </PhysicalEnterTooltip>
+                <hr/>
                 <ConfigRow>
                     <ConfigRowButtonContainer>
                         <SaveFileButton 

@@ -89,6 +89,8 @@ const zhCn = {
     'botBuyList.infinityProcessors.name.singular': '无限处理器',
     'botBuyList.infinityProcessors.description': '存在于空间和时间之外的终极位生成器。它们生成无限的位，但人力资源部仍要求每周提交进度报告。',
     'config.volume.title': '音量：{volumeValue}',
+    'config.physicalEnter.title': '物理回车键激活:',
+    'config.physicalEnter.tooltip': '激活后，玩家可以使用键盘上的物理回车键来按游戏中的回车按钮。',
     'config.reset': '重置',
     'config.exportSaveFile.title': '导出保存文件',
     'config.exportSaveFile.copyButton': '复制到剪贴板',

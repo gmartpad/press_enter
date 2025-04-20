@@ -89,6 +89,8 @@ const fr = {
     'botBuyList.infinityProcessors.name.singular': 'Processeur Infinity',
     'botBuyList.infinityProcessors.description': "Les générateurs de bits ultimes qui existent au-delà de l'espace et du temps. Ils génèrent des bits infinis, mais les RH exigent toujours des rapports d'avancement hebdomadaires.",
     'config.volume.title': 'volume: {volumeValue}',
+    'config.physicalEnter.title': 'Touche Entrée physique active:',
+    'config.physicalEnter.tooltip': 'Lorsque cette option est active, le joueur peut utiliser la touche Entrée physique de son clavier pour appuyer sur le bouton Entrée dans le jeu.',
     'config.reset': 'Réinitialiser',
     'config.exportSaveFile.title': 'Exporter le fichier de sauvegarde',
     'config.exportSaveFile.copyButton': 'Copier dans le presse-papiers',

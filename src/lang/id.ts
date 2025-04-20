@@ -89,6 +89,8 @@ const id = {
     'botBuyList.infinityProcessors.name.singular': 'Prosesor Infinity',
     'botBuyList.infinityProcessors.description': 'Generator bit terbaik yang ada di luar ruang dan waktu. Mereka menghasilkan bit tak terbatas, tetapi HR masih menuntut laporan kemajuan mingguan.',
     'config.volume.title': 'volume: {volumeValue}',
+    'config.physicalEnter.title': 'Enter fisik aktif:',
+    'config.physicalEnter.tooltip': 'Ketika aktif, memungkinkan pemain untuk menggunakan tombol Enter fisik pada keyboard mereka untuk menekan tombol Enter dalam permainan.',
     'config.reset': 'Reset',
     'config.exportSaveFile.title': 'Ekspor File Save',
     'config.exportSaveFile.copyButton': 'Salin ke papan klip',

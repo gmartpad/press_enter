@@ -1,3 +1,4 @@
+import { Tooltip } from 'react-tooltip'
 import { styled } from 'styled-components'
 
 const ConfigDialog = styled.dialog`
@@ -12,9 +13,14 @@ const ConfigDialog = styled.dialog`
   color: #fff;
 `
 
-const ConfigRow = styled.div`
+interface ConfigRowProps {
+  flexDirection?: 'column' | 'row'
+}
+
+const ConfigRow = styled.div<ConfigRowProps>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props => props.flexDirection || 'column'};
+  align-items: ${props => props.flexDirection === 'row' ? 'center' : 'inherit'};
   text-shadow: -2px 2px #555;
   color: #fff;
 `
@@ -84,6 +90,13 @@ const VolumeSlider = styled.input`
   }
 `
 
+const PhysicalEnterTooltip = styled(Tooltip)`
+    z-index: 2;
+    backgroundColor: #000;
+    color: #fff;
+    max-width: 300px;
+`
+
 export { 
     ConfigDialog, 
     ConfigRow, 
@@ -92,5 +105,6 @@ export {
     SaveFileButton, 
     SaveFileButtonH2, 
     VolumeSlider,
-    ConfigRowButtonContainer
+    ConfigRowButtonContainer,
+    PhysicalEnterTooltip
 }
