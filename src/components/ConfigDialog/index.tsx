@@ -87,7 +87,7 @@ const ConfigDialog = () => {
             ...currentConfig,
             physicalEnter: e.target.checked,
         })
-    }, [setConfig, store])
+    }, [handleClickSound, setConfig, store])
 
     if(config.configDialogOpen) return (
         <>
