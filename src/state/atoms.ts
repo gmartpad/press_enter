@@ -9,6 +9,7 @@ import { decodeSaveData, encodeSaveData } from '@utils/saveEncoder.ts'
 // Types
 export type Config = {
   volume: number
+  physicalEnter: boolean
   configDialogOpen: boolean
   confirmDialogOpen: boolean
   languageDialogOpen: boolean
@@ -23,6 +24,7 @@ export type Config = {
 // Default values
 const DEFAULT_CONFIG: Config = {
     volume: 0.5,
+    physicalEnter: true,
     configDialogOpen: false,
     confirmDialogOpen: false,
     languageDialogOpen: false,

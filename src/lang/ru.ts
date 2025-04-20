@@ -89,6 +89,8 @@ const ru = {
     'botBuyList.infinityProcessors.name.singular': 'Процессор бесконечности',
     'botBuyList.infinityProcessors.description': 'Совершенные генераторы битов, которые существуют за пределами пространства и времени. Они генерируют бесконечные биты, но HR все еще требует еженедельных отчетов о ходе работы.',
     'config.volume.title': 'громкость: {volumeValue}',
+    'config.physicalEnter.title': 'Физический Enter активен:',
+    'config.physicalEnter.tooltip': 'Когда активно, позволяет игроку использовать физическую клавишу Enter на клавиатуре для нажатия кнопки Enter в игре.',
     'config.reset': 'Сброс',
     'config.exportSaveFile.title': 'Экспорт файла сохранения',
     'config.exportSaveFile.copyButton': 'Копировать в буфер обмена',

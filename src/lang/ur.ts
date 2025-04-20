@@ -88,6 +88,8 @@ const ur = {
     'botBuyList.infinityProcessors.name.singular': 'انفینٹی پروسیسر',
     'botBuyList.infinityProcessors.description': 'حتمی بٹ جنریٹرز جو جگہ اور وقت سے باہر موجود ہیں۔ وہ لامحدود بٹس تیار کرتے ہیں، لیکن HR پھر بھی ہفتہ وار پیش رفت کی رپورٹ کا مطالبہ کرتا ہے۔',
     'config.volume.title': 'والیوم: {volumeValue}',
+    'config.physicalEnter.title': 'حقیقی اینٹر کی فعال:',
+    'config.physicalEnter.tooltip': 'جب فعال ہو، کھلاڑی کو اپنے کی بورڈ پر حقیقی اینٹر کی استعمال کرنے کی اجازت دیتا ہے تاکہ گیم میں اینٹر بٹن دبا سکے۔',
     'config.reset': 'ری سیٹ',
     'config.exportSaveFile.title': 'ذخیرہ فائل استعمال کریں',
     'config.exportSaveFile.copyButton': 'کلپ بورڈ میں کوپی',

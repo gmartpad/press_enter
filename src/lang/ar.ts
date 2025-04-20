@@ -88,6 +88,8 @@ const ar = {
     'botBuyList.infinityProcessors.name.singular': "معالج إنفينيتي",
     'botBuyList.infinityProcessors.description': "مولدات البتات النهائية التي توجد خارج المكان والزمان. إنها تولد بتات لا نهائية، لكن قسم الموارد البشرية لا يزال يطلب تقارير التقدم الأسبوعية.",
     'config.volume.title': 'الصوت: {volumeValue}',
+    'config.physicalEnter.title': 'مفتاح الإدخال نشط:',
+    'config.physicalEnter.tooltip': 'عند التفعيل، يسمح للاعب باستخدام مفتاح الإدخال (Enter) الفعلي على لوحة المفاتيح للضغط على زر الإدخال في اللعبة.',
     'config.reset': 'إعادة تعيين',
     'config.exportSaveFile.title': 'تصدير ملف الحفظ',
     'config.exportSaveFile.copyButton': 'نسخ إلى المنصة',

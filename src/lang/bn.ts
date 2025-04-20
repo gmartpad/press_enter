@@ -89,6 +89,8 @@ const bn = {
     'botBuyList.infinityProcessors.name.singular': 'ইনফিনিটি প্রসেসর',
     'botBuyList.infinityProcessors.description': 'স্থান এবং সময়ের বাইরে বিদ্যমান চূড়ান্ত বিট জেনারেটর। তারা অসীম বিট তৈরি করে, কিন্তু HR এখনও সাপ্তাহিক অগ্রগতি প্রতিবেদন দাবি করে।',
     'config.volume.title': 'ভলিউম: {volumeValue}',
+    'config.physicalEnter.title': 'ফিজিক্যাল এন্টার সক্রিয়:',
+    'config.physicalEnter.tooltip': 'সক্রিয় থাকলে, খেলোয়াড়কে তার কীবোর্ডের ফিজিক্যাল এন্টার কী ব্যবহার করে গেমে এন্টার বাটন টিপতে অনুমতি দেয়।',
     'config.reset': 'রিসেট',
     'config.exportSaveFile.title': 'সংরক্ষণাত্মক ফাইল বিন্যাস করুন',
     'config.exportSaveFile.copyButton': 'ক্লিপবোর্ডে কপি করুন',

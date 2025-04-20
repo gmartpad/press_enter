@@ -89,6 +89,8 @@ const hiIn = {
     'botBuyList.infinityProcessors.name.singular': 'इन्फिनिटी प्रोसेसर',
     'botBuyList.infinityProcessors.description': 'अंतिम बिट जनरेटर जो अंतरिक्ष और समय से परे मौजूद हैं। वे अनंत बिट्स उत्पन्न करते हैं, लेकिन HR अभी भी साप्ताहिक प्रगति रिपोर्ट की मांग करता है।',
     'config.volume.title': 'वॉल्यूम: {volumeValue}',
+    'config.physicalEnter.title': 'भौतिक एंटर सक्रिय:',
+    'config.physicalEnter.tooltip': 'जब सक्रिय होता है, तो खिलाड़ी को अपने कीबोर्ड पर भौतिक एंटर कुंजी का उपयोग करके गेम में एंटर बटन दबाने की अनुमति देता है।',
     'config.reset': 'रीसेट',
     'config.exportSaveFile.title': 'सेव फाइल आउटपुट',
     'config.exportSaveFile.copyButton': 'क्लिपबोर्ड में कॉपी करें',
