@@ -108,7 +108,10 @@ const UpgradeItem = ({
     return (
         <OuterUpgradeItem
             $purchasable={isUpgradeAffordable}
-            onClick={handleOnClick}
+            onClick={async (e) => {
+                if(e.detail === 0) return
+                await handleOnClick()
+            }}
             onMouseEnter={() => {
                 if (isDesktop) {
                     setCurrentHoveredUpgradeItem(upgrade)

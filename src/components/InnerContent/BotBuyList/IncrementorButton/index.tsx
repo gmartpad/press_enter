@@ -52,7 +52,8 @@ function IncrementorButton({ item, children }: { item: Incrementor; children: Re
     return (
         <StyledIncrementorButton
             className="botBuy"
-            onClick={async () => {
+            onClick={async (e) => {
+                if(e.detail === 0) return
                 updateAutoIncrementors(item)
                 handleEnterBotClick()
             }}
