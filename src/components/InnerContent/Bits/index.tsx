@@ -14,7 +14,6 @@ import React, { useCallback, useMemo, useRef, useState } from 'react'
 import formatLargeNumber from '@utils/formatLargeNumber'
 import { useIntl, FormattedMessage } from 'react-intl'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
-import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 
 // At the top of the file, outside the component
 const audioFiles = [
@@ -27,7 +26,7 @@ const Bits = () => {
     const store = useStore()
     const intl = useIntl()
     const { windowInnerWidth, windowInnerHeight } = useWindowInnerValues()
-    const isClick = useDetectButtonClickBoolean()
+    const touchEventFired = useRef<boolean>(false)
     const [enterPresses, setEnterPressesState] = useAtom(enterPressesState)
     const setClearIntervals = useSetAtom(clearIntervalsState)
     const [bits, setBits] = useAtom(bitState)
@@ -142,13 +141,18 @@ const Bits = () => {
                 $windowInnerWidth={windowInnerWidth}
                 ref={enterButtonRef}
                 onClick={(e) => {
-                    const trueClick = isClick && e.isTrusted && e.detail > 0
-                    if(trueClick) {
-                        handleEnterBitClick(e)
+                    if (!touchEventFired.current) {
+                        const trueClick = e.isTrusted && e.detail > 0
+                        if(trueClick) {
+                            handleEnterBitClick(e)
+                        }
                     }
+                    // Reset the flag for next interaction
+                    touchEventFired.current = false
                 }}
-                onTouchStart={(e) => {  
-                    const trueTouch = !isClick && e.isTrusted && e.touches.length > 0
+                onTouchStart={(e) => { 
+                    touchEventFired.current = true
+                    const trueTouch = e.isTrusted && e.touches.length > 0
                     if(trueTouch) {
                         handleEnterBitClick(e)
                     }
