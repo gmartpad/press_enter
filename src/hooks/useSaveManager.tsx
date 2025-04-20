@@ -60,6 +60,7 @@ const useSaveManager = () => {
         setBits(0)
         setConfig({
             volume: 0.5,
+            physicalEnter: true,
             configDialogOpen: false,
             confirmDialogOpen: false,
             languageDialogOpen: false,
