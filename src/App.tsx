@@ -1,4 +1,5 @@
 import { Provider } from 'jotai'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { 
     BitUpdaterProvider, 
     BroadcastProvider, 
@@ -11,6 +12,7 @@ import { TabNavigatorProvider } from '@contexts/TabNavigatorContext'
 function App() {
     return (
         <Provider>
+            <SpeedInsights/>
             {/* <InspectProtectionProvider> */}
             <TabNavigatorProvider>
                 <LangProvider>
