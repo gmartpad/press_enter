@@ -1,5 +1,6 @@
 import { Provider } from 'jotai'
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 import { 
     BitUpdaterProvider, 
     BroadcastProvider, 
@@ -11,20 +12,23 @@ import { TabNavigatorProvider } from '@contexts/TabNavigatorContext'
 
 function App() {
     return (
-        <Provider>
+        <>
+            <Provider>
+                {/* <InspectProtectionProvider> */}
+                <TabNavigatorProvider>
+                    <LangProvider>
+                        <BroadcastProvider>
+                            <BitUpdaterProvider>
+                                <Content/>
+                            </BitUpdaterProvider>
+                        </BroadcastProvider>
+                    </LangProvider>
+                </TabNavigatorProvider>
+                {/* </InspectProtectionProvider> */}
+            </Provider>
             <SpeedInsights/>
-            {/* <InspectProtectionProvider> */}
-            <TabNavigatorProvider>
-                <LangProvider>
-                    <BroadcastProvider>
-                        <BitUpdaterProvider>
-                            <Content/>
-                        </BitUpdaterProvider>
-                    </BroadcastProvider>
-                </LangProvider>
-            </TabNavigatorProvider>
-            {/* </InspectProtectionProvider> */}
-        </Provider>
+            <Analytics/>
+        </>
     )
 }
 
