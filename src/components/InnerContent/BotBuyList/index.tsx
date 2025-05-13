@@ -137,7 +137,7 @@ const BotBuyList = () => {
                 height: '100vh'
             }}
         >
-            <AdComponent $windowInnerWidth={windowInnerWidth}/>
+            {/* <AdComponent $windowInnerWidth={windowInnerWidth}/> */}
             <>
                 <BotUpgradeTitle>
                     <FormattedMessage id="botBuyList.upgrades.title" />
