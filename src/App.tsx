@@ -1,5 +1,5 @@
 import { Provider } from 'jotai'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { 
     BitUpdaterProvider, 
     BroadcastProvider, 
