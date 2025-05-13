@@ -40,7 +40,7 @@ import updateUpgrades from '@utils/updateUpgrades'
 import shallowEqualUpgrades from '@utils/shallowEqualUpgrades'
 import useWindowInnerValues from '@hooks/useWindowInnerValues'
 import useIsDesktop from '@hooks/useIsDesktop'
-import AdComponent from '@components/shared/AdsComponent'
+// import AdComponent from '@components/shared/AdsComponent'
 const BotBuyList = () => {
     const { windowInnerWidth } = useWindowInnerValues()
     const store = useStore()
