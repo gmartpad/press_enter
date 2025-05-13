@@ -13,6 +13,7 @@
   "dependencies": {
     "@formatjs/intl-locale": "^4.2.8",
     "@formatjs/intl-relativetimeformat": "^11.4.8",
+    "@vercel/speed-insights": "^1.2.0",
     "country-flag-icons": "^1.5.14",
     "intl-messageformat": "^10.7.10",
     "jotai": "^2.11.3",
