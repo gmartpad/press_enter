@@ -88,6 +88,8 @@ const zhCn = {
     'botBuyList.infinityProcessors.name': '无限处理器',
     'botBuyList.infinityProcessors.name.singular': '无限处理器',
     'botBuyList.infinityProcessors.description': '存在于空间和时间之外的终极位生成器。它们生成无限的位，但人力资源部仍要求每周提交进度报告。',
+    "botVisualizer.ariaLabel": "{units} 个 {botName} 机器人单元{pluralSuffix}的可视化。每个单元由一个包含机器人图像的圆圈表示。",
+    "botVisualizer.fallbackText": "机器人活动的视觉表示。当前显示 {units} 个 {botName} 机器人单元{pluralSuffix}。",
     'config.volume.title': '音量：{volumeValue}',
     'config.physicalEnter.title': '物理回车键激活:',
     'config.physicalEnter.tooltip': '激活后，玩家可以使用键盘上的物理回车键来按游戏中的回车按钮。',

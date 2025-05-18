@@ -1,6 +1,17 @@
 import { FixedSizeList as FixedSizeListType } from 'react-window'
 import { autoIncrementorsState } from "@state/atoms"
-import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react'
+import React, { 
+    useState, 
+    useMemo, 
+    useCallback, 
+    useRef, 
+    useEffect,
+    CSSProperties,
+    Component,
+    ReactNode,
+    ErrorInfo,
+    FC
+} from 'react'
 import BotVisualizerItem from "@components/BotVisualizer"
 import { useAtomValue } from 'jotai'
 import NAVBAR_HEIGHT from '@utils/NavbarHeight'
@@ -19,18 +30,18 @@ interface IncrementorData {
 
 interface RowProps {
     index: number;
-    style: React.CSSProperties;
+    style: CSSProperties;
     data: IncrementorData[];
 }
 
 // Style objects
-const containerStyle: React.CSSProperties = {
+const containerStyle: CSSProperties = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column'
 }
 
-const separatorStyle: React.CSSProperties = {
+const separatorStyle: CSSProperties = {
     height: 20,
     backgroundColor: '#000'
 }
@@ -51,9 +62,9 @@ const useScrollPreservation = () => {
 }
 
 // Error boundary component
-class ErrorBoundary extends React.Component<{
-    fallback: React.ReactNode;
-    children: React.ReactNode;
+class ErrorBoundary extends Component<{
+    fallback: ReactNode;
+    children: ReactNode;
 }, { hasError: boolean }> {
     state = { hasError: false }
 
@@ -61,7 +72,7 @@ class ErrorBoundary extends React.Component<{
         return { hasError: true }
     }
 
-    componentDidCatch(error: Error, info: React.ErrorInfo) {
+    componentDidCatch(error: Error, info: ErrorInfo) {
         console.error('BotVisualizer error:', error, info)
     }
 
@@ -70,7 +81,7 @@ class ErrorBoundary extends React.Component<{
     }
 }
 
-const BotVisualizers: React.FC = () => {
+const BotVisualizers: FC = () => {
     const autoIncrementors = useAtomValue(autoIncrementorsState)
     const listRef = useRef<FixedSizeListType>(null)
     const { scrollOffset, handleScroll } = useScrollPreservation()
@@ -92,14 +103,19 @@ const BotVisualizers: React.FC = () => {
         const item = data[index]
 
         return (
-            <div style={{ ...style, ...containerStyle }}>
-                <ErrorBoundary fallback={<div>Error loading bot visualization</div>}>
+            <div 
+                role="listitem" 
+                style={{ ...style, ...containerStyle }}
+            >
+                <ErrorBoundary 
+                    fallback={<div>Error loading bot visualization for bot {item.id}</div>}
+                >
                     <BotVisualizerItem
                         botId={item.id}
                         key={item.id}
                     />
                 </ErrorBoundary>
-                <div style={separatorStyle} />
+                <div style={separatorStyle} aria-hidden="true" />
             </div>
         )
     }, [])
@@ -131,6 +147,7 @@ const BotVisualizers: React.FC = () => {
             onScroll={handleScroll}
             initialScrollOffset={scrollOffset}
             itemData={memoizedIncrementors} // Pass data to Row component
+            aria-label="List of bot activity visualizations"
         >
             {Row}
         </FixedSizeList>

@@ -1,5 +1,5 @@
 import { configState, saveGameState } from '@state/atoms'
-import { useCallback, useRef } from 'react'
+import { useCallback, useMemo, useRef } from 'react'
 import { FormattedMessage, useIntl } from 'react-intl'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import DialogBackground from '@components/shared/DialogBackground'
@@ -21,6 +21,14 @@ const ConfigDialog = () => {
     const store = useStore()
     const intl = useIntl()
     const [config, setConfig] = useAtom(configState)
+
+    const ariaIDs = useMemo(() => ({
+        dialogTitleId: 'config-dialog-title',
+        volumeSliderLabelId: 'volume-slider-label',
+        volumeSliderId: 'volume-slider',
+        physicalEnterCheckboxId: 'physical-enter-checkbox',
+        physicalEnterLabelId: 'physical-enter-label'
+    }), [])
 
     const handleVolumeChange = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -92,26 +100,45 @@ const ConfigDialog = () => {
     if(config.configDialogOpen) return (
         <>
             <DialogBackground handleToggleDialog={handleToggleConfigDialog} />
-            <DialogContainer dialogOpen={Boolean(config.configDialogOpen)}>
+            <DialogContainer 
+                dialogOpen={Boolean(config.configDialogOpen)}
+                aria-labelledby={ariaIDs.dialogTitleId}
+                aria-modal="true"
+            >
                 <DialogCloseButton 
                     handleToggleDialog={handleToggleConfigDialog}
                     orientation='right'
+                    aria-label="Close settings"
                 >
                     X
                 </DialogCloseButton>
                 <ConfigRow>
-                    <FormattedMessage id="config.volume.title" values={{ volumeValue: (config.volume * 100).toFixed(0) }} tagName="p" />
+                    <label
+                        htmlFor={ariaIDs.volumeSliderId}
+                        id={ariaIDs.volumeSliderLabelId}
+                    >
+                        <FormattedMessage 
+                            id="config.volume.title" 
+                            values={{ volumeValue: (config.volume * 100).toFixed(0) }} 
+                            tagName="p" 
+                        />
+                    </label>
                     <VolumeSlider
+                        id={ariaIDs.volumeSliderId}
                         type="range"
                         max={100}
                         min={0}
                         value={config.volume * 100}
                         onChange={handleVolumeChange}
+                        aria-labelledby={ariaIDs.volumeSliderLabelId}
+                        aria-valuetext={`${(config.volume * 100).toFixed(0)}%`}
                     />
                 </ConfigRow>
                 <hr />
                 <ConfigRow flexDirection='row'>
                     <label
+                        htmlFor={ariaIDs.physicalEnterCheckboxId}
+                        id={ariaIDs.physicalEnterLabelId}
                         style={{
                             display: 'flex',
                             flexDirection: 'row',
@@ -121,11 +148,13 @@ const ConfigDialog = () => {
                         className="physical-enter-row"
                     >
                         <FormattedMessage id="config.physicalEnter.title" tagName="h3" />
-                        <input 
+                        <input
+                            id={ariaIDs.physicalEnterCheckboxId}
                             type="checkbox" 
                             checked={config.physicalEnter} 
                             onChange={handlePhysicalEnterActiveChange}
                             style={{ margin: '0px 10px' }}
+                            aria-labelledby={ariaIDs.physicalEnterLabelId}
                         />
                     </label>
                 </ConfigRow>
@@ -135,7 +164,8 @@ const ConfigDialog = () => {
                 <hr/>
                 <ConfigRow>
                     <ConfigRowButtonContainer>
-                        <SaveFileButton 
+                        <SaveFileButton
+                            className="thickButton"
                             onClick={() => {
                                 saveGameState(store.get)
                                 handleToggleConfigDialog()

@@ -88,6 +88,8 @@ const hiIn = {
     'botBuyList.infinityProcessors.name': 'इन्फिनिटी प्रोसेसर',
     'botBuyList.infinityProcessors.name.singular': 'इन्फिनिटी प्रोसेसर',
     'botBuyList.infinityProcessors.description': 'अंतिम बिट जनरेटर जो अंतरिक्ष और समय से परे मौजूद हैं। वे अनंत बिट्स उत्पन्न करते हैं, लेकिन HR अभी भी साप्ताहिक प्रगति रिपोर्ट की मांग करता है।',
+    "botVisualizer.ariaLabel": "{units} {botName} बॉट यूनिट{pluralSuffix} का विज़ुअलाइज़ेशन। प्रत्येक यूनिट को बॉट की छवि वाले एक वृत्त द्वारा दर्शाया गया है।",
+    "botVisualizer.fallbackText": "बॉट गतिविधि का एक दृश्य प्रतिनिधित्व। वर्तमान में {units} {botName} बॉट यूनिट{pluralSuffix} दिखा रहा है।",
     'config.volume.title': 'वॉल्यूम: {volumeValue}',
     'config.physicalEnter.title': 'भौतिक एंटर सक्रिय:',
     'config.physicalEnter.tooltip': 'जब सक्रिय होता है, तो खिलाड़ी को अपने कीबोर्ड पर भौतिक एंटर कुंजी का उपयोग करके गेम में एंटर बटन दबाने की अनुमति देता है।',

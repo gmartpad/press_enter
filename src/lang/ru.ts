@@ -88,6 +88,8 @@ const ru = {
     'botBuyList.infinityProcessors.name': 'Процессоры бесконечности',
     'botBuyList.infinityProcessors.name.singular': 'Процессор бесконечности',
     'botBuyList.infinityProcessors.description': 'Совершенные генераторы битов, которые существуют за пределами пространства и времени. Они генерируют бесконечные биты, но HR все еще требует еженедельных отчетов о ходе работы.',
+    "botVisualizer.ariaLabel": "Визуализация {units} единиц{pluralSuffix} бота {botName}. Каждая единица представлена кругом с изображением бота.",
+    "botVisualizer.fallbackText": "Визуальное представление активности бота. В настоящее время отображается {units} единиц{pluralSuffix} бота {botName}.",
     'config.volume.title': 'громкость: {volumeValue}',
     'config.physicalEnter.title': 'Физический Enter активен:',
     'config.physicalEnter.tooltip': 'Когда активно, позволяет игроку использовать физическую клавишу Enter на клавиатуре для нажатия кнопки Enter в игре.',

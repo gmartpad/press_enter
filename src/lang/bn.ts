@@ -88,6 +88,8 @@ const bn = {
     'botBuyList.infinityProcessors.name': 'ইনফিনিটি প্রসেসর',
     'botBuyList.infinityProcessors.name.singular': 'ইনফিনিটি প্রসেসর',
     'botBuyList.infinityProcessors.description': 'স্থান এবং সময়ের বাইরে বিদ্যমান চূড়ান্ত বিট জেনারেটর। তারা অসীম বিট তৈরি করে, কিন্তু HR এখনও সাপ্তাহিক অগ্রগতি প্রতিবেদন দাবি করে।',
+    "botVisualizer.ariaLabel": "{units} টি {botName} বট ইউনিট{pluralSuffix} এর দৃশ্যায়ন। প্রতিটি ইউনিট একটি বৃত্ত দ্বারা উপস্থাপিত হয় যেখানে বটের ছবি রয়েছে।",
+    "botVisualizer.fallbackText": "বটের কার্যকলাপের একটি ভিজ্যুয়াল উপস্থাপনা। বর্তমানে {units} টি {botName} বট ইউনিট{pluralSuffix} দেখানো হচ্ছে।",
     'config.volume.title': 'ভলিউম: {volumeValue}',
     'config.physicalEnter.title': 'ফিজিক্যাল এন্টার সক্রিয়:',
     'config.physicalEnter.tooltip': 'সক্রিয় থাকলে, খেলোয়াড়কে তার কীবোর্ডের ফিজিক্যাল এন্টার কী ব্যবহার করে গেমে এন্টার বাটন টিপতে অনুমতি দেয়।',

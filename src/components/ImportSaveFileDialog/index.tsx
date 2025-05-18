@@ -13,7 +13,8 @@ import {
     ButtonContainer, 
     ErrorMessage, 
     ImportButtonContainer, 
-    InvisibleFileUploadInput 
+    InvisibleFileUploadInput, 
+    VisuallyHiddenLabel
 } from './styled'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import { sound1 } from '@assets/sounds/sharedClick'
@@ -25,6 +26,12 @@ const ImportSaveFileDialog = () => {
     const { loadGame } = useSaveManager()
     const [saveString, setSaveString] = useState('')
     const [error, setError] = useState('')
+
+    const ariaIDs = useMemo(() => ({
+        dialogTitleId: 'import-save-dialog-title',
+        saveInputLabelId: 'import-save-input-label',
+        errorMessageId: 'import-save-error-message'
+    }), [])
 
     const hasReadText = useMemo(() => Boolean(navigator.clipboard?.readText), [navigator.clipboard?.readText])
 
@@ -136,29 +143,48 @@ const ImportSaveFileDialog = () => {
     return (
         <>
             <DialogBackground handleToggleDialog={confirmConfigToggle} />
-            <DialogContainer dialogOpen={Boolean(config.importSaveFileDialogOpen)}>
+            <DialogContainer 
+                dialogOpen={Boolean(config.importSaveFileDialogOpen)}
+                aria-labelledby={ariaIDs.dialogTitleId}
+                aria-modal="true"
+            >
                 <DialogCloseButton
                     handleToggleDialog={confirmConfigToggle}
                     orientation='left'
+                    aria-label="Go back to settings"
                 >
                     {'<'}
                 </DialogCloseButton>
                 <CentralizeDiv>
                     <h2>{intl.formatMessage({ id: 'config.importSaveFile.title' })}</h2>
+                    <VisuallyHiddenLabel
+                        htmlFor="save-game-data-input"
+                        id={ariaIDs.saveInputLabelId}
+                    >
+                        {'Paste your save game data here'}
+                    </VisuallyHiddenLabel>
                     <SaveInput
+                        id="save-game-data-input"
                         value={saveString}
                         onChange={(e) => setSaveString(e.target.value)}
                         placeholder={intl.formatMessage({ id: 'config.importSaveFile.placeholder' })}
+                        aria-labelledby={ariaIDs.saveInputLabelId}
+                        aria-describedby={error ? ariaIDs.errorMessageId : undefined}
+                        aria-invalid={!!error}
                     />
                     <ButtonContainer>
                         <ImportButtonContainer>
                             {hasReadText && (
-                                <ImportButton onClick={handlePasteFromClipboard}>
+                                <ImportButton 
+                                    onClick={handlePasteFromClipboard}
+                                    aria-label="Paste save data from clipboard"
+                                >
                                     {intl.formatMessage({ id: 'config.importSaveFile.pasteFromClipboard' })}
                                 </ImportButton>
                             )}
                             <ImportButton
                                 onClick={() => document.getElementById('file-upload')?.click()}
+                                aria-label="Upload save data from a file"
                             >
                                 {intl.formatMessage({ id: 'config.importSaveFile.uploadFile' })}
                             </ImportButton>
@@ -168,15 +194,26 @@ const ImportSaveFileDialog = () => {
                             type="file"
                             accept=".txt"
                             onChange={handleFileUpload}
+                            aria-hidden="true"
+                            tabIndex={-1}
                         />
                         <ImportButton
                             onClick={handleLoad}
                             disabled={!saveString}
+                            aria-label="Load the provided save data"
                         >
                             {intl.formatMessage({ id: 'config.importSaveFile.loadButton' })}
                         </ImportButton>
                     </ButtonContainer>
-                    {error && <ErrorMessage>{error}</ErrorMessage>}
+                    {error && (
+                        <ErrorMessage
+                            id={ariaIDs.errorMessageId}
+                            role="alert"
+                            aria-live="assertive"
+                        >
+                            {error}
+                        </ErrorMessage>
+                    )}
                 </CentralizeDiv>
             </DialogContainer>
         </>

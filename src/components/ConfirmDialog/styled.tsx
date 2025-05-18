@@ -1,3 +1,4 @@
+import BaseButton from '@components/shared/BaseButton'
 import { styled } from 'styled-components'
 
 const CentralizeDiv = styled.div`
@@ -29,11 +30,8 @@ const ConfirmButtonsContainer = styled.div`
   width: 100%;
 `
 
-const DeclineButton = styled.button`
+const DeclineButton = styled(BaseButton)`
   padding: 10px;
-  cursor: pointer;
-  background: black;
-  border-width: thick;
 `
 
 const DeclineButtonH2 = styled.h2`
