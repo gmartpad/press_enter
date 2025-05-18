@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { InfoImgDiv, SkeletonInfoImgDiv } from './styled'
 import { type Incrementor } from '@state/defaultAutoIncrementors'
 import { type Upgrade } from '@upgrades'
@@ -37,11 +37,24 @@ const InfoDialogImg = ({ item, isIncrementor }: { item: Incrementor | Upgrade, i
         handleImageUrl()
     }, [item, handleImageUrl])
 
+    const altText = useMemo(() => {
+        if (hiddenIncrementor) {
+            return "Icon representing a hidden item"
+        }
+        return `Icon for ${item.name}`
+    }, [item])
+
     return (
         <>
-            {isInfoDialogImgLoading && <SkeletonInfoImgDiv />}
+            {isInfoDialogImgLoading && (
+                <SkeletonInfoImgDiv 
+                    role="img"
+                    aria-label="Loading image..."
+                />
+            )}
             <InfoImgDiv
                 src={hiddenIncrementor ? QUESTION_MARK_SRC : imageUrl}
+                alt={altText}
                 $isInfoDialogImgLoading={isInfoDialogImgLoading}
                 $hiddenIncrementor={hiddenIncrementor}
                 onLoad={() => setIsInfoDialogImgLoading(false)}

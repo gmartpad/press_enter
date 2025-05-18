@@ -1,4 +1,17 @@
+import BaseButton from '@components/shared/BaseButton'
 import styled from 'styled-components'
+
+const VisuallyHiddenLabel = styled.label`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+`
 
 const SaveInput = styled.textarea`
   width: 80%;
@@ -12,18 +25,19 @@ const SaveInput = styled.textarea`
   resize: vertical;
   margin-bottom: 16px;
   box-sizing: border-box;
+
+  &:focus-visible {
+    outline: 2px solid #FFD700;
+    outline-offset: 1px;
+    border-color: #FFD700;
+  }
 `
 
-const CopyButton = styled.button`
+const CopyButton = styled(BaseButton)`
   padding: 10px;
-  cursor: pointer;
-  background: black;
-  border-width: thick;
-  color: white;
   width: 100%;
   margin-top: 8px;
   box-sizing: border-box;
-  text-shadow: -2px 2px #555;
 `
 
 const CopyButtonContainer = styled.div`
@@ -32,4 +46,4 @@ const CopyButtonContainer = styled.div`
   gap: 10px;
 `
 
-export { SaveInput, CopyButton, CopyButtonContainer }
+export { VisuallyHiddenLabel, SaveInput, CopyButton, CopyButtonContainer }

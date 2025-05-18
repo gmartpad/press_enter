@@ -1,3 +1,4 @@
+import BaseButton from "@components/shared/BaseButton"
 import { styled } from "styled-components"
 
 const NotValidContainer = styled.div<{ $flexDirection: 'row' | 'column' }>`
@@ -15,10 +16,7 @@ const NotValidContainer = styled.div<{ $flexDirection: 'row' | 'column' }>`
     text-align: center;
 `
 
-const StyledReloadButton = styled.button`
-    cursor: pointer;
-    background-color: #000;
-    border-width: thick;
+const StyledReloadButton = styled(BaseButton)`
     padding: 4px 8px;
 `
 

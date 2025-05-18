@@ -87,6 +87,8 @@ const ar = {
     'botBuyList.infinityProcessors.name': "معالجات إنفينيتي",
     'botBuyList.infinityProcessors.name.singular': "معالج إنفينيتي",
     'botBuyList.infinityProcessors.description': "مولدات البتات النهائية التي توجد خارج المكان والزمان. إنها تولد بتات لا نهائية، لكن قسم الموارد البشرية لا يزال يطلب تقارير التقدم الأسبوعية.",
+    "botVisualizer.ariaLabel": "تصور لـ {units} وحدة بوت {botName}{pluralSuffix}. يتم تمثيل كل وحدة بدائرة تحتوي على صورة البوت.",
+    "botVisualizer.fallbackText": "تمثيل مرئي لنشاط البوت. يعرض حاليًا {units} وحدة بوت {botName}{pluralSuffix}.",
     'config.volume.title': 'الصوت: {volumeValue}',
     'config.physicalEnter.title': 'مفتاح الإدخال نشط:',
     'config.physicalEnter.tooltip': 'عند التفعيل، يسمح للاعب باستخدام مفتاح الإدخال (Enter) الفعلي على لوحة المفاتيح للضغط على زر الإدخال في اللعبة.',

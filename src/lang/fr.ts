@@ -88,6 +88,8 @@ const fr = {
     'botBuyList.infinityProcessors.name': 'Processeurs Infinity',
     'botBuyList.infinityProcessors.name.singular': 'Processeur Infinity',
     'botBuyList.infinityProcessors.description': "Les générateurs de bits ultimes qui existent au-delà de l'espace et du temps. Ils génèrent des bits infinis, mais les RH exigent toujours des rapports d'avancement hebdomadaires.",
+    "botVisualizer.ariaLabel": "Visualisation de {units} unité{pluralSuffix} du bot {botName}. Chaque unité est représentée par un cercle contenant l'image du bot.",
+    "botVisualizer.fallbackText": "Une représentation visuelle de l'activité du bot. Affiche actuellement {units} unité{pluralSuffix} du bot {botName}.",
     'config.volume.title': 'volume: {volumeValue}',
     'config.physicalEnter.title': 'Touche Entrée physique active:',
     'config.physicalEnter.tooltip': 'Lorsque cette option est active, le joueur peut utiliser la touche Entrée physique de son clavier pour appuyer sur le bouton Entrée dans le jeu.',
