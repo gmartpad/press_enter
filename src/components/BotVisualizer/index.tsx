@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getSpecificIncrementor } from '@state/atoms'
 import { useAtomValue } from 'jotai'
 import { StyledCanvas } from './styled'
+import { useIntl } from 'react-intl'
 
 // Global image cache to prevent redundant loads
 const imageCache = new Map<string, HTMLImageElement>()
@@ -10,6 +11,8 @@ const imageCache = new Map<string, HTMLImageElement>()
 const backgroundCache = new Map<string, string>()
 
 const BotVisualizerItem = ({ botId }: { botId: string }) => {
+    const intl = useIntl()
+
     const memoizedAtom = useMemo(() => {
         return getSpecificIncrementor(botId)
     }, [botId])
@@ -210,11 +213,41 @@ const BotVisualizerItem = ({ botId }: { botId: string }) => {
         loadBackground()
     }, [])
 
+    const units = useMemo(() => currentIncrementor?.units ?? 0, [currentIncrementor])
+    
+    const styledCanvasAriaLabel = useMemo(() => {
+        return intl.formatMessage(
+            { id: 'botVisualizer.ariaLabel' },
+            {
+                units: units,
+                botName: currentIncrementor?.name,
+                pluralSuffix: units === 1 ? '' : 's'
+            }
+        )
+    }, [units, currentIncrementor, intl])
+
+    const styledCanvasFallbackText = useMemo(() => {
+        return intl.formatMessage(
+            { id: 'botVisualizer.fallbackText' },
+            { 
+                units: units, 
+                botName: currentIncrementor?.name, 
+                pluralSuffix: units === 1 ? '' : 's' 
+            }
+        )
+    }, [units, currentIncrementor?.name, intl])
+
     return (
         <StyledCanvas
+            role="img"
+            aria-label={styledCanvasAriaLabel}
             ref={canvasRef}
             $background={background}
-        />
+        >
+            <p>
+                {styledCanvasFallbackText}
+            </p>
+        </StyledCanvas>
     )
 }
 

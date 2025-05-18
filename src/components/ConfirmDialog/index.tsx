@@ -1,5 +1,5 @@
 import { configState } from '@state/atoms'
-import { useCallback, useRef } from 'react'
+import { useCallback, useMemo, useRef } from 'react'
 import DialogBackground from '@components/shared/DialogBackground'
 import DialogContainer from '@components/shared/DialogContainer'
 import ResetButton from '@components/ResetButton'
@@ -64,21 +64,32 @@ const ConfirmDialog = () => {
         handleToggleConfirmDialog()
     }, [handleToggleConfirmDialog])
 
+    const ariaIDs = useMemo(() => ({
+        dialogTitleId: 'confirm-dialog-title',
+        dialogDescriptionId: 'confirm-dialog-description',
+    }), [])
+
     if(config.confirmDialogOpen) return (
         <>
             <DialogBackground 
                 handleToggleDialog={confirmConfigToggle} 
             />
-            <DialogContainer dialogOpen={Boolean(config.confirmDialogOpen)}>
+            <DialogContainer 
+                dialogOpen={Boolean(config.confirmDialogOpen)}
+                aria-labelledby={ariaIDs.dialogTitleId}
+                aria-describedby={ariaIDs.dialogDescriptionId}
+                aria-modal="true"
+            >
                 <CentralizeDiv>
                     <DialogCloseButton
                         handleToggleDialog={confirmConfigToggle}
                         orientation='left'
+                        aria-label="Go back"
                     >
                         {'<'}
                     </DialogCloseButton>
-                    <ConfirmH2>{intl.formatMessage({ id: 'confirm.primary.title' })}</ConfirmH2>
-                    <ConfirmH3>{intl.formatMessage({ id: 'confirm.secondary.title' })}</ConfirmH3>
+                    <ConfirmH2 id={ariaIDs.dialogTitleId}>{intl.formatMessage({ id: 'confirm.primary.title' })}</ConfirmH2>
+                    <ConfirmH3 id={ariaIDs.dialogDescriptionId}>{intl.formatMessage({ id: 'confirm.secondary.title' })}</ConfirmH3>
                     <ConfirmButtonsContainer>
                         <ResetButton
                             labelText={intl.formatMessage({ id: 'confirm.resetButton.label' })}

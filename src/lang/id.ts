@@ -88,6 +88,8 @@ const id = {
     'botBuyList.infinityProcessors.name': 'Prosesor Infinity',
     'botBuyList.infinityProcessors.name.singular': 'Prosesor Infinity',
     'botBuyList.infinityProcessors.description': 'Generator bit terbaik yang ada di luar ruang dan waktu. Mereka menghasilkan bit tak terbatas, tetapi HR masih menuntut laporan kemajuan mingguan.',
+    "botVisualizer.ariaLabel": "Visualisasi {units} unit bot {botName}{pluralSuffix}. Setiap unit direpresentasikan oleh lingkaran yang berisi gambar bot.",
+    "botVisualizer.fallbackText": "Representasi visual aktivitas bot. Saat ini menampilkan {units} unit bot {botName}{pluralSuffix}.",
     'config.volume.title': 'volume: {volumeValue}',
     'config.physicalEnter.title': 'Enter fisik aktif:',
     'config.physicalEnter.tooltip': 'Ketika aktif, memungkinkan pemain untuk menggunakan tombol Enter fisik pada keyboard mereka untuk menekan tombol Enter dalam permainan.',

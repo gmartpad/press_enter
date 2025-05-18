@@ -1,3 +1,4 @@
+import BaseButton from '@components/shared/BaseButton'
 import { Tooltip } from 'react-tooltip'
 import { styled } from 'styled-components'
 
@@ -31,10 +32,7 @@ const ConfigRowButtonContainer = styled.div`
   gap: 10px;
 `
 
-const ConfigResetButton = styled.button`
-  cursor: pointer;
-  background: #000;
-  border-width: thick;
+const ConfigResetButton = styled(BaseButton)`
   padding: 10px;
 `
 
@@ -44,10 +42,7 @@ const ConfigResetButtonH2 = styled.h2`
   color: #fff;
 `
 
-const SaveFileButton = styled.button`
-  cursor: pointer;
-  background: #000;
-  border-width: thick;
+const SaveFileButton = styled(BaseButton)`
   padding: 10px;
   width: 100%;
 `

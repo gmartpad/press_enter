@@ -7,7 +7,7 @@ const ReloadButton = ({
     intl: IntlShape
 }) => {
     return (
-        <StyledReloadButton 
+        <StyledReloadButton
             onClick={() => location.reload()}
         >
             {intl.formatMessage({ id: 'broadcastProvider.accessDenied.clickHere' })}

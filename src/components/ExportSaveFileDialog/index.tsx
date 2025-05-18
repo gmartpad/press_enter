@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl'
 import { useAtom, useStore } from 'jotai'
 import useDetectButtonClickBoolean from '@hooks/useDetectButtonClickBoolean'
 import { CentralizeDiv } from '@components/ConfirmDialog/styled'
-import { SaveInput, CopyButton, CopyButtonContainer } from './styled'
+import { SaveInput, CopyButton, CopyButtonContainer, VisuallyHiddenLabel } from './styled'
 import DialogCloseButton from '@components/shared/DialogCloseButton'
 import { sound1 } from '@assets/sounds/sharedClick'
 
@@ -17,13 +17,27 @@ const ExportSaveFileDialog = () => {
     const [config, setConfig] = useAtom(configState)
     const inputRef = useRef<HTMLTextAreaElement>(null)
 
+    const ariaIDs = useMemo(() => ({
+        dialogTitleId: 'export-save-dialog-title',
+        saveInputLabelId: 'save-input-label'
+    }), [])
+
     useEffect(() => {
-        if (inputRef.current) {
+        if (config.exportSaveFileDialogOpen && inputRef.current) {
             inputRef.current.focus()
         }
     }, [])
 
     const hasWriteText = useMemo(() => Boolean(navigator.clipboard?.writeText), [navigator.clipboard?.writeText])
+
+    const handleClickSound = useCallback(() => {
+        if (audioRef.current) {
+            const randomSound = sound1
+            audioRef.current.src = randomSound
+            audioRef.current.volume = config.volume
+            audioRef.current.play()
+        }
+    }, [config.volume])
 
     const handleCopy = useCallback(() => {
         handleClickSound()
@@ -31,16 +45,21 @@ const ExportSaveFileDialog = () => {
 
         try {
             inputRef.current.select()
+            inputRef.current.focus()
             if (hasWriteText) {
                 navigator.clipboard.writeText(inputRef.current.value)
+                    .catch((err) => {
+                        console.error('Failed to copy text: ', err)
+                        document.execCommand('copy')
+                    })
             } else {
                 // Fallback to execCommand
                 document.execCommand('copy')
             }
         } catch (err) {
-            console.error(err)
+            console.error('Error during copy operation: ', err)
         }
-    }, [hasWriteText])
+    }, [hasWriteText, handleClickSound])
 
     const handleDownloadSave = useCallback(() => {
         try {
@@ -60,15 +79,6 @@ const ExportSaveFileDialog = () => {
     }, [])
 
     const audioRef = useRef<HTMLAudioElement>(new Audio())
-
-    const handleClickSound = useCallback(() => {
-        if (audioRef.current) {
-            const randomSound = sound1
-            audioRef.current.src = randomSound
-            audioRef.current.volume = config.volume
-            audioRef.current.play()
-        }
-    }, [config.volume])
 
     const handleToggleExportSaveFileDialog = useCallback(() => {
         handleClickSound()
@@ -103,19 +113,33 @@ const ExportSaveFileDialog = () => {
             <DialogBackground 
                 handleToggleDialog={confirmConfigToggle} 
             />
-            <DialogContainer dialogOpen={Boolean(config.exportSaveFileDialogOpen)}>
+            <DialogContainer 
+                dialogOpen={Boolean(config.exportSaveFileDialogOpen)}
+                aria-labelledby={ariaIDs.dialogTitleId}
+                aria-modal="true"
+            >
                 <DialogCloseButton
                     handleToggleDialog={confirmConfigToggle}
                     orientation='left'
+                    aria-label="Go back to settings"
                 >
                     {'<'}
                 </DialogCloseButton>
                 <CentralizeDiv>
                     <h2>{intl.formatMessage({ id: 'config.exportSaveFile.title' })}</h2>
+                    <VisuallyHiddenLabel
+                        htmlFor="save-game-data"
+                        id={ariaIDs.saveInputLabelId}
+                    >
+                        {'Save game data (read-only)'}
+                    </VisuallyHiddenLabel>
                     <SaveInput
+                        id="save-game-data"
                         ref={inputRef}
                         value={localStorage.getItem('gameState') || ''}
                         readOnly
+                        aria-labelledby={ariaIDs.saveInputLabelId}
+                        aria-describedby={ariaIDs.dialogTitleId}
                     />
                     <CopyButtonContainer>
                         {hasWriteText && (

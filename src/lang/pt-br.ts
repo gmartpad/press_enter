@@ -88,6 +88,8 @@ const ptBr = {
     'botBuyList.infinityProcessors.name': 'Processadores de Infinito',
     'botBuyList.infinityProcessors.name.singular': 'Processador de Infinito',
     'botBuyList.infinityProcessors.description': 'Os geradores de bits definitivos que existem além do espaço e do tempo. Eles geram bits infinitos, mas o RH ainda exige relatórios de progresso semanais.',
+    'botVisualizer.ariaLabel': "Visualization of {units} {botName} bot unit{pluralSuffix}. Each unit is represented by a circle containing the bot's image.",
+    'botVisualizer.fallbackText': "A visual representation of bot activity. Currently showing {units} {botName} bot unit{pluralSuffix}.",
     'config.volume.title': 'volume: {volumeValue}',
     'config.physicalEnter.title': 'Enter ativo:',
     'config.physicalEnter.tooltip': 'Quando ativo, permite que o jogador use a tecla Enter física de seu teclado para pressionar o botão de Enter no jogo.',

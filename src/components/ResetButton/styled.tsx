@@ -1,9 +1,7 @@
+import BaseButton from "@components/shared/BaseButton"
 import { styled } from "styled-components"
 
-const StyledResetButton = styled.button`
-  cursor: pointer;
-  background: black;
-  border-width: thick;
+const StyledResetButton = styled(BaseButton)`
   padding: 10px;
 `
 
