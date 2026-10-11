@@ -62,13 +62,11 @@ const LoadSaveStringButton = () => {
                 return
             }
 
-            // Store the save string and attempt to load it
-            localStorage.setItem('gameState', saveString)
-            const success = loadGame()
+            // Load first; the atoms validate it and autosave stores the result
+            const success = loadGame(saveString)
 
             if (!success) {
                 setError(intl.formatMessage({ id: 'loadSave.loadError' }))
-                localStorage.removeItem('gameState')
             } else {
                 setSaveString('')
                 setError('')

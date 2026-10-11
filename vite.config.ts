@@ -4,6 +4,8 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    // GitHub Pages serves a project site under /<repo>/; use '/' with a custom domain.
+    base: '/press_enter/',
     plugins: [react()],
     resolve: {
         alias: {
