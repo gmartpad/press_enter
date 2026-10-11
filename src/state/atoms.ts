@@ -5,6 +5,7 @@ import { defaultUpgrades, Upgrade } from '@upgrades'
 import { LanguageValues } from '@components/LanguageDialog/languages.ts'
 import handleRecalculatePricePerUnit from '@utils/handleRecalculatePricePerUnit.ts'
 import { decodeSaveData, encodeSaveData } from '@utils/saveEncoder.ts'
+import { validateArray, validateNumber, validateObject } from '@utils/saveValidators.ts'
 
 // Types
 export type Config = {
@@ -70,26 +71,6 @@ export const saveGameState = (get: any) => {
     }
     const encoded = encodeSaveData(saveData)
     localStorage.setItem('gameState', encoded)
-}
-
-// Validation helper functions
-const validateNumber = (value: unknown, defaultValue: number): number => {
-    return typeof value === 'number' && !isNaN(value) ? value : defaultValue
-}
-
-function validateArray<T>(saved: T[] | undefined, defaults: T[]): T[] {
-    if (!saved) return defaults
-    
-    // If the saved array is shorter than defaults, append the new items
-    if (saved.length < defaults.length) {
-        return [...saved, ...defaults.slice(saved.length)]
-    }
-    
-    return saved
-}
-
-const validateObject = <T extends object>(value: unknown, defaultValue: T): T => {
-    return value && typeof value === 'object' ? value as T : defaultValue
 }
 
 // Internal atoms with validated initial values
