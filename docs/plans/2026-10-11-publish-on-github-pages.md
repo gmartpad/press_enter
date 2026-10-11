@@ -6,9 +6,13 @@ dependencies, the save import, and the deploy workflow.
 
 **Status, 2026-10-11:**
 
-- The code is done on `SP023/GITHUB_PAGES_SECURITY`, not yet committed. The GitHub settings and
-  the `VITE_ENCODE_KEY` secret are in place.
-- Next: the commits and a PR into `devel` → `main`; the merge into `main` deploys.
+- **Shipped.** PRs #150 (into `devel`) and #151 (into `main`); the first deploy (run 38161409289)
+  succeeded, and the site is live at https://gmartpad.github.io/press_enter/.
+- Still open:
+  - importing a save exported from the old site (phase 4);
+  - the custom-domain switch (below);
+  - Dependabot's PR #152 (vite 5.4.21 → 6.4.3), which fixes the 4 dev-server advisories. It targets
+    `main` directly, and nothing checks it, so test it before merging.
 
 **Audit, 2026-10-11:**
 
@@ -49,11 +53,10 @@ dependencies, the save import, and the deploy workflow.
   that expose my email".
 - [x] **A second secret scan.** **Done 2026-10-11:** GitHub secret scanning, which covers the full
   history, instead of gitleaks.
-- [x] **Domain.** `gmartpad.github.io` for now:
-  - `ads.txt` must sit at the host root, so it needs a custom domain or a `gmartpad.github.io` repo
-    holding it.
-  - Every `*.github.io` site of yours shares one origin, and so one `localStorage`. No other repo
-    of yours has Pages yet.
+- [x] **Domain.** **Changed 2026-10-11:** `pressingenter.com` (on Cloudflare) becomes the Pages
+  custom domain; see "Custom domain" below. It puts `ads.txt` at the root and gives the game its own
+  origin, separate from any other `*.github.io` site. `gmartpad.github.io/press_enter/` redirects
+  there.
 
 ## Phase 1: code
 
@@ -87,8 +90,9 @@ dependencies, the save import, and the deploy workflow.
 - [x] **Visibility: Public.** Done by you, 2026-10-11.
 - [x] **Secret scanning and push protection.** **Done 2026-10-11** through the API. Dependabot
   alerts were already on.
-- [ ] **Dependabot security updates.** Turn on after the upgrade reaches `main`; before that, it
-  opens a pull request for every vulnerable version still on `main`.
+- [x] **Dependabot security updates.** **Done 2026-10-11**, after the upgrade reached `main`.
+  Turning them on earlier would have opened a pull request for every vulnerable version still on
+  `main`.
 - [x] **`VITE_ENCODE_KEY` secret.** **Done 2026-10-11:** set to the old Vercel key, so saves
   exported from the old site keep importing. A local build with it embeds the key and drops the
   `'your-key-here'` fallback. **Never change it:** once players save on Pages, a new key makes their
@@ -113,13 +117,41 @@ dependencies, the save import, and the deploy workflow.
 
 ## Phase 4: after the first deploy
 
-- [ ] `https://gmartpad.github.io/press_enter/` loads and the console is clean.
+- [x] **The site loads and the console is clean.** **Done 2026-10-11:** 200, assets under
+  `/press_enter/`, no console errors or warnings; the game renders and autosaves.
 - [ ] A save exported from the old site imports, if you still have one.
-- [ ] Security tab: no secret-scanning alerts; the 4 dev-server advisories can be dismissed as
-  "Risk is tolerable to this project".
-- [ ] The deploy run's log doesn't show the key.
-- [ ] Repo About link: `gh repo edit gmartpad/press_enter --homepage https://gmartpad.github.io/press_enter/`.
-  Today it sends visitors to someone else's app.
+- [x] **Security tab.** **Done 2026-10-11:** 0 secret-scanning alerts; open Dependabot alerts went
+  from 64 to 4, the dev-server ones. Leave those open: security updates may propose the Vite 6
+  upgrade that fixes them.
+- [x] **The deploy log doesn't show the key.** **Done 2026-10-11:** it appears 0 times in the log of
+  run 38161409289.
+- [x] **Repo About link.** **Done 2026-10-11:** it now points to
+  https://gmartpad.github.io/press_enter/ instead of someone else's app.
+
+## Custom domain: pressingenter.com
+
+One deploy serves it. With a Pages custom domain, every push to `main` updates `pressingenter.com`,
+and the `github.io` URL redirects there. No second pipeline is needed.
+
+- [x] **Relative asset URLs.** **Done 2026-10-11:** `base: './'`, so one build works both at
+  `/press_enter/` and at the root. Both paths were served locally from a build with the real key.
+  Starting from a rich save and pressing Enter loaded the lazy assets too: 31 JS chunks, 10 PNGs,
+  4 WAVs and the font, with no failures, and `/ads.txt` responds with a 200 at the root. Deploy
+  this before setting the custom domain, because a `/press_enter/` build breaks at the root.
+- [x] **Cloudflare DNS.** **Done 2026-10-11:** the root and `www` are both
+  `CNAME gmartpad.github.io`, set to "DNS only", and they resolve to GitHub's four IPs. The old
+  Vercel records (`A 76.76.21.21`, `CNAME cname.vercel-dns.com`) are gone, which closes the
+  dangling DNS. The Resend email records and the AWS certificate validation record are untouched.
+- [x] **Verify the domain on GitHub.** **Done 2026-10-11** at github.com/settings/pages. Keep the
+  `_github-pages-challenge-gmartpad` TXT record in Cloudflare. Now no other GitHub account can
+  claim the domain for its Pages site.
+- [ ] **Set the custom domain**, once the relative build is live and DNS points at GitHub:
+  `gh api -X PUT repos/gmartpad/press_enter/pages -f cname=pressingenter.com`. Then enforce HTTPS
+  once the certificate is issued.
+- [ ] **About link and AdSense.** Point the About link at `https://pressingenter.com/`, and add the
+  site in AdSense.
+- Saves made on `gmartpad.github.io` since today's launch don't carry over, because they belong to a
+  different origin. Switching now limits that to launch-day testing.
 
 ## The move
 
