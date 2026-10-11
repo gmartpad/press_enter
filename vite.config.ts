@@ -4,8 +4,8 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    // GitHub Pages serves a project site under /<repo>/; use '/' with a custom domain.
-    base: '/press_enter/',
+    // ponytail: relative URLs let one build serve gmartpad.github.io/press_enter/ and pressingenter.com/. They work only while there's no router; with nested routes, use '/'.
+    base: './',
     plugins: [react()],
     resolve: {
         alias: {
