@@ -51,6 +51,7 @@ const BroadcastProvider = ({ children }: BroadcastProviderProps) => {
     
         if(!activeTab) {
             localStorage.setItem('activeTab', tabId)
+            accessDeniedRef.current = false
             setLoading(false)
         } else {
             echoTimeoutId.current = setTimeout(() => {
@@ -61,7 +62,7 @@ const BroadcastProvider = ({ children }: BroadcastProviderProps) => {
         }
 
         window.addEventListener('beforeunload', () => {
-            const activeTab = localStorage.get('activeTab')
+            const activeTab = localStorage.getItem('activeTab')
             if(activeTab === tabId) {
                 localStorage.removeItem('activeTab')
             }
