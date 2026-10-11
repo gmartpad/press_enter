@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { Props, US, BR, ES, CN, IN, FR, BD, RU, PK, ID, SA } from 'country-flag-icons/react/3x2'
 
 export type LanguageValues = 'en' | 'es' | 'pt-br' | 'zh-cn' | 'hi-in' | 'fr' | 'ar' | 'bn' | 'ru' | 'ur' | 'id'
