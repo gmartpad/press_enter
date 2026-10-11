@@ -82,12 +82,11 @@ const ImportSaveFileDialog = () => {
                 return
             }
 
-            // Store the save string and attempt to load it
+            // Load first; the atoms validate it and autosave stores the result
             const success = loadGame(saveString)
 
             if (!success) {
                 setError(intl.formatMessage({ id: 'config.importSaveFile.loadError' }))
-                localStorage.removeItem('gameState')
             } else {
                 setSaveString('')
                 setError('')
